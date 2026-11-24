@@ -25,6 +25,9 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.mohit.rehabit.ui.library.ExerciseDetailScreen
 import com.mohit.rehabit.ui.library.LibraryScreen
+import com.mohit.rehabit.ui.library.PlanDetailScreen
+import com.mohit.rehabit.ui.player.PlayerRequest
+import com.mohit.rehabit.ui.player.PlayerScreen
 import com.mohit.rehabit.ui.progress.ProgressScreen
 import com.mohit.rehabit.ui.settings.SettingsScreen
 import com.mohit.rehabit.ui.today.TodayScreen
@@ -48,6 +51,10 @@ fun RehabitAppUi() {
     val backStack by nav.currentBackStackEntryAsState()
     val route = backStack?.destination?.route
 
+    val openPlan: (String) -> Unit = { id -> nav.navigate("plan/$id") }
+    val openExercise: (String) -> Unit = { id -> nav.navigate("exercise/$id") }
+    val startPhase: (String, String) -> Unit = { planId, phaseId -> nav.navigate("player/plan/$planId/$phaseId") }
+
     Scaffold(
         bottomBar = {
             if (Tab.entries.any { it.route == route }) {
@@ -69,10 +76,17 @@ fun RehabitAppUi() {
             startDestination = Tab.TODAY.route,
             modifier = Modifier.padding(bottom = padding.calculateBottomPadding()),
         ) {
-            composable(Tab.TODAY.route) { TodayScreen(onBrowseLibrary = { nav.openTab(Tab.LIBRARY) }) }
+            composable(Tab.TODAY.route) {
+                TodayScreen(
+                    onOpenPlan = openPlan,
+                    onStartRoutine = startPhase,
+                    onBrowseLibrary = { nav.openTab(Tab.LIBRARY) },
+                )
+            }
             composable(Tab.LIBRARY.route) {
                 LibraryScreen(
-                    onOpenExercise = { id -> nav.navigate("exercise/$id") },
+                    onOpenExercise = openExercise,
+                    onOpenPlan = openPlan,
                     onShowProblems = { nav.openTab(Tab.SETTINGS) },
                 )
             }
@@ -85,8 +99,40 @@ fun RehabitAppUi() {
                 ExerciseDetailScreen(
                     id = entry.arguments?.getString("id").orEmpty(),
                     onBack = { nav.popBackStack() },
-                    onOpenExercise = { id -> nav.navigate("exercise/$id") },
+                    onOpenExercise = openExercise,
+                    onTry = { id -> nav.navigate("player/exercise/$id") },
                 )
+            }
+            composable(
+                route = "plan/{id}",
+                arguments = listOf(navArgument("id") { type = NavType.StringType }),
+            ) { entry ->
+                PlanDetailScreen(
+                    id = entry.arguments?.getString("id").orEmpty(),
+                    onBack = { nav.popBackStack() },
+                    onOpenExercise = openExercise,
+                    onStart = startPhase,
+                )
+            }
+            composable(
+                route = "player/plan/{planId}/{phaseId}",
+                arguments = listOf(
+                    navArgument("planId") { type = NavType.StringType },
+                    navArgument("phaseId") { type = NavType.StringType },
+                ),
+            ) { entry ->
+                val request = PlayerRequest.PlanPhase(
+                    planId = entry.arguments?.getString("planId").orEmpty(),
+                    phaseId = entry.arguments?.getString("phaseId").orEmpty(),
+                )
+                PlayerScreen(request, onClose = { nav.popBackStack() })
+            }
+            composable(
+                route = "player/exercise/{id}",
+                arguments = listOf(navArgument("id") { type = NavType.StringType }),
+            ) { entry ->
+                val request = PlayerRequest.SingleExercise(entry.arguments?.getString("id").orEmpty())
+                PlayerScreen(request, onClose = { nav.popBackStack() })
             }
         }
     }

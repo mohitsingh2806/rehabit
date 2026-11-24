@@ -1,0 +1,105 @@
+{
+  "id": "posterior-tibial-tendon",
+  "name": "Posterior tibial tendon (PTTD)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Settle the painful tendon on the inside of the ankle, then strengthen it step by step so it can hold up your arch again for walking, hiking and running.",
+  "whoFor": "People diagnosed with early-stage posterior tibial tendon dysfunction: pain and sometimes swelling along the inside of the ankle, and the arch may be starting to drop.",
+  "notFor": [
+    "A flat foot that has become rigid (no arch forms when you rise on tiptoe): see a foot and ankle specialist",
+    "Recent ankle surgery: follow your surgeon's protocol"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Pain on the inside of the ankle when walking or doing a heel raise (0-10)",
+  "painRules": "Up to about 3 out of 10 during exercise is OK if it settles within 24 hours. If the ankle is more painful or swollen the next morning, drop back a step for a few days. Supportive shoes (or orthotics from your clinician) help while the tendon recovers.",
+  "redFlags": [
+    "A sudden pop or tearing feeling, and you can't stand on tiptoe",
+    "The arch flattening noticeably over a few weeks",
+    "You can't do a single heel raise on that side at all",
+    "A lot of swelling, heat or redness",
+    "Numbness or tingling in the foot",
+    "If you have diabetes: a hot, swollen or changing-shape foot (see a doctor the same day)"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Calm and load gently",
+      "durationHint": "1-2 weeks",
+      "entryCriteria": "Pain on the inside of the ankle, worse with walking or running.",
+      "exitCriteria": "Walking is comfortable and the inversion holds cause little pain (2 out of 10 or less).",
+      "items": [
+        {
+          "exerciseId": "ankle-inversion-isometric",
+          "dose": { "sets": 5, "holdSec": 30, "restSec": 30, "sides": "AFFECTED" },
+          "schedule": { "slots": ["MORNING"] }
+        },
+        { "exerciseId": "short-foot", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "calf-stretch-wall-gastroc", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "calf-stretch-wall-soleus", "schedule": { "slots": ["NIGHT"] } }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Strengthen the tendon",
+      "durationHint": "4-6 weeks",
+      "entryCriteria": "Walking is comfortable.",
+      "exitCriteria": "3 x 12 ball-squeeze heel raises with pain of 2 out of 10 or less, and no worse the next day.",
+      "items": [
+        {
+          "exerciseId": "ankle-inversion-band",
+          "dose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-1-3", "sides": "AFFECTED" },
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "heel-raise-ball-squeeze",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        { "exerciseId": "short-foot", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "single-leg-balance", "schedule": { "slots": ["MORNING"] } },
+        {
+          "exerciseId": "ankle-inversion-isometric",
+          "dose": { "sets": 3, "holdSec": 30, "restSec": 30, "sides": "AFFECTED" },
+          "schedule": { "slots": ["MORNING"] },
+          "core": false,
+          "note": "Useful on sore days for pain relief."
+        },
+        { "exerciseId": "calf-stretch-wall-gastroc", "schedule": { "slots": ["NIGHT"] }, "core": false },
+        { "exerciseId": "calf-stretch-wall-soleus", "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    },
+    {
+      "id": "capacity",
+      "name": "Build capacity, return to running",
+      "durationHint": "6+ weeks",
+      "entryCriteria": "Ball-squeeze heel raises are comfortable.",
+      "exitCriteria": "20 or more single-leg heel raises without pain, and comfortable runs.",
+      "items": [
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "heel-raise-ball-squeeze",
+          "dose": { "sets": 3, "reps": 15, "restSec": 60, "tempo": "2-1-3", "load": "Add a backpack when easy" },
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true },
+          "note": "Keep your arch lifted as you lower."
+        },
+        { "exerciseId": "single-leg-balance", "schedule": { "slots": ["MORNING"] } },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true },
+          "core": false,
+          "note": "Only once single-leg heel raises are pain-free: a step towards running."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Kulig K, et al. 2009. Nonsurgical management of posterior tibial tendon dysfunction with orthoses and resistive exercise: a randomized controlled trial. Phys Ther 89:26-37."
+  ],
+  "reviewed": false
+}

@@ -1,0 +1,85 @@
+{
+  "id": "lower-back-pain",
+  "name": "Lower back pain (incl. after running)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Calm a sore back with gentle movement and walking, then build trunk endurance and hip strength so your back copes with sitting, lifting and running.",
+  "whoFor": "People with everyday (non-specific) lower back pain, including runners whose back aches during or after runs.",
+  "notFor": [
+    "Back pain after a significant fall or accident that hasn't been checked",
+    "Leg pain that's worse than the back pain (see a physio for a nerve-focused plan)"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Lower-back pain at its worst today (0-10)",
+  "painRules": "Mild discomfort up to about 3 out of 10 during exercise is OK if it settles within an hour and isn't worse the next morning. Stop anything that sends pain further down your leg. Staying active helps more than resting.",
+  "redFlags": [
+    "Numbness around the genitals, inner thighs or buttocks (the 'saddle' area)",
+    "New trouble passing or controlling urine or bowels (go to emergency the same day)",
+    "Weakness in a leg that's getting worse, or a foot that drops or slaps",
+    "Pain, numbness or pins and needles in both legs",
+    "Fever or feeling unwell with back pain",
+    "A history of cancer, or unexplained weight loss",
+    "Severe pain that no position eases, or pain after a significant fall"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Calm it down",
+      "durationHint": "1-2 weeks, or during a flare-up",
+      "entryCriteria": "Back pain that's recent or flared up, or sore after runs.",
+      "exitCriteria": "Pain is mostly 3 out of 10 or less, and walking and sitting feel OK.",
+      "items": [
+        { "exerciseId": "brisk-walk", "schedule": { "slots": ["ANYTIME"] }, "note": "Split into two 5-minute walks if 10 minutes is too much." },
+        { "exerciseId": "cat-cow", "schedule": { "slots": ["MORNING"] } },
+        { "exerciseId": "pelvic-tilt", "schedule": { "slots": ["MORNING"] }, "core": false },
+        { "exerciseId": "lower-trunk-rotation", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "glute-bridge", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "knee-to-chest", "schedule": { "slots": ["NIGHT"] }, "core": false, "note": "Use if bending forward eases your pain." },
+        {
+          "exerciseId": "prone-press-up",
+          "schedule": { "slots": ["NIGHT"] },
+          "core": false,
+          "note": "Use if standing up straight or leaning back eases your pain. Skip it if leg pain spreads."
+        },
+        { "exerciseId": "child-pose", "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    },
+    {
+      "id": "endurance",
+      "name": "Build endurance (big 3)",
+      "durationHint": "2-4 weeks",
+      "entryCriteria": "Pain is settling and daily activities feel manageable.",
+      "exitCriteria": "The big 3 feel easy and your back stays calm after runs.",
+      "items": [
+        { "exerciseId": "brisk-walk", "schedule": { "slots": ["ANYTIME"] } },
+        { "exerciseId": "cat-cow", "schedule": { "slots": ["MORNING"] }, "core": false },
+        { "exerciseId": "mcgill-curl-up", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "side-plank-knees", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "bird-dog", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "glute-bridge", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "hip-flexor-stretch-kneeling", "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    },
+    {
+      "id": "run-proof",
+      "name": "Run-proof your back",
+      "durationHint": "4-8 weeks, then keep 2 sessions a week",
+      "entryCriteria": "Little or no pain day to day.",
+      "exitCriteria": "Pain-free with your normal running. Keep the strength work twice a week.",
+      "items": [
+        { "exerciseId": "side-plank", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "bird-dog", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "dead-bug", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "single-leg-bridge", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true } },
+        { "exerciseId": "single-leg-rdl", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true } },
+        { "exerciseId": "split-squat", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true } },
+        { "exerciseId": "couch-stretch", "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    }
+  ],
+  "references": [
+    "George SZ, et al. 2021. Interventions for the management of acute and chronic low back pain: revision 2021. Clinical practice guidelines. J Orthop Sports Phys Ther 51(11):CPG1-CPG60.",
+    "McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."
+  ],
+  "reviewed": false
+}

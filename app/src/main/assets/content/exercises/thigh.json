@@ -1,0 +1,39 @@
+[
+  {
+    "id": "hamstring-stretch-standing",
+    "name": "Hamstring stretch on a step",
+    "bodyAreas": ["HAMSTRING"],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "trailFriendly": true,
+    "equipment": ["STEP"],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "why": "Stretches the back of the thigh, which tightens with running and sitting.",
+    "setup": ["Stand facing a low step, bench or rock and rest one heel on it, leg straight, toes pointing up."],
+    "cues": ["Hinge forward from the hips", "Keep your back long", "Stop at a gentle stretch"],
+    "mistakes": ["Rounding the back to reach further", "Locking the knee hard", "Bouncing"],
+    "feel": "A stretch in the back of the thigh.",
+    "stopIf": "Tingling or pain down the leg: that's a nerve, not a muscle, so ease off.",
+    "reviewed": false
+  },
+  {
+    "id": "quad-stretch-standing",
+    "name": "Standing quad stretch",
+    "bodyAreas": ["QUAD", "HIP"],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "trailFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "why": "Stretches the front of the thigh after running, cycling or hiking downhill.",
+    "setup": ["Stand tall holding a wall or tree for balance."],
+    "cues": ["Bring your heel towards your bottom", "Knees side by side", "Tuck your tailbone under"],
+    "mistakes": ["Arching the lower back", "Letting the knee drift forward or out", "Pulling hard on the ankle"],
+    "feel": "A stretch along the front of the thigh.",
+    "stopIf": "Knee pain.",
+    "reviewed": false
+  }
+]

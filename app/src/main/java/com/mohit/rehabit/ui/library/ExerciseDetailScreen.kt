@@ -18,7 +18,9 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -54,7 +56,12 @@ import com.mohit.rehabit.ui.common.label
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ExerciseDetailScreen(id: String, onBack: () -> Unit, onOpenExercise: (String) -> Unit) {
+fun ExerciseDetailScreen(
+    id: String,
+    onBack: () -> Unit,
+    onOpenExercise: (String) -> Unit,
+    onTry: (String) -> Unit,
+) {
     val context = LocalContext.current
     val state by context.container.content.state.collectAsStateWithLifecycle()
     val ready = state as? ContentState.Ready
@@ -80,7 +87,7 @@ fun ExerciseDetailScreen(id: String, onBack: () -> Unit, onOpenExercise: (String
                     "This exercise isn't in the library any more.",
                     modifier = Modifier.align(Alignment.Center).padding(32.dp),
                 )
-                else -> ExerciseDetail(exercise, ready.bundle, onOpenExercise)
+                else -> ExerciseDetail(exercise, ready.bundle, onOpenExercise, onTry)
             }
         }
     }
@@ -88,7 +95,12 @@ fun ExerciseDetailScreen(id: String, onBack: () -> Unit, onOpenExercise: (String
 
 @OptIn(ExperimentalLayoutApi::class)
 @Composable
-private fun ExerciseDetail(e: Exercise, bundle: ContentBundle, onOpenExercise: (String) -> Unit) {
+private fun ExerciseDetail(
+    e: Exercise,
+    bundle: ContentBundle,
+    onOpenExercise: (String) -> Unit,
+    onTry: (String) -> Unit,
+) {
     val uriHandler = LocalUriHandler.current
     Column(
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
@@ -118,6 +130,12 @@ private fun ExerciseDetail(e: Exercise, bundle: ContentBundle, onOpenExercise: (
                     if (e.equipment.isEmpty()) Tag("No equipment") else e.equipment.forEach { Tag(it.label) }
                     if (e.deskFriendly) Tag("Desk-friendly")
                     if (e.trailFriendly) Tag("Trail-friendly")
+                }
+                Spacer(Modifier.height(16.dp))
+                Button(onClick = { onTry(e.id) }, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+                    Icon(Icons.Filled.PlayArrow, contentDescription = null)
+                    Spacer(Modifier.width(8.dp))
+                    Text("Try it now (guided)")
                 }
             }
         }

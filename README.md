@@ -12,8 +12,9 @@ conventions and content-authoring rules.
 > physiotherapist first.
 
 ## Status
-Milestone 0 (foundations): app skeleton, theme, navigation, content schema + validator, first
-exercises in the Library. Plans, routines and the guided player come next (see PLAN.md §13).
+Milestone 1: Library (plans, routines, 84 exercises; search and filters), plan detail with phases
+and red flags, and a hands-free guided player (timers, left/right sides, voice cues, beeps and
+metronome, vibration) with a session log. Daily plans with reminders come next (see PLAN.md §13).
 
 ## Install
 Every push to `main` builds a signed APK and publishes it as a GitHub Release:
@@ -44,6 +45,8 @@ The schema is `app/src/main/java/com/mohit/rehabit/content/ContentModels.kt`; th
 app/src/main/java/com/mohit/rehabit/
   RehabitApp.kt      Application + AppContainer (manual DI)
   content/           schema, loader, validator (pure Kotlin) + ContentRepository (assets)
-  domain/            pure logic, unit-tested (dose text, …)
-  ui/                Compose screens: today, library (list + exercise detail), progress, settings
+  data/              Room database (session log)
+  domain/            pure logic, unit-tested: SessionScript (doses → player steps), dose/schedule text
+  player/            SessionAudio: offline voice, beeps, vibration
+  ui/                Compose screens: today, library (lists, plan + exercise detail), player, progress, settings
 ```

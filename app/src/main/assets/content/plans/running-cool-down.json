@@ -1,0 +1,26 @@
+{
+  "id": "running-cool-down",
+  "name": "Running cool-down",
+  "kind": "ON_DEMAND",
+  "category": "RUNNING",
+  "goal": "Bring your heart rate down gently, then stretch the muscles running tightens most. All standing except one, so you can do it outdoors.",
+  "whoFor": "Anyone after a run. The stretches feel good and keep you moving well; they won't prevent soreness on their own, and that's fine.",
+  "estMinutes": 14,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Cool-down",
+      "items": [
+        { "exerciseId": "brisk-walk", "dose": { "sets": 1, "durationSec": 300 }, "note": "Easy walk or very easy jog." },
+        { "exerciseId": "calf-stretch-wall-gastroc", "dose": { "sets": 1, "holdSec": 30 } },
+        { "exerciseId": "calf-stretch-wall-soleus", "dose": { "sets": 1, "holdSec": 30 } },
+        { "exerciseId": "hamstring-stretch-standing", "dose": { "sets": 1, "holdSec": 30 } },
+        { "exerciseId": "quad-stretch-standing", "dose": { "sets": 1, "holdSec": 30 } },
+        { "exerciseId": "figure-4-stretch-standing", "dose": { "sets": 1, "holdSec": 30 } },
+        { "exerciseId": "hip-flexor-stretch-kneeling", "dose": { "sets": 1, "holdSec": 30 }, "core": false, "note": "Kneel on a jacket or mat if you're outside." },
+        { "exerciseId": "side-lunge-adductor-stretch", "dose": { "sets": 1, "holdSec": 30 }, "core": false }
+      ]
+    }
+  ],
+  "reviewed": false
+}

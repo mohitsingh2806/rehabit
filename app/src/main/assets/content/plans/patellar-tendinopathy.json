@@ -1,0 +1,106 @@
+{
+  "id": "patellar-tendinopathy",
+  "name": "Patellar tendinopathy (jumper's knee)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Settle pain with isometric holds, rebuild tendon strength with heavy slow squats, then restore the springiness you need for running and jumping. Tendons recover with the right load, not with rest.",
+  "whoFor": "People diagnosed with patellar tendinopathy: pain just below the kneecap that comes on with loading (squatting, stairs, jumping, running) and eases with rest.",
+  "notFor": [
+    "Pain mainly around or behind the kneecap rather than just below it (a different problem; a front-of-knee plan is coming)",
+    "Recent knee surgery: follow your surgeon's protocol"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Pain just below the kneecap on stairs or a slow squat (0-10)",
+  "painRules": "Up to about 3 out of 10 during exercise is OK if it settles quickly and the knee is no worse the next morning. If it is worse, go back to the previous load for a few days rather than stopping completely.",
+  "redFlags": [
+    "The knee locks, gives way, or won't fully straighten",
+    "Fast, large swelling after an injury",
+    "A hot, red, swollen knee, or fever",
+    "Calf pain with swelling and warmth (possible blood clot)",
+    "A sudden pop with a sudden loss of strength to straighten the knee"
+  ],
+  "avoid": ["couch-stretch"],
+  "phases": [
+    {
+      "id": "isometric",
+      "name": "Settle with holds",
+      "durationHint": "1-2 weeks, and on painful days later",
+      "entryCriteria": "Pain just below the kneecap that limits squatting, stairs or running.",
+      "exitCriteria": "Pain on a slow single-leg squat is 3 out of 10 or less.",
+      "items": [
+        {
+          "exerciseId": "spanish-squat-isometric",
+          "dose": { "sets": 5, "holdSec": 45, "restSec": 60, "effort": "Firm hold, knee discomfort up to 3/10" },
+          "schedule": { "slots": ["MORNING"] },
+          "note": "No band anchor? Use the wall sit instead."
+        },
+        { "exerciseId": "glute-bridge", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "side-lying-hip-abduction", "schedule": { "slots": ["NIGHT"] }, "core": false },
+        { "exerciseId": "quad-stretch-standing", "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    },
+    {
+      "id": "heavy-slow",
+      "name": "Heavy slow strength",
+      "durationHint": "6-12 weeks",
+      "entryCriteria": "Pain is settling and holds are comfortable.",
+      "exitCriteria": "Slow squats with a heavy weight at 3 out of 10 or less, and the knee is no worse the next day.",
+      "items": [
+        {
+          "exerciseId": "box-squat-slow",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true },
+          "note": "Move on to the slow goblet squat and add weight over the weeks."
+        },
+        {
+          "exerciseId": "split-squat",
+          "dose": { "sets": 3, "reps": 8, "restSec": 90, "tempo": "3-1-3" },
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "spanish-squat-isometric",
+          "schedule": { "slots": ["MORNING"] },
+          "core": false,
+          "note": "On sore days, or before a run."
+        }
+      ]
+    },
+    {
+      "id": "spring",
+      "name": "Spring and return to running",
+      "durationHint": "4-8 weeks",
+      "entryCriteria": "Heavy slow squats are comfortable.",
+      "exitCriteria": "Hopping, running and stairs are comfortable. Keep heavy strength work twice a week.",
+      "items": [
+        {
+          "exerciseId": "goblet-squat-slow",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 3, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true },
+          "note": "Start small and quiet. Build up only if the knee is no worse the next day."
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"], "notOnRunDay": true },
+          "core": false
+        },
+        { "exerciseId": "spanish-squat-isometric", "schedule": { "slots": ["MORNING"] }, "core": false }
+      ]
+    }
+  ],
+  "references": [
+    "Malliaras P, Cook J, Purdam C, Rio E. 2015. Patellar tendinopathy: clinical diagnosis, load management, and advice for challenging case presentations. J Orthop Sports Phys Ther 45(11):887-98.",
+    "Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802.",
+    "Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83."
+  ],
+  "reviewed": false
+}

@@ -1,0 +1,112 @@
+{
+  "id": "frozen-shoulder",
+  "name": "Frozen shoulder",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Ease pain early on, then steadily win back movement and strength. Frozen shoulder usually recovers, but slowly (often over many months); regular, gentle work helps you get there with less pain and stiffness.",
+  "whoFor": "People diagnosed with frozen shoulder (adhesive capsulitis): a painful shoulder that has become stiff in every direction, especially turning the arm outwards.",
+  "notFor": [
+    "Shoulder pain after a fall or injury that hasn't been checked",
+    "Recent shoulder surgery: follow your surgeon's or physio's protocol",
+    "Pain mainly when lifting the arm while movement is otherwise full (more likely a rotator cuff problem)"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Pain when reaching up or behind your back (0-10)",
+  "painRules": "Painful stage: move only into mild discomfort, and any ache should settle within about 30 minutes. Later stages: stretching to about 3-4 out of 10 is OK if it settles within an hour and the shoulder isn't worse the next day.",
+  "redFlags": [
+    "Shoulder or arm pain with chest pain, breathlessness, sweating or feeling faint (call emergency services)",
+    "Pain or loss of movement after a fall or injury",
+    "A red, hot, swollen shoulder, or fever",
+    "Numbness, tingling or weakness in the arm or hand",
+    "Unexplained weight loss, or a history of cancer"
+  ],
+  "phases": [
+    {
+      "id": "painful",
+      "name": "Calm the pain",
+      "durationHint": "often weeks to a few months",
+      "entryCriteria": "Pain is the main problem: the shoulder aches at rest, wakes you at night and hurts with most movements.",
+      "exitCriteria": "For about 2 weeks the pain has been calmer (you're sleeping better) and stiffness is now the main problem.",
+      "items": [
+        { "exerciseId": "shoulder-pendulum", "schedule": { "timesPerDay": 2, "slots": ["MORNING", "NIGHT"] } },
+        { "exerciseId": "shoulder-table-slide", "schedule": { "timesPerDay": 2, "slots": ["MORNING", "NIGHT"] } },
+        {
+          "exerciseId": "shoulder-er-stick",
+          "schedule": { "slots": ["NIGHT"] },
+          "note": "Very gentle in this stage: only into a mild stretch."
+        },
+        { "exerciseId": "scapular-retraction", "schedule": { "slots": ["DESK"] }, "core": false }
+      ]
+    },
+    {
+      "id": "stiff",
+      "name": "Win back movement",
+      "durationHint": "often a few months",
+      "entryCriteria": "Stiffness is the main problem; pain is mostly at the end of movements.",
+      "exitCriteria": "Movement is clearly coming back week by week and pain is low (about 2 out of 10 or less).",
+      "items": [
+        {
+          "exerciseId": "shoulder-pendulum",
+          "dose": { "sets": 1, "durationSec": 60, "sides": "AFFECTED" },
+          "schedule": { "slots": ["MORNING"] },
+          "core": false,
+          "note": "A gentle warm-up before the stretches."
+        },
+        {
+          "exerciseId": "shoulder-flexion-stick",
+          "dose": { "sets": 1, "reps": 10, "holdSec": 10, "sides": "AFFECTED" },
+          "schedule": { "timesPerDay": 2, "slots": ["MORNING", "NIGHT"] }
+        },
+        {
+          "exerciseId": "shoulder-er-stick",
+          "dose": { "sets": 1, "reps": 10, "holdSec": 10, "sides": "AFFECTED" },
+          "schedule": { "timesPerDay": 2, "slots": ["MORNING", "NIGHT"] }
+        },
+        { "exerciseId": "towel-internal-rotation", "schedule": { "slots": ["NIGHT"] } },
+        {
+          "exerciseId": "cross-body-stretch",
+          "dose": { "sets": 3, "holdSec": 30, "sides": "AFFECTED" },
+          "schedule": { "slots": ["NIGHT"] }
+        },
+        { "exerciseId": "wall-finger-walk", "schedule": { "slots": ["MORNING"] }, "note": "Mark your highest point to see progress." }
+      ]
+    },
+    {
+      "id": "recover",
+      "name": "Rebuild strength",
+      "durationHint": "until movement and strength feel normal",
+      "entryCriteria": "Movement is coming back steadily and pain is low.",
+      "exitCriteria": "Near-full, comfortable movement and enough strength for daily tasks and sport.",
+      "items": [
+        {
+          "exerciseId": "shoulder-flexion-stick",
+          "dose": { "sets": 1, "reps": 10, "holdSec": 10, "sides": "AFFECTED" },
+          "schedule": { "slots": ["NIGHT"] }
+        },
+        {
+          "exerciseId": "shoulder-er-stick",
+          "dose": { "sets": 1, "reps": 10, "holdSec": 10, "sides": "AFFECTED" },
+          "schedule": { "slots": ["NIGHT"] }
+        },
+        { "exerciseId": "towel-internal-rotation", "schedule": { "slots": ["NIGHT"] } },
+        {
+          "exerciseId": "cross-body-stretch",
+          "dose": { "sets": 2, "holdSec": 30, "sides": "AFFECTED" },
+          "schedule": { "slots": ["NIGHT"] },
+          "core": false
+        },
+        {
+          "exerciseId": "shoulder-er-band",
+          "dose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-0-2", "sides": "AFFECTED" },
+          "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"] }
+        },
+        { "exerciseId": "band-row", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"] } },
+        { "exerciseId": "wall-slide-shoulder", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"] } }
+      ]
+    }
+  ],
+  "references": [
+    "Kelley MJ, et al. 2013. Shoulder pain and mobility deficits: adhesive capsulitis. Clinical practice guidelines. J Orthop Sports Phys Ther 43(5):A1-A31."
+  ],
+  "reviewed": false
+}

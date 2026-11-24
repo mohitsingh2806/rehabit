@@ -1,0 +1,66 @@
+{
+  "id": "neck-pain",
+  "name": "Neck pain and stiffness",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Ease everyday neck pain and stiffness with regular movement and short desk breaks, then build the deep neck and upper-back strength that keeps it away.",
+  "whoFor": "People with everyday neck pain and stiffness, often from desk and screen work, with no arm symptoms or only mild ones.",
+  "notFor": [
+    "Neck pain after an accident or fall that hasn't been checked",
+    "Pain, tingling or weakness mainly down one arm (see a physio for a nerve-focused plan)"
+  ],
+  "estMinutes": 12,
+  "trackedMetric": "Neck pain at its worst today (0-10)",
+  "painRules": "Mild discomfort up to about 3 out of 10 that settles within an hour is OK. Stop any exercise that sends pain or tingling into the arm.",
+  "redFlags": [
+    "Dizziness, blackouts, double vision, or trouble speaking or swallowing",
+    "Numbness, tingling or weakness in both arms or in the legs, or clumsy walking",
+    "Neck pain after a fall, accident or blow to the head",
+    "Fever, feeling very unwell, or unexplained weight loss",
+    "A sudden, severe headache unlike any before",
+    "Severe pain that's constant, including at night"
+  ],
+  "phases": [
+    {
+      "id": "settle",
+      "name": "Settle and move",
+      "durationHint": "1-3 weeks",
+      "entryCriteria": "Neck pain or stiffness, worse with long sitting or screen use.",
+      "exitCriteria": "Daily pain is mostly 3 out of 10 or less and you can turn your head comfortably.",
+      "items": [
+        { "exerciseId": "neck-rotation", "schedule": { "slots": ["MORNING"] } },
+        { "exerciseId": "chin-tuck", "schedule": { "timesPerDay": 2, "slots": ["DESK", "DESK"] } },
+        { "exerciseId": "scapular-retraction", "schedule": { "timesPerDay": 2, "slots": ["DESK", "DESK"] } },
+        { "exerciseId": "thoracic-extension-chair", "schedule": { "slots": ["DESK"] }, "core": false },
+        { "exerciseId": "upper-trap-stretch", "schedule": { "slots": ["NIGHT"] } },
+        { "exerciseId": "levator-scapulae-stretch", "schedule": { "slots": ["NIGHT"] }, "core": false },
+        { "exerciseId": "doorway-pec-stretch", "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Build strength",
+      "durationHint": "4-8 weeks",
+      "entryCriteria": "Pain is low and movement is comfortable.",
+      "exitCriteria": "Little or no pain with work and daily life for 2 weeks. Keep the desk breaks and 2-3 strength sessions a week.",
+      "items": [
+        { "exerciseId": "chin-tuck", "schedule": { "timesPerDay": 2, "slots": ["DESK", "DESK"] } },
+        {
+          "exerciseId": "deep-neck-flexor-nod",
+          "dose": { "sets": 1, "reps": 10, "holdSec": 10 },
+          "schedule": { "slots": ["NIGHT"] },
+          "note": "Start with 5-second holds if 10 seconds is too hard."
+        },
+        { "exerciseId": "band-row", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"] } },
+        { "exerciseId": "prone-y-t-raise", "schedule": { "days": "EVERY_N_DAYS", "everyNDays": 2, "slots": ["NIGHT"] } },
+        { "exerciseId": "open-book", "schedule": { "slots": ["NIGHT"] }, "core": false },
+        { "exerciseId": "upper-trap-stretch", "dose": { "sets": 1, "holdSec": 30 }, "schedule": { "slots": ["NIGHT"] }, "core": false }
+      ]
+    }
+  ],
+  "references": [
+    "Blanpied PR, et al. 2017. Neck pain: revision 2017. Clinical practice guidelines. J Orthop Sports Phys Ther 47(7):A1-A83.",
+    "Jull G, et al. 2002. A randomized controlled trial of exercise and manipulative therapy for cervicogenic headache. Spine 27:1835-43."
+  ],
+  "reviewed": false
+}

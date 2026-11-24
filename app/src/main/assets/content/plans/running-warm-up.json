@@ -1,0 +1,28 @@
+{
+  "id": "running-warm-up",
+  "name": "Running warm-up",
+  "kind": "ON_DEMAND",
+  "category": "RUNNING",
+  "goal": "Get your heart, muscles and tendons ready to run in about 12 minutes, with dynamic movements only (save long static stretches for after).",
+  "whoFor": "Anyone before an easy run, a workout or a race. Shorten it to the jog and leg swings on easy days if you're short of time.",
+  "estMinutes": 12,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Warm-up",
+      "items": [
+        { "exerciseId": "easy-jog", "note": "Or a brisk walk if you're coming back from an injury." },
+        { "exerciseId": "leg-swing-front-back" },
+        { "exerciseId": "leg-swing-side" },
+        { "exerciseId": "walking-lunge-rotation" },
+        { "exerciseId": "hip-gate-opener" },
+        { "exerciseId": "ankle-pogo-hops", "dose": { "sets": 1, "reps": 20 }, "core": false, "note": "Skip if a calf, Achilles or foot tendon is sore." },
+        { "exerciseId": "a-skip" },
+        { "exerciseId": "high-knees" },
+        { "exerciseId": "butt-kicks" },
+        { "exerciseId": "strides", "dose": { "sets": 3, "distanceM": 80, "restSec": 60 }, "core": false, "note": "Before workouts and races. Skip on easy days." }
+      ]
+    }
+  ],
+  "reviewed": false
+}

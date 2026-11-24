@@ -26,13 +26,16 @@ enum class Position { STANDING, SEATED, FLOOR_SUPINE, FLOOR_PRONE, SIDE_LYING, Q
 
 @Serializable
 enum class Equipment {
-    WALL, CHAIR, STEP, TOWEL, MAT, BAND, LOOP_BAND, FOAM_ROLLER, BALL, STRAP, DUMBBELL, BENCH, DOOR;
+    WALL, CHAIR, STEP, TOWEL, MAT, BAND, LOOP_BAND, FOAM_ROLLER, BALL, STRAP, DUMBBELL, BENCH, DOOR,
+
+    /** A broom handle or similar, for assisted shoulder exercises. */
+    STICK;
 
     /** Found in any home or office, so it never needs a no-equipment substitute. */
     val everyday: Boolean get() = this in EVERYDAY
 
     private companion object {
-        val EVERYDAY = setOf(WALL, CHAIR, STEP, TOWEL, MAT)
+        val EVERYDAY = setOf(WALL, CHAIR, STEP, TOWEL, MAT, STICK)
     }
 }
 
