@@ -65,6 +65,10 @@ import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.mohit.rehabit.container
 import com.mohit.rehabit.content.ContentState
+import com.mohit.rehabit.content.Equipment
+import com.mohit.rehabit.content.Exercise
+import com.mohit.rehabit.domain.Suggestions
+import com.mohit.rehabit.ui.common.label
 import com.mohit.rehabit.content.Plan
 import com.mohit.rehabit.content.PlanKind
 import com.mohit.rehabit.data.AgendaRepository
@@ -111,6 +115,17 @@ class TodayViewModel(private val repo: AgendaRepository, private val history: Hi
         viewModelScope.launch { history.setExcused(day, reason) }
     }
 
+    /** Use [exerciseId] instead of the task's exercise in every plan it came from, from today. */
+    fun swap(task: Task, to: Exercise) {
+        viewModelScope.launch {
+            task.refs.distinctBy { it.enrollmentId to it.itemIndex }.forEach { ref ->
+                repo.replaceItem(ref.enrollmentId, ref.itemIndex) { item ->
+                    item.copy(exerciseId = to.id, dose = Suggestions.doseForSwap(item.dose, to))
+                }
+            }
+        }
+    }
+
     private fun day(): Long = state.value?.agenda?.day ?: LocalDate.now().toEpochDay()
 
     fun setStatus(tasks: List<Task>, status: TaskStatus?) {
@@ -145,6 +160,7 @@ fun TodayScreen(
     onStartRoutine: (planId: String, phaseId: String) -> Unit,
     onBrowseLibrary: () -> Unit,
     onOpenSettings: () -> Unit,
+    onOpenProgress: () -> Unit,
 ) {
     val context = LocalContext.current
     val vm: TodayViewModel = viewModel { TodayViewModel(context.container.agenda, context.container.history) }
@@ -175,7 +191,7 @@ fun TodayScreen(
             when {
                 s == null -> CircularProgressIndicator(Modifier.align(Alignment.Center))
                 s.plans.isEmpty() -> NoPlans(allPlans, routines, onOpenPlan, onStartRoutine, onBrowseLibrary)
-                else -> Checklist(s, vm, routines, onStartSlot, onTryExercise, onOpenPlan, onStartRoutine, onOpenSettings)
+                else -> Checklist(s, vm, routines, onStartSlot, onTryExercise, onOpenPlan, onStartRoutine, onOpenSettings, onOpenProgress)
             }
         }
     }
@@ -191,8 +207,10 @@ private fun Checklist(
     onOpenPlan: (String) -> Unit,
     onStartRoutine: (String, String) -> Unit,
     onOpenSettings: () -> Unit,
+    onOpenProgress: () -> Unit,
 ) {
     val context = LocalContext.current
+    val exercises = (context.container.content.state.collectAsStateWithLifecycle().value as? ContentState.Ready)?.bundle?.exercisesById.orEmpty()
     var resumeTick by remember { mutableIntStateOf(0) }
     LifecycleResumeEffect(Unit) {
         resumeTick++
@@ -233,6 +251,21 @@ private fun Checklist(
         items(warnings, key = { "w-${it.title}" }) { InsightCard(it) }
 
         item(key = "hero") { Hero(s, vm, onStartSlot) }
+
+        val suggestionCount = progress?.suggestions?.size ?: 0
+        if (suggestionCount > 0) {
+            item(key = "suggestions") {
+                Card(onClick = onOpenProgress, modifier = Modifier.fillMaxWidth()) {
+                    Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
+                        Text(
+                            if (suggestionCount == 1) "1 suggestion to adjust your plans" else "$suggestionCount suggestions to adjust your plans",
+                            modifier = Modifier.weight(1f),
+                        )
+                        Icon(Icons.AutoMirrored.Filled.KeyboardArrowRight, contentDescription = null)
+                    }
+                }
+            }
+        }
 
         if (prompts.isNotEmpty()) {
             item(key = "checkin") { CheckInCard(prompts) { vm.saveCheckIns(it) } }
@@ -288,7 +321,7 @@ private fun Checklist(
         }
 
         items(agenda.groups, key = { it.key.id }) { g ->
-            GroupCard(g, vm, onStart = { onStartSlot(agenda.day, g.key.id) }, onTryExercise = onTryExercise)
+            GroupCard(g, vm, exercises, s.prefs.equipment, onStart = { onStartSlot(agenda.day, g.key.id) }, onTryExercise = onTryExercise)
         }
 
         item(key = "plans-h") {
@@ -376,7 +409,14 @@ private fun Hero(s: TodayState, vm: TodayViewModel, onStartSlot: (Long, String) 
 }
 
 @Composable
-private fun GroupCard(g: SlotGroup, vm: TodayViewModel, onStart: () -> Unit, onTryExercise: (String) -> Unit) {
+private fun GroupCard(
+    g: SlotGroup,
+    vm: TodayViewModel,
+    exercises: Map<String, Exercise>,
+    owned: Set<Equipment>,
+    onStart: () -> Unit,
+    onTryExercise: (String) -> Unit,
+) {
     val allDone = g.pending.isEmpty()
     Card(Modifier.fillMaxWidth().alpha(if (allDone) 0.7f else 1f)) {
         Column(Modifier.padding(vertical = 8.dp)) {
@@ -397,15 +437,20 @@ private fun GroupCard(g: SlotGroup, vm: TodayViewModel, onStart: () -> Unit, onT
                     Text("Done ✓", style = MaterialTheme.typography.labelLarge, color = MaterialTheme.colorScheme.primary)
                 }
             }
-            g.tasks.forEach { TaskRow(it, vm, onTryExercise) }
+            g.tasks.forEach { TaskRow(it, vm, exercises, owned, onTryExercise) }
         }
     }
 }
 
 @OptIn(ExperimentalFoundationApi::class)
 @Composable
-private fun TaskRow(t: Task, vm: TodayViewModel, onTryExercise: (String) -> Unit) {
+private fun TaskRow(t: Task, vm: TodayViewModel, exercises: Map<String, Exercise>, owned: Set<Equipment>, onTryExercise: (String) -> Unit) {
     var menu by remember { mutableStateOf(false) }
+    var swapTo by remember { mutableStateOf<Exercise?>(null) }
+    val options = remember(t.exercise, exercises) {
+        fun list(ids: List<String>, label: String) = ids.mapNotNull { exercises[it] }.map { label to it }
+        list(t.exercise.regressions, "Easier") + list(t.exercise.progressions, "Harder") + list(t.exercise.substitutes, "Swap for")
+    }
     Box {
         Row(
             Modifier
@@ -456,7 +501,28 @@ private fun TaskRow(t: Task, vm: TodayViewModel, onTryExercise: (String) -> Unit
             if (t.status != null) {
                 DropdownMenuItem(text = { Text("Undo") }, onClick = { menu = false; vm.setStatus(listOf(t), null) })
             }
+            options.forEach { (label, other) ->
+                val missing = other.equipment.filter { !it.everyday && it !in owned }
+                DropdownMenuItem(
+                    text = { Text("$label: ${other.name}" + if (missing.isNotEmpty()) " (needs ${missing.joinToString { it.label.lowercase() }})" else "") },
+                    onClick = { menu = false; swapTo = other },
+                )
+            }
         }
+    }
+    swapTo?.let { other ->
+        AlertDialog(
+            onDismissRequest = { swapTo = null },
+            title = { Text("Use ${other.name}?") },
+            text = { Text("Instead of ${t.exercise.name} in ${t.planNames.joinToString(" and ")}, from today on. Today's ticks are kept.") },
+            confirmButton = {
+                TextButton(onClick = {
+                    vm.swap(t, other)
+                    swapTo = null
+                }) { Text("Use it") }
+            },
+            dismissButton = { TextButton(onClick = { swapTo = null }) { Text("Cancel") } },
+        )
     }
 }
 

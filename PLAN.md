@@ -1,6 +1,6 @@
 # Rehabit — Exercise & Rehab Routine App (Android) — Plan
 
-> **Status (2026-11-24): M4 built** (your own exercises, routines and daily plans in a builder; Combine plans; your own photo on any exercise; backup export/restore to a file). Next: M5 (progression suggestions, swap/regress UX, body map). This doc holds all context so any future session
+> **Status (2026-11-24): M5 built — all planned milestones done** (progression suggestions from ratings/check-ins/adherence, easier/harder/swap on the checklist with equipment hints, body map + My equipment filter). Next: on-phone testing, content review, verified video links, more content groups. This doc holds all context so any future session
 > can pick up from here. **Flaws & fixes (§3) are LOCKED** with the user's refinements (§16).
 > **All open questions (§15) answered 2026-11-24**; decisions in §16, which wins over any older text.
 > **Generic app (2026-11-24):** content and defaults are written for anyone, never tailored to the
@@ -618,4 +618,7 @@ Nothing open. (No per-user condition intake: the app is generic, see §16 "gener
 | 2026-11-24 | M4 | Own photos for **any** exercise via the system photo picker (no permission), stored downscaled (≤1600 px, EXIF-rotated) in app storage. Shown on the exercise page (not in the player, to keep it uncluttered). |
 | 2026-11-24 | M4 | Backup = one JSON file (all tables + settings + photos as base64), saved / opened with the system file picker. Restore replaces everything after a confirmation showing what's in the file. |
 | 2026-11-24 | M4 | Check-ins / pain-rule insights also apply to your own plans when you give them a "symptom to track". |
+| 2026-11-24 | M5 | Suggestions (accept-only, "Not now" hides one for 14 days): 3× "too easy" in a row → harder version (or +reps / +10 s hold / +30 s); 2× "too hard"/"hurt" → easier version (or a set less, etc.); next phase when ≥14 days in the phase, last check-in ≤3/10 and not rising (if tracked), and ≥70% adherence over the last 2 finished weeks — showing the phase's exit criteria for the user to judge. |
+| 2026-11-24 | M5 | Changing one item (swap / dose) ends the current follow and starts a copy today with today's ticks carried over, so history keeps the old item. Side effect: "every N days" items restart their cycle from today. |
+| 2026-11-24 | M5 | Easier / harder / swap options in the checklist's long-press menu (from the exercise's regressions / progressions / substitutes); alternatives needing equipment you don't own are labelled. Body map (front/back) and a "My equipment" filter in the Library. |
 | 2026-11-24 | Q6b | **AI-prompt import dropped**: user not convinced it's useful. Personal additions via manual Builder (M4). |

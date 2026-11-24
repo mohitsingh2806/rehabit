@@ -109,7 +109,20 @@ abstract class SessionDao {
         """,
     )
     abstract fun observeHurtSince(fromMillis: Long): Flow<List<HurtRow>>
+
+    @Query(
+        """
+        SELECT e.exerciseId AS exerciseId, e.feedback AS feedback, s.startedAt AS startedAt
+        FROM session_exercises e JOIN sessions s ON e.sessionId = s.id
+        WHERE e.feedback IS NOT NULL AND s.startedAt >= :fromMillis
+        ORDER BY s.startedAt
+        """,
+    )
+    abstract fun observeFeedbackSince(fromMillis: Long): Flow<List<FeedbackRow>>
 }
+
+/** Every end-of-session rating, for progression suggestions. */
+data class FeedbackRow(val exerciseId: String, val feedback: Feedback, val startedAt: Long)
 
 /** An exercise rated "Hurt" at the end of a session. */
 data class HurtRow(val planId: String?, val startedAt: Long, val exerciseId: String)
@@ -200,6 +213,9 @@ interface TaskLogDao {
 
     @Query("SELECT * FROM task_logs WHERE epochDay BETWEEN :from AND :to")
     fun observeRange(from: Long, to: Long): Flow<List<TaskLogEntity>>
+
+    @Query("SELECT * FROM task_logs WHERE epochDay = :day AND enrollmentId = :enrollmentId")
+    suspend fun getDayFor(day: Long, enrollmentId: Long): List<TaskLogEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(logs: List<TaskLogEntity>)

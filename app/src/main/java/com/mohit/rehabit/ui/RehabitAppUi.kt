@@ -109,6 +109,7 @@ fun RehabitAppUi(pendingRoute: String? = null, onRouteHandled: () -> Unit = {}) 
                     onStartRoutine = startPhase,
                     onBrowseLibrary = { nav.openTab(Tab.LIBRARY) },
                     onOpenSettings = { nav.openTab(Tab.SETTINGS) },
+                    onOpenProgress = { nav.openTab(Tab.PROGRESS) },
                 )
             }
             composable(Tab.LIBRARY.route) {

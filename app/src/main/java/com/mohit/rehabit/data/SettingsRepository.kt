@@ -53,6 +53,7 @@ class SettingsRepository(private val context: Context) {
         val desk2 = intPreferencesKey("desk2_min")
         val equipment = stringSetPreferencesKey("equipment")
         val checkInDays = intPreferencesKey("check_in_days_mask")
+        val dismissed = stringSetPreferencesKey("dismissed_suggestions")
         val coreOnlyDay = longPreferencesKey("core_only_day")
         val lastReminderHandled = longPreferencesKey("last_reminder_handled")
     }
@@ -75,6 +76,7 @@ class SettingsRepository(private val context: Context) {
                 ?.mapNotNull { name -> runCatching { Equipment.valueOf(name) }.getOrNull() }
                 ?.toSet() ?: d.equipment,
             checkInDays = p[Keys.checkInDays]?.let(::daysFromMask) ?: d.checkInDays,
+            dismissedSuggestions = p[Keys.dismissed] ?: emptySet(),
             coreOnlyDay = p[Keys.coreOnlyDay] ?: d.coreOnlyDay,
         )
     }
@@ -137,6 +139,14 @@ class SettingsRepository(private val context: Context) {
             ),
         )
         if (!b.setupDone) context.dataStore.edit { it[Keys.setupDone] = false }
+    }
+
+    /** "Not now" on a suggestion: hidden for 14 days. Old entries are dropped. */
+    suspend fun dismissSuggestion(key: String, today: Long) {
+        context.dataStore.edit { p ->
+            val kept = (p[Keys.dismissed] ?: emptySet()).filter { (it.substringAfterLast('@').toLongOrNull() ?: 0) > today - 14 }
+            p[Keys.dismissed] = (kept + "$key@$today").toSet()
+        }
     }
 
     suspend fun setCoreOnlyDay(day: Long) {

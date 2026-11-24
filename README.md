@@ -23,6 +23,8 @@ sick / travel / flare-up days), weekly progress per plan, quick symptom check-in
 and pain-rule tips ("ease off" / "nice progress").
 Milestone 4: build your own exercises, routines and daily plans (e.g. from your physio), combine
 plans, add your own photo to any exercise, and export / restore a backup file.
+Milestone 5: suggestions to step up or ease off (from your ratings, check-ins and adherence),
+easier / harder / swap options right on the checklist, and a body map in the Library.
 
 ## Install
 Every push to `main` builds a signed APK and publishes it as a GitHub Release:

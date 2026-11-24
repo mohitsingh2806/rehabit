@@ -9,6 +9,10 @@ import com.mohit.rehabit.domain.CheckInPoint
 import com.mohit.rehabit.domain.DayMark
 import com.mohit.rehabit.domain.DayPrefs
 import com.mohit.rehabit.domain.DayScore
+import com.mohit.rehabit.domain.FeedbackPoint
+import com.mohit.rehabit.domain.Suggestion
+import com.mohit.rehabit.domain.SuggestionAction
+import com.mohit.rehabit.domain.Suggestions
 import com.mohit.rehabit.domain.FollowedPlan
 import com.mohit.rehabit.domain.History
 import com.mohit.rehabit.domain.Insight
@@ -48,6 +52,7 @@ data class ProgressState(
     val checkInPrompts: List<CheckInPrompt>,
     val checkInsByDay: Map<Long, Map<String, Int>>,
     val hasPlans: Boolean,
+    val suggestions: List<Suggestion> = emptyList(),
 )
 
 private data class Inputs1(
@@ -63,6 +68,7 @@ private data class Inputs2(
     val excused: List<ExcusedDayEntity>,
     val sessions: List<SessionEntity>,
     val hurt: List<HurtRow>,
+    val feedback: List<FeedbackRow>,
 )
 
 /** Calendar, adherence, check-ins and pain-rule insights, rebuilt from the stored ticks. */
@@ -95,7 +101,8 @@ class HistoryRepository(
             db.excusedDayDao().observeRange(from, to),
             db.sessionDao().observeSince(millis(today - 42)),
             db.sessionDao().observeHurtSince(millis(today - 6)),
-        ) { checkIns, excused, sessions, hurt -> Inputs2(checkIns, excused, sessions, hurt) }
+            db.sessionDao().observeFeedbackSince(millis(today - 30)),
+        ) { checkIns, excused, sessions, hurt, feedback -> Inputs2(checkIns, excused, sessions, hurt, feedback) }
 
         return combine(a, b) { i1, i2 -> build(month, today, from, i1, i2) }.flowOn(Dispatchers.Default)
     }
@@ -174,6 +181,24 @@ class HistoryRepository(
             .filter { it.plan.id !in checkInToday }
             .map { CheckInPrompt(it.plan.id, it.plan.name, it.plan.trackedMetric.orEmpty()) }
 
+        // Progression suggestions (accept-only).
+        val dismissed = i1.prefs.dismissedSuggestions
+            .filter { (it.substringAfterLast('@').toLongOrNull() ?: 0) > today - 14 }
+            .map { it.substringBeforeLast('@') }.toSet()
+        val adherence = planProgress.associate { pp ->
+            val finished = pp.weeks.dropLast(1).takeLast(2).mapNotNull { it.percent }
+            pp.planId to (if (finished.isEmpty()) null else finished.average().toInt())
+        }
+        val suggestions = Suggestions.build(
+            plans = plans,
+            exercises = bundle.exercisesById,
+            feedback = i2.feedback.map { FeedbackPoint(it.exerciseId, it.feedback, dayOf(it.startedAt)) },
+            checkInsByPlan = checkInsByPlan.mapValues { (_, list) -> list.map { CheckInPoint(it.epochDay, it.value) } },
+            adherenceByPlan = adherence,
+            dismissed = dismissed,
+            today = today,
+        )
+
         return ProgressState(
             today = today,
             month = month,
@@ -185,7 +210,25 @@ class HistoryRepository(
             checkInPrompts = prompts,
             checkInsByDay = i2.checkIns.groupBy { it.epochDay }.mapValues { (_, list) -> list.associate { it.planId to it.value } },
             hasPlans = plans.isNotEmpty(),
+            suggestions = suggestions,
         )
+    }
+
+    suspend fun apply(action: SuggestionAction) {
+        when (action) {
+            is SuggestionAction.Swap -> {
+                val to = agenda.bundle().exercisesById[action.exerciseId] ?: return
+                agenda.replaceItem(action.enrollmentId, action.itemIndex) { item ->
+                    item.copy(exerciseId = to.id, dose = Suggestions.doseForSwap(item.dose, to))
+                }
+            }
+            is SuggestionAction.ChangeDose -> agenda.replaceItem(action.enrollmentId, action.itemIndex) { it.copy(dose = action.dose) }
+            is SuggestionAction.NextPhase -> agenda.setPhase(action.enrollmentId, action.phaseId)
+        }
+    }
+
+    suspend fun dismiss(s: Suggestion) {
+        settings.dismissSuggestion(s.key, LocalDate.now().toEpochDay())
     }
 
     suspend fun saveCheckIns(day: Long, values: Map<String, Int>) {

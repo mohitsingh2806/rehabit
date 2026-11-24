@@ -62,6 +62,7 @@ import com.mohit.rehabit.domain.DayMark
 import com.mohit.rehabit.domain.History
 import com.mohit.rehabit.domain.Insight
 import com.mohit.rehabit.domain.InsightKind
+import com.mohit.rehabit.domain.Suggestion
 import com.mohit.rehabit.domain.label
 import com.mohit.rehabit.ui.common.NoInsets
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -102,6 +103,14 @@ class ProgressViewModel(private val history: HistoryRepository) : ViewModel() {
     fun setExcused(day: Long, reason: ExcuseReason?) {
         viewModelScope.launch { history.setExcused(day, reason) }
     }
+
+    fun apply(s: Suggestion) {
+        viewModelScope.launch { history.apply(s.action) }
+    }
+
+    fun dismiss(s: Suggestion) {
+        viewModelScope.launch { history.dismiss(s) }
+    }
 }
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -136,6 +145,11 @@ fun ProgressScreen() {
                     verticalArrangement = Arrangement.spacedBy(12.dp),
                 ) {
                     items(s.insights, key = { it.title }) { InsightCard(it) }
+
+                    if (s.suggestions.isNotEmpty()) {
+                        item(key = "sugg-h") { Heading("Suggestions", "Based on your ratings and check-ins. Nothing changes unless you tap Apply.") }
+                        items(s.suggestions, key = { it.key }) { sg -> SuggestionCard(sg, onApply = { vm.apply(sg) }, onDismiss = { vm.dismiss(sg) }) }
+                    }
 
                     if (s.plans.isNotEmpty()) {
                         item(key = "adherence-h") { Heading("Weekly progress", "Core items done on finished days. Excused days don't count.") }
@@ -219,6 +233,32 @@ fun InsightCard(insight: Insight) {
             Column {
                 Text(insight.title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
                 Text(insight.text, style = MaterialTheme.typography.bodyMedium)
+            }
+        }
+    }
+}
+
+@Composable
+fun SuggestionCard(s: Suggestion, onApply: () -> Unit, onDismiss: () -> Unit) {
+    Card(
+        Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            Text(
+                when (s.harder) {
+                    true -> "STEP UP"
+                    false -> "EASE OFF"
+                    null -> "SUGGESTION"
+                },
+                style = MaterialTheme.typography.labelMedium,
+                fontWeight = FontWeight.Bold,
+            )
+            Text(s.title, style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+            Text(s.text, style = MaterialTheme.typography.bodyMedium)
+            Row {
+                TextButton(onClick = onApply) { Text("Apply from today") }
+                TextButton(onClick = onDismiss) { Text("Not now") }
             }
         }
     }

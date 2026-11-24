@@ -239,6 +239,27 @@ class AgendaRepository(
         onChanged()
     }
 
+    /**
+     * Changes one item of a followed plan from today on (swap the exercise or change its dose).
+     * Like a phase change it ends the current follow and starts a copy today, so history keeps the
+     * old item; today's ticks are carried over (same item positions).
+     */
+    suspend fun replaceItem(enrollmentId: Long, itemIndex: Int, change: (PlanItem) -> PlanItem) {
+        val dao = db.enrollmentDao()
+        val e = dao.get(enrollmentId) ?: return
+        val items = decodeItems(e.itemsJson).toMutableList()
+        if (itemIndex !in items.indices) return
+        items[itemIndex] = change(items[itemIndex])
+        val today = LocalDate.now().toEpochDay()
+        dao.update(e.copy(status = FollowStatus.ENDED, endedEpochDay = today))
+        val newId = dao.insert(
+            e.copy(id = 0, itemsJson = encodeItems(items), startEpochDay = today, endedEpochDay = null, createdAt = System.currentTimeMillis()),
+        )
+        val carried = db.taskLogDao().getDayFor(today, enrollmentId).map { it.copy(id = 0, enrollmentId = newId) }
+        if (carried.isNotEmpty()) db.taskLogDao().upsertAll(carried)
+        onChanged()
+    }
+
     suspend fun updateEnrollment(enrollmentId: Long, change: (EnrollmentEntity) -> EnrollmentEntity) {
         val e = db.enrollmentDao().get(enrollmentId) ?: return
         db.enrollmentDao().update(change(e))

@@ -78,6 +78,11 @@ fun LibraryScreen(
     var area by rememberSaveable { mutableStateOf<BodyArea?>(null) }
     var noEquipment by rememberSaveable { mutableStateOf(false) }
     var deskFriendly by rememberSaveable { mutableStateOf(false) }
+    var myEquipment by rememberSaveable { mutableStateOf(false) }
+    var showMap by rememberSaveable { mutableStateOf(false) }
+    val prefsFlow = remember { context.container.settings.flow }
+    val prefs by prefsFlow.collectAsStateWithLifecycle(initialValue = null)
+    val owned = prefs?.equipment.orEmpty()
 
     var createMenu by remember { mutableStateOf(false) }
     Scaffold(
@@ -141,13 +146,29 @@ fun LibraryScreen(
                                     e.matches(q) &&
                                         (selectedArea == null || selectedArea in e.bodyAreas) &&
                                         (!noEquipment || e.equipment.all { it.everyday }) &&
-                                        (!deskFriendly || e.deskFriendly)
+                                        (!deskFriendly || e.deskFriendly) &&
+                                        (!myEquipment || e.equipment.all { it.everyday || it in owned })
                                 }
                                 Column {
+                                    if (showMap) BodyMap(selectedArea, areas.toSet()) { area = it }
                                     LazyRow(
                                         contentPadding = PaddingValues(horizontal = 16.dp),
                                         horizontalArrangement = Arrangement.spacedBy(8.dp),
                                     ) {
+                                        item {
+                                            FilterChip(
+                                                selected = showMap,
+                                                onClick = { showMap = !showMap },
+                                                label = { Text("Body map") },
+                                            )
+                                        }
+                                        item {
+                                            FilterChip(
+                                                selected = myEquipment,
+                                                onClick = { myEquipment = !myEquipment },
+                                                label = { Text("My equipment") },
+                                            )
+                                        }
                                         item {
                                             FilterChip(
                                                 selected = noEquipment,
