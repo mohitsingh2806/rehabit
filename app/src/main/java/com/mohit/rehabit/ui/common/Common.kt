@@ -58,6 +58,24 @@ val Equipment.label: String
         else -> pretty()
     }
 
+/** Shown on exercises and plans the user made. */
+@Composable
+fun YoursBadge(modifier: Modifier = Modifier) {
+    Surface(
+        color = MaterialTheme.colorScheme.secondaryContainer,
+        contentColor = MaterialTheme.colorScheme.onSecondaryContainer,
+        shape = MaterialTheme.shapes.small,
+        modifier = modifier,
+    ) {
+        Text(
+            "Yours",
+            style = MaterialTheme.typography.labelSmall,
+            fontWeight = FontWeight.Bold,
+            modifier = Modifier.padding(horizontal = 6.dp, vertical = 2.dp),
+        )
+    }
+}
+
 /** Shown on content the owner hasn't reviewed yet. */
 @Composable
 fun NotReviewedBadge(modifier: Modifier = Modifier) {

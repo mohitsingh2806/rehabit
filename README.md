@@ -20,7 +20,9 @@ across plans, Core only, "I ran today"), and gentle reminders (once per slot or 
 repeated) with Start / Done / Snooze.
 Milestone 3: Progress: month calendar (each day marked with colour + symbol, tap for details, mark
 sick / travel / flare-up days), weekly progress per plan, quick symptom check-ins with trend charts,
-and pain-rule tips ("ease off" / "nice progress"). Next: plan builder, own photos, backup.
+and pain-rule tips ("ease off" / "nice progress").
+Milestone 4: build your own exercises, routines and daily plans (e.g. from your physio), combine
+plans, add your own photo to any exercise, and export / restore a backup file.
 
 ## Install
 Every push to `main` builds a signed APK and publishes it as a GitHub Release:
@@ -51,11 +53,12 @@ The schema is `app/src/main/java/com/mohit/rehabit/content/ContentModels.kt`; th
 app/src/main/java/com/mohit/rehabit/
   RehabitApp.kt      Application + AppContainer (manual DI)
   content/           schema, loader, validator (pure Kotlin) + ContentRepository (assets)
-  data/              Room database (sessions, followed plans, ticks, run days), settings, AgendaRepository
+  data/              Room database (sessions, followed plans, ticks, run days, check-ins, your content),
+                     settings, Agenda / History / UserContent / Backup repositories
   domain/            pure logic, unit-tested: Agenda (what's due today, merging, reminders), History
                      (day scores, weekly adherence, pain-rule insights),
                      SessionScript (doses → player steps), dose/schedule text
   player/            SessionAudio: offline voice, beeps, vibration
   reminders/         ReminderScheduler (AlarmManager), AlarmReceiver, BootReceiver, Notifier
-  ui/                Compose screens: today, library (lists, plan + exercise detail), player, progress, settings
+  ui/                Compose screens: today, library, builder, follow, setup, player, progress, settings
 ```

@@ -14,7 +14,26 @@ import com.mohit.rehabit.domain.DayPrefs
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.flow.map
+import kotlinx.serialization.Serializable
 import java.time.DayOfWeek
+
+/** Settings as stored in a backup file (masks and minutes, so it doesn't depend on enum classes). */
+@Serializable
+data class BackupSettings(
+    val setupDone: Boolean,
+    val wakeFollowsAlarm: Boolean,
+    val wakeMin: Int,
+    val morningMin: Int,
+    val middayMin: Int,
+    val eveningMin: Int,
+    val nightMin: Int,
+    val workdaysMask: Int,
+    val deskBreaks: Boolean,
+    val desk1Min: Int,
+    val desk2Min: Int,
+    val equipment: List<String>,
+    val checkInDaysMask: Int,
+)
 
 private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "settings")
 
@@ -79,6 +98,45 @@ class SettingsRepository(private val context: Context) {
             p[Keys.equipment] = d.equipment.map { it.name }.toSet()
             p[Keys.checkInDays] = maskFromDays(d.checkInDays)
         }
+    }
+
+    suspend fun exportSettings(): BackupSettings {
+        val d = get()
+        return BackupSettings(
+            setupDone = d.setupDone,
+            wakeFollowsAlarm = d.wakeFollowsAlarm,
+            wakeMin = d.wakeMin,
+            morningMin = d.morningMin,
+            middayMin = d.middayMin,
+            eveningMin = d.eveningMin,
+            nightMin = d.nightMin,
+            workdaysMask = maskFromDays(d.workdays),
+            deskBreaks = d.deskBreaks,
+            desk1Min = d.desk1Min,
+            desk2Min = d.desk2Min,
+            equipment = d.equipment.map { it.name },
+            checkInDaysMask = maskFromDays(d.checkInDays),
+        )
+    }
+
+    suspend fun importSettings(b: BackupSettings) {
+        saveDay(
+            DayPrefs(
+                wakeFollowsAlarm = b.wakeFollowsAlarm,
+                wakeMin = b.wakeMin,
+                morningMin = b.morningMin,
+                middayMin = b.middayMin,
+                eveningMin = b.eveningMin,
+                nightMin = b.nightMin,
+                workdays = daysFromMask(b.workdaysMask),
+                deskBreaks = b.deskBreaks,
+                desk1Min = b.desk1Min,
+                desk2Min = b.desk2Min,
+                equipment = b.equipment.mapNotNull { name -> runCatching { Equipment.valueOf(name) }.getOrNull() }.toSet(),
+                checkInDays = daysFromMask(b.checkInDaysMask),
+            ),
+        )
+        if (!b.setupDone) context.dataStore.edit { it[Keys.setupDone] = false }
     }
 
     suspend fun setCoreOnlyDay(day: Long) {

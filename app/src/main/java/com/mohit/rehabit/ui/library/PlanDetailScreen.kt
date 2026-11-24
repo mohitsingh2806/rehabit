@@ -15,6 +15,8 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Warning
 import androidx.compose.material3.Button
@@ -47,6 +49,8 @@ import com.mohit.rehabit.content.Phase
 import com.mohit.rehabit.content.Plan
 import com.mohit.rehabit.content.PlanItem
 import com.mohit.rehabit.content.PlanKind
+import com.mohit.rehabit.content.isUser
+import com.mohit.rehabit.ui.common.YoursBadge
 import com.mohit.rehabit.domain.SessionItem
 import com.mohit.rehabit.domain.combinationWarnings
 import com.mohit.rehabit.domain.SessionScript
@@ -81,8 +85,12 @@ fun PlanDetailScreen(
     onOpenExercise: (String) -> Unit,
     onStart: (planId: String, phaseId: String) -> Unit,
     onFollow: (planId: String) -> Unit,
+    onEdit: (planId: String) -> Unit,
+    onDeleted: () -> Unit,
 ) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var confirmDelete by remember { mutableStateOf(false) }
     val state by context.container.content.state.collectAsStateWithLifecycle()
     val ready = state as? ContentState.Ready
     val plan = ready?.bundle?.plansById?.get(id)
@@ -94,6 +102,12 @@ fun PlanDetailScreen(
                 title = { Text(plan?.name ?: "") },
                 navigationIcon = {
                     IconButton(onClick = onBack) { Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back") }
+                },
+                actions = {
+                    if (plan?.isUser == true) {
+                        IconButton(onClick = { onEdit(plan.id) }) { Icon(Icons.Filled.Edit, contentDescription = "Edit") }
+                        IconButton(onClick = { confirmDelete = true }) { Icon(Icons.Filled.Delete, contentDescription = "Delete") }
+                    }
                 },
             )
         },
@@ -108,6 +122,24 @@ fun PlanDetailScreen(
                 else -> PlanDetail(plan, ready.bundle, onOpenExercise, onStart, onFollow)
             }
         }
+    }
+
+    if (confirmDelete && plan != null) {
+        AlertDialog(
+            onDismissRequest = { confirmDelete = false },
+            title = { Text("Delete ${plan.name}?") },
+            text = { Text("If you follow it, it stops. Your history and ticks are kept.") },
+            confirmButton = {
+                TextButton(onClick = {
+                    confirmDelete = false
+                    scope.launch {
+                        context.container.userContent.deletePlan(plan.id, context.container.agenda)
+                        onDeleted()
+                    }
+                }) { Text("Delete") }
+            },
+            dismissButton = { TextButton(onClick = { confirmDelete = false }) { Text("Cancel") } },
+        )
     }
 }
 
@@ -142,7 +174,7 @@ private fun PlanDetail(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.weight(1f),
                     )
-                    if (!plan.reviewed) NotReviewedBadge()
+                    if (plan.isUser) YoursBadge() else if (!plan.reviewed) NotReviewedBadge()
                 }
                 Spacer(Modifier.height(4.dp))
                 Text(plan.goal, style = MaterialTheme.typography.bodyLarge)

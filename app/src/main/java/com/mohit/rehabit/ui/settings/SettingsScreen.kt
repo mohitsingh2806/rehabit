@@ -6,6 +6,8 @@ import android.net.Uri
 import android.os.Build
 import android.os.PowerManager
 import android.provider.Settings
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -18,8 +20,14 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.Card
+import androidx.compose.material3.OutlinedButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.Icon
@@ -32,6 +40,8 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -44,8 +54,13 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mohit.rehabit.container
 import com.mohit.rehabit.content.ContentState
 import com.mohit.rehabit.content.PlanKind
+import com.mohit.rehabit.data.BackupFile
 import com.mohit.rehabit.ui.common.NoInsets
 import com.mohit.rehabit.ui.common.minuteText
+import kotlinx.coroutines.launch
+import java.time.Instant
+import java.time.LocalDate
+import java.time.ZoneId
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -83,6 +98,10 @@ fun SettingsScreen(onOpenDay: () -> Unit) {
             HorizontalDivider()
             SectionTitle("Make reminders reliable")
             ReliabilitySection(context, resumeTick, c.scheduler.canScheduleExact())
+
+            HorizontalDivider()
+            SectionTitle("Backup")
+            BackupSection()
 
             HorizontalDivider()
             SectionTitle("Content")
@@ -199,4 +218,72 @@ private fun PermissionRow(title: String, okText: String, badText: String, ok: Bo
 
 private fun Context.safeStart(intent: Intent) {
     runCatching { startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)) }
+}
+
+@Composable
+private fun BackupSection() {
+    val context = LocalContext.current
+    val c = context.container
+    val scope = rememberCoroutineScope()
+    var message by remember { mutableStateOf<String?>(null) }
+    var pending by remember { mutableStateOf<BackupFile?>(null) }
+
+    val exporter = rememberLauncherForActivityResult(ActivityResultContracts.CreateDocument("application/json")) { uri ->
+        if (uri != null) scope.launch {
+            message = runCatching { c.backup.export(uri) }.fold(
+                onSuccess = { s -> "Backup saved: ${s.sessions} sessions, ${s.plansFollowed} followed plans, ${s.ownExercises + s.ownPlans} of your own items, ${s.photos} photos." },
+                onFailure = { "Couldn't save the backup: ${it.message}" },
+            )
+        }
+    }
+    val importer = rememberLauncherForActivityResult(ActivityResultContracts.OpenDocument()) { uri ->
+        if (uri != null) scope.launch {
+            runCatching { c.backup.read(uri) }
+                .onSuccess { pending = it }
+                .onFailure { message = it.message ?: "Couldn't read that file" }
+        }
+    }
+
+    Column(Modifier.padding(horizontal = 16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
+        Text(
+            "Everything lives only on this phone. Save a backup file (to Drive, email, Downloads…) so you can restore " +
+                "it after a reset or on a new phone.",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+        )
+        Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+            Button(onClick = { exporter.launch("rehabit-backup-${LocalDate.now()}.json") }) { Text("Export backup") }
+            OutlinedButton(onClick = { importer.launch(arrayOf("application/json", "application/octet-stream", "text/plain")) }) {
+                Text("Restore")
+            }
+        }
+        message?.let { Text(it, style = MaterialTheme.typography.bodyMedium) }
+    }
+
+    pending?.let { file ->
+        AlertDialog(
+            onDismissRequest = { pending = null },
+            title = { Text("Restore this backup?") },
+            text = {
+                val date = Instant.ofEpochMilli(file.exportedAt).atZone(ZoneId.systemDefault()).toLocalDate()
+                Text(
+                    "From $date: ${file.sessions.size} sessions, ${file.enrollments.size} plan follows, " +
+                        "${file.userExercises.size + file.userPlans.size} of your own items, ${file.photos.size} photos.\n\n" +
+                        "This replaces everything currently in the app.",
+                )
+            },
+            confirmButton = {
+                TextButton(onClick = {
+                    pending = null
+                    scope.launch {
+                        message = runCatching {
+                            c.backup.restore(file)
+                            c.scheduler.rescheduleAll()
+                        }.fold(onSuccess = { "Restored." }, onFailure = { "Restore failed: ${it.message}" })
+                    }
+                }) { Text("Replace and restore") }
+            },
+            dismissButton = { TextButton(onClick = { pending = null }) { Text("Cancel") } },
+        )
+    }
 }

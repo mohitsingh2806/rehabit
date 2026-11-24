@@ -12,6 +12,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.Clear
 import androidx.compose.material.icons.filled.Search
 import androidx.compose.material.icons.filled.Warning
@@ -19,6 +20,8 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.DropdownMenu
+import androidx.compose.material3.DropdownMenuItem
 import androidx.compose.material3.FilterChip
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -34,6 +37,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
@@ -48,8 +52,10 @@ import com.mohit.rehabit.content.ContentState
 import com.mohit.rehabit.content.Exercise
 import com.mohit.rehabit.content.Plan
 import com.mohit.rehabit.content.PlanKind
+import com.mohit.rehabit.content.isUser
 import com.mohit.rehabit.ui.common.NoInsets
 import com.mohit.rehabit.ui.common.NotReviewedBadge
+import com.mohit.rehabit.ui.common.YoursBadge
 import com.mohit.rehabit.ui.common.defaultDoseText
 import com.mohit.rehabit.ui.common.label
 
@@ -57,7 +63,14 @@ private enum class LibraryTab(val title: String) { PLANS("Plans"), ROUTINES("Rou
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LibraryScreen(onOpenExercise: (String) -> Unit, onOpenPlan: (String) -> Unit, onShowProblems: () -> Unit) {
+fun LibraryScreen(
+    onOpenExercise: (String) -> Unit,
+    onOpenPlan: (String) -> Unit,
+    onShowProblems: () -> Unit,
+    onNewExercise: () -> Unit,
+    onNewPlan: () -> Unit,
+    onCombine: () -> Unit,
+) {
     val context = LocalContext.current
     val state by context.container.content.state.collectAsStateWithLifecycle()
     var tab by rememberSaveable { mutableStateOf(LibraryTab.PLANS) }
@@ -66,7 +79,25 @@ fun LibraryScreen(onOpenExercise: (String) -> Unit, onOpenPlan: (String) -> Unit
     var noEquipment by rememberSaveable { mutableStateOf(false) }
     var deskFriendly by rememberSaveable { mutableStateOf(false) }
 
-    Scaffold(contentWindowInsets = NoInsets, topBar = { TopAppBar(title = { Text("Library") }) }) { padding ->
+    var createMenu by remember { mutableStateOf(false) }
+    Scaffold(
+        contentWindowInsets = NoInsets,
+        topBar = {
+            TopAppBar(
+                title = { Text("Library") },
+                actions = {
+                    Box {
+                        IconButton(onClick = { createMenu = true }) { Icon(Icons.Filled.Add, contentDescription = "Create") }
+                        DropdownMenu(expanded = createMenu, onDismissRequest = { createMenu = false }) {
+                            DropdownMenuItem(text = { Text("New exercise") }, onClick = { createMenu = false; onNewExercise() })
+                            DropdownMenuItem(text = { Text("New routine or plan") }, onClick = { createMenu = false; onNewPlan() })
+                            DropdownMenuItem(text = { Text("Combine plans") }, onClick = { createMenu = false; onCombine() })
+                        }
+                    }
+                },
+            )
+        },
+    ) { padding ->
         Column(Modifier.padding(padding).fillMaxSize()) {
             TabRow(selectedTabIndex = tab.ordinal) {
                 LibraryTab.entries.forEach { t ->
@@ -173,7 +204,11 @@ private fun PlanList(
                 overlineContent = { Text(planMeta(plan)) },
                 headlineContent = { Text(plan.name) },
                 supportingContent = { Text(plan.goal, maxLines = 2, overflow = TextOverflow.Ellipsis) },
-                trailingContent = if (plan.reviewed) null else ({ NotReviewedBadge() }),
+                trailingContent = when {
+                    plan.isUser -> ({ YoursBadge() })
+                    !plan.reviewed -> ({ NotReviewedBadge() })
+                    else -> null
+                },
             )
         }
     }
@@ -216,7 +251,11 @@ private fun ExerciseList(
                     modifier = Modifier.clickable { onOpenExercise(e.id) },
                     headlineContent = { Text(e.name) },
                     supportingContent = { Text("${e.kind.label} · ${e.defaultDoseText()}") },
-                    trailingContent = if (e.reviewed) null else ({ NotReviewedBadge() }),
+                    trailingContent = when {
+                        e.isUser -> ({ YoursBadge() })
+                        !e.reviewed -> ({ NotReviewedBadge() })
+                        else -> null
+                    },
                 )
             }
         }

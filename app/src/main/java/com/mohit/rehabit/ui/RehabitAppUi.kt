@@ -18,6 +18,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.platform.LocalContext
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mohit.rehabit.container
+import com.mohit.rehabit.ui.builder.CombinePlansScreen
+import com.mohit.rehabit.ui.builder.ExerciseEditorScreen
+import com.mohit.rehabit.ui.builder.PlanEditorScreen
 import com.mohit.rehabit.ui.follow.FollowPlanScreen
 import com.mohit.rehabit.ui.setup.SetupScreen
 import androidx.compose.ui.Modifier
@@ -113,6 +116,9 @@ fun RehabitAppUi(pendingRoute: String? = null, onRouteHandled: () -> Unit = {}) 
                     onOpenExercise = openExercise,
                     onOpenPlan = openPlan,
                     onShowProblems = { nav.openTab(Tab.SETTINGS) },
+                    onNewExercise = { nav.navigate("exercise-edit") },
+                    onNewPlan = { nav.navigate("plan-edit") },
+                    onCombine = { nav.navigate("combine") },
                 )
             }
             composable(Tab.PROGRESS.route) { ProgressScreen() }
@@ -166,6 +172,8 @@ fun RehabitAppUi(pendingRoute: String? = null, onRouteHandled: () -> Unit = {}) 
                     onBack = { nav.popBackStack() },
                     onOpenExercise = openExercise,
                     onTry = { id -> nav.navigate("player/exercise/$id") },
+                    onEdit = { id -> nav.navigate("exercise-edit?id=$id") },
+                    onDeleted = { nav.popBackStack() },
                 )
             }
             composable(
@@ -178,6 +186,49 @@ fun RehabitAppUi(pendingRoute: String? = null, onRouteHandled: () -> Unit = {}) 
                     onOpenExercise = openExercise,
                     onStart = startPhase,
                     onFollow = follow,
+                    onEdit = { id -> nav.navigate("plan-edit?id=$id") },
+                    onDeleted = { nav.popBackStack() },
+                )
+            }
+            composable(
+                route = "exercise-edit?id={id}",
+                arguments = listOf(navArgument("id") { type = NavType.StringType; nullable = true; defaultValue = null }),
+            ) { entry ->
+                val id = entry.arguments?.getString("id")
+                ExerciseEditorScreen(
+                    id = id,
+                    onBack = { nav.popBackStack() },
+                    onSaved = { savedId ->
+                        nav.popBackStack()
+                        if (id == null) openExercise(savedId)
+                    },
+                )
+            }
+            composable(
+                route = "plan-edit?id={id}&combine={combine}",
+                arguments = listOf(
+                    navArgument("id") { type = NavType.StringType; nullable = true; defaultValue = null },
+                    navArgument("combine") { type = NavType.StringType; nullable = true; defaultValue = null },
+                ),
+            ) { entry ->
+                val id = entry.arguments?.getString("id")
+                val combine = entry.arguments?.getString("combine")?.split(',')?.filter { it.isNotBlank() }.orEmpty()
+                PlanEditorScreen(
+                    id = id,
+                    combine = combine,
+                    onBack = { nav.popBackStack() },
+                    onSaved = { savedId ->
+                        nav.popBackStack()
+                        if (id == null) openPlan(savedId)
+                    },
+                )
+            }
+            composable("combine") {
+                CombinePlansScreen(
+                    onBack = { nav.popBackStack() },
+                    onCombine = { ids ->
+                        nav.navigate("plan-edit?combine=${ids.joinToString(",")}") { popUpTo("combine") { inclusive = true } }
+                    },
                 )
             }
             composable(

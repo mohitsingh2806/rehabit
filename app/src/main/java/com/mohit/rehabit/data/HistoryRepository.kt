@@ -150,7 +150,7 @@ class HistoryRepository(
         val insights = mutableListOf<Insight>()
         for ((planId, follows) in byPlan) {
             val plan = follows.first().plan
-            if (plan.category != PlanCategory.REHAB) continue
+            if (plan.category != PlanCategory.REHAB && plan.trackedMetric == null) continue
             val ids = follows.map { it.id }.toSet()
             val painSkips = i1.logs.count { it.epochDay >= weekAgo && it.enrollmentId in ids && it.status == TaskStatus.SKIPPED_PAIN }
             val hurt = i2.hurt.count { it.planId == planId }

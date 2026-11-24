@@ -1,6 +1,6 @@
 # Rehabit — Exercise & Rehab Routine App (Android) — Plan
 
-> **Status (2026-11-24): M3 built** (Progress: month calendar with status + symbol per day and day details, excused days, weekly adherence per plan, symptom check-ins (Today card on check-in days) with trend charts, pain-rule insights on Today and Progress). Next: M4 (Builder, own photos, backup/export). This doc holds all context so any future session
+> **Status (2026-11-24): M4 built** (your own exercises, routines and daily plans in a builder; Combine plans; your own photo on any exercise; backup export/restore to a file). Next: M5 (progression suggestions, swap/regress UX, body map). This doc holds all context so any future session
 > can pick up from here. **Flaws & fixes (§3) are LOCKED** with the user's refinements (§16).
 > **All open questions (§15) answered 2026-11-24**; decisions in §16, which wins over any older text.
 > **Generic app (2026-11-24):** content and defaults are written for anyone, never tailored to the
@@ -613,4 +613,9 @@ Nothing open. (No per-user condition intake: the app is generic, see §16 "gener
 | 2026-11-24 | M3 | Check-in days editable in Your day (default Mon/Wed/Fri); a check-in can also be added any time from Progress. |
 | 2026-11-24 | C2/C3 | User said "continue as per you": content before M4. Added the user's originally requested plans: **plantar heel pain, IT band syndrome, front-of-knee (patellofemoral), hiking & trekking prep, runner strength, ACL injury prevention (sport)**, and routines **hiker's trail stretch, long-hold flexibility (inspired by David Goggins; not affiliated), desk reset, morning mobility**. 92 exercises, 17 plans/routines. ACL post-op stays a job for the M4 builder (your surgeon's protocol). |
 | 2026-11-24 | §3.6 | "Heads-up with your other plans" card on plan and follow screens when a plan contains an exercise a followed plan advises avoiding (or vice versa). |
+| 2026-11-24 | M4 | User content (exercises, plans) is stored in Room as the **same JSON as bundled content**, ids prefixed `my-`, merged live into the library; user plans are category CUSTOM with a single phase. Bundled-content validation still runs on bundled files; the builder checks user items with the same dose/schedule rules. |
+| 2026-11-24 | M4 | Combine plans = pick 2+ → merged list (same exercise at same time kept once, bigger dose; followed plans use the current phase) → opened in the builder to edit and save as your own plan/routine. |
+| 2026-11-24 | M4 | Own photos for **any** exercise via the system photo picker (no permission), stored downscaled (≤1600 px, EXIF-rotated) in app storage. Shown on the exercise page (not in the player, to keep it uncluttered). |
+| 2026-11-24 | M4 | Backup = one JSON file (all tables + settings + photos as base64), saved / opened with the system file picker. Restore replaces everything after a confirmation showing what's in the file. |
+| 2026-11-24 | M4 | Check-ins / pain-rule insights also apply to your own plans when you give them a "symptom to track". |
 | 2026-11-24 | Q6b | **AI-prompt import dropped**: user not convinced it's useful. Personal additions via manual Builder (M4). |

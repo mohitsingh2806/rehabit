@@ -16,6 +16,7 @@ import androidx.room.Update
 import androidx.room.migration.Migration
 import androidx.sqlite.db.SupportSQLiteDatabase
 import kotlinx.coroutines.flow.Flow
+import kotlinx.serialization.Serializable
 
 /** How an exercise felt, chosen at the end of a session. Stored by name: append-only. */
 enum class Feedback(val label: String) {
@@ -26,6 +27,7 @@ enum class Feedback(val label: String) {
 }
 
 /** One run of the player (a routine, a plan phase or a single exercise). */
+@Serializable
 @Entity(tableName = "sessions")
 data class SessionEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -39,6 +41,7 @@ data class SessionEntity(
 )
 
 /** What was actually done for each exercise, so later plan edits never rewrite history. */
+@Serializable
 @Entity(
     tableName = "session_exercises",
     foreignKeys = [
@@ -125,6 +128,7 @@ enum class SideChoice { LEFT, RIGHT, BOTH }
 enum class TaskStatus { DONE, PARTIAL, SKIPPED, SKIPPED_PAIN }
 
 /** A plan the user follows daily. Items are a snapshot, so content updates never change it silently. */
+@Serializable
 @Entity(tableName = "enrollments")
 data class EnrollmentEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
@@ -144,6 +148,7 @@ data class EnrollmentEntity(
 )
 
 /** One tick in the daily checklist: (day, plan, item, occurrence) → status. */
+@Serializable
 @Entity(
     tableName = "task_logs",
     indices = [Index(value = ["epochDay", "enrollmentId", "itemIndex", "occurrence"], unique = true)],
@@ -159,6 +164,7 @@ data class TaskLogEntity(
 )
 
 /** Days the user ran (heavy tendon work moves to the next day). */
+@Serializable
 @Entity(tableName = "run_days")
 data class RunDayEntity(@PrimaryKey val epochDay: Long)
 
@@ -223,6 +229,7 @@ interface RunDayDao {
 // ---- Progress (v3) ----
 
 /** A symptom score (0-10) for a plan's tracked metric on a day. One per plan per day. */
+@Serializable
 @Entity(
     tableName = "check_ins",
     indices = [Index(value = ["epochDay", "planId"], unique = true)],
@@ -238,6 +245,7 @@ data class CheckInEntity(
 /** Why a day doesn't count against adherence. Stored by name: append-only. */
 enum class ExcuseReason(val label: String) { SICK("Sick"), TRAVEL("Travelling"), FLARE("Flare-up"), OTHER("Other") }
 
+@Serializable
 @Entity(tableName = "excused_days")
 data class ExcusedDayEntity(@PrimaryKey val epochDay: Long, val reason: ExcuseReason)
 
@@ -265,6 +273,93 @@ interface ExcusedDayDao {
     suspend fun delete(day: Long)
 }
 
+// ---- Your own content (v4) ----
+
+/** A user-made exercise, stored as the same JSON as bundled content. */
+@Serializable
+@Entity(tableName = "user_exercises")
+data class UserExerciseEntity(@PrimaryKey val id: String, val json: String, val updatedAt: Long)
+
+/** A user-made routine or plan, stored as the same JSON as bundled content. */
+@Serializable
+@Entity(tableName = "user_plans")
+data class UserPlanEntity(@PrimaryKey val id: String, val json: String, val updatedAt: Long)
+
+/** The user's own photo for any exercise (bundled or theirs); the file lives in app storage. */
+@Serializable
+@Entity(tableName = "user_photos")
+data class UserPhotoEntity(@PrimaryKey val exerciseId: String, val fileName: String)
+
+@Dao
+interface UserContentDao {
+    @Query("SELECT * FROM user_exercises ORDER BY id")
+    fun observeExercises(): Flow<List<UserExerciseEntity>>
+
+    @Query("SELECT * FROM user_plans ORDER BY id")
+    fun observePlans(): Flow<List<UserPlanEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertExercise(e: UserExerciseEntity)
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertPlan(p: UserPlanEntity)
+
+    @Query("DELETE FROM user_exercises WHERE id = :id")
+    suspend fun deleteExercise(id: String)
+
+    @Query("DELETE FROM user_plans WHERE id = :id")
+    suspend fun deletePlan(id: String)
+
+    @Query("SELECT * FROM user_photos")
+    fun observePhotos(): Flow<List<UserPhotoEntity>>
+
+    @Query("SELECT * FROM user_photos WHERE exerciseId = :exerciseId")
+    suspend fun getPhoto(exerciseId: String): UserPhotoEntity?
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertPhoto(p: UserPhotoEntity)
+
+    @Query("DELETE FROM user_photos WHERE exerciseId = :exerciseId")
+    suspend fun deletePhoto(exerciseId: String)
+}
+
+/** Whole-database read / wipe / write for backup and restore. */
+@Dao
+interface BackupDao {
+    @Query("SELECT * FROM sessions") suspend fun sessions(): List<SessionEntity>
+    @Query("SELECT * FROM session_exercises") suspend fun sessionExercises(): List<SessionExerciseEntity>
+    @Query("SELECT * FROM enrollments") suspend fun enrollments(): List<EnrollmentEntity>
+    @Query("SELECT * FROM task_logs") suspend fun taskLogs(): List<TaskLogEntity>
+    @Query("SELECT * FROM run_days") suspend fun runDays(): List<RunDayEntity>
+    @Query("SELECT * FROM check_ins") suspend fun checkIns(): List<CheckInEntity>
+    @Query("SELECT * FROM excused_days") suspend fun excusedDays(): List<ExcusedDayEntity>
+    @Query("SELECT * FROM user_exercises") suspend fun userExercises(): List<UserExerciseEntity>
+    @Query("SELECT * FROM user_plans") suspend fun userPlans(): List<UserPlanEntity>
+    @Query("SELECT * FROM user_photos") suspend fun userPhotos(): List<UserPhotoEntity>
+
+    @Query("DELETE FROM session_exercises") suspend fun clearSessionExercises()
+    @Query("DELETE FROM sessions") suspend fun clearSessions()
+    @Query("DELETE FROM enrollments") suspend fun clearEnrollments()
+    @Query("DELETE FROM task_logs") suspend fun clearTaskLogs()
+    @Query("DELETE FROM run_days") suspend fun clearRunDays()
+    @Query("DELETE FROM check_ins") suspend fun clearCheckIns()
+    @Query("DELETE FROM excused_days") suspend fun clearExcusedDays()
+    @Query("DELETE FROM user_exercises") suspend fun clearUserExercises()
+    @Query("DELETE FROM user_plans") suspend fun clearUserPlans()
+    @Query("DELETE FROM user_photos") suspend fun clearUserPhotos()
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertSessions(l: List<SessionEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertSessionExercises(l: List<SessionExerciseEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertEnrollments(l: List<EnrollmentEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertTaskLogs(l: List<TaskLogEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertRunDays(l: List<RunDayEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertCheckIns(l: List<CheckInEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertExcusedDays(l: List<ExcusedDayEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertUserExercises(l: List<UserExerciseEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertUserPlans(l: List<UserPlanEntity>)
+    @Insert(onConflict = OnConflictStrategy.REPLACE) suspend fun insertUserPhotos(l: List<UserPhotoEntity>)
+}
+
 @Database(
     entities = [
         SessionEntity::class,
@@ -274,8 +369,11 @@ interface ExcusedDayDao {
         RunDayEntity::class,
         CheckInEntity::class,
         ExcusedDayEntity::class,
+        UserExerciseEntity::class,
+        UserPlanEntity::class,
+        UserPhotoEntity::class,
     ],
-    version = 3,
+    version = 4,
     exportSchema = false,
 )
 abstract class RehabitDatabase : RoomDatabase() {
@@ -285,6 +383,26 @@ abstract class RehabitDatabase : RoomDatabase() {
     abstract fun runDayDao(): RunDayDao
     abstract fun checkInDao(): CheckInDao
     abstract fun excusedDayDao(): ExcusedDayDao
+    abstract fun userContentDao(): UserContentDao
+    abstract fun backupDao(): BackupDao
+}
+
+/** v4: your own exercises, plans and photos. */
+val MIGRATION_3_4 = object : Migration(3, 4) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `user_exercises` (`id` TEXT NOT NULL, `json` TEXT NOT NULL, " +
+                "`updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `user_plans` (`id` TEXT NOT NULL, `json` TEXT NOT NULL, " +
+                "`updatedAt` INTEGER NOT NULL, PRIMARY KEY(`id`))",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `user_photos` (`exerciseId` TEXT NOT NULL, `fileName` TEXT NOT NULL, " +
+                "PRIMARY KEY(`exerciseId`))",
+        )
+    }
 }
 
 /** v3: symptom check-ins and excused days. */

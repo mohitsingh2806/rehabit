@@ -122,7 +122,18 @@ data class Exercise(
 enum class PlanKind { ON_DEMAND, FOCUSED }
 
 @Serializable
-enum class PlanCategory { RUNNING, HIKING, MOBILITY, STRENGTH, DESK, SPORT, REHAB }
+enum class PlanCategory {
+    RUNNING, HIKING, MOBILITY, STRENGTH, DESK, SPORT, REHAB,
+
+    /** Made by the user in the builder. */
+    CUSTOM,
+}
+
+/** User-made exercises and plans use this id prefix, so they never clash with bundled ones. */
+const val USER_ID_PREFIX = "my-"
+
+val Exercise.isUser: Boolean get() = id.startsWith(USER_ID_PREFIX)
+val Plan.isUser: Boolean get() = id.startsWith(USER_ID_PREFIX)
 
 /** Time slots of the day. The user sets each slot's time in Settings. */
 @Serializable

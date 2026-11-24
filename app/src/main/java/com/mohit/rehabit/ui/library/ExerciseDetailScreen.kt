@@ -18,9 +18,17 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
+import androidx.activity.compose.rememberLauncherForActivityResult
+import androidx.activity.result.PickVisualMediaRequest
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.compose.material.icons.filled.Delete
+import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Button
+import androidx.compose.material3.OutlinedButton
+import androidx.compose.material3.TextButton
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.CircularProgressIndicator
@@ -35,6 +43,10 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -49,6 +61,10 @@ import com.mohit.rehabit.content.ContentBundle
 import com.mohit.rehabit.content.ContentState
 import com.mohit.rehabit.content.Exercise
 import com.mohit.rehabit.content.MediaType
+import com.mohit.rehabit.content.isUser
+import com.mohit.rehabit.ui.common.ExercisePhoto
+import com.mohit.rehabit.ui.common.YoursBadge
+import kotlinx.coroutines.launch
 import com.mohit.rehabit.ui.common.NoInsets
 import com.mohit.rehabit.ui.common.NotReviewedBadge
 import com.mohit.rehabit.ui.common.defaultDoseText
@@ -61,8 +77,12 @@ fun ExerciseDetailScreen(
     onBack: () -> Unit,
     onOpenExercise: (String) -> Unit,
     onTry: (String) -> Unit,
+    onEdit: (String) -> Unit,
+    onDeleted: () -> Unit,
 ) {
     val context = LocalContext.current
+    val scope = rememberCoroutineScope()
+    var confirmDelete by remember { mutableStateOf(false) }
     val state by context.container.content.state.collectAsStateWithLifecycle()
     val ready = state as? ContentState.Ready
     val exercise = ready?.bundle?.exercisesById?.get(id)
@@ -75,6 +95,12 @@ fun ExerciseDetailScreen(
                 navigationIcon = {
                     IconButton(onClick = onBack) {
                         Icon(Icons.AutoMirrored.Filled.ArrowBack, contentDescription = "Back")
+                    }
+                },
+                actions = {
+                    if (exercise?.isUser == true) {
+                        IconButton(onClick = { onEdit(exercise.id) }) { Icon(Icons.Filled.Edit, contentDescription = "Edit") }
+                        IconButton(onClick = { confirmDelete = true }) { Icon(Icons.Filled.Delete, contentDescription = "Delete") }
                     }
                 },
             )
@@ -90,6 +116,62 @@ fun ExerciseDetailScreen(
                 else -> ExerciseDetail(exercise, ready.bundle, onOpenExercise, onTry)
             }
         }
+    }
+
+    if (confirmDelete && exercise != null && ready != null) {
+        val usedIn = ready.bundle.plans.filter { p -> p.phases.any { ph -> ph.items.any { it.exerciseId == exercise.id } } }
+        AlertDialog(
+            onDismissRequest = { confirmDelete = false },
+            title = { Text(if (usedIn.isEmpty()) "Delete ${exercise.name}?" else "Can't delete yet") },
+            text = {
+                Text(
+                    if (usedIn.isEmpty()) "Its photo is deleted too. Past sessions keep their history."
+                    else "It's used in: ${usedIn.joinToString { it.name }}. Remove it from there first.",
+                )
+            },
+            confirmButton = {
+                if (usedIn.isEmpty()) {
+                    TextButton(onClick = {
+                        confirmDelete = false
+                        scope.launch {
+                            context.container.userContent.deleteExercise(exercise.id)
+                            onDeleted()
+                        }
+                    }) { Text("Delete") }
+                } else {
+                    TextButton(onClick = { confirmDelete = false }) { Text("OK") }
+                }
+            },
+            dismissButton = { if (usedIn.isEmpty()) TextButton(onClick = { confirmDelete = false }) { Text("Cancel") } },
+        )
+    }
+}
+
+/** Your own photo of the exercise (any exercise), via the system photo picker. */
+@Composable
+private fun PhotoSection(exerciseId: String) {
+    val context = LocalContext.current
+    val userContent = context.container.userContent
+    val scope = rememberCoroutineScope()
+    val photosFlow = remember { userContent.photos() }
+    val photos by photosFlow.collectAsStateWithLifecycle(initialValue = emptyMap())
+    var failed by remember { mutableStateOf(false) }
+    val picker = rememberLauncherForActivityResult(ActivityResultContracts.PickVisualMedia()) { uri ->
+        if (uri != null) scope.launch { failed = !userContent.setPhoto(exerciseId, uri) }
+    }
+    val pick = { picker.launch(PickVisualMediaRequest(ActivityResultContracts.PickVisualMedia.ImageOnly)) }
+    val file = photos[exerciseId]
+    Column(verticalArrangement = Arrangement.spacedBy(4.dp)) {
+        if (file != null) {
+            ExercisePhoto(file)
+            Row {
+                TextButton(onClick = pick) { Text("Change photo") }
+                TextButton(onClick = { scope.launch { userContent.removePhoto(exerciseId) } }) { Text("Remove photo") }
+            }
+        } else {
+            OutlinedButton(onClick = pick, modifier = Modifier.fillMaxWidth()) { Text("Add your own photo") }
+        }
+        if (failed) Text("That image couldn't be read.", color = MaterialTheme.colorScheme.error)
     }
 }
 
@@ -120,7 +202,7 @@ private fun ExerciseDetail(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.weight(1f),
                     )
-                    if (!e.reviewed) NotReviewedBadge()
+                    if (e.isUser) YoursBadge() else if (!e.reviewed) NotReviewedBadge()
                 }
                 Text(e.defaultDoseText(), style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Bold)
                 Spacer(Modifier.height(12.dp))
@@ -139,6 +221,8 @@ private fun ExerciseDetail(
                 }
             }
         }
+
+        PhotoSection(e.id)
 
         Section("Why it helps") { Body(e.why) }
 
