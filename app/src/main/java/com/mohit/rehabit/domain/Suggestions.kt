@@ -136,19 +136,27 @@ object Suggestions {
     }
 
     /** A little more: reps +2 (max 30, then a set), holds +10 s (max 120), time +30 s, distance +1 set. */
-    fun bump(d: Dose, e: Exercise): Dose? = when (e.measure) {
-        Measure.REPS -> {
-            val reps = d.reps ?: return null
-            if (reps + 2 <= 30) d.copy(reps = reps + 2) else if (d.sets < 5) d.copy(sets = d.sets + 1) else null
+    fun bump(d: Dose, e: Exercise): Dose? {
+        val reps = d.reps
+        val hold = d.holdSec
+        val time = d.durationSec
+        return when (e.measure) {
+            Measure.REPS -> when {
+                reps == null -> null
+                reps + 2 <= 30 -> d.copy(reps = reps + 2)
+                d.sets < 5 -> d.copy(sets = d.sets + 1)
+                else -> null
+            }
+            Measure.HOLD -> if (hold != null && hold + 10 <= 120) d.copy(holdSec = hold + 10) else null
+            Measure.REPS_WITH_HOLD -> when {
+                hold == null || reps == null -> null
+                hold < 10 -> d.copy(holdSec = hold + 2)
+                reps + 2 <= 20 -> d.copy(reps = reps + 2)
+                else -> null
+            }
+            Measure.TIME -> if (time != null && time + 30 <= 3600) d.copy(durationSec = time + 30) else null
+            Measure.DISTANCE -> if (d.sets < 8) d.copy(sets = d.sets + 1) else null
         }
-        Measure.HOLD -> (d.holdSec ?: return null).let { if (it + 10 <= 120) d.copy(holdSec = it + 10) else null }
-        Measure.REPS_WITH_HOLD -> {
-            val hold = d.holdSec ?: return null
-            val reps = d.reps ?: return null
-            if (hold < 10) d.copy(holdSec = hold + 2) else if (reps + 2 <= 20) d.copy(reps = reps + 2) else null
-        }
-        Measure.TIME -> (d.durationSec ?: return null).let { if (it + 30 <= 3600) d.copy(durationSec = it + 30) else null }
-        Measure.DISTANCE -> if (d.sets < 8) d.copy(sets = d.sets + 1) else null
     }
 
     /** A little less: a set off first, then reps -2 / holds -10 s / time -30 s. */
