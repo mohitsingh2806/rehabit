@@ -222,7 +222,7 @@
           "exerciseId": "brisk-walk",
           "dose": {
             "sets": 1,
-            "durationSec": 5400
+            "durationSec": 3600
           },
           "schedule": {
             "days": "WEEKDAYS",
@@ -234,7 +234,7 @@
             ]
           },
           "core": false,
-          "note": "A long hike in your trek boots if you can."
+          "note": "A long hike in your trek boots: 60 minutes or more if you can (the timer stops at 60)."
         }
       ]
     },

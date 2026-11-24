@@ -82,3 +82,11 @@ dependencies {
 
     testImplementation(libs.junit)
 }
+
+// Print the full assertion message (e.g. the list of content problems) in the CI log.
+tasks.withType<Test> {
+    testLogging {
+        events("failed")
+        exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
+    }
+}
