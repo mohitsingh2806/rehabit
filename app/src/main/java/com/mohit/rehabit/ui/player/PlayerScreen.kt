@@ -297,7 +297,7 @@ private fun TimerRing(step: Step, elapsedMs: Long, durationMs: Long, size: Dp) {
             if (counter != null) {
                 val rep = counter.currentRep(elapsedMs)
                 Text(
-                    if (rep == 0) "Get set" else "Rep $rep of ${counter.reps}",
+                    if (rep == 0) "Get set" else "${counter.unit} $rep of ${counter.reps}",
                     style = if (big) MaterialTheme.typography.headlineSmall else MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                 )

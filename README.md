@@ -12,7 +12,7 @@ conventions and content-authoring rules.
 > physiotherapist first.
 
 ## Status
-Milestone 1: Library (plans, routines, now 92 exercises; search and filters), plan detail with phases
+Milestone 1: Library (plans, routines, now 114 exercises incl. yoga; search and filters), plan detail with phases
 and red flags, and a hands-free guided player (timers, left/right sides, voice cues, beeps and
 metronome, vibration) with a session log.
 Milestone 2: follow plans daily: set up your day, a Today checklist spread over time slots (merged

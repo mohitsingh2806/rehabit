@@ -19,6 +19,12 @@ enum class BodyArea {
 enum class ExerciseKind {
     STRETCH_STATIC, STRETCH_DYNAMIC, MOBILITY, STRENGTH, ISOMETRIC, ACTIVATION,
     BALANCE, PLYOMETRIC, NERVE_GLIDE, SOFT_TISSUE, CARDIO,
+
+    /** A yoga pose (usually held, often breath-paced). */
+    YOGA,
+
+    /** Paced breathing / relaxation. */
+    BREATHING,
 }
 
 @Serializable
@@ -64,7 +70,10 @@ data class Dose(
     val distanceM: Int? = null,
     /** Rest between sets. */
     val restSec: Int? = null,
-    /** Seconds per phase, e.g. "3-2-3" = up, hold, down. Drives the metronome. */
+    /**
+     * Seconds per phase, e.g. "3-2-3" = up, hold, down. Drives the metronome. On a HOLD or TIME
+     * dose it paces breathing instead, e.g. "4-6" = breathe in 4 s, out 6 s.
+     */
     val tempo: String? = null,
     val sides: Sides? = null,
     /** Free text, e.g. "bodyweight", "+ loaded backpack". */
@@ -124,6 +133,8 @@ enum class PlanKind { ON_DEMAND, FOCUSED }
 @Serializable
 enum class PlanCategory {
     RUNNING, HIKING, MOBILITY, STRENGTH, DESK, SPORT, REHAB,
+
+    YOGA,
 
     /** Made by the user in the builder. */
     CUSTOM,
@@ -211,6 +222,8 @@ data class Plan(
     val avoid: List<String> = emptyList(),
     /** Asked when following the plan; answers include items via [PlanItem.showIf]. */
     val chooser: List<ChooserQuestion> = emptyList(),
+    /** A flowing sequence (e.g. sun salutation): short transitions, no long "get ready" between poses. */
+    val flow: Boolean = false,
     val references: List<String> = emptyList(),
     val reviewed: Boolean = false,
 )

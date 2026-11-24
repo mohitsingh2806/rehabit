@@ -13,6 +13,7 @@ import com.mohit.rehabit.content.BodyArea
 import com.mohit.rehabit.content.Equipment
 import com.mohit.rehabit.content.Exercise
 import com.mohit.rehabit.content.ExerciseKind
+import com.mohit.rehabit.content.PlanCategory
 import com.mohit.rehabit.content.Position
 import com.mohit.rehabit.domain.doseText
 
@@ -37,6 +38,12 @@ val ExerciseKind.label: String
         ExerciseKind.STRETCH_DYNAMIC -> "Dynamic stretch"
         ExerciseKind.NERVE_GLIDE -> "Nerve glide"
         ExerciseKind.SOFT_TISSUE -> "Soft tissue"
+        else -> pretty()
+    }
+
+val PlanCategory.label: String
+    get() = when (this) {
+        PlanCategory.CUSTOM -> "Yours"
         else -> pretty()
     }
 

@@ -1,0 +1,72 @@
+{
+  "id": "yoga-for-runners",
+  "name": "Yoga for runners",
+  "kind": "ON_DEMAND",
+  "category": "YOGA",
+  "goal": "A 20-minute session for after a run or a rest day: hip flexors, hamstrings, calves, glutes and inner thighs, finishing with legs up the wall.",
+  "whoFor": "Runners and hikers. Best after running, not before.",
+  "notFor": [
+    "Pregnancy: some poses need changes, so a prenatal class is a better guide",
+    "A current injury flare-up: use that rehab plan first"
+  ],
+  "estMinutes": 20,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Yoga for runners",
+      "items": [
+        {
+          "exerciseId": "low-lunge",
+          "dose": {
+            "sets": 1,
+            "holdSec": 45,
+            "tempo": "4-6"
+          }
+        },
+        {
+          "exerciseId": "downward-dog",
+          "dose": {
+            "sets": 1,
+            "holdSec": 45,
+            "tempo": "4-6"
+          }
+        },
+        {
+          "exerciseId": "pigeon-stretch",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "reclining-hamstring-strap",
+          "dose": {
+            "sets": 1,
+            "holdSec": 45,
+            "tempo": "4-6"
+          }
+        },
+        {
+          "exerciseId": "butterfly-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 45,
+            "tempo": "4-6"
+          }
+        },
+        {
+          "exerciseId": "supine-twist",
+          "dose": {
+            "sets": 1,
+            "holdSec": 45,
+            "tempo": "4-6"
+          }
+        },
+        {
+          "exerciseId": "legs-up-the-wall"
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

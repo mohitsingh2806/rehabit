@@ -49,6 +49,12 @@ class DoseTextTest {
     }
 
     @Test
+    fun breathingDoses() {
+        assertEquals("30 s hold · breathe in 4, out 6", doseText(Dose(holdSec = 30, tempo = "4-6"), Measure.HOLD, Laterality.BILATERAL))
+        assertEquals("2 min · breathing 4-4-4-4", doseText(Dose(durationSec = 120, tempo = "4-4-4-4"), Measure.TIME, Laterality.BILATERAL))
+    }
+
+    @Test
     fun durationsAndDistances() {
         assertEquals("45 s", durationText(45))
         assertEquals("1 min", durationText(60))

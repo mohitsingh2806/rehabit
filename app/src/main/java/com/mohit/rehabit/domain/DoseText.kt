@@ -39,7 +39,15 @@ fun doseText(dose: Dose, measure: Measure, laterality: Laterality): String {
         Laterality.EACH_SIDE -> if (dose.sides == Sides.AFFECTED) "sore side" else "each side"
         Laterality.ALTERNATING -> "each side, alternating"
     }
-    val tempo = dose.tempo?.let { "tempo $it" }
+    val breathing = measure == Measure.HOLD || measure == Measure.TIME
+    val tempo = dose.tempo?.let { t ->
+        val parts = t.split('-')
+        when {
+            !breathing -> "tempo $t"
+            parts.size == 2 -> "breathe in ${parts[0]}, out ${parts[1]}"
+            else -> "breathing $t"
+        }
+    }
     return listOfNotNull(main, side, tempo).joinToString(" · ")
 }
 

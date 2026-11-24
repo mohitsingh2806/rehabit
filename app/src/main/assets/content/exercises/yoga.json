@@ -1,0 +1,917 @@
+[
+  {
+    "id": "mountain-pose",
+    "name": "Mountain pose",
+    "aliases": [
+      "Tadasana"
+    ],
+    "bodyAreas": [
+      "FULL_BODY"
+    ],
+    "kind": "YOGA",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Tall, balanced standing: the starting point of standing flows and a calm place to settle your breath.",
+    "setup": [
+      "Stand with feet hip-width apart, weight even across both feet.",
+      "Arms by your sides, palms facing forward."
+    ],
+    "cues": [
+      "Feet grounded, knees soft",
+      "Grow tall through the crown of your head",
+      "Shoulders relaxed down"
+    ],
+    "mistakes": [
+      "Locking the knees",
+      "Leaning back",
+      "Holding your breath"
+    ],
+    "feel": "Lightly working legs and a tall, easy spine.",
+    "stopIf": "You feel dizzy or light-headed: sit down.",
+    "reviewed": false
+  },
+  {
+    "id": "standing-forward-fold",
+    "name": "Standing forward fold",
+    "aliases": [
+      "Uttanasana"
+    ],
+    "bodyAreas": [
+      "HAMSTRING",
+      "LUMBAR"
+    ],
+    "kind": "YOGA",
+    "position": "STANDING",
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Lengthens the backs of the legs and lets the spine hang and relax.",
+    "setup": [
+      "Stand with feet hip-width apart.",
+      "Hinge forward from your hips and let your upper body hang."
+    ],
+    "cues": [
+      "Hinge from your hips",
+      "Bend your knees as much as you need",
+      "Let your head hang heavy"
+    ],
+    "mistakes": [
+      "Locking the knees and rounding hard",
+      "Forcing your hands to the floor",
+      "Coming up fast"
+    ],
+    "feel": "A stretch along the back of the legs and a gentle release in the back.",
+    "stopIf": "Back pain, or pain or tingling down a leg. Come up slowly to avoid dizziness.",
+    "cautions": [
+      "Head below the heart: keep it brief or skip it if you have uncontrolled high blood pressure, glaucoma or a detached retina."
+    ],
+    "regressions": [
+      "half-forward-fold"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "half-forward-fold",
+    "name": "Half forward fold",
+    "aliases": [
+      "Ardha Uttanasana",
+      "Halfway lift"
+    ],
+    "bodyAreas": [
+      "HAMSTRING",
+      "LUMBAR"
+    ],
+    "kind": "YOGA",
+    "position": "STANDING",
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 10,
+      "tempo": "4-6"
+    },
+    "why": "A flat-back hinge that links poses in a sun salutation and teaches hip hinging.",
+    "setup": [
+      "From a forward fold, put your hands on your shins or thighs."
+    ],
+    "cues": [
+      "Lengthen your spine forward",
+      "Hands on shins or thighs",
+      "Long neck, gaze down"
+    ],
+    "mistakes": [
+      "Rounding the back",
+      "Locking the knees",
+      "Lifting the head too far"
+    ],
+    "feel": "Back of the legs lengthening, back muscles gently working.",
+    "stopIf": "Back pain.",
+    "progressions": [
+      "standing-forward-fold"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "downward-dog",
+    "name": "Downward-facing dog",
+    "aliases": [
+      "Adho Mukha Svanasana",
+      "Down dog"
+    ],
+    "bodyAreas": [
+      "HAMSTRING",
+      "CALF",
+      "SHOULDER"
+    ],
+    "kind": "YOGA",
+    "position": "QUADRUPED",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Stretches the calves and hamstrings while the arms and shoulders carry weight: a classic whole-body pose.",
+    "setup": [
+      "From hands and knees, tuck your toes and lift your hips up and back."
+    ],
+    "cues": [
+      "Push the floor away with your hands",
+      "Lift your hips up and back",
+      "Bend your knees to keep your back long"
+    ],
+    "mistakes": [
+      "Rounding the back to get the heels down",
+      "Sinking into the shoulders",
+      "Hands too close to the feet"
+    ],
+    "feel": "Stretch in calves and backs of the legs, work in the arms and shoulders.",
+    "stopIf": "Wrist or shoulder pain, or you feel dizzy.",
+    "cautions": [
+      "Head below the heart: keep it brief or skip it if you have uncontrolled high blood pressure, glaucoma or a detached retina.",
+      "Wrist pain: try it on your forearms (dolphin) or skip it."
+    ],
+    "regressions": [
+      "child-pose"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "low-lunge",
+    "name": "Low lunge",
+    "aliases": [
+      "Anjaneyasana"
+    ],
+    "bodyAreas": [
+      "HIP",
+      "QUAD"
+    ],
+    "kind": "YOGA",
+    "position": "KNEELING",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Opens the front of the hip and thigh, which tighten with sitting and running.",
+    "setup": [
+      "Kneel on padding, then step one foot forward into a lunge.",
+      "Hands on the front knee or reaching up."
+    ],
+    "cues": [
+      "Back knee down on padding",
+      "Sink your hips forward",
+      "Lift your chest, arms up if steady"
+    ],
+    "mistakes": [
+      "Front knee caving in",
+      "Arching the lower back",
+      "No padding under the knee"
+    ],
+    "feel": "A stretch at the front of the back leg's hip and thigh.",
+    "stopIf": "Pain in either knee, or in the lower back.",
+    "substitutes": [
+      "hip-flexor-stretch-standing"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "warrior-two",
+    "name": "Warrior II",
+    "aliases": [
+      "Virabhadrasana II"
+    ],
+    "bodyAreas": [
+      "HIP",
+      "QUAD",
+      "ADDUCTOR"
+    ],
+    "kind": "YOGA",
+    "position": "STANDING",
+    "trailFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "A strong standing pose that builds leg strength and opens the hips and inner thighs.",
+    "setup": [
+      "Step your feet wide apart, front toes forward, back toes turned in slightly.",
+      "Bend the front knee, arms out at shoulder height."
+    ],
+    "cues": [
+      "Front knee over your ankle",
+      "Arms long at shoulder height",
+      "Gaze over your front hand"
+    ],
+    "mistakes": [
+      "Front knee falling inwards",
+      "Leaning towards the front leg",
+      "Shoulders up by the ears"
+    ],
+    "feel": "Work in the front thigh, a stretch in the inner thighs.",
+    "stopIf": "Knee pain above about 3 out of 10.",
+    "reviewed": false
+  },
+  {
+    "id": "triangle-pose",
+    "name": "Triangle pose",
+    "aliases": [
+      "Trikonasana"
+    ],
+    "bodyAreas": [
+      "HAMSTRING",
+      "ADDUCTOR",
+      "THORACIC"
+    ],
+    "kind": "YOGA",
+    "position": "STANDING",
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Stretches the sides of the body, hamstrings and inner thighs while building balance.",
+    "setup": [
+      "Stand with feet wide, front toes forward.",
+      "Reach forward over the front leg, then tip down: hand on shin, a block or a chair."
+    ],
+    "cues": [
+      "Both legs straight, front knee soft",
+      "Reach forward, then tip your arm down",
+      "Open your chest to the side"
+    ],
+    "mistakes": [
+      "Collapsing the side of the waist",
+      "Locking the front knee",
+      "Forcing the hand to the floor"
+    ],
+    "feel": "A stretch along the front-leg hamstring and the side of the body.",
+    "stopIf": "Back or knee pain.",
+    "reviewed": false
+  },
+  {
+    "id": "tree-pose",
+    "name": "Tree pose",
+    "aliases": [
+      "Vrksasana"
+    ],
+    "bodyAreas": [
+      "ANKLE",
+      "HIP",
+      "FOOT"
+    ],
+    "kind": "BALANCE",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "A balance pose that trains the ankle, foot and hip muscles to keep you steady.",
+    "setup": [
+      "Stand on one leg near a wall if needed.",
+      "Place the other foot on the inside of the ankle, calf or thigh."
+    ],
+    "cues": [
+      "Foot on ankle, calf or thigh, never the knee",
+      "Press foot and leg together",
+      "Fix your gaze on one spot"
+    ],
+    "mistakes": [
+      "Foot pressing on the knee joint",
+      "Hip pushing out to the side",
+      "Holding your breath"
+    ],
+    "feel": "Small muscles in the standing foot and ankle working, hips steady.",
+    "stopIf": "Ankle or knee pain.",
+    "regressions": [
+      "single-leg-balance"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "chair-pose",
+    "name": "Chair pose",
+    "aliases": [
+      "Utkatasana"
+    ],
+    "bodyAreas": [
+      "QUAD",
+      "GLUTE",
+      "KNEE"
+    ],
+    "kind": "YOGA",
+    "position": "STANDING",
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 20,
+      "tempo": "4-6"
+    },
+    "why": "A held half-squat that builds strength in the legs and buttocks.",
+    "setup": [
+      "Stand with feet together or hip-width apart.",
+      "Bend your knees and sit back, arms up or hands at the chest."
+    ],
+    "cues": [
+      "Sit back as if into a chair",
+      "Weight in your heels",
+      "Arms up, ribs down"
+    ],
+    "mistakes": [
+      "Knees shooting far forward",
+      "Arching the lower back",
+      "Lifting the heels"
+    ],
+    "feel": "Hard work in the thighs and buttocks.",
+    "stopIf": "Knee pain above about 3 out of 10.",
+    "substitutes": [
+      "wall-sit-isometric"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "plank-pose",
+    "name": "Plank",
+    "aliases": [
+      "High plank"
+    ],
+    "bodyAreas": [
+      "CORE",
+      "SHOULDER"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_PRONE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 20,
+      "tempo": "4-6"
+    },
+    "why": "Builds trunk and shoulder strength; the link between poses in a sun salutation.",
+    "setup": [
+      "From hands and knees, step your feet back into a straight line.",
+      "Hands under the shoulders."
+    ],
+    "cues": [
+      "Hands under shoulders",
+      "Straight line head to heels",
+      "Knees down to make it easier"
+    ],
+    "mistakes": [
+      "Hips sagging",
+      "Hips high in the air",
+      "Holding your breath"
+    ],
+    "feel": "Work in the stomach, shoulders and arms.",
+    "stopIf": "Wrist, shoulder or back pain.",
+    "reviewed": false
+  },
+  {
+    "id": "cobra-pose",
+    "name": "Low cobra",
+    "aliases": [
+      "Bhujangasana"
+    ],
+    "bodyAreas": [
+      "LUMBAR",
+      "THORACIC"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_PRONE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 15,
+      "tempo": "4-6"
+    },
+    "why": "A gentle backbend that strengthens the back muscles and opens the chest.",
+    "setup": [
+      "Lie face down, hands beside your chest, elbows tucked in.",
+      "Legs long, tops of the feet down."
+    ],
+    "cues": [
+      "Hands under shoulders, elbows in",
+      "Lift your chest with your back muscles",
+      "Hips and legs stay down"
+    ],
+    "mistakes": [
+      "Pushing up high on straight arms",
+      "Squeezing the buttocks hard",
+      "Craning the neck"
+    ],
+    "feel": "Work along the back and a stretch across the front of the chest.",
+    "stopIf": "Back pain increases, or pain spreads into a leg.",
+    "regressions": [
+      "sphinx-pose"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "sphinx-pose",
+    "name": "Sphinx pose",
+    "aliases": [],
+    "bodyAreas": [
+      "LUMBAR"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_PRONE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 45,
+      "tempo": "4-6"
+    },
+    "why": "The gentlest backbend, propped on the forearms. Many backs that feel better standing up straight like it.",
+    "setup": [
+      "Lie face down and prop yourself up on your forearms, elbows under your shoulders."
+    ],
+    "cues": [
+      "Elbows under your shoulders",
+      "Let your belly soften to the floor",
+      "Shoulders away from your ears"
+    ],
+    "mistakes": [
+      "Shrugging into the shoulders",
+      "Pushing up higher than is comfortable",
+      "Tensing the buttocks"
+    ],
+    "feel": "A gentle arch in the lower back, easing with each breath.",
+    "stopIf": "Back pain increases, or pain spreads into a leg (some backs prefer bending forward).",
+    "progressions": [
+      "cobra-pose"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "bridge-pose",
+    "name": "Bridge pose (held)",
+    "aliases": [
+      "Setu Bandha Sarvangasana"
+    ],
+    "bodyAreas": [
+      "GLUTE",
+      "LUMBAR",
+      "HAMSTRING"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Strengthens the buttocks and backs of the legs while opening the front of the hips.",
+    "setup": [
+      "Lie on your back, knees bent, feet hip-width apart near your bottom."
+    ],
+    "cues": [
+      "Press your feet down and lift your hips",
+      "Knees point straight ahead",
+      "Lower slowly, one vertebra at a time"
+    ],
+    "mistakes": [
+      "Arching from the lower back",
+      "Knees falling apart",
+      "Pushing up onto the neck"
+    ],
+    "feel": "Glutes and backs of the thighs working.",
+    "stopIf": "Back or neck pain.",
+    "substitutes": [
+      "glute-bridge"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "seated-forward-fold",
+    "name": "Seated forward fold",
+    "aliases": [
+      "Paschimottanasana"
+    ],
+    "bodyAreas": [
+      "HAMSTRING",
+      "LUMBAR"
+    ],
+    "kind": "YOGA",
+    "position": "SEATED",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 45,
+      "tempo": "4-6"
+    },
+    "why": "A quiet, calming stretch for the backs of the legs and the back.",
+    "setup": [
+      "Sit on a folded blanket or cushion with your legs out in front.",
+      "Bend your knees as much as you need."
+    ],
+    "cues": [
+      "Sit tall on a cushion, knees bent if needed",
+      "Hinge forward from your hips",
+      "Breathe out to relax deeper"
+    ],
+    "mistakes": [
+      "Rounding hard to reach the toes",
+      "Locking the knees",
+      "Pulling yourself forward"
+    ],
+    "feel": "A stretch along the backs of the legs.",
+    "stopIf": "Tingling down the legs, or back pain.",
+    "reviewed": false
+  },
+  {
+    "id": "butterfly-pose",
+    "name": "Butterfly pose",
+    "aliases": [
+      "Baddha Konasana",
+      "Bound angle"
+    ],
+    "bodyAreas": [
+      "ADDUCTOR",
+      "HIP"
+    ],
+    "kind": "YOGA",
+    "position": "SEATED",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 45,
+      "tempo": "4-6"
+    },
+    "why": "Opens the inner thighs and hips. Gentle enough to hold for a while.",
+    "setup": [
+      "Sit on a cushion with the soles of your feet together, knees out to the sides."
+    ],
+    "cues": [
+      "Soles of the feet together",
+      "Sit tall on a cushion",
+      "Let your knees fall open"
+    ],
+    "mistakes": [
+      "Pushing the knees down",
+      "Slumping",
+      "Bouncing"
+    ],
+    "feel": "A stretch along the inner thighs.",
+    "stopIf": "Groin or knee pain.",
+    "reviewed": false
+  },
+  {
+    "id": "supine-twist",
+    "name": "Lying twist",
+    "aliases": [
+      "Supta Matsyendrasana"
+    ],
+    "bodyAreas": [
+      "LUMBAR",
+      "THORACIC"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 45,
+      "tempo": "4-6"
+    },
+    "why": "A relaxing twist for the back, good at the end of the day.",
+    "setup": [
+      "Lie on your back, arms out in a T.",
+      "Draw one knee up and let it fall across your body."
+    ],
+    "cues": [
+      "Draw one knee across your body",
+      "Both shoulders stay heavy",
+      "Look the other way if comfortable"
+    ],
+    "mistakes": [
+      "Forcing the knee to the floor",
+      "Lifting the opposite shoulder high",
+      "Holding your breath"
+    ],
+    "feel": "Gentle rotation and stretch through the back and outer hip.",
+    "stopIf": "Back pain or pain into a leg.",
+    "reviewed": false
+  },
+  {
+    "id": "happy-baby",
+    "name": "Happy baby",
+    "aliases": [
+      "Ananda Balasana"
+    ],
+    "bodyAreas": [
+      "HIP",
+      "LUMBAR"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 30,
+      "tempo": "4-6"
+    },
+    "why": "Releases the hips and lower back in a supported, relaxed position.",
+    "setup": [
+      "Lie on your back, hug your knees in, then hold the outsides of your feet or your shins."
+    ],
+    "cues": [
+      "Hold your feet or shins",
+      "Knees towards your armpits",
+      "Lower back relaxed on the floor"
+    ],
+    "mistakes": [
+      "Lifting the head and straining the neck",
+      "Pulling hard",
+      "Tail lifting off the floor"
+    ],
+    "feel": "A stretch in the inner thighs and hips.",
+    "stopIf": "Hip pinching or knee pain.",
+    "reviewed": false
+  },
+  {
+    "id": "reclining-hamstring-strap",
+    "name": "Lying hamstring stretch with a strap",
+    "aliases": [
+      "Supta Padangusthasana"
+    ],
+    "bodyAreas": [
+      "HAMSTRING"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "TOWEL",
+      "MAT"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "holdSec": 45,
+      "tempo": "4-6"
+    },
+    "why": "A back-friendly hamstring stretch: the floor supports your spine.",
+    "setup": [
+      "Lie on your back with a strap, belt or towel round one foot.",
+      "The other leg long on the floor, or bent."
+    ],
+    "cues": [
+      "Strap or towel round one foot",
+      "Raise the leg to a gentle stretch",
+      "Back and shoulders relaxed"
+    ],
+    "mistakes": [
+      "Pulling the leg too far",
+      "Lifting the head",
+      "Locking the knee hard"
+    ],
+    "feel": "A stretch in the back of the raised leg.",
+    "stopIf": "Tingling or pain down the leg: ease off.",
+    "reviewed": false
+  },
+  {
+    "id": "legs-up-the-wall",
+    "name": "Legs up the wall",
+    "aliases": [
+      "Viparita Karani"
+    ],
+    "bodyAreas": [
+      "FULL_BODY"
+    ],
+    "kind": "YOGA",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "WALL",
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "TIME",
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 180,
+      "tempo": "4-6"
+    },
+    "why": "A restful pose that eases tired legs after running or hiking and helps you wind down.",
+    "setup": [
+      "Sit side-on to a wall, then swing your legs up as you lie back.",
+      "Bottom close to the wall, legs resting on it."
+    ],
+    "cues": [
+      "Bottom close to the wall",
+      "Legs resting up the wall",
+      "Arms relaxed, breathe slowly"
+    ],
+    "mistakes": [
+      "Straining to get the bottom right against the wall",
+      "Tensing the legs",
+      "Staying if the legs tingle"
+    ],
+    "feel": "Legs relaxing, a gentle stretch in the backs of the legs.",
+    "stopIf": "Tingling or numbness in the legs: bend the knees or come down.",
+    "cautions": [
+      "Skip it in late pregnancy, or if you have glaucoma or uncontrolled high blood pressure."
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "savasana",
+    "name": "Relaxation (savasana)",
+    "aliases": [
+      "Corpse pose"
+    ],
+    "bodyAreas": [
+      "FULL_BODY"
+    ],
+    "kind": "BREATHING",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "TIME",
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 180
+    },
+    "why": "A few minutes of complete rest at the end of a session lets your body and mind settle.",
+    "setup": [
+      "Lie on your back, arms and legs relaxed, palms up. A cushion under the knees helps the back."
+    ],
+    "cues": [
+      "Let your whole body get heavy",
+      "Soften your face and jaw",
+      "Breathe naturally"
+    ],
+    "mistakes": [
+      "Rushing it",
+      "Lying uncomfortably: use cushions",
+      "Checking your phone"
+    ],
+    "feel": "Calm, heavy and relaxed.",
+    "stopIf": "You feel unwell: roll to your side and sit up slowly.",
+    "reviewed": false
+  },
+  {
+    "id": "belly-breathing",
+    "name": "Belly breathing",
+    "aliases": [
+      "Diaphragmatic breathing"
+    ],
+    "bodyAreas": [
+      "CORE",
+      "FULL_BODY"
+    ],
+    "kind": "BREATHING",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "BILATERAL",
+    "measure": "TIME",
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 120,
+      "tempo": "4-6"
+    },
+    "why": "Slow breathing with a long breath out calms the nervous system, which can ease stress and the way pain is felt.",
+    "setup": [
+      "Sit or lie comfortably.",
+      "One hand on your belly, one on your chest."
+    ],
+    "cues": [
+      "Breathe in through your nose, belly rises",
+      "Chest stays fairly still",
+      "Long, slow breath out"
+    ],
+    "mistakes": [
+      "Forcing big breaths",
+      "Lifting the shoulders",
+      "Breathing fast"
+    ],
+    "feel": "Calm; the belly hand moves more than the chest hand.",
+    "stopIf": "You feel dizzy or light-headed: breathe normally.",
+    "reviewed": false
+  },
+  {
+    "id": "box-breathing",
+    "name": "Box breathing",
+    "aliases": [
+      "Square breathing"
+    ],
+    "bodyAreas": [
+      "FULL_BODY"
+    ],
+    "kind": "BREATHING",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "BILATERAL",
+    "measure": "TIME",
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 120,
+      "tempo": "4-4-4-4"
+    },
+    "why": "Breathing in a steady 4-4-4-4 rhythm is a simple way to settle nerves before sport or after a stressful day.",
+    "setup": [
+      "Sit tall and relax your shoulders."
+    ],
+    "cues": [
+      "Breathe in for 4",
+      "Hold for 4",
+      "Breathe out for 4, hold for 4"
+    ],
+    "mistakes": [
+      "Straining on the holds",
+      "Lifting the shoulders",
+      "Breathing through the mouth"
+    ],
+    "feel": "Calm and steady.",
+    "stopIf": "You feel dizzy: shorten the holds or breathe normally.",
+    "reviewed": false
+  }
+]

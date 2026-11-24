@@ -1,0 +1,59 @@
+{
+  "id": "yoga-for-back",
+  "name": "Gentle yoga for the back",
+  "kind": "ON_DEMAND",
+  "category": "YOGA",
+  "goal": "Slow, gentle poses that move and relax the back, ending with a few minutes of rest. Move only in a comfortable range.",
+  "whoFor": "People with everyday back stiffness. With ongoing back pain, the lower back pain plan is the main guide.",
+  "notFor": [
+    "Pregnancy: some poses need changes, so a prenatal class is a better guide",
+    "A current injury flare-up: use that rehab plan first",
+    "Back pain with warning signs (see the lower back pain plan)"
+  ],
+  "estMinutes": 18,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Gentle yoga for the back",
+      "items": [
+        {
+          "exerciseId": "cat-cow"
+        },
+        {
+          "exerciseId": "child-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "sphinx-pose",
+          "note": "Skip it if arching makes your back worse."
+        },
+        {
+          "exerciseId": "bridge-pose",
+          "dose": {
+            "sets": 2,
+            "holdSec": 20,
+            "tempo": "4-6",
+            "restSec": 15
+          }
+        },
+        {
+          "exerciseId": "supine-twist"
+        },
+        {
+          "exerciseId": "knee-to-chest",
+          "note": "Skip it if bending forward makes your back worse."
+        },
+        {
+          "exerciseId": "happy-baby"
+        },
+        {
+          "exerciseId": "savasana"
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

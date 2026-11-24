@@ -24,8 +24,8 @@ sealed interface CueAction {
 /** Something the player does [atMs] after the step starts. */
 data class Cue(val atMs: Long, val action: CueAction)
 
-/** Auto-counted reps: rep n (1-based) starts at offsetMs + (n - 1) * cycleMs. */
-data class RepCounter(val reps: Int, val cycleMs: Long, val offsetMs: Long) {
+/** Auto-counted reps (or breaths): rep n (1-based) starts at offsetMs + (n - 1) * cycleMs. */
+data class RepCounter(val reps: Int, val cycleMs: Long, val offsetMs: Long, val unit: String = "Rep") {
     /** 0 before the first rep starts, then 1..reps. */
     fun currentRep(elapsedMs: Long): Int =
         if (elapsedMs < offsetMs) 0 else ((elapsedMs - offsetMs) / cycleMs + 1).toInt().coerceAtMost(reps)
@@ -63,7 +63,14 @@ data class ScriptOptions(
     /** Estimates for open-ended steps. */
     val estimatedSecPerRep: Int = 3,
     val estimatedMetersPerSec: Int = 3,
-)
+    /** Flowing sequence: a short transition naming the next pose instead of the full "get ready". */
+    val flow: Boolean = false,
+    val flowTransitionSec: Int = 4,
+) {
+    companion object {
+        val FLOW = ScriptOptions(flow = true, switchSec = 3, defaultRestSec = 0)
+    }
+}
 
 /**
  * Expands exercises + doses into a timeline of player steps. Pure and deterministic, so the player
@@ -86,8 +93,14 @@ object SessionScript {
                 else -> listOf(Side.LEFT, Side.RIGHT)
             }
 
-            val prepareMs = o.prepareSec * 1000L
-            val intro = (if (i == 0) "First: " else "Next: ") + e.name + ". " + e.cues.joinToString(". ") + "."
+            // In a flow, the first pose still gets the full introduction; after that just its name.
+            val shortIntro = o.flow && i > 0
+            val prepareMs = (if (shortIntro) o.flowTransitionSec else o.prepareSec) * 1000L
+            val intro = if (shortIntro) {
+                e.name + "."
+            } else {
+                (if (i == 0) "First: " else "Next: ") + e.name + ". " + e.cues.joinToString(". ") + "."
+            }
             steps += Step(
                 kind = StepKind.PREPARE, itemIndex = i, exercise = e, dose = d, set = 0, sets = sets,
                 side = sides.first(), label = "Get ready", durationMs = prepareMs,
@@ -130,20 +143,42 @@ object SessionScript {
         val start = listOf(Cue(0, CueAction.Buzz), Cue(0, CueAction.Beep(Tone.HIGH)))
 
         fun step(label: String, durationMs: Long?, speech: String, extra: List<Cue> = emptyList(),
-                 counter: RepCounter? = null, target: String? = null) = Step(
+                 counter: RepCounter? = null, target: String? = null, withCountdown: Boolean = true) = Step(
             kind = StepKind.WORK, itemIndex = i, exercise = e, dose = d, set = set, sets = sets, side = side,
             label = label, durationMs = durationMs, repCounter = counter, target = target,
-            cues = start + Cue(0, CueAction.Speak(speech)) + extra + (durationMs?.let { countdown(it) } ?: emptyList()),
+            cues = start + Cue(0, CueAction.Speak(speech)) + extra +
+                (durationMs?.takeIf { withCountdown }?.let { countdown(it) } ?: emptyList()),
         )
 
         return when (e.measure) {
-            Measure.HOLD -> {
-                val sec = d.holdSec ?: 30
-                step("${sideLabel}Hold", sec * 1000L, "${sideSpeech}Hold ${secondsSpeech(sec)}.")
-            }
-            Measure.TIME -> {
-                val sec = d.durationSec ?: 60
-                step("${sideLabel}Go", sec * 1000L, "$sideSpeech${secondsSpeech(sec)}. Go.")
+            Measure.HOLD, Measure.TIME -> {
+                val sec = (if (e.measure == Measure.HOLD) d.holdSec ?: 30 else d.durationSec ?: 60)
+                val ms = sec * 1000L
+                val breath = tempoPhases(d.tempo)?.takeIf { it.size >= 2 }
+                if (breath == null) {
+                    if (e.measure == Measure.HOLD) {
+                        step("${sideLabel}Hold", ms, "${sideSpeech}Hold ${secondsSpeech(sec)}.")
+                    } else {
+                        step("${sideLabel}Go", ms, "$sideSpeech${secondsSpeech(sec)}. Go.")
+                    }
+                } else {
+                    // Breath pacer: high beep = breathe in, low beep = breathe out (and holds, if 4 phases).
+                    val cycle = breath.sum() * 1000L
+                    val breaths = (ms / cycle).toInt().coerceAtLeast(1)
+                    val cues = (0 until breaths).flatMap { b ->
+                        var t = b * cycle
+                        breath.mapIndexed { p, s ->
+                            val cue = Cue(t, CueAction.Beep(if (p == 0) Tone.HIGH else Tone.LOW))
+                            t += s * 1000L
+                            cue
+                        }
+                    }.filter { it.atMs > 0 } + listOf(Cue(breath[0] * 1000L, CueAction.Speak("and out.")))
+                    step(
+                        "${sideLabel}Breathe", ms,
+                        "${sideSpeech}${breaths} slow breaths. Breathe in.",
+                        cues, RepCounter(breaths, cycle, 0, unit = "Breath"), withCountdown = false,
+                    )
+                }
             }
             Measure.DISTANCE -> {
                 val m = d.distanceM ?: 20

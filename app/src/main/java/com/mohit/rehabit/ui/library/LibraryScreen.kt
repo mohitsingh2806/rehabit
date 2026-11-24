@@ -51,6 +51,7 @@ import com.mohit.rehabit.content.BodyArea
 import com.mohit.rehabit.content.ContentState
 import com.mohit.rehabit.content.Exercise
 import com.mohit.rehabit.content.Plan
+import com.mohit.rehabit.content.PlanCategory
 import com.mohit.rehabit.content.PlanKind
 import com.mohit.rehabit.content.isUser
 import com.mohit.rehabit.ui.common.NoInsets
@@ -76,6 +77,7 @@ fun LibraryScreen(
     var tab by rememberSaveable { mutableStateOf(LibraryTab.PLANS) }
     var query by rememberSaveable { mutableStateOf("") }
     var area by rememberSaveable { mutableStateOf<BodyArea?>(null) }
+    var category by rememberSaveable { mutableStateOf<PlanCategory?>(null) }
     var noEquipment by rememberSaveable { mutableStateOf(false) }
     var deskFriendly by rememberSaveable { mutableStateOf(false) }
     var myEquipment by rememberSaveable { mutableStateOf(false) }
@@ -130,14 +132,33 @@ fun LibraryScreen(
                         when (tab) {
                             LibraryTab.PLANS, LibraryTab.ROUTINES -> {
                                 val kind = if (tab == LibraryTab.PLANS) PlanKind.FOCUSED else PlanKind.ON_DEMAND
-                                val plans = s.bundle.plans
-                                    .filter { it.kind == kind && it.matches(q) }
+                                val ofKind = s.bundle.plans.filter { it.kind == kind }
+                                val categories = ofKind.map { it.category }.distinct().sorted()
+                                val selectedCategory = category?.takeIf { it in categories }
+                                val plans = ofKind
+                                    .filter { it.matches(q) && (selectedCategory == null || it.category == selectedCategory) }
                                     .sortedBy { it.name }
-                                PlanList(plans, s.problems.size, onOpenPlan, onShowProblems, emptyText = when {
-                                    q.isNotEmpty() -> "Nothing matches \"$q\"."
-                                    kind == PlanKind.FOCUSED -> "No plans yet."
-                                    else -> "No routines yet."
-                                })
+                                Column {
+                                    if (categories.size > 1) {
+                                        LazyRow(
+                                            contentPadding = PaddingValues(horizontal = 16.dp),
+                                            horizontalArrangement = Arrangement.spacedBy(8.dp),
+                                        ) {
+                                            items(categories) { cat ->
+                                                FilterChip(
+                                                    selected = selectedCategory == cat,
+                                                    onClick = { category = if (selectedCategory == cat) null else cat },
+                                                    label = { Text(cat.label) },
+                                                )
+                                            }
+                                        }
+                                    }
+                                    PlanList(plans, s.problems.size, onOpenPlan, onShowProblems, emptyText = when {
+                                        q.isNotEmpty() -> "Nothing matches \"$q\"."
+                                        kind == PlanKind.FOCUSED -> "No plans yet."
+                                        else -> "No routines yet."
+                                    })
+                                }
                             }
                             LibraryTab.EXERCISES -> {
                                 val areas = s.bundle.exercises.flatMap { it.bodyAreas }.distinct().sorted()

@@ -1,0 +1,58 @@
+{
+  "id": "yoga-morning-flow",
+  "name": "Morning yoga flow",
+  "kind": "ON_DEMAND",
+  "category": "YOGA",
+  "goal": "A gentle 15-minute flow to wake up the body: breathing, spine, hips, standing strength and balance.",
+  "whoFor": "Anyone who wants a calm, energising start to the day.",
+  "notFor": [
+    "Pregnancy: some poses need changes, so a prenatal class is a better guide",
+    "A current injury flare-up: use that rehab plan first"
+  ],
+  "estMinutes": 15,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Morning yoga flow",
+      "items": [
+        {
+          "exerciseId": "belly-breathing",
+          "dose": {
+            "sets": 1,
+            "durationSec": 60,
+            "tempo": "4-6"
+          }
+        },
+        {
+          "exerciseId": "cat-cow"
+        },
+        {
+          "exerciseId": "downward-dog"
+        },
+        {
+          "exerciseId": "low-lunge"
+        },
+        {
+          "exerciseId": "warrior-two"
+        },
+        {
+          "exerciseId": "triangle-pose"
+        },
+        {
+          "exerciseId": "tree-pose"
+        },
+        {
+          "exerciseId": "chair-pose"
+        },
+        {
+          "exerciseId": "standing-forward-fold"
+        },
+        {
+          "exerciseId": "mountain-pose"
+        }
+      ]
+    }
+  ],
+  "flow": true,
+  "reviewed": false
+}

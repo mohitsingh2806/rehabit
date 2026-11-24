@@ -18,6 +18,7 @@ import com.mohit.rehabit.data.SessionExerciseEntity
 import com.mohit.rehabit.domain.Cue
 import com.mohit.rehabit.domain.CueAction
 import com.mohit.rehabit.domain.SessionItem
+import com.mohit.rehabit.domain.ScriptOptions
 import com.mohit.rehabit.domain.SessionScript
 import com.mohit.rehabit.domain.SlotKey
 import com.mohit.rehabit.domain.Task
@@ -137,6 +138,7 @@ class PlayerViewModel(
             }
         }
         if (items.isEmpty()) return base.copy(error = "Nothing to do in this session.")
+        val flow = (request as? PlayerRequest.PlanPhase)?.let { bundle.plansById[it.planId]?.flow } == true
         val (planId, phaseId) = (request as? PlayerRequest.PlanPhase)?.let { it.planId to it.phaseId } ?: (null to null)
         return base.copy(
             title = title,
@@ -144,7 +146,7 @@ class PlayerViewModel(
             planId = planId,
             phaseId = phaseId,
             items = items,
-            steps = SessionScript.build(items),
+            steps = SessionScript.build(items, if (flow) ScriptOptions.FLOW else ScriptOptions()),
         )
     }
 

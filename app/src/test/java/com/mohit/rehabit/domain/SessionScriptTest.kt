@@ -113,6 +113,29 @@ class SessionScriptTest {
     }
 
     @Test
+    fun breathPacedHoldCountsBreathsWithoutCountdown() {
+        val e = exercise(Measure.HOLD, Laterality.BILATERAL)
+        val work = SessionScript.build(listOf(SessionItem(e, Dose(holdSec = 30, tempo = "4-6")))).single { it.kind == StepKind.WORK }
+        assertEquals(RepCounter(3, 10_000, 0, "Breath"), work.repCounter)
+        assertEquals(30_000L, work.durationMs)
+        val beeps = work.cues.filter { it.action is CueAction.Beep }.map { it.atMs to it.action }
+        assertTrue(beeps.contains(4_000L to CueAction.Beep(Tone.LOW)))   // breathe out
+        assertTrue(beeps.contains(10_000L to CueAction.Beep(Tone.HIGH))) // next breath in
+        assertTrue(beeps.none { it.first == 27_000L || it.first == 28_000L || it.first == 29_000L }) // no countdown
+    }
+
+    @Test
+    fun flowUsesShortTransitionsAfterTheFirstPose() {
+        val a = exercise(Measure.HOLD, Laterality.BILATERAL)
+        val b = a.copy(id = "b", name = "Second pose")
+        val steps = SessionScript.build(listOf(SessionItem(a, Dose(holdSec = 8)), SessionItem(b, Dose(holdSec = 8))), ScriptOptions.FLOW)
+        val prepares = steps.filter { it.kind == StepKind.PREPARE }
+        assertEquals(10_000L, prepares[0].durationMs)
+        assertEquals(4_000L, prepares[1].durationMs)
+        assertEquals("Second pose.", prepares[1].cues.mapNotNull { (it.action as? CueAction.Speak)?.text }.single())
+    }
+
+    @Test
     fun spokenDurations() {
         assertEquals("30 seconds", SessionScript.secondsSpeech(30))
         assertEquals("1 minute", SessionScript.secondsSpeech(60))

@@ -1,0 +1,47 @@
+{
+  "id": "bedtime-yoga",
+  "name": "Bedtime wind-down",
+  "kind": "ON_DEMAND",
+  "category": "YOGA",
+  "goal": "Fifteen minutes of slow breathing and restful poses to switch off before sleep.",
+  "whoFor": "Anyone who wants to relax at the end of the day.",
+  "notFor": [
+    "Pregnancy: some poses need changes, so a prenatal class is a better guide",
+    "A current injury flare-up: use that rehab plan first"
+  ],
+  "estMinutes": 16,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Bedtime wind-down",
+      "items": [
+        {
+          "exerciseId": "belly-breathing"
+        },
+        {
+          "exerciseId": "child-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "seated-forward-fold"
+        },
+        {
+          "exerciseId": "butterfly-pose"
+        },
+        {
+          "exerciseId": "supine-twist"
+        },
+        {
+          "exerciseId": "legs-up-the-wall"
+        },
+        {
+          "exerciseId": "savasana"
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

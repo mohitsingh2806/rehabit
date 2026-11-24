@@ -1,0 +1,176 @@
+{
+  "id": "sun-salutation",
+  "name": "Gentle sun salutation",
+  "kind": "ON_DEMAND",
+  "category": "YOGA",
+  "goal": "Two slow rounds of a gentle sun salutation: one breath per pose (three in downward dog), linking the poses into a flow. A great 6-minute wake-up.",
+  "whoFor": "Beginners and up. Bend your knees freely and lower your knees in plank.",
+  "notFor": [
+    "Pregnancy: some poses need changes, so a prenatal class is a better guide",
+    "A current injury flare-up: use that rehab plan first"
+  ],
+  "estMinutes": 6,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Gentle sun salutation",
+      "items": [
+        {
+          "exerciseId": "mountain-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "standing-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "half-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "plank-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          },
+          "note": "Knees down if you like."
+        },
+        {
+          "exerciseId": "cobra-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "downward-dog",
+          "dose": {
+            "sets": 1,
+            "holdSec": 24,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "half-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "standing-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "mountain-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "mountain-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "standing-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "half-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "plank-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          },
+          "note": "Knees down if you like."
+        },
+        {
+          "exerciseId": "cobra-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "downward-dog",
+          "dose": {
+            "sets": 1,
+            "holdSec": 24,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "half-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "standing-forward-fold",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "mountain-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 8,
+            "tempo": "4-4"
+          }
+        },
+        {
+          "exerciseId": "child-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        }
+      ]
+    }
+  ],
+  "flow": true,
+  "reviewed": false
+}
