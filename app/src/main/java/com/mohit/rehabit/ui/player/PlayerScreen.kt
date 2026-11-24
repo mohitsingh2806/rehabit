@@ -3,6 +3,7 @@ package com.mohit.rehabit.ui.player
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ExperimentalLayoutApi
 import androidx.compose.foundation.layout.FlowRow
@@ -47,6 +48,8 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
+import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -142,12 +145,13 @@ private fun KeepScreenOn() {
 private fun Active(s: PlayerState, vm: PlayerViewModel, onCloseRequest: () -> Unit) {
     val step = s.step ?: return
     val e = step.exercise
-    Column(Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 8.dp)) {
+    // Everything fits on one screen (no scrolling mid-exercise): the timer takes whatever space is left.
+    Column(Modifier.fillMaxSize().padding(horizontal = 16.dp, vertical = 4.dp)) {
         // Header
         Row(verticalAlignment = Alignment.CenterVertically) {
             IconButton(onClick = onCloseRequest) { Icon(Icons.Filled.Close, contentDescription = "End session") }
             Column(Modifier.weight(1f)) {
-                Text(s.title, style = MaterialTheme.typography.titleMedium, maxLines = 1)
+                Text(s.title, style = MaterialTheme.typography.titleSmall, maxLines = 1, overflow = TextOverflow.Ellipsis)
                 Text(
                     "Exercise ${step.itemIndex + 1} of ${s.items.size}",
                     style = MaterialTheme.typography.labelMedium,
@@ -158,14 +162,11 @@ private fun Active(s: PlayerState, vm: PlayerViewModel, onCloseRequest: () -> Un
         }
         LinearProgressIndicator(
             progress = { (s.index + 1f) / s.steps.size },
-            modifier = Modifier.fillMaxWidth().padding(vertical = 8.dp),
+            modifier = Modifier.fillMaxWidth().padding(vertical = 6.dp),
         )
 
-        Column(
-            Modifier.weight(1f).fillMaxWidth().verticalScroll(rememberScrollState()),
-            horizontalAlignment = Alignment.CenterHorizontally,
-        ) {
-            Spacer(Modifier.height(8.dp))
+        // Step title
+        Column(Modifier.fillMaxWidth(), horizontalAlignment = Alignment.CenterHorizontally) {
             Text(
                 step.label.uppercase(),
                 style = MaterialTheme.typography.labelLarge,
@@ -178,77 +179,95 @@ private fun Active(s: PlayerState, vm: PlayerViewModel, onCloseRequest: () -> Un
             )
             Text(
                 e.name,
-                style = MaterialTheme.typography.headlineMedium,
+                style = MaterialTheme.typography.headlineSmall,
                 fontWeight = FontWeight.Bold,
                 textAlign = TextAlign.Center,
+                maxLines = 2,
+                overflow = TextOverflow.Ellipsis,
             )
             Text(
                 stepSubtitle(step),
-                style = MaterialTheme.typography.bodyLarge,
+                style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
                 textAlign = TextAlign.Center,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
             )
-            Spacer(Modifier.height(20.dp))
+        }
 
+        // Timer / target: takes the remaining space
+        BoxWithConstraints(
+            Modifier.weight(1f).fillMaxWidth().padding(vertical = 8.dp),
+            contentAlignment = Alignment.Center,
+        ) {
+            val ringSize = minOf(maxWidth, maxHeight).coerceAtMost(260.dp)
             val duration = step.durationMs
-            if (duration != null) {
-                TimerRing(step, s.elapsedMs, duration)
-            } else {
-                Text(step.target.orEmpty(), style = MaterialTheme.typography.displayMedium, fontWeight = FontWeight.Bold)
-                Text("Tap Done when you finish", color = MaterialTheme.colorScheme.onSurfaceVariant)
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                if (duration != null) {
+                    TimerRing(step, s.elapsedMs, duration, ringSize)
+                } else {
+                    Text(step.target.orEmpty(), style = MaterialTheme.typography.displaySmall, fontWeight = FontWeight.Bold)
+                    Text("Tap Done when you finish", color = MaterialTheme.colorScheme.onSurfaceVariant)
+                }
+                if (s.paused) {
+                    Text("Paused", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.secondary)
+                }
             }
-            if (s.paused) {
-                Text("Paused", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.secondary)
-            }
+        }
 
-            if (step.kind == StepKind.PREPARE || step.kind == StepKind.WORK) {
-                Spacer(Modifier.height(20.dp))
-                Card(Modifier.fillMaxWidth()) {
-                    Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
-                        e.cues.forEach { Text("• $it", style = MaterialTheme.typography.titleMedium) }
-                        if (step.kind == StepKind.PREPARE) {
-                            Spacer(Modifier.height(4.dp))
-                            Text(
-                                "Stop if: ${e.stopIf}",
-                                style = MaterialTheme.typography.bodyMedium,
-                                color = MaterialTheme.colorScheme.error,
-                            )
-                        }
+        // Cues (compact)
+        if (step.kind == StepKind.PREPARE || step.kind == StepKind.WORK) {
+            Card(Modifier.fillMaxWidth()) {
+                Column(Modifier.padding(horizontal = 12.dp, vertical = 8.dp)) {
+                    e.cues.forEach { Text("• $it", style = MaterialTheme.typography.bodyLarge, maxLines = 1, overflow = TextOverflow.Ellipsis) }
+                    if (step.kind == StepKind.PREPARE) {
+                        Text(
+                            "Stop if: ${e.stopIf}",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.error,
+                            maxLines = 2,
+                            overflow = TextOverflow.Ellipsis,
+                        )
                     }
                 }
             }
-            val next = s.nextExercise
-            if (next != null && step.kind != StepKind.PREPARE) {
-                Spacer(Modifier.height(12.dp))
-                Text("Next: ${next.name}", color = MaterialTheme.colorScheme.onSurfaceVariant)
-            }
         }
+        val next = s.nextExercise
+        Text(
+            if (next != null && step.kind != StepKind.PREPARE) "Next: ${next.name}" else " ",
+            style = MaterialTheme.typography.bodyMedium,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
+            maxLines = 1,
+            overflow = TextOverflow.Ellipsis,
+            modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+            textAlign = TextAlign.Center,
+        )
 
         // Main action
         when {
-            step.kind == StepKind.PREPARE -> Button(onClick = vm::skip, modifier = Modifier.fillMaxWidth().height(64.dp)) {
+            step.kind == StepKind.PREPARE -> Button(onClick = vm::skip, modifier = Modifier.fillMaxWidth().height(56.dp)) {
                 Text("Start now", style = MaterialTheme.typography.titleMedium)
             }
             step.kind == StepKind.WORK && step.durationMs == null ->
-                Button(onClick = vm::done, modifier = Modifier.fillMaxWidth().height(64.dp)) {
+                Button(onClick = vm::done, modifier = Modifier.fillMaxWidth().height(56.dp)) {
                     Text("Done", style = MaterialTheme.typography.titleMedium)
                 }
-            step.kind == StepKind.WORK -> FilledTonalButton(onClick = vm::done, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            step.kind == StepKind.WORK -> FilledTonalButton(onClick = vm::done, modifier = Modifier.fillMaxWidth().height(52.dp)) {
                 Text("Finished early")
             }
-            else -> FilledTonalButton(onClick = vm::skip, modifier = Modifier.fillMaxWidth().height(56.dp)) {
+            else -> FilledTonalButton(onClick = vm::skip, modifier = Modifier.fillMaxWidth().height(52.dp)) {
                 Text(if (step.kind == StepKind.REST) "Skip rest" else "Ready")
             }
         }
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(6.dp))
         Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
-            OutlinedButton(onClick = vm::back, modifier = Modifier.weight(1f).height(56.dp)) { Text("Back") }
-            Button(onClick = vm::togglePause, modifier = Modifier.weight(1f).height(56.dp)) {
+            OutlinedButton(onClick = vm::back, modifier = Modifier.weight(1f).height(52.dp)) { Text("Back") }
+            Button(onClick = vm::togglePause, modifier = Modifier.weight(1f).height(52.dp)) {
                 Text(if (s.paused) "Resume" else "Pause")
             }
-            OutlinedButton(onClick = vm::skipExercise, modifier = Modifier.weight(1f).height(56.dp)) { Text("Skip") }
+            OutlinedButton(onClick = vm::skipExercise, modifier = Modifier.weight(1f).height(52.dp)) { Text("Skip") }
         }
-        Spacer(Modifier.height(8.dp))
+        Spacer(Modifier.height(6.dp))
     }
 }
 
@@ -262,14 +281,15 @@ private fun stepSubtitle(step: Step): String {
 }
 
 @Composable
-private fun TimerRing(step: Step, elapsedMs: Long, durationMs: Long) {
+private fun TimerRing(step: Step, elapsedMs: Long, durationMs: Long, size: Dp) {
     val progress = (elapsedMs.toFloat() / durationMs).coerceIn(0f, 1f)
     val remainingSec = ceil((durationMs - elapsedMs).coerceAtLeast(0) / 1000.0).toInt()
-    Box(Modifier.size(240.dp), contentAlignment = Alignment.Center) {
+    val big = size >= 180.dp
+    Box(Modifier.size(size), contentAlignment = Alignment.Center) {
         CircularProgressIndicator(
             progress = { 1f - progress },
             modifier = Modifier.fillMaxSize(),
-            strokeWidth = 14.dp,
+            strokeWidth = if (big) 14.dp else 10.dp,
             trackColor = MaterialTheme.colorScheme.surfaceVariant,
         )
         Column(horizontalAlignment = Alignment.CenterHorizontally) {
@@ -278,12 +298,16 @@ private fun TimerRing(step: Step, elapsedMs: Long, durationMs: Long) {
                 val rep = counter.currentRep(elapsedMs)
                 Text(
                     if (rep == 0) "Get set" else "Rep $rep of ${counter.reps}",
-                    style = MaterialTheme.typography.headlineSmall,
+                    style = if (big) MaterialTheme.typography.headlineSmall else MaterialTheme.typography.titleMedium,
                     fontWeight = FontWeight.Bold,
                 )
                 Text(timeText(remainingSec), style = MaterialTheme.typography.titleMedium)
             } else {
-                Text(timeText(remainingSec), style = MaterialTheme.typography.displayLarge, fontWeight = FontWeight.Bold)
+                Text(
+                    timeText(remainingSec),
+                    style = if (big) MaterialTheme.typography.displayLarge else MaterialTheme.typography.displaySmall,
+                    fontWeight = FontWeight.Bold,
+                )
             }
         }
     }
