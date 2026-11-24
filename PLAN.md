@@ -1,6 +1,6 @@
 # Rehabit — Exercise & Rehab Routine App (Android) — Plan
 
-> **Status (2026-11-24): planning. No code yet.** This doc holds all context so any future session
+> **Status (2026-11-24): M0 done** (skeleton, content schema + CI validator, 14 exercises, signed CI build + releases). Next: M1. This doc holds all context so any future session
 > can pick up from here. **Flaws & fixes (§3) are LOCKED** with the user's refinements (§16).
 > **All open questions (§15) answered 2026-11-24**; decisions in §16, which wins over any older text.
 > **Generic app (2026-11-24):** content and defaults are written for anyone, never tailored to the
