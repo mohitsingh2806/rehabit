@@ -76,7 +76,8 @@ class AgendaRepository(
             answers = parseAnswers(e.answers),
             reminderMode = e.reminderMode,
             dailyReminderMin = e.dailyReminderMin,
-            active = e.status == FollowStatus.ACTIVE,
+            active = e.status != FollowStatus.PAUSED,
+            endDay = e.endedEpochDay,
         )
     }
 
@@ -242,6 +243,23 @@ class AgendaRepository(
         val e = db.enrollmentDao().get(enrollmentId) ?: return
         db.enrollmentDao().update(change(e))
         onChanged()
+    }
+
+    /**
+     * Pause ends the current follow today and keeps a paused copy; resume restarts that copy from
+     * today. Paused days are then simply not covered by any follow, so history stays accurate.
+     */
+    suspend fun pause(enrollmentId: Long) {
+        val dao = db.enrollmentDao()
+        val e = dao.get(enrollmentId) ?: return
+        val today = LocalDate.now().toEpochDay()
+        dao.update(e.copy(status = FollowStatus.ENDED, endedEpochDay = today))
+        dao.insert(e.copy(id = 0, status = FollowStatus.PAUSED, endedEpochDay = null, createdAt = System.currentTimeMillis()))
+        onChanged()
+    }
+
+    suspend fun resume(enrollmentId: Long) = updateEnrollment(enrollmentId) {
+        it.copy(status = FollowStatus.ACTIVE, startEpochDay = LocalDate.now().toEpochDay())
     }
 
     suspend fun stop(enrollmentId: Long) = updateEnrollment(enrollmentId) {

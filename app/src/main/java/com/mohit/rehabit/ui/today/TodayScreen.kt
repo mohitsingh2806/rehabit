@@ -21,7 +21,9 @@ import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
 import androidx.compose.material.icons.filled.Check
 import androidx.compose.material.icons.filled.PlayArrow
 import androidx.compose.material.icons.filled.Warning
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.AssistChip
+import androidx.compose.material3.Slider
 import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
@@ -43,6 +45,7 @@ import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
+import androidx.compose.runtime.mutableStateMapOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
@@ -65,6 +68,12 @@ import com.mohit.rehabit.content.ContentState
 import com.mohit.rehabit.content.Plan
 import com.mohit.rehabit.content.PlanKind
 import com.mohit.rehabit.data.AgendaRepository
+import com.mohit.rehabit.data.CheckInPrompt
+import com.mohit.rehabit.data.ExcuseReason
+import com.mohit.rehabit.data.HistoryRepository
+import com.mohit.rehabit.data.ProgressState
+import com.mohit.rehabit.domain.InsightKind
+import com.mohit.rehabit.ui.progress.InsightCard
 import com.mohit.rehabit.data.ReminderMode
 import com.mohit.rehabit.data.TaskStatus
 import com.mohit.rehabit.data.TodayState
@@ -80,11 +89,27 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.stateIn
 import kotlinx.coroutines.launch
 import java.time.LocalDate
+import java.time.YearMonth
+import kotlin.math.roundToInt
 import java.time.format.DateTimeFormatter
 
-class TodayViewModel(private val repo: AgendaRepository) : ViewModel() {
+class TodayViewModel(private val repo: AgendaRepository, private val history: HistoryRepository) : ViewModel() {
     val state: StateFlow<TodayState?> =
         repo.todayFlow().stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
+    /** Check-in prompts, pain-rule warnings and today's excuse (from the progress data). */
+    val progress: StateFlow<ProgressState?> =
+        history.progressFlow(YearMonth.now()).stateIn(viewModelScope, SharingStarted.WhileSubscribed(5_000), null)
+
+    fun saveCheckIns(values: Map<String, Int>) {
+        val day = day()
+        viewModelScope.launch { history.saveCheckIns(day, values) }
+    }
+
+    fun setExcused(reason: ExcuseReason?) {
+        val day = day()
+        viewModelScope.launch { history.setExcused(day, reason) }
+    }
 
     private fun day(): Long = state.value?.agenda?.day ?: LocalDate.now().toEpochDay()
 
@@ -122,7 +147,7 @@ fun TodayScreen(
     onOpenSettings: () -> Unit,
 ) {
     val context = LocalContext.current
-    val vm: TodayViewModel = viewModel { TodayViewModel(context.container.agenda) }
+    val vm: TodayViewModel = viewModel { TodayViewModel(context.container.agenda, context.container.history) }
     val state by vm.state.collectAsStateWithLifecycle()
     val content by context.container.content.state.collectAsStateWithLifecycle()
     val allPlans = (content as? ContentState.Ready)?.bundle?.plans.orEmpty()
@@ -174,6 +199,11 @@ private fun Checklist(
         onPauseOrDispose { }
     }
     val notificationsOff = remember(resumeTick) { !NotificationManagerCompat.from(context).areNotificationsEnabled() }
+    val progress by vm.progress.collectAsStateWithLifecycle()
+    val warnings = progress?.insights.orEmpty().filter { it.kind == InsightKind.WARNING }
+    val prompts = progress?.checkInPrompts.orEmpty()
+    val excusedToday = progress?.excused?.get(s.agenda.day)
+    var excuseDialog by remember { mutableStateOf(false) }
     val wantsReminders = s.plans.any { it.active && it.reminderMode != ReminderMode.OFF }
     val agenda = s.agenda
 
@@ -200,7 +230,13 @@ private fun Checklist(
             }
         }
 
+        items(warnings, key = { "w-${it.title}" }) { InsightCard(it) }
+
         item(key = "hero") { Hero(s, vm, onStartSlot) }
+
+        if (prompts.isNotEmpty()) {
+            item(key = "checkin") { CheckInCard(prompts) { vm.saveCheckIns(it) } }
+        }
 
         item(key = "toggles") {
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp), verticalAlignment = Alignment.CenterVertically) {
@@ -210,11 +246,34 @@ private fun Checklist(
                     label = { Text(if (agenda.runDay) "Ran today ✓" else "I ran today") },
                 )
                 FilterChip(
+                    selected = excusedToday != null,
+                    onClick = { if (excusedToday != null) vm.setExcused(null) else excuseDialog = true },
+                    label = { Text(excusedToday?.let { "Excused: ${it.label}" } ?: "Rest day") },
+                )
+                FilterChip(
                     selected = agenda.coreOnly,
                     onClick = { vm.setCoreOnly(!agenda.coreOnly) },
                     label = {
                         Text(if (agenda.coreOnly && agenda.hiddenOptional > 0) "Core only (${agenda.hiddenOptional} hidden)" else "Core only")
                     },
+                )
+            }
+        }
+
+        if (excuseDialog) {
+            item(key = "excuse-dialog") {
+                AlertDialog(
+                    onDismissRequest = { excuseDialog = false },
+                    title = { Text("Take today off?") },
+                    text = { Text("Today won't count against your weekly progress. Your checklist stays, in case you feel up to it.") },
+                    confirmButton = {
+                        Column {
+                            ExcuseReason.entries.forEach { r ->
+                                TextButton(onClick = { excuseDialog = false; vm.setExcused(r) }) { Text(r.label) }
+                            }
+                        }
+                    },
+                    dismissButton = { TextButton(onClick = { excuseDialog = false }) { Text("Cancel") } },
                 )
             }
         }
@@ -469,6 +528,38 @@ private fun NoPlans(
                 Text("Quick start", style = MaterialTheme.typography.titleMedium, color = MaterialTheme.colorScheme.primary)
             }
             items(routines, key = { "r-${it.id}" }) { r -> RoutineCard(r, onOpenPlan, onStartRoutine) }
+        }
+    }
+}
+
+@Composable
+private fun CheckInCard(prompts: List<CheckInPrompt>, onSave: (Map<String, Int>) -> Unit) {
+    val values = remember(prompts) { mutableStateMapOf<String, Float>() }
+    Card(
+        Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
+    ) {
+        Column(Modifier.padding(16.dp)) {
+            Text("Quick check-in", style = MaterialTheme.typography.titleMedium, fontWeight = FontWeight.Bold)
+            Text(
+                "About 10 seconds. 0 = no pain, 10 = worst. It shows your trend over the weeks.",
+                style = MaterialTheme.typography.bodySmall,
+            )
+            prompts.forEach { p ->
+                Spacer(Modifier.height(8.dp))
+                Text(p.metric, style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                val v = values[p.planId]
+                Text(
+                    (if (prompts.size > 1) p.planName + " · " else "") + (v?.let { "${it.roundToInt()} out of 10" } ?: "Move the slider"),
+                    style = MaterialTheme.typography.labelMedium,
+                )
+                Slider(value = v ?: 0f, onValueChange = { values[p.planId] = it }, valueRange = 0f..10f, steps = 9)
+            }
+            Button(
+                onClick = { onSave(values.mapValues { it.value.roundToInt() }) },
+                enabled = prompts.all { it.planId in values },
+                modifier = Modifier.fillMaxWidth(),
+            ) { Text("Save check-in") }
         }
     }
 }

@@ -94,7 +94,22 @@ abstract class SessionDao {
         """,
     )
     abstract fun observeRecent(limit: Int): Flow<List<SessionSummary>>
+
+    @Query("SELECT * FROM sessions WHERE startedAt >= :fromMillis ORDER BY startedAt")
+    abstract fun observeSince(fromMillis: Long): Flow<List<SessionEntity>>
+
+    @Query(
+        """
+        SELECT s.planId AS planId, s.startedAt AS startedAt, e.exerciseId AS exerciseId
+        FROM session_exercises e JOIN sessions s ON e.sessionId = s.id
+        WHERE e.feedback = 'HURT' AND s.startedAt >= :fromMillis
+        """,
+    )
+    abstract fun observeHurtSince(fromMillis: Long): Flow<List<HurtRow>>
 }
+
+/** An exercise rated "Hurt" at the end of a session. */
+data class HurtRow(val planId: String?, val startedAt: Long, val exerciseId: String)
 
 // ---- Following plans (v2) ----
 // Enum values are stored by name: append-only.
@@ -149,6 +164,10 @@ data class RunDayEntity(@PrimaryKey val epochDay: Long)
 
 @Dao
 interface EnrollmentDao {
+    /** All follows, including ended ones (history needs them). */
+    @Query("SELECT * FROM enrollments ORDER BY id")
+    fun observeAll(): Flow<List<EnrollmentEntity>>
+
     @Query("SELECT * FROM enrollments WHERE status != 'ENDED' ORDER BY id")
     fun observeCurrent(): Flow<List<EnrollmentEntity>>
 
@@ -172,6 +191,9 @@ interface TaskLogDao {
 
     @Query("SELECT * FROM task_logs WHERE epochDay = :day")
     suspend fun getDay(day: Long): List<TaskLogEntity>
+
+    @Query("SELECT * FROM task_logs WHERE epochDay BETWEEN :from AND :to")
+    fun observeRange(from: Long, to: Long): Flow<List<TaskLogEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun upsertAll(logs: List<TaskLogEntity>)
@@ -198,6 +220,51 @@ interface RunDayDao {
     suspend fun delete(day: Long)
 }
 
+// ---- Progress (v3) ----
+
+/** A symptom score (0-10) for a plan's tracked metric on a day. One per plan per day. */
+@Entity(
+    tableName = "check_ins",
+    indices = [Index(value = ["epochDay", "planId"], unique = true)],
+)
+data class CheckInEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    val epochDay: Long,
+    val planId: String,
+    val value: Int,
+    val timestamp: Long,
+)
+
+/** Why a day doesn't count against adherence. Stored by name: append-only. */
+enum class ExcuseReason(val label: String) { SICK("Sick"), TRAVEL("Travelling"), FLARE("Flare-up"), OTHER("Other") }
+
+@Entity(tableName = "excused_days")
+data class ExcusedDayEntity(@PrimaryKey val epochDay: Long, val reason: ExcuseReason)
+
+@Dao
+interface CheckInDao {
+    @Query("SELECT * FROM check_ins ORDER BY epochDay")
+    fun observeAll(): Flow<List<CheckInEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsertAll(items: List<CheckInEntity>)
+
+    @Query("DELETE FROM check_ins WHERE epochDay = :day AND planId = :planId")
+    suspend fun delete(day: Long, planId: String)
+}
+
+@Dao
+interface ExcusedDayDao {
+    @Query("SELECT * FROM excused_days WHERE epochDay BETWEEN :from AND :to")
+    fun observeRange(from: Long, to: Long): Flow<List<ExcusedDayEntity>>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun upsert(day: ExcusedDayEntity)
+
+    @Query("DELETE FROM excused_days WHERE epochDay = :day")
+    suspend fun delete(day: Long)
+}
+
 @Database(
     entities = [
         SessionEntity::class,
@@ -205,8 +272,10 @@ interface RunDayDao {
         EnrollmentEntity::class,
         TaskLogEntity::class,
         RunDayEntity::class,
+        CheckInEntity::class,
+        ExcusedDayEntity::class,
     ],
-    version = 2,
+    version = 3,
     exportSchema = false,
 )
 abstract class RehabitDatabase : RoomDatabase() {
@@ -214,6 +283,25 @@ abstract class RehabitDatabase : RoomDatabase() {
     abstract fun enrollmentDao(): EnrollmentDao
     abstract fun taskLogDao(): TaskLogDao
     abstract fun runDayDao(): RunDayDao
+    abstract fun checkInDao(): CheckInDao
+    abstract fun excusedDayDao(): ExcusedDayDao
+}
+
+/** v3: symptom check-ins and excused days. */
+val MIGRATION_2_3 = object : Migration(2, 3) {
+    override fun migrate(db: SupportSQLiteDatabase) {
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `check_ins` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                "`epochDay` INTEGER NOT NULL, `planId` TEXT NOT NULL, `value` INTEGER NOT NULL, `timestamp` INTEGER NOT NULL)",
+        )
+        db.execSQL(
+            "CREATE UNIQUE INDEX IF NOT EXISTS `index_check_ins_epochDay_planId` ON `check_ins` (`epochDay`, `planId`)",
+        )
+        db.execSQL(
+            "CREATE TABLE IF NOT EXISTS `excused_days` (`epochDay` INTEGER NOT NULL, `reason` TEXT NOT NULL, " +
+                "PRIMARY KEY(`epochDay`))",
+        )
+    }
 }
 
 /** v2: following plans (enrollments, daily ticks, run days). Session history is untouched. */

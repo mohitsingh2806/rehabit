@@ -33,6 +33,7 @@ class SettingsRepository(private val context: Context) {
         val desk1 = intPreferencesKey("desk1_min")
         val desk2 = intPreferencesKey("desk2_min")
         val equipment = stringSetPreferencesKey("equipment")
+        val checkInDays = intPreferencesKey("check_in_days_mask")
         val coreOnlyDay = longPreferencesKey("core_only_day")
         val lastReminderHandled = longPreferencesKey("last_reminder_handled")
     }
@@ -54,6 +55,7 @@ class SettingsRepository(private val context: Context) {
             equipment = p[Keys.equipment]
                 ?.mapNotNull { name -> runCatching { Equipment.valueOf(name) }.getOrNull() }
                 ?.toSet() ?: d.equipment,
+            checkInDays = p[Keys.checkInDays]?.let(::daysFromMask) ?: d.checkInDays,
             coreOnlyDay = p[Keys.coreOnlyDay] ?: d.coreOnlyDay,
         )
     }
@@ -75,6 +77,7 @@ class SettingsRepository(private val context: Context) {
             p[Keys.desk1] = d.desk1Min
             p[Keys.desk2] = d.desk2Min
             p[Keys.equipment] = d.equipment.map { it.name }.toSet()
+            p[Keys.checkInDays] = maskFromDays(d.checkInDays)
         }
     }
 

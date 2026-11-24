@@ -17,7 +17,10 @@ and red flags, and a hands-free guided player (timers, left/right sides, voice c
 metronome, vibration) with a session log.
 Milestone 2: follow plans daily: set up your day, a Today checklist spread over time slots (merged
 across plans, Core only, "I ran today"), and gentle reminders (once per slot or once a day, never
-repeated) with Start / Done / Snooze. Progress tracking and check-ins come next (see PLAN.md §13).
+repeated) with Start / Done / Snooze.
+Milestone 3: Progress: month calendar (each day marked with colour + symbol, tap for details, mark
+sick / travel / flare-up days), weekly progress per plan, quick symptom check-ins with trend charts,
+and pain-rule tips ("ease off" / "nice progress"). Next: plan builder, own photos, backup.
 
 ## Install
 Every push to `main` builds a signed APK and publishes it as a GitHub Release:
@@ -49,7 +52,8 @@ app/src/main/java/com/mohit/rehabit/
   RehabitApp.kt      Application + AppContainer (manual DI)
   content/           schema, loader, validator (pure Kotlin) + ContentRepository (assets)
   data/              Room database (sessions, followed plans, ticks, run days), settings, AgendaRepository
-  domain/            pure logic, unit-tested: Agenda (what's due today, merging, reminders),
+  domain/            pure logic, unit-tested: Agenda (what's due today, merging, reminders), History
+                     (day scores, weekly adherence, pain-rule insights),
                      SessionScript (doses → player steps), dose/schedule text
   player/            SessionAudio: offline voice, beeps, vibration
   reminders/         ReminderScheduler (AlarmManager), AlarmReceiver, BootReceiver, Notifier

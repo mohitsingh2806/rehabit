@@ -30,6 +30,8 @@ data class FollowedPlan(
     val reminderMode: ReminderMode = ReminderMode.SLOTS,
     val dailyReminderMin: Int = 20 * 60,
     val active: Boolean = true,
+    /** First day this follow no longer covers (it ended), or null. */
+    val endDay: Long? = null,
 ) {
     val phaseIndex: Int get() = plan.phases.indexOfFirst { it.id == phaseId }
 
@@ -122,7 +124,7 @@ object AgendaBuilder {
 
         val raws = mutableListOf<Raw>()
         for (plan in plans) {
-            if (!plan.active || day < plan.startDay) continue
+            if (!plan.active || day < plan.startDay || (plan.endDay != null && day >= plan.endDay)) continue
             plan.items.forEachIndexed { i, item ->
                 if (!plan.includes(item)) return@forEachIndexed
                 val s = item.schedule ?: return@forEachIndexed

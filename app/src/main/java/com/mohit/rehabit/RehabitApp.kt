@@ -5,7 +5,9 @@ import android.content.Context
 import androidx.room.Room
 import com.mohit.rehabit.content.ContentRepository
 import com.mohit.rehabit.data.AgendaRepository
+import com.mohit.rehabit.data.HistoryRepository
 import com.mohit.rehabit.data.MIGRATION_1_2
+import com.mohit.rehabit.data.MIGRATION_2_3
 import com.mohit.rehabit.data.RehabitDatabase
 import com.mohit.rehabit.data.SettingsRepository
 import com.mohit.rehabit.reminders.Notifier
@@ -34,12 +36,13 @@ class AppContainer(context: Context) {
 
     // Every schema change needs a Migration here: never a destructive fallback.
     val db: RehabitDatabase = Room.databaseBuilder(context, RehabitDatabase::class.java, "rehabit.db")
-        .addMigrations(MIGRATION_1_2)
+        .addMigrations(MIGRATION_1_2, MIGRATION_2_3)
         .build()
 
     val settings = SettingsRepository(context)
     val agenda = AgendaRepository(context, content, db, settings)
     val scheduler = ReminderScheduler(context, agenda)
+    val history = HistoryRepository(content, db, settings, agenda)
 
     init {
         agenda.onChanged = { scheduler.rescheduleAll() }

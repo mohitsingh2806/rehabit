@@ -1,6 +1,6 @@
 # Rehabit — Exercise & Rehab Routine App (Android) — Plan
 
-> **Status (2026-11-24): M2 built** (follow plans daily: setup of your day, "Is this plan for you?" + chooser + side + phase, Today checklist with dedupe / Core only / I ran today, gentle reminders with Start/Done/Snooze, desk breaks). Next: M3 (progress, check-ins, pain rules). This doc holds all context so any future session
+> **Status (2026-11-24): M3 built** (Progress: month calendar with status + symbol per day and day details, excused days, weekly adherence per plan, symptom check-ins (Today card on check-in days) with trend charts, pain-rule insights on Today and Progress). Next: M4 (Builder, own photos, backup/export). This doc holds all context so any future session
 > can pick up from here. **Flaws & fixes (§3) are LOCKED** with the user's refinements (§16).
 > **All open questions (§15) answered 2026-11-24**; decisions in §16, which wins over any older text.
 > **Generic app (2026-11-24):** content and defaults are written for anyone, never tailored to the
@@ -607,4 +607,8 @@ Nothing open. (No per-user condition intake: the app is generic, see §16 "gener
 | 2026-11-24 | M2 | Run day = "I ran today" chip, or any completed session of a RUNNING routine. Items marked not-on-run-day move to the next day (1-day shift), unless already ticked before the run. |
 | 2026-11-24 | M2 | Finished sessions tick the checklist: slot sessions tick their tasks (Done / Partly done); other sessions tick the earliest pending task of each exercise done. |
 | 2026-11-24 | Q8 | Chooser implemented as plan `chooser` questions + item `showIf`; first used by the lower back plan ("which position eases your pain?"). |
+| 2026-11-24 | M3 | Pause = end the current follow today + keep a paused copy; resume restarts it from today. Paused days are covered by no follow, so history needs no pause log. |
+| 2026-11-24 | M3 | Adherence counts **core items on finished days** (today is left out until it's over; excused days excluded); partly done = ½. Calendar marks use the fixed status colours **plus a symbol and legend** (✓ ◐ ✕ E), never colour alone. |
+| 2026-11-24 | M3 | Pain-rule insights (suggestions only): check-in up ≥2 vs the previous one or 3 rising in a row → ease off; ≥3 "Hurt" ratings / "Skipped: pain" for a plan in 7 days → easier versions; pain during last session ≥6/10 (within 2 days) → ease off; check-in down ≥2 over the last 6 weeks → encouragement. |
+| 2026-11-24 | M3 | Check-in days editable in Your day (default Mon/Wed/Fri); a check-in can also be added any time from Progress. |
 | 2026-11-24 | Q6b | **AI-prompt import dropped**: user not convinced it's useful. Personal additions via manual Builder (M4). |

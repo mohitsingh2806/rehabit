@@ -41,6 +41,8 @@ data class DayPrefs(
     val desk1Min: Int = 11 * 60,
     val desk2Min: Int = 15 * 60,
     val equipment: Set<Equipment> = emptySet(),
+    /** Days the symptom check-in card shows on Today (default Mon, Wed, Fri). */
+    val checkInDays: Set<DayOfWeek> = setOf(DayOfWeek.MONDAY, DayOfWeek.WEDNESDAY, DayOfWeek.FRIDAY),
     /** The day (epoch day) "Core only" is switched on for; resets automatically the next day. */
     val coreOnlyDay: Long = -1,
 ) {

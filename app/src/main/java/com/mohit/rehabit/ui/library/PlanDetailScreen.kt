@@ -383,11 +383,7 @@ private fun FollowingCard(plan: Plan, e: EnrollmentEntity, bundle: ContentBundle
             }
             Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                 TextButton(onClick = {
-                    scope.launch {
-                        agenda.updateEnrollment(e.id) {
-                            it.copy(status = if (it.status == FollowStatus.PAUSED) FollowStatus.ACTIVE else FollowStatus.PAUSED)
-                        }
-                    }
+                    scope.launch { if (e.status == FollowStatus.PAUSED) agenda.resume(e.id) else agenda.pause(e.id) }
                 }) { Text(if (e.status == FollowStatus.PAUSED) "Resume" else "Pause") }
                 TextButton(onClick = { dialog = "stop" }) { Text("Stop following") }
             }

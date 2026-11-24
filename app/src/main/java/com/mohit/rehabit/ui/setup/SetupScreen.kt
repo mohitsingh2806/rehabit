@@ -128,6 +128,27 @@ fun SetupScreen(firstRun: Boolean, onBack: () -> Unit, onDone: () -> Unit) {
             TimeRow("Desk break 2", p.desk2Min, enabled = p.deskBreaks) { m -> update { copy(desk2Min = m) } }
 
             HorizontalDivider()
+            Section("Symptom check-ins")
+            Text(
+                "On these days Today asks for a quick 0-10 score for each rehab plan you follow (about 10 seconds).",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(horizontal = 16.dp),
+            )
+            FlowRow(
+                Modifier.padding(16.dp),
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
+            ) {
+                DayOfWeek.entries.forEach { d ->
+                    FilterChip(
+                        selected = d in p.checkInDays,
+                        onClick = { update { copy(checkInDays = if (d in checkInDays) checkInDays - d else checkInDays + d) } },
+                        label = { Text(d.getDisplayName(TextStyle.SHORT, Locale.getDefault())) },
+                    )
+                }
+            }
+
+            HorizontalDivider()
             Section("Equipment you have")
             Text(
                 "Used to suggest swaps later. Every exercise has a no-equipment alternative.",
