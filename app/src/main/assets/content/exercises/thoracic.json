@@ -2,128 +2,262 @@
   {
     "id": "open-book",
     "name": "Open book",
-    "aliases": ["Side-lying thoracic rotation"],
-    "bodyAreas": ["THORACIC"],
+    "aliases": [
+      "Side-lying thoracic rotation"
+    ],
+    "bodyAreas": [
+      "THORACIC"
+    ],
     "kind": "MOBILITY",
     "position": "SIDE_LYING",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 8 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 8
+    },
     "why": "Turns the mid back, which stiffens with sitting. A mobile mid back takes strain off both the neck and the lower back.",
-    "setup": ["Lie on your side with hips and knees bent to 90 degrees, arms straight out in front, palms together."],
-    "cues": ["Open your top arm like a book", "Follow your hand with your eyes", "Keep your knees together"],
-    "mistakes": ["Letting the knees come apart", "Forcing the arm to the floor", "Holding your breath"],
+    "setup": [
+      "Lie on your side with hips and knees bent to 90 degrees, arms straight out in front, palms together."
+    ],
+    "cues": [
+      "Open your top arm like a book",
+      "Follow your hand with your eyes",
+      "Keep your knees together"
+    ],
+    "mistakes": [
+      "Letting the knees come apart",
+      "Forcing the arm to the floor",
+      "Holding your breath"
+    ],
     "feel": "A stretch across the chest and a turning movement in the mid back.",
     "stopIf": "Pain shoots down an arm or leg.",
-    "substitutes": ["thread-the-needle"],
-    "reviewed": false
+    "substitutes": [
+      "thread-the-needle"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=rDviWORCWEw",
+        "credit": "Video: Open Books (Sidelying Thoracic Rotation) (Revival Performance Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "thread-the-needle",
     "name": "Thread the needle",
-    "bodyAreas": ["THORACIC", "SHOULDER"],
+    "bodyAreas": [
+      "THORACIC",
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "QUADRUPED",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 8 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 8
+    },
     "why": "Rotates the mid back from hands and knees and gently stretches the back of the shoulder.",
-    "setup": ["Get on hands and knees, hands under shoulders and knees under hips."],
-    "cues": ["Slide one arm under your body", "Let that shoulder and your head lower", "Then reach the arm up to the ceiling"],
-    "mistakes": ["Sitting back onto the heels", "Rushing", "Forcing the rotation"],
+    "setup": [
+      "Get on hands and knees, hands under shoulders and knees under hips."
+    ],
+    "cues": [
+      "Slide one arm under your body",
+      "Let that shoulder and your head lower",
+      "Then reach the arm up to the ceiling"
+    ],
+    "mistakes": [
+      "Sitting back onto the heels",
+      "Rushing",
+      "Forcing the rotation"
+    ],
     "feel": "A turning movement and stretch in the mid back and the back of the shoulder.",
     "stopIf": "Sharp shoulder pain, or pain into the arm.",
-    "substitutes": ["open-book"],
+    "substitutes": [
+      "open-book"
+    ],
     "reviewed": false
   },
   {
     "id": "thoracic-extension-foam-roller",
     "name": "Mid-back extension on a foam roller",
-    "bodyAreas": ["THORACIC"],
+    "bodyAreas": [
+      "THORACIC"
+    ],
     "kind": "MOBILITY",
     "position": "FLOOR_SUPINE",
-    "equipment": ["FOAM_ROLLER"],
+    "equipment": [
+      "FOAM_ROLLER"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 8 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 8
+    },
     "why": "Arching the mid back over a roller reverses the rounded desk posture and helps the shoulders lift overhead more easily.",
     "setup": [
       "Lie on your back with a foam roller across your mid back, just below the shoulder blades, knees bent and feet flat.",
       "Support your head with your hands, elbows pointing forward."
     ],
-    "cues": ["Keep your hips on the floor", "Arch gently back over the roller", "Try a spot a little higher too"],
-    "mistakes": ["Rolling onto the lower back", "Letting the head drop back unsupported", "Lifting the hips"],
+    "cues": [
+      "Keep your hips on the floor",
+      "Arch gently back over the roller",
+      "Try a spot a little higher too"
+    ],
+    "mistakes": [
+      "Rolling onto the lower back",
+      "Letting the head drop back unsupported",
+      "Lifting the hips"
+    ],
     "feel": "Pressure and a stretch through the mid back.",
     "stopIf": "Lower-back pain, or pain spreading around the ribs.",
-    "substitutes": ["thoracic-extension-chair"],
+    "substitutes": [
+      "thoracic-extension-chair"
+    ],
     "reviewed": false
   },
   {
     "id": "thoracic-extension-chair",
     "name": "Mid-back extension over a chair",
-    "bodyAreas": ["THORACIC"],
+    "bodyAreas": [
+      "THORACIC"
+    ],
     "kind": "MOBILITY",
     "position": "SEATED",
     "deskFriendly": true,
-    "equipment": ["CHAIR"],
+    "equipment": [
+      "CHAIR"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 8 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 8
+    },
     "why": "A desk-friendly way to arch the mid back and undo hours of leaning towards a screen.",
     "setup": [
       "Sit on a chair whose backrest reaches about the bottom of your shoulder blades.",
       "Hands behind your head, elbows pointing forward."
     ],
-    "cues": ["Lean back over the top of the chair", "Lift your chest towards the ceiling", "Keep your hips on the seat"],
-    "mistakes": ["Arching from the lower back", "Pulling on your neck", "Rushing"],
+    "cues": [
+      "Lean back over the top of the chair",
+      "Lift your chest towards the ceiling",
+      "Keep your hips on the seat"
+    ],
+    "mistakes": [
+      "Arching from the lower back",
+      "Pulling on your neck",
+      "Rushing"
+    ],
     "feel": "A stretch through the mid back.",
     "stopIf": "Lower-back pain or pain into the arms.",
-    "substitutes": ["thoracic-extension-foam-roller"],
-    "reviewed": false
+    "substitutes": [
+      "thoracic-extension-foam-roller"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=4ZqOMX-18O0",
+        "credit": "Video: Thoracic Extension Over a Chair (Dr. Sarah McNurlin DPT)"
+      }
+    ]
   },
   {
     "id": "prone-y-t-raise",
     "name": "Y and T raise (lying face down)",
-    "aliases": ["Prone Y-T"],
-    "bodyAreas": ["THORACIC", "SHOULDER"],
+    "aliases": [
+      "Prone Y-T"
+    ],
+    "bodyAreas": [
+      "THORACIC",
+      "SHOULDER"
+    ],
     "kind": "STRENGTH",
     "position": "FLOOR_PRONE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 2, "reps": 8, "holdSec": 2, "restSec": 45 },
+    "defaultDose": {
+      "sets": 2,
+      "reps": 8,
+      "holdSec": 2,
+      "restSec": 45
+    },
     "why": "Strengthens the middle and lower trapezius, the muscles that hold your shoulder blades back and down and support good posture.",
     "setup": [
       "Lie face down with a folded towel under your forehead.",
       "Arms overhead in a Y shape, thumbs pointing up. Switch to a T (arms out to the sides) for the second set."
     ],
-    "cues": ["Lift your arms just off the floor", "Draw your shoulder blades down", "Keep your neck long"],
-    "mistakes": ["Lifting the head", "Shrugging", "Arching the lower back"],
+    "cues": [
+      "Lift your arms just off the floor",
+      "Draw your shoulder blades down",
+      "Keep your neck long"
+    ],
+    "mistakes": [
+      "Lifting the head",
+      "Shrugging",
+      "Arching the lower back"
+    ],
     "feel": "Work between and below the shoulder blades.",
     "stopIf": "Shoulder pinching or pain into the arm.",
-    "substitutes": ["band-pull-apart"],
-    "reviewed": false
+    "substitutes": [
+      "band-pull-apart"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=2bm3VJqWvtQ",
+        "credit": "Video: Lower Trapezius Strengthening With Prone Ys (Ethos PT)"
+      }
+    ]
   },
   {
     "id": "wall-angel",
     "name": "Wall angel",
-    "bodyAreas": ["THORACIC", "SHOULDER"],
+    "bodyAreas": [
+      "THORACIC",
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "STANDING",
     "deskFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Combines a chest stretch with shoulder-blade control. A good posture reset after long sitting.",
     "setup": [
       "Stand with your back against a wall, feet a small step away from it.",
       "Arms in a goalpost shape against the wall."
     ],
-    "cues": ["Slide your arms up the wall", "Keep your lower back gently on the wall", "Slide down slowly"],
-    "mistakes": ["Arching away from the wall", "Shrugging", "Forcing the arms to touch the wall"],
+    "cues": [
+      "Slide your arms up the wall",
+      "Keep your lower back gently on the wall",
+      "Slide down slowly"
+    ],
+    "mistakes": [
+      "Arching away from the wall",
+      "Shrugging",
+      "Forcing the arms to touch the wall"
+    ],
     "feel": "A stretch across the chest and work between the shoulder blades.",
     "stopIf": "Pain or tingling in the arms.",
     "reviewed": false
@@ -131,21 +265,42 @@
   {
     "id": "band-pull-apart",
     "name": "Band pull-apart",
-    "bodyAreas": ["THORACIC", "SHOULDER"],
+    "bodyAreas": [
+      "THORACIC",
+      "SHOULDER"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
     "deskFriendly": true,
-    "equipment": ["BAND"],
+    "equipment": [
+      "BAND"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 15, "restSec": 45 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 45
+    },
     "why": "Strengthens the back of the shoulders and upper back, balancing out all the time spent reaching forward.",
-    "setup": ["Hold a light band in both hands, arms straight in front at shoulder height, hands shoulder-width apart."],
-    "cues": ["Pull the band apart to your chest", "Squeeze your shoulder blades", "Return slowly"],
-    "mistakes": ["Shrugging", "Bending the elbows a lot", "Arching the lower back"],
+    "setup": [
+      "Hold a light band in both hands, arms straight in front at shoulder height, hands shoulder-width apart."
+    ],
+    "cues": [
+      "Pull the band apart to your chest",
+      "Squeeze your shoulder blades",
+      "Return slowly"
+    ],
+    "mistakes": [
+      "Shrugging",
+      "Bending the elbows a lot",
+      "Arching the lower back"
+    ],
     "feel": "Work at the back of the shoulders and between the shoulder blades.",
     "stopIf": "Shoulder or neck pain increases.",
-    "substitutes": ["prone-y-t-raise"],
+    "substitutes": [
+      "prone-y-t-raise"
+    ],
     "reviewed": false
   },
   {

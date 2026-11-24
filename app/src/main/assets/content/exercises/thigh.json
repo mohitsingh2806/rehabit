@@ -33,7 +33,14 @@
     ],
     "feel": "A stretch in the back of the thigh.",
     "stopIf": "Tingling or pain down the leg: that's a nerve, not a muscle, so ease off.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=FrrNjD5e2fo",
+        "credit": "Video: Hamstring Stretch on Step (Precision Performance and Therapy)"
+      }
+    ]
   },
   {
     "id": "quad-stretch-standing",
@@ -67,7 +74,14 @@
     ],
     "feel": "A stretch along the front of the thigh.",
     "stopIf": "Knee pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Td-9CSgSFhs",
+        "credit": "Video: Standing Quadriceps Stretch (Ann & Robert H. Lurie Children's Hospital of Chicago)"
+      }
+    ]
   },
   {
     "id": "nordic-hamstring-curl",

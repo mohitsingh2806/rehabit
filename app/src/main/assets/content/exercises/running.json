@@ -2,169 +2,382 @@
   {
     "id": "easy-jog",
     "name": "Easy jog",
-    "bodyAreas": ["FULL_BODY"],
+    "bodyAreas": [
+      "FULL_BODY"
+    ],
     "kind": "CARDIO",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "TIME",
-    "defaultDose": { "sets": 1, "durationSec": 300 },
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 300
+    },
     "why": "Raises your heart rate and body temperature gradually so your muscles and tendons are ready to work.",
-    "setup": ["Start at an easy, conversational pace."],
-    "cues": ["Easy pace: you can talk", "Relaxed shoulders", "Short, light steps"],
-    "mistakes": ["Starting too fast", "Skipping it before faster running", "Tensing the shoulders"],
+    "setup": [
+      "Start at an easy, conversational pace."
+    ],
+    "cues": [
+      "Easy pace: you can talk",
+      "Relaxed shoulders",
+      "Short, light steps"
+    ],
+    "mistakes": [
+      "Starting too fast",
+      "Skipping it before faster running",
+      "Tensing the shoulders"
+    ],
     "feel": "Comfortable effort, getting warm.",
     "stopIf": "Pain that changes the way you run.",
-    "substitutes": ["brisk-walk"],
+    "substitutes": [
+      "brisk-walk"
+    ],
     "reviewed": false
   },
   {
     "id": "leg-swing-front-back",
     "name": "Leg swings, forward and back",
-    "bodyAreas": ["HIP", "HAMSTRING"],
+    "bodyAreas": [
+      "HIP",
+      "HAMSTRING"
+    ],
     "kind": "STRETCH_DYNAMIC",
     "position": "STANDING",
     "trailFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Loosens the hips and hamstrings through the range you use when running, without the performance dip of long static stretches.",
-    "setup": ["Stand side-on to a wall, tree or post with one hand on it."],
-    "cues": ["Swing your outside leg forward and back", "Start small, build up", "Stay tall"],
-    "mistakes": ["Arching the back on the back swing", "Swinging wildly at the start", "Leaning on the wall"],
+    "setup": [
+      "Stand side-on to a wall, tree or post with one hand on it."
+    ],
+    "cues": [
+      "Swing your outside leg forward and back",
+      "Start small, build up",
+      "Stay tall"
+    ],
+    "mistakes": [
+      "Arching the back on the back swing",
+      "Swinging wildly at the start",
+      "Leaning on the wall"
+    ],
     "feel": "Hips and hamstrings loosening.",
     "stopIf": "Sharp pain in the hip or the back of the thigh.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=UN9j_8l3keM",
+        "credit": "Video: Leg Swing, Front to Back (The Sustainable Training Method)"
+      }
+    ]
   },
   {
     "id": "leg-swing-side",
     "name": "Leg swings, side to side",
-    "bodyAreas": ["HIP", "ADDUCTOR"],
+    "bodyAreas": [
+      "HIP",
+      "ADDUCTOR"
+    ],
     "kind": "STRETCH_DYNAMIC",
     "position": "STANDING",
     "trailFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Loosens the inner and outer hip muscles that steady you on each stride.",
-    "setup": ["Face a wall, tree or post with both hands on it."],
-    "cues": ["Swing one leg across your body and out", "Hips keep facing forward", "Build up gradually"],
-    "mistakes": ["Twisting the hips", "Swinging too big too soon", "Locking the standing knee"],
+    "setup": [
+      "Face a wall, tree or post with both hands on it."
+    ],
+    "cues": [
+      "Swing one leg across your body and out",
+      "Hips keep facing forward",
+      "Build up gradually"
+    ],
+    "mistakes": [
+      "Twisting the hips",
+      "Swinging too big too soon",
+      "Locking the standing knee"
+    ],
     "feel": "Inner and outer hips loosening.",
     "stopIf": "Sharp groin or hip pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=qHYowYbwLuc",
+        "credit": "Video: Leg Swing, Lateral (The Sustainable Training Method)"
+      }
+    ]
   },
   {
     "id": "walking-lunge-rotation",
     "name": "Walking lunge with a twist",
-    "bodyAreas": ["HIP", "QUAD", "THORACIC"],
+    "bodyAreas": [
+      "HIP",
+      "QUAD",
+      "THORACIC"
+    ],
     "kind": "STRETCH_DYNAMIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "ALTERNATING",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 6 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 6
+    },
     "why": "Opens the hip flexors, wakes up the glutes and turns the mid back, all in one warm-up move.",
-    "setup": ["Find 10 to 15 metres of space."],
-    "cues": ["Step into a lunge", "Turn your chest towards the front leg", "Push up and step through"],
-    "mistakes": ["Front knee caving in", "Rushing", "Twisting from the knee instead of the trunk"],
+    "setup": [
+      "Find 10 to 15 metres of space."
+    ],
+    "cues": [
+      "Step into a lunge",
+      "Turn your chest towards the front leg",
+      "Push up and step through"
+    ],
+    "mistakes": [
+      "Front knee caving in",
+      "Rushing",
+      "Twisting from the knee instead of the trunk"
+    ],
     "feel": "Hips, thighs and mid back loosening.",
     "stopIf": "Knee pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=-ZtWiJ-CI1o",
+        "credit": "Video: Walking Lunge with Rotation (Dr. Susie Spirlock)"
+      }
+    ]
   },
   {
     "id": "hip-gate-opener",
     "name": "Open and close the gate",
-    "aliases": ["Hip circles"],
-    "bodyAreas": ["HIP"],
+    "aliases": [
+      "Hip circles"
+    ],
+    "bodyAreas": [
+      "HIP"
+    ],
     "kind": "STRETCH_DYNAMIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 5 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 5
+    },
     "why": "Circles the hip through rotation, waking up the joint and the small muscles around it.",
-    "setup": ["Stand tall, holding a wall or post if needed."],
-    "cues": ["Lift your knee up and out to the side", "Circle it open, like opening a gate", "Then reverse to close it"],
-    "mistakes": ["Leaning the trunk", "Rushing the circles", "Holding your breath"],
+    "setup": [
+      "Stand tall, holding a wall or post if needed."
+    ],
+    "cues": [
+      "Lift your knee up and out to the side",
+      "Circle it open, like opening a gate",
+      "Then reverse to close it"
+    ],
+    "mistakes": [
+      "Leaning the trunk",
+      "Rushing the circles",
+      "Holding your breath"
+    ],
     "feel": "The hip loosening.",
     "stopIf": "Pinching at the front of the hip.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=XJem9O8OaTk",
+        "credit": "Video: Hip Openers - Open the Gate - Close the Gate (Dr. Christy Lee)"
+      }
+    ]
   },
   {
     "id": "a-skip",
     "name": "A-skips",
-    "bodyAreas": ["HIP", "CALF"],
+    "bodyAreas": [
+      "HIP",
+      "CALF"
+    ],
     "kind": "PLYOMETRIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "DISTANCE",
-    "defaultDose": { "sets": 2, "distanceM": 20, "restSec": 20 },
+    "defaultDose": {
+      "sets": 2,
+      "distanceM": 20,
+      "restSec": 20
+    },
     "why": "A running drill that rehearses a quick knee lift and a springy foot strike under your hips.",
-    "setup": ["Find 20 metres of flat ground."],
-    "cues": ["Skip, driving one knee up", "Land on the ball of the foot, under your hips", "Quick, rhythmic arms"],
-    "mistakes": ["Leaning back", "Reaching the foot out in front", "Heavy landings"],
+    "setup": [
+      "Find 20 metres of flat ground."
+    ],
+    "cues": [
+      "Skip, driving one knee up",
+      "Land on the ball of the foot, under your hips",
+      "Quick, rhythmic arms"
+    ],
+    "mistakes": [
+      "Leaning back",
+      "Reaching the foot out in front",
+      "Heavy landings"
+    ],
     "feel": "Light, springy effort in the calves and hips.",
     "stopIf": "Pain in the calf, Achilles, shin or knee.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=692E8jdhSA8",
+        "credit": "Video: A-Skips | Form Drills (Stryd)"
+      }
+    ]
   },
   {
     "id": "high-knees",
     "name": "High knees",
-    "bodyAreas": ["HIP", "QUAD", "CALF"],
+    "bodyAreas": [
+      "HIP",
+      "QUAD",
+      "CALF"
+    ],
     "kind": "PLYOMETRIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "DISTANCE",
-    "defaultDose": { "sets": 2, "distanceM": 20, "restSec": 20 },
+    "defaultDose": {
+      "sets": 2,
+      "distanceM": 20,
+      "restSec": 20
+    },
     "why": "Quick, light steps with high knees prime the hip flexors and calves for running.",
-    "setup": ["Find 20 metres of flat ground."],
-    "cues": ["Quick, short steps", "Lift your knees to hip height", "Stay tall on the balls of your feet"],
-    "mistakes": ["Leaning back", "Slapping the feet down", "Going for speed over rhythm"],
+    "setup": [
+      "Find 20 metres of flat ground."
+    ],
+    "cues": [
+      "Quick, short steps",
+      "Lift your knees to hip height",
+      "Stay tall on the balls of your feet"
+    ],
+    "mistakes": [
+      "Leaning back",
+      "Slapping the feet down",
+      "Going for speed over rhythm"
+    ],
     "feel": "Light, quick effort in the hips and calves.",
     "stopIf": "Pain in the calf, Achilles, shin, knee or hip.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=DKyukKLmNUc",
+        "credit": "Video: Running Drills: High Knees (Alp Fitness)"
+      }
+    ]
   },
   {
     "id": "butt-kicks",
     "name": "Butt kicks",
-    "bodyAreas": ["QUAD", "HAMSTRING"],
+    "bodyAreas": [
+      "QUAD",
+      "HAMSTRING"
+    ],
     "kind": "PLYOMETRIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "DISTANCE",
-    "defaultDose": { "sets": 2, "distanceM": 20, "restSec": 20 },
+    "defaultDose": {
+      "sets": 2,
+      "distanceM": 20,
+      "restSec": 20
+    },
     "why": "Loosens the front of the thighs and rehearses a quick heel recovery under the body.",
-    "setup": ["Find 20 metres of flat ground."],
-    "cues": ["Quick, short steps", "Flick your heels up behind you", "Stay tall"],
-    "mistakes": ["Leaning forward", "Knees swinging forward", "Heavy landings"],
+    "setup": [
+      "Find 20 metres of flat ground."
+    ],
+    "cues": [
+      "Quick, short steps",
+      "Flick your heels up behind you",
+      "Stay tall"
+    ],
+    "mistakes": [
+      "Leaning forward",
+      "Knees swinging forward",
+      "Heavy landings"
+    ],
     "feel": "The front of the thighs loosening.",
     "stopIf": "Knee or hamstring pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=583IXOhp7eI",
+        "credit": "Video: Butt Kicks - Running Drill (Dr. Christy Lee)"
+      }
+    ]
   },
   {
     "id": "strides",
     "name": "Strides",
-    "bodyAreas": ["FULL_BODY"],
+    "bodyAreas": [
+      "FULL_BODY"
+    ],
     "kind": "CARDIO",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "DISTANCE",
-    "defaultDose": { "sets": 4, "distanceM": 80, "restSec": 60 },
+    "defaultDose": {
+      "sets": 4,
+      "distanceM": 80,
+      "restSec": 60
+    },
     "why": "Short, relaxed accelerations to near your fast pace prime your legs and running form before a workout or race.",
-    "setup": ["Find 80 to 100 metres of flat ground. Walk back between strides."],
-    "cues": ["Build up over the first half", "Tall and relaxed at top speed", "Ease off smoothly"],
-    "mistakes": ["Sprinting all-out", "Tensing the shoulders and face", "Skipping the warm-up first"],
+    "setup": [
+      "Find 80 to 100 metres of flat ground. Walk back between strides."
+    ],
+    "cues": [
+      "Build up over the first half",
+      "Tall and relaxed at top speed",
+      "Ease off smoothly"
+    ],
+    "mistakes": [
+      "Sprinting all-out",
+      "Tensing the shoulders and face",
+      "Skipping the warm-up first"
+    ],
     "feel": "Fast but relaxed: not a sprint.",
     "stopIf": "Any tug or sharp pain in the calf or hamstring.",
-    "cautions": ["Skip these if a tendon problem flares with speed."],
-    "reviewed": false
+    "cautions": [
+      "Skip these if a tendon problem flares with speed."
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=1i2ZPpXtuOk",
+        "credit": "Video: How To Run Strides And How They Make You Faster (The Run Experience)"
+      }
+    ]
   },
   {
     "id": "jump-landing",

@@ -2,21 +2,36 @@
   {
     "id": "shoulder-pendulum",
     "name": "Shoulder pendulum",
-    "aliases": ["Codman's pendulum"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Codman's pendulum"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "STANDING",
     "deskFriendly": true,
-    "equipment": ["CHAIR"],
+    "equipment": [
+      "CHAIR"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "TIME",
-    "defaultDose": { "sets": 2, "durationSec": 60, "restSec": 30, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 2,
+      "durationSec": 60,
+      "restSec": 30,
+      "sides": "AFFECTED"
+    },
     "why": "Moves the shoulder joint gently while the muscles stay relaxed, because gravity and your body's sway do the work. It eases pain and keeps the joint moving when lifting the arm hurts, as in the painful early stage of frozen shoulder.",
     "setup": [
       "Stand next to a table, desk or chair back and lean forward, supporting yourself with your good hand.",
       "Let the sore arm hang straight down, completely relaxed."
     ],
-    "cues": ["Let the arm hang heavy", "Sway your body to swing the arm", "Small circles, then a little bigger"],
+    "cues": [
+      "Let the arm hang heavy",
+      "Sway your body to swing the arm",
+      "Small circles, then a little bigger"
+    ],
     "mistakes": [
       "Using the shoulder muscles to swing the arm",
       "Swinging so big that it hurts",
@@ -24,28 +39,55 @@
     ],
     "feel": "A loose, gentle swinging in the shoulder. A mild stretch is fine.",
     "stopIf": "Pain is sharp or keeps building while you do it.",
-    "cautions": ["After shoulder surgery, follow your surgeon's or physio's instructions on when to start."],
-    "progressions": ["shoulder-table-slide"],
-    "reviewed": false
+    "cautions": [
+      "After shoulder surgery, follow your surgeon's or physio's instructions on when to start."
+    ],
+    "progressions": [
+      "shoulder-table-slide"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=xxgqT6Jn4pc",
+        "credit": "Video: Frozen shoulder Pendular Exercises (NHS Ayrshire & Arran)"
+      }
+    ]
   },
   {
     "id": "shoulder-table-slide",
     "name": "Table slide (shoulder flexion)",
-    "aliases": ["Forward table slide"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Forward table slide"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "SEATED",
     "deskFriendly": true,
-    "equipment": ["CHAIR", "TOWEL"],
+    "equipment": [
+      "CHAIR",
+      "TOWEL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5,
+      "sides": "AFFECTED"
+    },
     "why": "Takes the shoulder forward and up while the table carries the arm's weight, so you can work on range without straining the muscles. A good next step after pendulums when the shoulder is stiff.",
     "setup": [
       "Sit facing a table with your sore-side hand resting on a small towel on the table.",
       "Sit tall, feet flat on the floor."
     ],
-    "cues": ["Slide your hand forward", "Lean your body forward to help", "Stop at a gentle stretch"],
+    "cues": [
+      "Slide your hand forward",
+      "Lean your body forward to help",
+      "Stop at a gentle stretch"
+    ],
     "mistakes": [
       "Hitching the shoulder up towards the ear",
       "Pushing into strong pain",
@@ -53,236 +95,516 @@
     ],
     "feel": "A gentle stretch under the arm or around the shoulder at the end of the slide.",
     "stopIf": "Pain is sharp, or aching lasts more than about an hour afterwards.",
-    "regressions": ["shoulder-pendulum"],
-    "progressions": ["shoulder-flexion-stick"],
-    "reviewed": false
+    "regressions": [
+      "shoulder-pendulum"
+    ],
+    "progressions": [
+      "shoulder-flexion-stick"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=pgsPQ1_5e0w",
+        "credit": "Video: Shoulder Flexion Table Slides - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "shoulder-flexion-stick",
     "name": "Assisted arm raise with stick",
-    "aliases": ["Wand flexion", "Supine assisted flexion"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Wand flexion",
+      "Supine assisted flexion"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "FLOOR_SUPINE",
-    "equipment": ["STICK", "MAT"],
+    "equipment": [
+      "STICK",
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5,
+      "sides": "AFFECTED"
+    },
     "why": "Your good arm lifts the sore arm overhead using a stick, so the shoulder moves through its range without its own muscles fighting the stiffness.",
     "setup": [
       "Lie on your back with knees bent.",
       "Hold a stick or broom handle in both hands, hands shoulder-width apart, resting on your thighs."
     ],
-    "cues": ["Good arm does the lifting", "Raise the stick overhead slowly", "Stop at a gentle stretch"],
-    "mistakes": ["Arching the back to get further", "Forcing through pain", "Lifting with the sore arm"],
+    "cues": [
+      "Good arm does the lifting",
+      "Raise the stick overhead slowly",
+      "Stop at a gentle stretch"
+    ],
+    "mistakes": [
+      "Arching the back to get further",
+      "Forcing through pain",
+      "Lifting with the sore arm"
+    ],
     "feel": "A stretch in the shoulder and under the arm at the top of the movement.",
     "stopIf": "Sharp pain, or aching that lasts more than about an hour afterwards.",
-    "regressions": ["shoulder-table-slide"],
-    "progressions": ["wall-slide-shoulder"],
-    "reviewed": false
+    "regressions": [
+      "shoulder-table-slide"
+    ],
+    "progressions": [
+      "wall-slide-shoulder"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=xQNM4kKRH1w",
+        "credit": "Video: NUHS Physiotherapy - Shoulder flexion with stick (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "shoulder-er-stick",
     "name": "Assisted outward rotation with stick",
-    "aliases": ["Wand external rotation"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Wand external rotation"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "FLOOR_SUPINE",
-    "equipment": ["STICK", "TOWEL", "MAT"],
+    "equipment": [
+      "STICK",
+      "TOWEL",
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5,
+      "sides": "AFFECTED"
+    },
     "why": "Turning the arm outwards is usually the most restricted movement in frozen shoulder. The stick lets your good arm gently push the sore arm into rotation.",
     "setup": [
       "Lie on your back with the sore elbow bent to 90 degrees and tucked against your side, a small folded towel under the elbow.",
       "Hold a stick in both hands, the sore hand gripping one end."
     ],
-    "cues": ["Keep the elbow tucked in", "Good arm pushes the hand outwards", "Stop at a gentle stretch"],
-    "mistakes": ["Letting the elbow drift away from your side", "Pushing into strong pain", "Lifting the shoulder off the floor"],
+    "cues": [
+      "Keep the elbow tucked in",
+      "Good arm pushes the hand outwards",
+      "Stop at a gentle stretch"
+    ],
+    "mistakes": [
+      "Letting the elbow drift away from your side",
+      "Pushing into strong pain",
+      "Lifting the shoulder off the floor"
+    ],
     "feel": "A stretch at the front of the shoulder.",
     "stopIf": "Sharp pain, or aching that lasts more than about an hour afterwards.",
-    "progressions": ["shoulder-er-band"],
-    "reviewed": false
+    "progressions": [
+      "shoulder-er-band"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Pj8beVMgo7E",
+        "credit": "Video: NUHS Physiotherapy - Shoulder External rotation with stick (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "towel-internal-rotation",
     "name": "Towel stretch behind the back",
-    "aliases": ["Internal rotation towel stretch"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Internal rotation towel stretch"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
-    "equipment": ["TOWEL"],
+    "equipment": [
+      "TOWEL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5,
+      "sides": "AFFECTED"
+    },
     "why": "Helps you reach behind your back again (tucking in a shirt, fastening a bra), one of the last movements to come back after a stiff shoulder.",
     "setup": [
       "Hold a towel over your good shoulder with the good hand.",
       "Reach the sore hand behind your back and hold the bottom of the towel."
     ],
-    "cues": ["Good hand pulls the towel up", "Let the sore hand slide up your back", "Stop at a gentle stretch"],
-    "mistakes": ["Bending forward or twisting", "Pulling hard and fast", "Shrugging the sore shoulder"],
+    "cues": [
+      "Good hand pulls the towel up",
+      "Let the sore hand slide up your back",
+      "Stop at a gentle stretch"
+    ],
+    "mistakes": [
+      "Bending forward or twisting",
+      "Pulling hard and fast",
+      "Shrugging the sore shoulder"
+    ],
     "feel": "A stretch at the front and top of the sore shoulder.",
     "stopIf": "Sharp pain, or aching that lasts more than about an hour afterwards.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=omeww85Mhkw",
+        "credit": "Video: Towel Stretch for Internal Rotation (Baptist Health)"
+      }
+    ]
   },
   {
     "id": "cross-body-stretch",
     "name": "Cross-body shoulder stretch",
-    "aliases": ["Posterior shoulder stretch"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Posterior shoulder stretch"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
     "deskFriendly": true,
     "trailFriendly": true,
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Stretches the back of the shoulder, which tightens in frozen shoulder and with lots of sitting, and can pinch the front of the shoulder when you lift your arm.",
     "setup": [
       "Stand or sit tall.",
       "Bring one arm across your chest at shoulder height and hold it above the elbow with the other hand."
     ],
-    "cues": ["Ease the arm across your chest", "Keep the shoulder down", "Breathe slowly"],
-    "mistakes": ["Twisting the body", "Pulling on the elbow joint itself", "Shrugging"],
+    "cues": [
+      "Ease the arm across your chest",
+      "Keep the shoulder down",
+      "Breathe slowly"
+    ],
+    "mistakes": [
+      "Twisting the body",
+      "Pulling on the elbow joint itself",
+      "Shrugging"
+    ],
     "feel": "A stretch at the back of the shoulder.",
     "stopIf": "Pinching pain at the front or top of the shoulder.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=TCDA6qCp1FU",
+        "credit": "Video: Posterior Capsular Stretch - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "wall-finger-walk",
     "name": "Wall finger walk",
-    "aliases": ["Wall climb"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Wall climb"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "MOBILITY",
     "position": "STANDING",
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "sides": "AFFECTED"
+    },
     "why": "Lets you gain range a little at a time and see it. Mark your highest point: watching it climb week by week is a great motivator.",
     "setup": [
       "Stand facing a wall, about an arm's length away.",
       "Place the fingertips of the sore arm on the wall at waist height."
     ],
-    "cues": ["Walk your fingers up the wall", "Step closer as you go", "Walk back down slowly"],
-    "mistakes": ["Hitching the shoulder up", "Arching the back", "Pushing past a gentle stretch"],
+    "cues": [
+      "Walk your fingers up the wall",
+      "Step closer as you go",
+      "Walk back down slowly"
+    ],
+    "mistakes": [
+      "Hitching the shoulder up",
+      "Arching the back",
+      "Pushing past a gentle stretch"
+    ],
     "feel": "A stretch in the shoulder and under the arm at the top.",
     "stopIf": "Sharp pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Itxmml791f8",
+        "credit": "Video: Finger Wall Walk Exercise for Frozen Shoulder | Improve Shoulder Mobility & Range of Motion (Anand Physical Therapy Academy )"
+      }
+    ]
   },
   {
     "id": "shoulder-er-isometric",
     "name": "Outward rotation hold (isometric)",
-    "aliases": ["Isometric external rotation"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Isometric external rotation"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "ISOMETRIC",
     "position": "STANDING",
     "deskFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 5, "holdSec": 20, "restSec": 20 },
+    "defaultDose": {
+      "sets": 5,
+      "holdSec": 20,
+      "restSec": 20
+    },
     "why": "Works the rotator cuff muscles that turn the arm outwards without moving the joint: a gentle, pain-friendly way to start strengthening.",
     "setup": [
       "Stand side-on to a wall or door frame, working side nearest, elbow bent to 90 degrees and tucked against your side.",
       "Place the back of the wrist against the wall."
     ],
-    "cues": ["Press the back of your hand into the wall", "Keep the elbow tucked in", "Firm push, no pain"],
-    "mistakes": ["Letting the elbow leave your side", "Shrugging", "Holding your breath"],
+    "cues": [
+      "Press the back of your hand into the wall",
+      "Keep the elbow tucked in",
+      "Firm push, no pain"
+    ],
+    "mistakes": [
+      "Letting the elbow leave your side",
+      "Shrugging",
+      "Holding your breath"
+    ],
     "feel": "Effort at the back of the shoulder.",
     "stopIf": "Pain above about 3 out of 10.",
-    "progressions": ["shoulder-er-band"],
+    "progressions": [
+      "shoulder-er-band"
+    ],
     "reviewed": false
   },
   {
     "id": "shoulder-er-band",
     "name": "Band outward rotation",
-    "aliases": ["Banded external rotation"],
-    "bodyAreas": ["SHOULDER"],
+    "aliases": [
+      "Banded external rotation"
+    ],
+    "bodyAreas": [
+      "SHOULDER"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["BAND", "TOWEL"],
+    "equipment": [
+      "BAND",
+      "TOWEL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-0-2" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60,
+      "tempo": "2-0-2"
+    },
     "why": "Strengthens the rotator cuff muscles that keep the ball of the shoulder centred in its socket when you lift and reach.",
     "setup": [
       "Anchor a band at elbow height and stand side-on, working arm away from the anchor.",
       "Elbow bent to 90 degrees and tucked against a small folded towel at your side, holding the band."
     ],
-    "cues": ["Rotate your forearm outwards", "Elbow stays on the towel", "Return slowly"],
-    "mistakes": ["Elbow drifting away from the body", "Twisting the trunk", "Using a band that's too strong"],
+    "cues": [
+      "Rotate your forearm outwards",
+      "Elbow stays on the towel",
+      "Return slowly"
+    ],
+    "mistakes": [
+      "Elbow drifting away from the body",
+      "Twisting the trunk",
+      "Using a band that's too strong"
+    ],
     "feel": "Effort at the back of the shoulder.",
     "stopIf": "Sharp pain, or pain that's worse the next day.",
-    "regressions": ["shoulder-er-isometric"],
-    "substitutes": ["shoulder-er-isometric"],
-    "reviewed": false
+    "regressions": [
+      "shoulder-er-isometric"
+    ],
+    "substitutes": [
+      "shoulder-er-isometric"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=fguWxBv8M8U",
+        "credit": "Video: Resistance band shoulder external rotation (Sydney Health Physiotherapy)"
+      }
+    ]
   },
   {
     "id": "band-row",
     "name": "Band row",
-    "bodyAreas": ["THORACIC", "SHOULDER"],
+    "bodyAreas": [
+      "THORACIC",
+      "SHOULDER"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["BAND"],
+    "equipment": [
+      "BAND"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60
+    },
     "why": "Strengthens the upper back and the muscles that hold your shoulder blades, supporting both the neck and the shoulders.",
     "setup": [
       "Anchor a band at chest height (shut in a door or round a post).",
       "Hold an end in each hand, arms straight in front, and step back until the band is tight."
     ],
-    "cues": ["Pull your elbows back", "Squeeze your shoulder blades together", "Return slowly"],
-    "mistakes": ["Shrugging", "Leaning back", "Letting the band snap back"],
+    "cues": [
+      "Pull your elbows back",
+      "Squeeze your shoulder blades together",
+      "Return slowly"
+    ],
+    "mistakes": [
+      "Shrugging",
+      "Leaning back",
+      "Letting the band snap back"
+    ],
     "feel": "Work between your shoulder blades and at the back of the shoulders.",
     "stopIf": "Pain spreads into your arm, or neck pain increases.",
-    "regressions": ["scapular-retraction"],
-    "substitutes": ["scapular-retraction"],
-    "reviewed": false
+    "regressions": [
+      "scapular-retraction"
+    ],
+    "substitutes": [
+      "scapular-retraction"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=h8LG9-pJFfE",
+        "credit": "Video: 2-Arm Band Row (BSR Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "doorway-pec-stretch",
     "name": "Doorway chest stretch",
-    "aliases": ["Pec stretch"],
-    "bodyAreas": ["SHOULDER", "THORACIC"],
+    "aliases": [
+      "Pec stretch"
+    ],
+    "bodyAreas": [
+      "SHOULDER",
+      "THORACIC"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
     "deskFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Opens up the chest muscles that tighten when you sit rounded forward, making it easier to sit and stand tall without straining the neck.",
     "setup": [
       "Stand in a doorway with your forearms on the door frame, elbows at about shoulder height.",
       "Step one foot forward."
     ],
-    "cues": ["Lean gently forward", "Keep your ribs down", "Stop at a gentle stretch"],
-    "mistakes": ["Arching the lower back", "Elbows too high if it pinches", "Pushing the head forward"],
+    "cues": [
+      "Lean gently forward",
+      "Keep your ribs down",
+      "Stop at a gentle stretch"
+    ],
+    "mistakes": [
+      "Arching the lower back",
+      "Elbows too high if it pinches",
+      "Pushing the head forward"
+    ],
     "feel": "A stretch across the front of the chest and shoulders.",
     "stopIf": "Pinching at the front of the shoulder, or tingling in the arms or hands.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=bZ-eaBPOGiM",
+        "credit": "Video: How to do Doorway Pec Stretch - Flexibility - Wellen (Wellen)"
+      }
+    ]
   },
   {
     "id": "wall-slide-shoulder",
     "name": "Forearm wall slide",
-    "aliases": ["Wall slide"],
-    "bodyAreas": ["SHOULDER", "THORACIC"],
+    "aliases": [
+      "Wall slide"
+    ],
+    "bodyAreas": [
+      "SHOULDER",
+      "THORACIC"
+    ],
     "kind": "MOBILITY",
     "position": "STANDING",
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 2, "reps": 10, "restSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "reps": 10,
+      "restSec": 30
+    },
     "why": "Raises the arms overhead with the wall's support while training the shoulder blades to move well: a bridge between stretching and strengthening.",
-    "setup": ["Stand facing a wall with your forearms on it, elbows at shoulder height, little fingers touching the wall."],
-    "cues": ["Slide your forearms up the wall", "Let the shoulder blades rotate up", "Slide back down slowly"],
-    "mistakes": ["Shrugging up to the ears", "Arching the lower back", "Forcing the top of the range"],
+    "setup": [
+      "Stand facing a wall with your forearms on it, elbows at shoulder height, little fingers touching the wall."
+    ],
+    "cues": [
+      "Slide your forearms up the wall",
+      "Let the shoulder blades rotate up",
+      "Slide back down slowly"
+    ],
+    "mistakes": [
+      "Shrugging up to the ears",
+      "Arching the lower back",
+      "Forcing the top of the range"
+    ],
     "feel": "Work around the shoulder blades and a stretch under the arms.",
     "stopIf": "Pinching pain at the top of the shoulder.",
-    "regressions": ["shoulder-flexion-stick"],
-    "reviewed": false
+    "regressions": [
+      "shoulder-flexion-stick"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=LOwQXrU7SIs",
+        "credit": "Video: Forearm Wall Slides (Mike Robertson)"
+      }
+    ]
   }
 ]

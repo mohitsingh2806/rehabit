@@ -2,18 +2,36 @@
   {
     "id": "brisk-walk",
     "name": "Brisk walk",
-    "aliases": ["Walking"],
-    "bodyAreas": ["LUMBAR", "FULL_BODY"],
+    "aliases": [
+      "Walking"
+    ],
+    "bodyAreas": [
+      "LUMBAR",
+      "FULL_BODY"
+    ],
     "kind": "CARDIO",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "TIME",
-    "defaultDose": { "sets": 1, "durationSec": 600 },
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 600
+    },
     "why": "Walking is one of the best things for back pain: it moves the spine gently, keeps you active and builds tolerance. Short, regular walks beat one long one. Also an easy way to warm up or cool down.",
-    "setup": ["Wear comfortable shoes and start on flat ground."],
-    "cues": ["Walk tall", "Let your arms swing", "A pace where you can still talk"],
-    "mistakes": ["Going so far that pain builds", "Holding your back stiffly", "Skipping it on sore days (go shorter instead)"],
+    "setup": [
+      "Wear comfortable shoes and start on flat ground."
+    ],
+    "cues": [
+      "Walk tall",
+      "Let your arms swing",
+      "A pace where you can still talk"
+    ],
+    "mistakes": [
+      "Going so far that pain builds",
+      "Holding your back stiffly",
+      "Skipping it on sore days (go shorter instead)"
+    ],
     "feel": "Comfortable effort. A little stiffness that eases as you go is fine.",
     "stopIf": "Pain spreads down your leg or keeps building as you walk.",
     "reviewed": false
@@ -21,155 +39,356 @@
   {
     "id": "cat-cow",
     "name": "Cat-cow",
-    "aliases": ["Cat-camel"],
-    "bodyAreas": ["LUMBAR", "THORACIC"],
+    "aliases": [
+      "Cat-camel"
+    ],
+    "bodyAreas": [
+      "LUMBAR",
+      "THORACIC"
+    ],
     "kind": "MOBILITY",
     "position": "QUADRUPED",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Moves your whole spine gently through rounding and arching. It eases stiffness and is a kind first exercise when the back is sore or after a run.",
-    "setup": ["Get on hands and knees, hands under shoulders and knees under hips."],
-    "cues": ["Slowly round your back up", "Then lift your chest and tailbone", "Move with your breath"],
-    "mistakes": ["Rushing", "Moving only the neck", "Forcing the end of the range"],
+    "setup": [
+      "Get on hands and knees, hands under shoulders and knees under hips."
+    ],
+    "cues": [
+      "Slowly round your back up",
+      "Then lift your chest and tailbone",
+      "Move with your breath"
+    ],
+    "mistakes": [
+      "Rushing",
+      "Moving only the neck",
+      "Forcing the end of the range"
+    ],
     "feel": "Gentle movement and stretch along the back.",
     "stopIf": "Pain shoots into your leg, or one direction clearly makes the pain worse. Then stay in the comfortable range.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=M8U0mHhg0Dk",
+        "credit": "Video: The Cat/Cow | Back Pain Relief Exercise (Dr. Carl Baird)"
+      }
+    ]
   },
   {
     "id": "pelvic-tilt",
     "name": "Pelvic tilt",
-    "bodyAreas": ["LUMBAR"],
+    "bodyAreas": [
+      "LUMBAR"
+    ],
     "kind": "MOBILITY",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Tiny, gentle movements of the lower back that are usually comfortable even when the back is sore. Good for easing stiffness in the morning.",
-    "setup": ["Lie on your back with knees bent and feet flat."],
-    "cues": ["Gently flatten your lower back", "Then gently arch it", "Small, easy movements"],
-    "mistakes": ["Pushing with the legs", "Holding your breath", "Making the movement big and forceful"],
+    "setup": [
+      "Lie on your back with knees bent and feet flat."
+    ],
+    "cues": [
+      "Gently flatten your lower back",
+      "Then gently arch it",
+      "Small, easy movements"
+    ],
+    "mistakes": [
+      "Pushing with the legs",
+      "Holding your breath",
+      "Making the movement big and forceful"
+    ],
     "feel": "Gentle movement in the lower back.",
     "stopIf": "Pain increases.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=44D6Xc2Fkek",
+        "credit": "Video: How to do a pelvic tilt lying down (Rehab My Patient)"
+      }
+    ]
   },
   {
     "id": "lower-trunk-rotation",
     "name": "Knee rocks",
-    "aliases": ["Lower trunk rotation"],
-    "bodyAreas": ["LUMBAR", "HIP"],
+    "aliases": [
+      "Lower trunk rotation"
+    ],
+    "bodyAreas": [
+      "LUMBAR",
+      "HIP"
+    ],
     "kind": "MOBILITY",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "ALTERNATING",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Gently rotates the lower back and hips. Relaxing at the end of the day, and easy on a sore back.",
-    "setup": ["Lie on your back with knees bent and together, feet flat."],
-    "cues": ["Let your knees fall slowly to one side", "Keep both shoulders down", "Bring them back, then the other way"],
-    "mistakes": ["Letting the knees drop quickly", "Lifting the opposite shoulder", "Forcing the range"],
+    "setup": [
+      "Lie on your back with knees bent and together, feet flat."
+    ],
+    "cues": [
+      "Let your knees fall slowly to one side",
+      "Keep both shoulders down",
+      "Bring them back, then the other way"
+    ],
+    "mistakes": [
+      "Letting the knees drop quickly",
+      "Lifting the opposite shoulder",
+      "Forcing the range"
+    ],
     "feel": "Gentle rotation and stretch in the lower back and hips.",
     "stopIf": "Pain shoots into your leg.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=ZuUAy32NutY",
+        "credit": "Video: All Care Physio - Back Exercises - Lumbar Rocks (allcarephysio)"
+      }
+    ]
   },
   {
     "id": "knee-to-chest",
     "name": "Knee to chest",
-    "bodyAreas": ["LUMBAR", "GLUTE"],
+    "bodyAreas": [
+      "LUMBAR",
+      "GLUTE"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 20 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 20
+    },
     "why": "Gently rounds the lower back. Helpful when bending forward eases your back pain.",
-    "setup": ["Lie on your back with knees bent."],
-    "cues": ["Hug one knee towards your chest", "Keep the other foot down", "Relax and breathe"],
-    "mistakes": ["Pulling hard", "Lifting the head", "Holding your breath"],
+    "setup": [
+      "Lie on your back with knees bent."
+    ],
+    "cues": [
+      "Hug one knee towards your chest",
+      "Keep the other foot down",
+      "Relax and breathe"
+    ],
+    "mistakes": [
+      "Pulling hard",
+      "Lifting the head",
+      "Holding your breath"
+    ],
     "feel": "A stretch in the lower back and buttock.",
     "stopIf": "Pain shoots down your leg, or back pain increases.",
-    "substitutes": ["child-pose"],
-    "reviewed": false
+    "substitutes": [
+      "child-pose"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Yd9wY25koVk",
+        "credit": "Video: Single Knee to Chest - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "child-pose",
     "name": "Child's pose",
-    "bodyAreas": ["LUMBAR", "HIP"],
+    "bodyAreas": [
+      "LUMBAR",
+      "HIP"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "KNEELING",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "A gentle rounding stretch for the lower back and hips that many people find soothing, especially if bending forward eases their pain.",
     "setup": [
       "Kneel with knees apart and big toes together.",
       "Sit back towards your heels and walk your hands forward."
     ],
-    "cues": ["Sit your hips back", "Let your chest sink", "Breathe into your back"],
-    "mistakes": ["Forcing the hips down", "Tensing the shoulders", "Holding your breath"],
+    "cues": [
+      "Sit your hips back",
+      "Let your chest sink",
+      "Breathe into your back"
+    ],
+    "mistakes": [
+      "Forcing the hips down",
+      "Tensing the shoulders",
+      "Holding your breath"
+    ],
     "feel": "A gentle stretch in the lower back and hips.",
     "stopIf": "Knee pain, or back or leg pain increases (some backs prefer arching instead).",
-    "substitutes": ["knee-to-chest"],
-    "reviewed": false
+    "substitutes": [
+      "knee-to-chest"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=rOymAu3AGsk",
+        "credit": "Video: Child's Pose Stretch (Dr. Brian Abelson)"
+      }
+    ]
   },
   {
     "id": "prone-press-up",
     "name": "Press-up (lying face down)",
-    "aliases": ["Prone press-up", "Back extension"],
-    "bodyAreas": ["LUMBAR"],
+    "aliases": [
+      "Prone press-up",
+      "Back extension"
+    ],
+    "bodyAreas": [
+      "LUMBAR"
+    ],
     "kind": "MOBILITY",
     "position": "FLOOR_PRONE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 10 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10
+    },
     "why": "Gently arches the lower back. If standing up straight or leaning back eases your pain, repeated arching can calm it, and pain moving out of the leg towards the back is a good sign.",
-    "setup": ["Lie face down with your hands under your shoulders."],
-    "cues": ["Push your upper body up", "Let your hips and back relax", "Lower slowly"],
-    "mistakes": ["Squeezing the buttocks", "Lifting the hips off the floor", "Forcing into pain"],
+    "setup": [
+      "Lie face down with your hands under your shoulders."
+    ],
+    "cues": [
+      "Push your upper body up",
+      "Let your hips and back relax",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Squeezing the buttocks",
+      "Lifting the hips off the floor",
+      "Forcing into pain"
+    ],
     "feel": "Gentle pressure in the lower back that eases with repeats.",
     "stopIf": "Pain spreads further down your leg, or increases with each repeat.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Z1IM_NDRWn4",
+        "credit": "Video: Prone Press Up ([P]rehab)"
+      }
+    ]
   },
   {
     "id": "mcgill-curl-up",
     "name": "Curl-up (McGill)",
-    "aliases": ["Modified curl-up"],
-    "bodyAreas": ["CORE", "LUMBAR"],
+    "aliases": [
+      "Modified curl-up"
+    ],
+    "bodyAreas": [
+      "CORE",
+      "LUMBAR"
+    ],
     "kind": "STRENGTH",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 5, "holdSec": 8 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 5,
+      "holdSec": 8
+    },
     "why": "Trains the stomach muscles to stiffen and protect the spine without the repeated bending of a sit-up. One of McGill's 'big 3' back exercises.",
     "setup": [
       "Lie on your back with one knee bent and the other leg straight.",
       "Slide your hands, palms down, under the natural arch of your lower back. Swap legs halfway through."
     ],
-    "cues": ["Brace your stomach lightly", "Lift head and shoulders a little, as one", "Keep your neck still"],
-    "mistakes": ["Flattening the lower back into the floor", "Tucking the chin", "Curling up high like a sit-up"],
+    "cues": [
+      "Brace your stomach lightly",
+      "Lift head and shoulders a little, as one",
+      "Keep your neck still"
+    ],
+    "mistakes": [
+      "Flattening the lower back into the floor",
+      "Tucking the chin",
+      "Curling up high like a sit-up"
+    ],
     "feel": "Effort in the stomach muscles.",
     "stopIf": "Back or neck pain increases.",
-    "references": ["McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."],
-    "reviewed": false
+    "references": [
+      "McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=p6X1-Hb30I4",
+        "credit": "Video: McGill Big 3- Curl Up, Side Bridge, Bird Dog (freetofeelhealthy)"
+      }
+    ]
   },
   {
     "id": "bird-dog",
     "name": "Bird dog",
-    "bodyAreas": ["CORE", "LUMBAR", "GLUTE"],
+    "bodyAreas": [
+      "CORE",
+      "LUMBAR",
+      "GLUTE"
+    ],
     "kind": "STRENGTH",
     "position": "QUADRUPED",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "ALTERNATING",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 6, "holdSec": 8 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 6,
+      "holdSec": 8
+    },
     "why": "Trains the trunk muscles to keep your spine steady while your arms and legs move: the kind of endurance that protects the back when running and lifting. One of McGill's 'big 3' back exercises.",
-    "setup": ["Get on hands and knees, hands under shoulders, knees under hips, back flat."],
-    "cues": ["Reach opposite arm and leg out long", "Keep your back still as a tabletop", "Hold, then switch sides"],
+    "setup": [
+      "Get on hands and knees, hands under shoulders, knees under hips, back flat."
+    ],
+    "cues": [
+      "Reach opposite arm and leg out long",
+      "Keep your back still as a tabletop",
+      "Hold, then switch sides"
+    ],
     "mistakes": [
       "Lifting the leg too high and arching the back",
       "Letting the hips tip to one side",
@@ -177,83 +396,201 @@
     ],
     "feel": "Effort in the back of the hip, along the back and around the trunk.",
     "stopIf": "Sharp back pain, or pain spreading down your leg.",
-    "references": ["McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."],
-    "reviewed": false
+    "references": [
+      "McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=_b2IhAjUpFk",
+        "credit": "Video: NUH Physiotherapy - Bird Dog (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "side-plank-knees",
     "name": "Side plank on knees",
-    "aliases": ["Modified side bridge"],
-    "bodyAreas": ["CORE", "LUMBAR"],
+    "aliases": [
+      "Modified side bridge"
+    ],
+    "bodyAreas": [
+      "CORE",
+      "LUMBAR"
+    ],
     "kind": "STRENGTH",
     "position": "SIDE_LYING",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 3, "holdSec": 15, "restSec": 20 },
+    "defaultDose": {
+      "sets": 3,
+      "holdSec": 15,
+      "restSec": 20
+    },
     "why": "Strengthens the muscles along the side of the trunk that keep your pelvis and spine level, especially on one leg as in every running stride. The easier version of the side plank, one of McGill's 'big 3'.",
-    "setup": ["Lie on your side with knees bent behind you, propped on your forearm, elbow under your shoulder."],
-    "cues": ["Lift your hips off the floor", "Straight line from head to knees", "Keep breathing"],
-    "mistakes": ["Letting the hips sag or drift backwards", "Shrugging the supporting shoulder", "Holding your breath"],
+    "setup": [
+      "Lie on your side with knees bent behind you, propped on your forearm, elbow under your shoulder."
+    ],
+    "cues": [
+      "Lift your hips off the floor",
+      "Straight line from head to knees",
+      "Keep breathing"
+    ],
+    "mistakes": [
+      "Letting the hips sag or drift backwards",
+      "Shrugging the supporting shoulder",
+      "Holding your breath"
+    ],
     "feel": "Work along the side of your trunk and hip.",
     "stopIf": "Shoulder pain, or back pain increases.",
-    "progressions": ["side-plank"],
-    "references": ["McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."],
-    "reviewed": false
+    "progressions": [
+      "side-plank"
+    ],
+    "references": [
+      "McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=6npPOFUNyXk",
+        "credit": "Video: Side Plank Too Hard? Start With This Modified Version (Physical Therapy First)"
+      }
+    ]
   },
   {
     "id": "side-plank",
     "name": "Side plank",
-    "aliases": ["Side bridge"],
-    "bodyAreas": ["CORE", "LUMBAR", "HIP"],
+    "aliases": [
+      "Side bridge"
+    ],
+    "bodyAreas": [
+      "CORE",
+      "LUMBAR",
+      "HIP"
+    ],
     "kind": "STRENGTH",
     "position": "SIDE_LYING",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 3, "holdSec": 20, "restSec": 20 },
+    "defaultDose": {
+      "sets": 3,
+      "holdSec": 20,
+      "restSec": 20
+    },
     "why": "Full side plank: strong trunk and hip support for running, hiking and lifting. One of McGill's 'big 3'.",
-    "setup": ["Lie on your side, legs straight and feet stacked (or top foot in front), propped on your forearm with the elbow under your shoulder."],
-    "cues": ["Lift your hips into a straight line", "Push the floor away with your forearm", "Keep breathing"],
-    "mistakes": ["Hips sagging", "Rolling forward or back", "Holding your breath"],
+    "setup": [
+      "Lie on your side, legs straight and feet stacked (or top foot in front), propped on your forearm with the elbow under your shoulder."
+    ],
+    "cues": [
+      "Lift your hips into a straight line",
+      "Push the floor away with your forearm",
+      "Keep breathing"
+    ],
+    "mistakes": [
+      "Hips sagging",
+      "Rolling forward or back",
+      "Holding your breath"
+    ],
     "feel": "Work along the side of your trunk, hip and shoulder.",
     "stopIf": "Shoulder pain, or back pain increases.",
-    "regressions": ["side-plank-knees"],
-    "references": ["McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."],
-    "reviewed": false
+    "regressions": [
+      "side-plank-knees"
+    ],
+    "references": [
+      "McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=LPZ7JawCHP4",
+        "credit": "Video: Form for Side Forearm Plank (suzannebowenfitness)"
+      }
+    ]
   },
   {
     "id": "dead-bug",
     "name": "Dead bug",
-    "bodyAreas": ["CORE"],
+    "bodyAreas": [
+      "CORE"
+    ],
     "kind": "STRENGTH",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "ALTERNATING",
     "measure": "REPS",
-    "defaultDose": { "sets": 2, "reps": 8, "restSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "reps": 8,
+      "restSec": 30
+    },
     "why": "Teaches your trunk to stay steady while your arms and legs move, the same control you need in every running stride.",
-    "setup": ["Lie on your back with arms pointing at the ceiling and hips and knees bent to 90 degrees."],
-    "cues": ["Lower opposite arm and leg slowly", "Keep your lower back still", "Breathe out as you reach"],
-    "mistakes": ["Arching the lower back off the floor", "Moving too fast", "Holding your breath"],
+    "setup": [
+      "Lie on your back with arms pointing at the ceiling and hips and knees bent to 90 degrees."
+    ],
+    "cues": [
+      "Lower opposite arm and leg slowly",
+      "Keep your lower back still",
+      "Breathe out as you reach"
+    ],
+    "mistakes": [
+      "Arching the lower back off the floor",
+      "Moving too fast",
+      "Holding your breath"
+    ],
     "feel": "Work deep in the stomach.",
     "stopIf": "Back pain increases.",
-    "regressions": ["bird-dog"],
-    "reviewed": false
+    "regressions": [
+      "bird-dog"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=g_BYB0R-4Ws",
+        "credit": "Video: Core Exercise: Dead Bug (Children's Hospital Colorado)"
+      }
+    ]
   },
   {
     "id": "glute-bridge",
     "name": "Glute bridge",
-    "bodyAreas": ["GLUTE", "HAMSTRING", "LUMBAR"],
+    "bodyAreas": [
+      "GLUTE",
+      "HAMSTRING",
+      "LUMBAR"
+    ],
     "kind": "STRENGTH",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 2, "reps": 10, "holdSec": 3, "restSec": 45 },
+    "defaultDose": {
+      "sets": 2,
+      "reps": 10,
+      "holdSec": 3,
+      "restSec": 45
+    },
     "why": "Strengthens the glutes, which share the load with your lower back and knees when you run, climb stairs and lift.",
-    "setup": ["Lie on your back with knees bent, feet flat and hip-width apart, arms by your sides."],
-    "cues": ["Squeeze your glutes, then lift your hips", "Straight line from knees to shoulders", "Lower slowly"],
+    "setup": [
+      "Lie on your back with knees bent, feet flat and hip-width apart, arms by your sides."
+    ],
+    "cues": [
+      "Squeeze your glutes, then lift your hips",
+      "Straight line from knees to shoulders",
+      "Lower slowly"
+    ],
     "mistakes": [
       "Arching the lower back at the top",
       "Pushing through the toes instead of the heels",
@@ -261,8 +598,17 @@
     ],
     "feel": "Your glutes working. A little in the back of the thighs is fine.",
     "stopIf": "Lower-back pain increases during the exercise.",
-    "progressions": ["single-leg-bridge"],
-    "reviewed": false
+    "progressions": [
+      "single-leg-bridge"
+    ],
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=CPb8yRUxWBQ",
+        "credit": "Video: Glute Bridge 101 (Knob Noster Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "stair-climb",

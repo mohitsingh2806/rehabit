@@ -39,7 +39,14 @@
     ],
     "feel": "A stretch in the upper part of the back calf.",
     "stopIf": "Sharp pain in the heel, Achilles or ankle.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=95A-pAKiOwg",
+        "credit": "Video: Gastrocnemius Calf muscle stretch (EverestTherapeutics)"
+      }
+    ]
   },
   {
     "id": "calf-stretch-wall-soleus",
@@ -81,7 +88,14 @@
     ],
     "feel": "A stretch low in the calf, just above the heel.",
     "stopIf": "Sharp pain in the heel, Achilles or ankle.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=1i8QwoscojU",
+        "credit": "Video: Soleus Calf muscle stretch (EverestTherapeutics)"
+      }
+    ]
   },
   {
     "id": "plantar-fascia-stretch",
@@ -161,7 +175,14 @@
     ],
     "feel": "Effort in the arch of the foot.",
     "stopIf": "Cramping that doesn't ease, or arch pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=m1lkcg8p-48",
+        "credit": "Video: Short Foot Exercise (Singapore General Hospital)"
+      }
+    ]
   },
   {
     "id": "ankle-inversion-isometric",
@@ -257,7 +278,14 @@
     "references": [
       "Kulig K, et al. 2009. Nonsurgical management of posterior tibial tendon dysfunction with orthoses and resistive exercise: a randomized controlled trial. Phys Ther 89:26-37."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=JB12dq_1Y94",
+        "credit": "Video: Rehab exercise; Tibialis Posterior; Banded Plantarflexed Adduction (Liam Stapleton (Podiatric Sports Medicine))"
+      }
+    ]
   },
   {
     "id": "heel-raise-double",
@@ -350,7 +378,14 @@
     "progressions": [
       "single-leg-heel-raise"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=IjoSXiL-dO0",
+        "credit": "Video: Heel Raise With Ball Squeeze - For Posterior Tib Activation (Sole Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "single-leg-heel-raise",
@@ -393,7 +428,14 @@
     "regressions": [
       "heel-raise-double"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=-IqeI-mMQLQ",
+        "credit": "Video: Single Leg Heel Raises - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "single-leg-balance",
@@ -433,7 +475,14 @@
     "cautions": [
       "Stay near support if your balance is poor."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=FjwiVMhBhw0",
+        "credit": "Video: Single Leg Balance - Increase Ankle Strength and Stability (Center For Total Back Care)"
+      }
+    ]
   },
   {
     "id": "tibialis-raise",
@@ -514,7 +563,14 @@
     "regressions": [
       "single-leg-heel-raise"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=hjprPAnfqoQ",
+        "credit": "Video: Pogo Hops (Drs. Mike & Kelly Swann)"
+      }
+    ]
   },
   {
     "id": "heel-raise-towel-toes",

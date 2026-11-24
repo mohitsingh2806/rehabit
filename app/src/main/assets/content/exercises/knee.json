@@ -175,7 +175,14 @@
     "references": [
       "Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=lqGcco-k7oE",
+        "credit": "Video: Isometric Wall Squat for Knee Pain, , San Antonio, TX Puckett Physical Therapy (Puckett Sports Rehab and Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "spanish-squat-isometric",
@@ -224,7 +231,14 @@
     "references": [
       "Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=mik90mAS6fU",
+        "credit": "Video: Spanish Squats - Isometric Exercise for Patellar Tendinopathy (The Knee Resource)"
+      }
+    ]
   },
   {
     "id": "box-squat-slow",
@@ -272,7 +286,14 @@
     "references": [
       "Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=rvpC9QkTc3Y",
+        "credit": "Video: Chair Squat Exercise (Margaret Martin, Physical Therapist)"
+      }
+    ]
   },
   {
     "id": "goblet-squat-slow",
@@ -321,7 +342,14 @@
     "references": [
       "Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=vuRyCXWv6uI",
+        "credit": "Video: Strength Training for Soccer Players: Goblet Squats (Fit for Life Physiotherapy)"
+      }
+    ]
   },
   {
     "id": "split-squat",
@@ -359,7 +387,14 @@
     "progressions": [
       "reverse-lunge"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=4dVOXBt4BRE",
+        "credit": "Video: How To: Split Squat (Reload Physical Therapy and Fitness)"
+      }
+    ]
   },
   {
     "id": "reverse-lunge",
@@ -440,7 +475,14 @@
     ],
     "feel": "Work in the thigh and buttock of the standing leg.",
     "stopIf": "Knee pain above about 3 out of 10.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=FAZpljV-n9w",
+        "credit": "Video: Eccentric step down - Lower Body Exercise (Commons Clinic)"
+      }
+    ]
   },
   {
     "id": "step-up",

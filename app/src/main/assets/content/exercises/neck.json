@@ -39,7 +39,14 @@
     "progressions": [
       "deep-neck-flexor-nod"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=qfYcLXhCjWw",
+        "credit": "Video: Chin Tuck for Physical Therapy (Potomac Valley Orthopaedic Associates)"
+      }
+    ]
   },
   {
     "id": "deep-neck-flexor-nod",
@@ -86,7 +93,14 @@
     "references": [
       "Jull G, et al. 2002. A randomized controlled trial of exercise and manipulative therapy for cervicogenic headache. Spine 27:1835-43."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=NPcXigkv81Q",
+        "credit": "Video: How to do a Seated Deep Neck Flexor Upper Cervical Nod - Posture & Strength Exercise - Wellen (Wellen)"
+      }
+    ]
   },
   {
     "id": "neck-rotation",
@@ -123,7 +137,14 @@
     ],
     "feel": "Gentle movement and a light stretch in the neck.",
     "stopIf": "Dizziness, blurred vision, or pain spreading into the arm.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=mChPKm2UhPo",
+        "credit": "Video: Physical Therapy for the Neck : Gentle Range of Motion Exercise for Neck Physical Therapy (ehowhealth)"
+      }
+    ]
   },
   {
     "id": "upper-trap-stretch",
@@ -169,7 +190,14 @@
     "substitutes": [
       "levator-scapulae-stretch"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=uwLcpgIqpnU",
+        "credit": "Video: NUH Physiotherapy - Upper Trapezius Stretch (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "levator-scapulae-stretch",
@@ -214,7 +242,14 @@
     "substitutes": [
       "upper-trap-stretch"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=0_RO8NbdKBc",
+        "credit": "Video: NUHS Physiotherapy - Levator Scapulae Stretch (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "scapular-retraction",
@@ -257,6 +292,13 @@
     "progressions": [
       "band-row"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=QN1oZVMMRjE",
+        "credit": "Video: Shoulder exercise - scapular squeeze (www.sportsinjuryclinic.net)"
+      }
+    ]
   }
 ]

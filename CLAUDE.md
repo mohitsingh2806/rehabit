@@ -86,9 +86,12 @@ Bundled content lives in `app/src/main/assets/content/` as JSON (`exercises/*.js
 - **Write to current evidence.** Plans do what actually manages the problem. Name the evidence in
   `references` (author + year + title, e.g. Rathleff 2015 high-load strength for plantar fasciitis),
   and only cite sources you're confident exist.
-- **Video links**: only real, checked URLs. Fetch each one before adding it and confirm it exists
-  and shows *that* exercise. Prefer reputable physio / sports-medicine / clinic channels. **Never
-  invent or guess a URL.** If none is verified, leave the field empty.
+- **Video links**: only real, checked URLs. **Never invent or guess a URL.** Method that works:
+  WebSearch limited to youtube.com → verify each candidate with
+  `https://www.youtube.com/oembed?format=json&url=https://www.youtube.com/watch?v=<id>` (must return
+  the video's title and channel) → pick one whose title matches the exercise, preferring hospital /
+  NHS / physio-clinic channels. Store as `{"type":"VIDEO_LINK","url":…,"credit":"Video: <title> (<channel>)"}`.
+  If none is verified, leave the field empty.
 - Conservative default doses; progressions are suggestions, never automatic.
 - Post-surgical plans (e.g. ACL reconstruction) are templates for the user's own surgeon/physio
   protocol plus general education, never a replacement.
