@@ -1,0 +1,51 @@
+[
+  {
+    "id": "wall-sit-isometric",
+    "name": "Wall sit (isometric hold)",
+    "bodyAreas": ["KNEE", "QUAD"],
+    "kind": "ISOMETRIC",
+    "position": "STANDING",
+    "equipment": ["WALL"],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 4, "holdSec": 30, "restSec": 60, "effort": "Knee discomfort up to 3/10 is OK" },
+    "why": "Holding a squat without moving loads the knee tendon and thigh muscles steadily. For patellar tendon pain, holds like this let you keep the tendon working when moving exercises hurt, and many people find the pain eases for a while afterwards.",
+    "setup": [
+      "Stand with your back against a wall, feet about 30 cm in front of you and hip-width apart.",
+      "Slide down until your knees are bent to a depth that feels hard but not painful. Go no lower than thighs level with the floor."
+    ],
+    "cues": ["Back flat on the wall", "Knees in line with your toes", "Keep breathing"],
+    "mistakes": ["Going so deep that the knee hurts", "Letting the knees fall inwards", "Holding your breath"],
+    "feel": "Hard work in the front of the thighs. Mild knee discomfort that settles after the set is OK.",
+    "stopIf": "Knee pain goes above about 3-4 out of 10, or is worse the next morning.",
+    "cautions": ["Skip it if the knee is hot or swollen."],
+    "substitutes": ["spanish-squat-isometric"],
+    "references": ["Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"],
+    "reviewed": false
+  },
+  {
+    "id": "spanish-squat-isometric",
+    "name": "Spanish squat (isometric hold)",
+    "bodyAreas": ["KNEE", "QUAD"],
+    "kind": "ISOMETRIC",
+    "position": "STANDING",
+    "equipment": ["BAND"],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 4, "holdSec": 30, "restSec": 60, "effort": "Knee discomfort up to 3/10 is OK" },
+    "why": "The band holds your shins upright, so the thigh muscles and knee tendon do the work with less squeeze on the front of the knee. A favourite hold for patellar tendon pain.",
+    "setup": [
+      "Loop a long resistance band (or strap) around a sturdy post and behind both knees.",
+      "Step back until the band is tight, feet hip-width apart.",
+      "Sit back as if into a chair, keeping your shins upright."
+    ],
+    "cues": ["Sit back into the band", "Shins stay upright", "Chest up, keep breathing"],
+    "mistakes": ["Letting the knees drift forward past the toes", "Squatting too deep too soon", "Anchoring to something that can move"],
+    "feel": "Hard work in the front of the thighs. Mild knee discomfort that settles after the set is OK.",
+    "stopIf": "Knee pain goes above about 3-4 out of 10, or is worse the next morning.",
+    "cautions": ["Check the anchor is solid before leaning back."],
+    "substitutes": ["wall-sit-isometric"],
+    "references": ["Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"],
+    "reviewed": false
+  }
+]

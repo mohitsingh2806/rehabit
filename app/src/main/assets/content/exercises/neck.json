@@ -1,0 +1,58 @@
+[
+  {
+    "id": "chin-tuck",
+    "name": "Chin tuck",
+    "aliases": ["Neck retraction"],
+    "bodyAreas": ["NECK"],
+    "kind": "ACTIVATION",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "BILATERAL",
+    "measure": "REPS_WITH_HOLD",
+    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 3 },
+    "why": "Wakes up the deep muscles at the front of your neck that hold your head balanced over your shoulders. After long hours at a screen the head drifts forward and these muscles switch off, which loads the back of the neck.",
+    "setup": [
+      "Sit or stand tall with your shoulders relaxed.",
+      "Look straight ahead with your chin level."
+    ],
+    "cues": ["Slide your head straight back", "Make a gentle double chin", "Keep your eyes level"],
+    "mistakes": [
+      "Tipping the chin down to the chest instead of sliding the head back",
+      "Pushing so hard that the neck strains",
+      "Shrugging the shoulders"
+    ],
+    "feel": "A gentle stretch at the base of your skull and light effort at the front of your neck.",
+    "stopIf": "Pain spreads into your arm, or you feel dizzy, tingly or numb.",
+    "reviewed": false
+  },
+  {
+    "id": "upper-trap-stretch",
+    "name": "Upper trapezius stretch",
+    "aliases": ["Side neck stretch"],
+    "bodyAreas": ["NECK", "SHOULDER"],
+    "kind": "STRETCH_STATIC",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "equipment": ["CHAIR"],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "why": "Eases tightness along the side of the neck and top of the shoulder, where tension builds up with stress, desk work and carrying bags.",
+    "setup": [
+      "Sit tall and hold the side of the chair seat with your right hand to keep that shoulder down.",
+      "Slowly tilt your left ear towards your left shoulder.",
+      "Optional: rest your left hand on your head for a little extra weight. Don't pull."
+    ],
+    "cues": ["Ear towards shoulder", "Keep the other shoulder down", "Breathe slowly"],
+    "mistakes": [
+      "Pulling hard on your head",
+      "Letting the stretched-side shoulder creep up",
+      "Turning the head instead of tilting it"
+    ],
+    "feel": "A stretch along the side of the neck into the top of the shoulder, on the side away from the tilt.",
+    "stopIf": "Pain or tingling travels down your arm, or you feel dizzy.",
+    "reviewed": false
+  }
+]

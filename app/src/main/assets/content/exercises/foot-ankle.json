@@ -1,0 +1,121 @@
+[
+  {
+    "id": "calf-stretch-wall-gastroc",
+    "name": "Calf stretch, straight knee",
+    "aliases": ["Gastrocnemius stretch"],
+    "bodyAreas": ["CALF", "ANKLE"],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "equipment": ["WALL"],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "why": "Stretches the big upper calf muscle (gastrocnemius). A tight calf adds strain to the Achilles, the arch of the foot and the inside of the ankle.",
+    "setup": [
+      "Stand facing a wall with your hands on it.",
+      "Step one foot back, heel down and toes pointing straight forward."
+    ],
+    "cues": ["Back knee straight, heel down", "Toes point forward", "Lean in until the calf stretches"],
+    "mistakes": ["Letting the back heel lift", "Turning the back foot out", "Bouncing"],
+    "feel": "A stretch in the upper part of the back calf.",
+    "stopIf": "Sharp pain in the heel, Achilles or ankle.",
+    "reviewed": false
+  },
+  {
+    "id": "calf-stretch-wall-soleus",
+    "name": "Calf stretch, bent knee",
+    "aliases": ["Soleus stretch"],
+    "bodyAreas": ["CALF", "ANKLE"],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "equipment": ["WALL"],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "why": "Bending the knee shifts the stretch to the deeper, lower calf muscle (soleus), which works hard in running and walking downhill.",
+    "setup": [
+      "Stand facing a wall with your hands on it, one foot a short step behind the other.",
+      "Keep both heels down."
+    ],
+    "cues": ["Bend the back knee", "Keep that heel down", "Sink until the low calf stretches"],
+    "mistakes": ["Letting the back heel lift", "Stepping too far back", "Rolling the foot in"],
+    "feel": "A stretch low in the calf, just above the heel.",
+    "stopIf": "Sharp pain in the heel, Achilles or ankle.",
+    "reviewed": false
+  },
+  {
+    "id": "ankle-inversion-isometric",
+    "name": "Ankle inversion hold (isometric)",
+    "bodyAreas": ["ANKLE", "FOOT"],
+    "kind": "ISOMETRIC",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "equipment": ["CHAIR"],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": { "sets": 5, "holdSec": 30, "restSec": 30, "effort": "Firm push, discomfort up to 3/10" },
+    "why": "Pressing the inside of the foot against something solid works the tibialis posterior, the tendon on the inside of the ankle that holds up your arch, without moving the ankle. A gentle starting point when that tendon is painful.",
+    "setup": [
+      "Sit with both feet flat on the floor.",
+      "Place the inside edge of the working foot against the inside of your other foot, or a table leg."
+    ],
+    "cues": ["Push the inner foot inwards", "Don't let the foot move", "Keep breathing"],
+    "mistakes": ["Pushing so hard it hurts", "Lifting the heel", "Holding your breath"],
+    "feel": "Effort along the inside of the ankle and lower shin.",
+    "stopIf": "Sharp pain on the inside of the ankle.",
+    "progressions": ["ankle-inversion-band"],
+    "reviewed": false
+  },
+  {
+    "id": "ankle-inversion-band",
+    "name": "Resisted ankle inversion (band)",
+    "bodyAreas": ["ANKLE", "FOOT"],
+    "kind": "STRENGTH",
+    "position": "SEATED",
+    "equipment": ["BAND"],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-1-3" },
+    "why": "Strengthens the tibialis posterior through its full movement, with a slow lowering phase that tendons respond well to. Resisted exercise like this is part of non-surgical treatment for posterior tibial tendon problems.",
+    "setup": [
+      "Sit with the working leg crossed over the other knee, or with the foot flat on the floor.",
+      "Loop a band around the forefoot and hold or anchor it to the outside, so it pulls the foot outwards."
+    ],
+    "cues": ["Turn the sole of your foot inwards", "Move from the ankle, not the knee", "Lower slowly"],
+    "mistakes": ["Rotating the whole leg instead of the foot", "Letting the band snap back", "Using a band that's too heavy"],
+    "feel": "Work along the inside of the ankle and lower shin.",
+    "stopIf": "Sharp pain on the inside of the ankle, or it's more painful the next morning.",
+    "regressions": ["ankle-inversion-isometric"],
+    "progressions": ["heel-raise-ball-squeeze"],
+    "substitutes": ["ankle-inversion-isometric"],
+    "references": ["Kulig K, et al. 2009. Nonsurgical management of posterior tibial tendon dysfunction with orthoses and resistive exercise: a randomized controlled trial. Phys Ther 89:26-37."],
+    "reviewed": false
+  },
+  {
+    "id": "heel-raise-ball-squeeze",
+    "name": "Heel raise with ball squeeze",
+    "bodyAreas": ["ANKLE", "CALF", "FOOT"],
+    "kind": "STRENGTH",
+    "position": "STANDING",
+    "equipment": ["TOWEL", "WALL"],
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-1-3" },
+    "why": "Rising onto your toes while squeezing something between your heels makes the tibialis posterior, the tendon that holds up your arch, work harder. Building its strength is the core of rehab for posterior tibial tendon problems.",
+    "setup": [
+      "Stand facing a wall or counter with your fingertips on it for balance.",
+      "Place a small soft ball or rolled-up towel between your ankles, just above the heels."
+    ],
+    "cues": ["Squeeze the ball", "Rise up through the big toe", "Lower slowly"],
+    "mistakes": ["Rolling out onto the little toes", "Dropping down fast", "Letting the ball fall"],
+    "feel": "Work in the calves and along the inside of the ankles and arches.",
+    "stopIf": "Sharp pain on the inside of the ankle, or the ankle feels unstable.",
+    "regressions": ["ankle-inversion-band"],
+    "reviewed": false
+  }
+]

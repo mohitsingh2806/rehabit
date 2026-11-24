@@ -1,0 +1,66 @@
+[
+  {
+    "id": "cat-cow",
+    "name": "Cat-cow",
+    "aliases": ["Cat-camel"],
+    "bodyAreas": ["LUMBAR", "THORACIC"],
+    "kind": "MOBILITY",
+    "position": "QUADRUPED",
+    "equipment": ["MAT"],
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": { "sets": 1, "reps": 10 },
+    "why": "Moves your whole spine gently through rounding and arching. It eases stiffness and is a kind first exercise when the back is sore or after a run.",
+    "setup": ["Get on hands and knees, hands under shoulders and knees under hips."],
+    "cues": ["Slowly round your back up", "Then lift your chest and tailbone", "Move with your breath"],
+    "mistakes": ["Rushing", "Moving only the neck", "Forcing the end of the range"],
+    "feel": "Gentle movement and stretch along the back.",
+    "stopIf": "Pain shoots into your leg, or one direction clearly makes the pain worse. Then stay in the comfortable range.",
+    "reviewed": false
+  },
+  {
+    "id": "bird-dog",
+    "name": "Bird dog",
+    "bodyAreas": ["CORE", "LUMBAR", "GLUTE"],
+    "kind": "STRENGTH",
+    "position": "QUADRUPED",
+    "equipment": ["MAT"],
+    "laterality": "ALTERNATING",
+    "measure": "REPS_WITH_HOLD",
+    "defaultDose": { "sets": 1, "reps": 6, "holdSec": 8 },
+    "why": "Trains the trunk muscles to keep your spine steady while your arms and legs move: the kind of endurance that protects the back when running and lifting. One of McGill's 'big 3' back exercises.",
+    "setup": ["Get on hands and knees, hands under shoulders, knees under hips, back flat."],
+    "cues": ["Reach opposite arm and leg out long", "Keep your back still as a tabletop", "Hold, then switch sides"],
+    "mistakes": [
+      "Lifting the leg too high and arching the back",
+      "Letting the hips tip to one side",
+      "Rushing the hold"
+    ],
+    "feel": "Effort in the back of the hip, along the back and around the trunk.",
+    "stopIf": "Sharp back pain, or pain spreading down your leg.",
+    "references": ["McGill SM. Low Back Disorders: Evidence-Based Prevention and Rehabilitation. Human Kinetics."],
+    "reviewed": false
+  },
+  {
+    "id": "glute-bridge",
+    "name": "Glute bridge",
+    "bodyAreas": ["GLUTE", "HAMSTRING", "LUMBAR"],
+    "kind": "STRENGTH",
+    "position": "FLOOR_SUPINE",
+    "equipment": ["MAT"],
+    "laterality": "BILATERAL",
+    "measure": "REPS_WITH_HOLD",
+    "defaultDose": { "sets": 2, "reps": 10, "holdSec": 3, "restSec": 45 },
+    "why": "Strengthens the glutes, which share the load with your lower back and knees when you run, climb stairs and lift.",
+    "setup": ["Lie on your back with knees bent, feet flat and hip-width apart, arms by your sides."],
+    "cues": ["Squeeze your glutes, then lift your hips", "Straight line from knees to shoulders", "Lower slowly"],
+    "mistakes": [
+      "Arching the lower back at the top",
+      "Pushing through the toes instead of the heels",
+      "Feeling it mostly in the hamstrings (bring your heels a little closer)"
+    ],
+    "feel": "Your glutes working. A little in the back of the thighs is fine.",
+    "stopIf": "Lower-back pain increases during the exercise.",
+    "reviewed": false
+  }
+]

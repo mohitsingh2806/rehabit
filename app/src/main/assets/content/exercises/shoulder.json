@@ -1,0 +1,58 @@
+[
+  {
+    "id": "shoulder-pendulum",
+    "name": "Shoulder pendulum",
+    "aliases": ["Codman's pendulum"],
+    "bodyAreas": ["SHOULDER"],
+    "kind": "MOBILITY",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "equipment": ["CHAIR"],
+    "laterality": "EACH_SIDE",
+    "measure": "TIME",
+    "defaultDose": { "sets": 2, "durationSec": 60, "restSec": 30, "sides": "AFFECTED" },
+    "why": "Moves the shoulder joint gently while the muscles stay relaxed, because gravity and your body's sway do the work. It eases pain and keeps the joint moving when lifting the arm hurts, as in the painful early stage of frozen shoulder.",
+    "setup": [
+      "Stand next to a table, desk or chair back and lean forward, supporting yourself with your good hand.",
+      "Let the sore arm hang straight down, completely relaxed."
+    ],
+    "cues": ["Let the arm hang heavy", "Sway your body to swing the arm", "Small circles, then a little bigger"],
+    "mistakes": [
+      "Using the shoulder muscles to swing the arm",
+      "Swinging so big that it hurts",
+      "Rounding the back instead of hinging at the hips"
+    ],
+    "feel": "A loose, gentle swinging in the shoulder. A mild stretch is fine.",
+    "stopIf": "Pain is sharp or keeps building while you do it.",
+    "cautions": ["After shoulder surgery, follow your surgeon's or physio's instructions on when to start."],
+    "reviewed": false
+  },
+  {
+    "id": "shoulder-table-slide",
+    "name": "Table slide (shoulder flexion)",
+    "aliases": ["Forward table slide"],
+    "bodyAreas": ["SHOULDER"],
+    "kind": "MOBILITY",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "equipment": ["CHAIR", "TOWEL"],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS_WITH_HOLD",
+    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5, "sides": "AFFECTED" },
+    "why": "Takes the shoulder forward and up while the table carries the arm's weight, so you can work on range without straining the muscles. A good next step after pendulums when the shoulder is stiff.",
+    "setup": [
+      "Sit facing a table with your sore-side hand resting on a small towel on the table.",
+      "Sit tall, feet flat on the floor."
+    ],
+    "cues": ["Slide your hand forward", "Lean your body forward to help", "Stop at a gentle stretch"],
+    "mistakes": [
+      "Hitching the shoulder up towards the ear",
+      "Pushing into strong pain",
+      "Holding your breath"
+    ],
+    "feel": "A gentle stretch under the arm or around the shoulder at the end of the slide.",
+    "stopIf": "Pain is sharp, or aching lasts more than about an hour afterwards.",
+    "regressions": ["shoulder-pendulum"],
+    "reviewed": false
+  }
+]
