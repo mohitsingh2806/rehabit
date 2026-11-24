@@ -124,7 +124,14 @@
     "cautions": [
       "Start with 1-2 sets of 3-5: soreness for 2-3 days is normal at first."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Yb6yPPLXMM8",
+        "credit": "Video: How To Perform A Nordic Curl: Hamstring Strengthening with Mangiarelli Rehabilitation (Mangiarelli Rehabilitation)"
+      }
+    ]
   },
   {
     "id": "hamstring-heel-dig",
@@ -165,7 +172,14 @@
     "progressions": [
       "hamstring-bridge-isometric"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=SKKxhCgQ7hM",
+        "credit": "Video: 21. Exercises - Supine Isometric Heel Digs (Aspetar سبيتار)"
+      }
+    ]
   },
   {
     "id": "hamstring-bridge-isometric",
@@ -212,6 +226,13 @@
     "progressions": [
       "single-leg-bridge"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=I40bWAwJXUY",
+        "credit": "Video: Isometric Hamstring Exercise With Chair (Elite Performance Institute)"
+      }
+    ]
   }
 ]

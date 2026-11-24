@@ -136,7 +136,14 @@
     "references": [
       "DiGiovanni BF, et al. 2003. Tissue-specific plantar fascia-stretching exercise enhances outcomes in patients with chronic heel pain. J Bone Joint Surg Am 85:1270-7."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=JVS4MzeIBVI",
+        "credit": "Video: NUHS Physiotherapy  - Seated Plantar Fascia Stretch (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "short-foot",
@@ -331,7 +338,14 @@
       "heel-raise-ball-squeeze",
       "single-leg-heel-raise"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=FRw-Oe7wcSY",
+        "credit": "Video: Heel Raise Exercise to Strengthen Calf Muscles (Margaret Martin, Physical Therapist)"
+      }
+    ]
   },
   {
     "id": "heel-raise-ball-squeeze",
@@ -522,7 +536,14 @@
     ],
     "feel": "Work at the front of the shins.",
     "stopIf": "Sharp shin pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=BKHTwGv71t4",
+        "credit": "Video: Wall Toe Raises (Tibialis Raises) (Bertucci_PT)"
+      }
+    ]
   },
   {
     "id": "ankle-pogo-hops",
@@ -624,7 +645,14 @@
     "references": [
       "Rathleff MS, et al. 2015. High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12 months follow-up. Scand J Med Sci Sports 25:e292-300."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=GHgEgPGiExU",
+        "credit": "Video: Plantar Fascia Loading Exercise (High Load Exercise) (NHS Ayrshire & Arran)"
+      }
+    ]
   },
   {
     "id": "eccentric-heel-drop-straight",
@@ -678,7 +706,14 @@
     "references": [
       "Alfredson H, et al. 1998. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 26:360-6."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=fHHbn_Odk4E",
+        "credit": "Video: Alfredson Achilles Tendinopathy Rehab Protocol (Physiotutors)"
+      }
+    ]
   },
   {
     "id": "eccentric-heel-drop-bent",
@@ -732,7 +767,14 @@
     "references": [
       "Alfredson H, et al. 1998. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 26:360-6."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=fHHbn_Odk4E",
+        "credit": "Video: Alfredson Achilles Tendinopathy Rehab Protocol (Physiotutors)"
+      }
+    ]
   },
   {
     "id": "calf-isometric-hold",
@@ -774,7 +816,14 @@
     "progressions": [
       "single-leg-heel-raise"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=XF5YDmVyhHw",
+        "credit": "Video: Achilles Tendinopathy Rehab - Single Leg Isometric Calf Raise Hold (Stronger Teams)"
+      }
+    ]
   },
   {
     "id": "bent-knee-heel-raise",
@@ -818,7 +867,14 @@
     "regressions": [
       "heel-raise-double"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=M5zL9EEoNx8",
+        "credit": "Video: Single Leg Bent Knee Calf Raise (Elite Performance Institute)"
+      }
+    ]
   },
   {
     "id": "ankle-alphabet",
@@ -855,7 +911,14 @@
     ],
     "feel": "Easy movement in the ankle.",
     "stopIf": "Sharp pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=YTVZUMuEKPA",
+        "credit": "Video: Ankle Alphabet - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "ankle-eversion-isometric",
@@ -899,7 +962,14 @@
     "progressions": [
       "ankle-eversion-band"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=g7MzQbhkMsU",
+        "credit": "Video: Ankle Eversion Isometic Exercise (Rehab My Patient)"
+      }
+    ]
   },
   {
     "id": "ankle-eversion-band",
@@ -943,7 +1013,14 @@
     "substitutes": [
       "ankle-eversion-isometric"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=xfrncpP5ONQ",
+        "credit": "Video: Ankle Eversion with Resistive Band - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "single-leg-balance-cushion",
@@ -991,7 +1068,14 @@
     "regressions": [
       "single-leg-balance"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=tJLvpIQNe9s",
+        "credit": "Video: Single leg stance (On pillow) (Holistic Physio Fitness)"
+      }
+    ]
   },
   {
     "id": "single-leg-hop",
@@ -1033,6 +1117,13 @@
     "regressions": [
       "ankle-pogo-hops"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=BRaoSnNhMV4",
+        "credit": "Video: Single leg hopping (On the spot) (Holistic Physio Fitness)"
+      }
+    ]
   }
 ]

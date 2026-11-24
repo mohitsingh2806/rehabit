@@ -418,7 +418,14 @@
     "regressions": [
       "box-squat-slow"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=zLNTTqtCjZo",
+        "credit": "Video: How to Jump & Land to Prevent ACL Injuries (Coury & Buehler Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "lateral-hop",
@@ -460,6 +467,13 @@
     "regressions": [
       "single-leg-balance"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=kfiC-w5MvRI",
+        "credit": "Video: Skater lateral bounds with yielding emphasis (Integrated Rehab and Performance Center)"
+      }
+    ]
   }
 ]

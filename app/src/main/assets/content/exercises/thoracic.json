@@ -84,7 +84,14 @@
     "substitutes": [
       "open-book"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=78Z1sq5z6aA",
+        "credit": "Video: Thoracic rotation (thread the needle) exercise for spine and rib mobility (Excel Therapy)"
+      }
+    ]
   },
   {
     "id": "thoracic-extension-foam-roller",
@@ -123,7 +130,14 @@
     "substitutes": [
       "thoracic-extension-chair"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=w73GJ-Uag9I",
+        "credit": "Video: Mid-Back (Thoracic) Extension on Foam Roll (Coury & Buehler Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "thoracic-extension-chair",
@@ -260,7 +274,14 @@
     ],
     "feel": "A stretch across the chest and work between the shoulder blades.",
     "stopIf": "Pain or tingling in the arms.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=CwoPzrBDfpk",
+        "credit": "Video: Wall Angels - Posture Exercise (Revamp Wellness)"
+      }
+    ]
   },
   {
     "id": "band-pull-apart",
@@ -301,7 +322,14 @@
     "substitutes": [
       "prone-y-t-raise"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=kZNeqj-wtE0",
+        "credit": "Video: How to Do A Band Pull Apart - Posture Exercises - Wellen (Wellen)"
+      }
+    ]
   },
   {
     "id": "standing-chest-opener",
@@ -342,7 +370,14 @@
     "substitutes": [
       "doorway-pec-stretch"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=JOLHu9rI2vY",
+        "credit": "Video: Clasped hands behind back arm extension stretch in standing - great for biceps, chest and shoulders! (Lift Clinic)"
+      }
+    ]
   },
   {
     "id": "standing-trunk-rotation",
@@ -380,6 +415,13 @@
     ],
     "feel": "Gentle movement through the mid back.",
     "stopIf": "Sharp back pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=acwMSzYfUc8",
+        "credit": "Video: NUH Physiotherapy - Back Rotation in Standing (National University Hospital (NUH) Singapore)"
+      }
+    ]
   }
 ]

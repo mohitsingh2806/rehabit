@@ -401,7 +401,14 @@
     "progressions": [
       "shoulder-er-band"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=xZKlQlkAeZA",
+        "credit": "Video: Isometric shoulder External rotation wall (Rehab My Patient)"
+      }
+    ]
   },
   {
     "id": "shoulder-er-band",

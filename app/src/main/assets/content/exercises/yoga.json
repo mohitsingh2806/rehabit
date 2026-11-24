@@ -36,7 +36,14 @@
     ],
     "feel": "Lightly working legs and a tall, easy spine.",
     "stopIf": "You feel dizzy or light-headed: sit down.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=NYhH8Gr35cI",
+        "credit": "Video: Mountain Pose (Tadasana) - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "standing-forward-fold",
@@ -80,7 +87,14 @@
     "regressions": [
       "half-forward-fold"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=g7Uhp5tphAs",
+        "credit": "Video: Forward Fold Yoga Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "half-forward-fold",
@@ -121,7 +135,14 @@
     "progressions": [
       "standing-forward-fold"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=2_yNresGBQE",
+        "credit": "Video: Half Standing Forward Bend (Ardha Uttanasana) - Yoga Pose Tutorial by Muscle and Motion (Muscle & Motion)"
+      }
+    ]
   },
   {
     "id": "downward-dog",
@@ -170,7 +191,14 @@
     "regressions": [
       "child-pose"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=j97SSGsnCAQ",
+        "credit": "Video: Downward Dog - Downward Facing Dog Yoga Pose (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "low-lunge",
@@ -214,7 +242,14 @@
     "substitutes": [
       "hip-flexor-stretch-standing"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=s_NTxDh5W4s",
+        "credit": "Video: Low Lunge Pose (Anjaneyasana) - Parker University Yoga (Parker University)"
+      }
+    ]
   },
   {
     "id": "warrior-two",
@@ -254,7 +289,14 @@
     ],
     "feel": "Work in the front thigh, a stretch in the inner thighs.",
     "stopIf": "Knee pain above about 3 out of 10.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=4Ejz7IgODlU",
+        "credit": "Video: Warrior 2 Yoga Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "triangle-pose",
@@ -293,7 +335,14 @@
     ],
     "feel": "A stretch along the front-leg hamstring and the side of the body.",
     "stopIf": "Back or knee pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=upFYlxZHif0",
+        "credit": "Video: Triangle Pose  |  Trikonasana  |  Foundations of Yoga (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "tree-pose",
@@ -337,7 +386,14 @@
     "regressions": [
       "single-leg-balance"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=yVE4XXFFO70",
+        "credit": "Video: Tree Pose - Vrksasana - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "chair-pose",
@@ -379,7 +435,14 @@
     "substitutes": [
       "wall-sit-isometric"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=ySafTekJ3Ls",
+        "credit": "Video: Chair Pose | Utkatasana (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "plank-pose",
@@ -420,7 +483,14 @@
     ],
     "feel": "Work in the stomach, shoulders and arms.",
     "stopIf": "Wrist, shoulder or back pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=6qg3r4zZE_k",
+        "credit": "Video: Plank Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "cobra-pose",
@@ -464,7 +534,14 @@
     "regressions": [
       "sphinx-pose"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=gPCns6PkF84",
+        "credit": "Video: How to Do Cobra Pose Safely | Beginner Yoga Guide (MyYogaTeacher)"
+      }
+    ]
   },
   {
     "id": "sphinx-pose",
@@ -504,7 +581,14 @@
     "progressions": [
       "cobra-pose"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=-UPqmTkyRqM",
+        "credit": "Video: How to Do Sphinx Pose | Gentle Heart Opening Yoga for Posture and Back Strength (Lauren McMillin | Yoga & Movement)"
+      }
+    ]
   },
   {
     "id": "bridge-pose",
@@ -548,7 +632,14 @@
     "substitutes": [
       "glute-bridge"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=NnbvPeAIhmA",
+        "credit": "Video: Bridge Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "seated-forward-fold",
@@ -589,7 +680,14 @@
     ],
     "feel": "A stretch along the backs of the legs.",
     "stopIf": "Tingling down the legs, or back pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=xNuiEX5GqAs",
+        "credit": "Video: Seated Forward Fold Yoga Tutorial | Personalize Your Practice with Props (Mindful Yoga with Dr. Beth)"
+      }
+    ]
   },
   {
     "id": "butterfly-pose",
@@ -630,7 +728,14 @@
     ],
     "feel": "A stretch along the inner thighs.",
     "stopIf": "Groin or knee pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=B6tb4TncKhY",
+        "credit": "Video: Bound Angle  Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "supine-twist",
@@ -671,7 +776,14 @@
     ],
     "feel": "Gentle rotation and stretch through the back and outer hip.",
     "stopIf": "Back pain or pain into a leg.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=mKC3IeldPOc",
+        "credit": "Video: Reclined Twist Yoga Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "happy-baby",
@@ -711,7 +823,14 @@
     ],
     "feel": "A stretch in the inner thighs and hips.",
     "stopIf": "Hip pinching or knee pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=gVM7GZg0OYU",
+        "credit": "Video: Happy Baby | Yoga Poses | YogaRenew How To Yoga Pose Video (YogaRenew)"
+      }
+    ]
   },
   {
     "id": "reclining-hamstring-strap",
@@ -752,7 +871,14 @@
     ],
     "feel": "A stretch in the back of the raised leg.",
     "stopIf": "Tingling or pain down the leg: ease off.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Il1L75v6gq0",
+        "credit": "Video: Hamstring Stretch with a Strap, Supine - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "legs-up-the-wall",
@@ -795,7 +921,14 @@
     "cautions": [
       "Skip it in late pregnancy, or if you have glaucoma or uncontrolled high blood pressure."
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=YHxoiq1YivE",
+        "credit": "Video: How to do Viparita Karani (Legs Up the Wall) w/ AnaMargret Sanchez (Yoga International)"
+      }
+    ]
   },
   {
     "id": "savasana",
@@ -833,7 +966,14 @@
     ],
     "feel": "Calm, heavy and relaxed.",
     "stopIf": "You feel unwell: roll to your side and sit up slowly.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=eSeRjoolN2A",
+        "credit": "Video: Corpse Pose - Yoga With Adriene (Yoga With Adriene)"
+      }
+    ]
   },
   {
     "id": "belly-breathing",
@@ -873,7 +1013,14 @@
     ],
     "feel": "Calm; the belly hand moves more than the chest hand.",
     "stopIf": "You feel dizzy or light-headed: breathe normally.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=4SxLf_yYs2E",
+        "credit": "Video: Deep Belly Breathing (Diaphragmatic Breathing) for Stress Relief (National Cancer Centre Singapore)"
+      }
+    ]
   },
   {
     "id": "box-breathing",
@@ -911,6 +1058,13 @@
     ],
     "feel": "Calm and steady.",
     "stopIf": "You feel dizzy: shorten the holds or breathe normally.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=LgbLGowKhG4",
+        "credit": "Video: Box Breathing Technique and Exercise | 1 Minute | Use For Meditation, Anxiety, Or Sleep | 4 4 4 4 (Sandstone Care)"
+      }
+    ]
   }
 ]

@@ -41,7 +41,14 @@
     "progressions": [
       "wrist-extension-slow"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=3VboWPSJ7Pw",
+        "credit": "Video: Isometric Wrist Extension for Tennis Elbow (Lateral Epicondylitis) (Momenta Chiropractic)"
+      }
+    ]
   },
   {
     "id": "wrist-extension-slow",
@@ -90,7 +97,14 @@
     "substitutes": [
       "wrist-extension-isometric"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Gt2m7mPiwKQ",
+        "credit": "Video: Eccentric wrist extension with dumbbell (Physical Therapy First)"
+      }
+    ]
   },
   {
     "id": "grip-squeeze-towel",
@@ -132,7 +146,14 @@
     ],
     "feel": "Work in the hand and forearm.",
     "stopIf": "Elbow pain above about 3 out of 10.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=lEdg2q-EVxw",
+        "credit": "Video: Towel Squeeze - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "wrist-extensor-stretch",
@@ -168,7 +189,14 @@
     ],
     "feel": "A stretch along the top of the forearm.",
     "stopIf": "Sharp elbow pain, or tingling in the fingers.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=267XvJCphr0",
+        "credit": "Video: Wrist Stretch: Wrist Extensor Stretch for Lateral Epicondylitis (LuWellness)"
+      }
+    ]
   },
   {
     "id": "forearm-rotation",
@@ -208,7 +236,14 @@
     ],
     "feel": "Work in the forearm.",
     "stopIf": "Elbow pain above about 3 out of 10.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=-LfyhlA9UNM",
+        "credit": "Video: Forearm Pronation and Supination With Hammer (OrthoIndy)"
+      }
+    ]
   },
   {
     "id": "wall-push-up",
@@ -250,7 +285,14 @@
     "progressions": [
       "push-up"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=dUAxTiVOhbA",
+        "credit": "Video: Physiotherapy exercise: Wall Push Up, for arms, chest and abdominal strength (PhysioMatters Dartmouth)"
+      }
+    ]
   },
   {
     "id": "push-up",
@@ -291,7 +333,14 @@
     "regressions": [
       "wall-push-up"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=__71lgdtiB8",
+        "credit": "Video: How To Properly Do A Modified Push-Up On Knees - Strength Exercises - Wellen (Wellen)"
+      }
+    ]
   },
   {
     "id": "sit-to-stand",
@@ -335,7 +384,14 @@
     "progressions": [
       "box-squat-slow"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=CYdWRZFer0U",
+        "credit": "Video: Chair Exercises Sit to Stand (JW Physio Rehabilitation and Fitness)"
+      }
+    ]
   },
   {
     "id": "tandem-stance",
@@ -380,6 +436,13 @@
     "progressions": [
       "single-leg-balance"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Sh70MpLzwS0",
+        "credit": "Video: Tandem Stance Exercise (Freedom Physical Therapy Services)"
+      }
+    ]
   }
 ]

@@ -140,7 +140,14 @@
     "progressions": [
       "pigeon-stretch"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=-g0nuyTHMrI",
+        "credit": "Video: Piriformis Figure 4 Stretch - Ask Doctor Jo (AskDoctorJo)"
+      }
+    ]
   },
   {
     "id": "figure-4-stretch-standing",
@@ -228,7 +235,14 @@
     "regressions": [
       "figure-4-stretch-supine"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=QCyA2kAeFfE",
+        "credit": "Video: How to do: Pigeon Stretch (Anti-Fragile Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "hip-90-90-switch",
@@ -264,7 +278,14 @@
     ],
     "feel": "Movement and a mild stretch around both hips.",
     "stopIf": "Pinching at the front of the hip, or knee pain.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=wEyKzajn82s",
+        "credit": "Video: 90/90 Hip Switches (Wolf Health & Performance Group)"
+      }
+    ]
   },
   {
     "id": "clamshell",
@@ -304,7 +325,14 @@
     "progressions": [
       "side-lying-hip-abduction"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=KX4k5Bi068I",
+        "credit": "Video: Side-Lying Clamshell | Hip Stability Exercise Series (Therapeutic EDGE)"
+      }
+    ]
   },
   {
     "id": "side-lying-hip-abduction",
@@ -405,7 +433,14 @@
     "substitutes": [
       "side-lying-hip-abduction"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=F6ZXQvozb8g",
+        "credit": "Video: Best Hip, Knee & Ankle Stability Exercises - Banded Side Steps (Sarasota Sports Medicine)"
+      }
+    ]
   },
   {
     "id": "single-leg-bridge",
@@ -584,6 +619,13 @@
     "substitutes": [
       "hip-flexor-stretch-kneeling"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=G8rbX0npKVE",
+        "credit": "Video: Standing Hip Flexor Stretch (Pursuit Physical Therapy)"
+      }
+    ]
   }
 ]

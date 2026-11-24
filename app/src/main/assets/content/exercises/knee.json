@@ -42,7 +42,14 @@
     "progressions": [
       "straight-leg-raise"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=QK8VHrHykcE",
+        "credit": "Video: NUH Physiotherapy - Static quadriceps (National University Hospital (NUH) Singapore)"
+      }
+    ]
   },
   {
     "id": "straight-leg-raise",
@@ -82,7 +89,14 @@
     "regressions": [
       "quad-set"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=drEiYK2li9Q",
+        "credit": "Video: Straight Leg Raises (Michigan Medicine)"
+      }
+    ]
   },
   {
     "id": "terminal-knee-extension-band",
@@ -127,7 +141,14 @@
     "substitutes": [
       "quad-set"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=X4z79e7uOfA",
+        "credit": "Video: Standing Banded Terminal Knee Extension (Motus Rx Physical Therapy)"
+      }
+    ]
   },
   {
     "id": "wall-sit-isometric",
@@ -433,7 +454,14 @@
     "regressions": [
       "split-squat"
     ],
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=Ry-wqegeKlE",
+        "credit": "Video: How To Perform The Reverse Lunge (Dr. Carl Baird)"
+      }
+    ]
   },
   {
     "id": "step-down-eccentric",
@@ -522,6 +550,13 @@
     ],
     "feel": "Work in the thigh and buttock of the stepping leg.",
     "stopIf": "Knee pain above about 3 out of 10.",
-    "reviewed": false
+    "reviewed": false,
+    "media": [
+      {
+        "type": "VIDEO_LINK",
+        "url": "https://www.youtube.com/watch?v=7hdkXSyGPsc",
+        "credit": "Video: Step-ups - Sports Medicine Rehab Exercises (Blue Ridge)"
+      }
+    ]
   }
 ]
