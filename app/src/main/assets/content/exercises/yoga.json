@@ -441,7 +441,7 @@
     "measure": "HOLD",
     "defaultDose": {
       "sets": 1,
-      "holdSec": 15,
+      "holdSec": 20,
       "tempo": "4-6"
     },
     "why": "A gentle backbend that strengthens the back muscles and opens the chest.",
@@ -773,8 +773,7 @@
     "measure": "TIME",
     "defaultDose": {
       "sets": 1,
-      "durationSec": 180,
-      "tempo": "4-6"
+      "durationSec": 180
     },
     "why": "A restful pose that eases tired legs after running or hiking and helps you wind down.",
     "setup": [

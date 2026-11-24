@@ -1,0 +1,123 @@
+{
+  "id": "balance-and-strength",
+  "name": "Balance and leg strength (falls prevention)",
+  "kind": "FOCUSED",
+  "category": "STRENGTH",
+  "goal": "Steadier balance and stronger legs: the combination proven to cut falls. Short sessions three times a week, plus balance most days.",
+  "whoFor": "Older adults, or anyone who feels unsteady or wants to stay independent and active.",
+  "notFor": [
+    "Recent falls with injury, fainting or dizziness: see your doctor first"
+  ],
+  "estMinutes": 15,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Balance and strength",
+      "durationHint": "ongoing (benefits build over 3+ months)",
+      "items": [
+        {
+          "exerciseId": "sit-to-stand",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "heel-raise-double",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "step-up",
+          "dose": {
+            "sets": 2,
+            "reps": 10,
+            "restSec": 60
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "note": "Low step, hold a rail."
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "tandem-stance",
+          "schedule": {
+            "slots": [
+              "MIDDAY"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "dose": {
+            "sets": 3,
+            "holdSec": 15,
+            "restSec": 10
+          },
+          "schedule": {
+            "slots": [
+              "MIDDAY"
+            ]
+          },
+          "note": "Next to a counter."
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 1200
+          },
+          "schedule": {
+            "slots": [
+              "ANYTIME"
+            ]
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Sherrington C, et al. 2019. Exercise for preventing falls in older people living in the community. Cochrane Database Syst Rev 1:CD012424."
+  ],
+  "reviewed": false
+}

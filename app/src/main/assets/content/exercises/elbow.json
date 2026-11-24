@@ -1,0 +1,385 @@
+[
+  {
+    "id": "wrist-extension-isometric",
+    "name": "Wrist extension hold (isometric)",
+    "aliases": [],
+    "bodyAreas": [
+      "ELBOW",
+      "WRIST"
+    ],
+    "kind": "ISOMETRIC",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "equipment": [
+      "CHAIR"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 5,
+      "holdSec": 30,
+      "restSec": 60,
+      "sides": "AFFECTED"
+    },
+    "why": "Pushing the back of your hand up against resistance without moving loads the forearm tendon at the outside of the elbow gently. Often eases tennis-elbow pain for a while.",
+    "setup": [
+      "Rest your forearm on a table, palm down, hand over the edge.",
+      "Put your other hand on the back of it."
+    ],
+    "cues": [
+      "Push the back of your hand up",
+      "Your other hand stops it moving",
+      "Firm, but pain stays low"
+    ],
+    "mistakes": [
+      "Pushing so hard it hurts",
+      "Lifting the forearm off the table",
+      "Holding your breath"
+    ],
+    "feel": "Effort along the top of the forearm.",
+    "stopIf": "Pain above about 3 out of 10 at the elbow.",
+    "progressions": [
+      "wrist-extension-slow"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "wrist-extension-slow",
+    "name": "Slow wrist extension with a weight",
+    "aliases": [
+      "Eccentric wrist extension"
+    ],
+    "bodyAreas": [
+      "ELBOW",
+      "WRIST"
+    ],
+    "kind": "STRENGTH",
+    "position": "SEATED",
+    "equipment": [
+      "DUMBBELL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 60,
+      "tempo": "3-3",
+      "sides": "AFFECTED",
+      "load": "Start light: 0.5-1 kg or a water bottle"
+    },
+    "why": "Slowly lifting and lowering a weight with the wrist strengthens the forearm tendon behind tennis elbow. Tendons get stronger with gradual load.",
+    "setup": [
+      "Rest your forearm on a table or your thigh, palm down, hand over the edge, holding a light weight."
+    ],
+    "cues": [
+      "Lift the back of your hand up slowly",
+      "Lower slowly",
+      "Forearm stays still"
+    ],
+    "mistakes": [
+      "Going too heavy",
+      "Flicking the weight",
+      "Moving the elbow"
+    ],
+    "feel": "Work along the top of the forearm.",
+    "stopIf": "Elbow pain above about 3-4 out of 10, or worse the next day.",
+    "regressions": [
+      "wrist-extension-isometric"
+    ],
+    "substitutes": [
+      "wrist-extension-isometric"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "grip-squeeze-towel",
+    "name": "Grip squeeze",
+    "aliases": [
+      "Towel squeeze"
+    ],
+    "bodyAreas": [
+      "WRIST",
+      "ELBOW"
+    ],
+    "kind": "ACTIVATION",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "equipment": [
+      "TOWEL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS_WITH_HOLD",
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5,
+      "sides": "AFFECTED"
+    },
+    "why": "Builds grip strength gently. Gripping is what usually hurts with tennis elbow, so it's brought back gradually.",
+    "setup": [
+      "Hold a rolled-up towel or soft ball in your hand, elbow bent and resting at your side."
+    ],
+    "cues": [
+      "Squeeze firmly",
+      "Hold, then relax",
+      "Keep your wrist straight"
+    ],
+    "mistakes": [
+      "Squeezing into pain",
+      "Bending the wrist",
+      "Shrugging"
+    ],
+    "feel": "Work in the hand and forearm.",
+    "stopIf": "Elbow pain above about 3 out of 10.",
+    "reviewed": false
+  },
+  {
+    "id": "wrist-extensor-stretch",
+    "name": "Forearm extensor stretch",
+    "aliases": [],
+    "bodyAreas": [
+      "WRIST",
+      "ELBOW"
+    ],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
+    "why": "A gentle stretch for the forearm muscles on the outside of the elbow, nice after desk work or gripping.",
+    "setup": [
+      "Hold your arm out in front, elbow straight, palm down."
+    ],
+    "cues": [
+      "Bend your wrist down",
+      "Use the other hand to ease it further",
+      "Gentle stretch only"
+    ],
+    "mistakes": [
+      "Pulling hard",
+      "Bending the elbow",
+      "Holding your breath"
+    ],
+    "feel": "A stretch along the top of the forearm.",
+    "stopIf": "Sharp elbow pain, or tingling in the fingers.",
+    "reviewed": false
+  },
+  {
+    "id": "forearm-rotation",
+    "name": "Forearm rotation with a weight",
+    "aliases": [
+      "Supination and pronation"
+    ],
+    "bodyAreas": [
+      "ELBOW",
+      "WRIST"
+    ],
+    "kind": "STRENGTH",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 45,
+      "tempo": "2-2",
+      "load": "A hammer or water bottle held at one end"
+    },
+    "why": "Turning the palm up and down against a light load strengthens the forearm muscles that support the elbow.",
+    "setup": [
+      "Sit with your forearm on a table or your thigh, holding a hammer or bottle upright."
+    ],
+    "cues": [
+      "Turn your palm up slowly",
+      "Then palm down slowly",
+      "Elbow stays still"
+    ],
+    "mistakes": [
+      "Holding the far end of a heavy hammer too soon",
+      "Moving the elbow",
+      "Rushing"
+    ],
+    "feel": "Work in the forearm.",
+    "stopIf": "Elbow pain above about 3 out of 10.",
+    "reviewed": false
+  },
+  {
+    "id": "wall-push-up",
+    "name": "Wall push-up",
+    "aliases": [],
+    "bodyAreas": [
+      "SHOULDER",
+      "CORE"
+    ],
+    "kind": "STRENGTH",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "equipment": [
+      "WALL"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 10,
+      "restSec": 45
+    },
+    "why": "An easy push-up against a wall builds chest, shoulder and arm strength and is gentle on the wrists.",
+    "setup": [
+      "Stand an arm's length from a wall, hands on it at shoulder height and width."
+    ],
+    "cues": [
+      "Body straight like a plank",
+      "Bend the elbows to bring your chest in",
+      "Push back out"
+    ],
+    "mistakes": [
+      "Hips sagging",
+      "Elbows flaring straight out",
+      "Shrugging"
+    ],
+    "feel": "Work in the chest, shoulders and arms.",
+    "stopIf": "Shoulder or wrist pain.",
+    "progressions": [
+      "push-up"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "push-up",
+    "name": "Push-up (knees or toes)",
+    "aliases": [],
+    "bodyAreas": [
+      "SHOULDER",
+      "CORE"
+    ],
+    "kind": "STRENGTH",
+    "position": "FLOOR_PRONE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 8,
+      "restSec": 60
+    },
+    "why": "Builds upper-body and trunk strength. Start on your knees and move to your toes as you get stronger.",
+    "setup": [
+      "Hands under the shoulders, knees or toes on the floor, body in a straight line."
+    ],
+    "cues": [
+      "Straight line from head to knees or heels",
+      "Lower your chest towards the floor",
+      "Push back up"
+    ],
+    "mistakes": [
+      "Hips sagging or piking",
+      "Elbows flaring straight out",
+      "Half reps"
+    ],
+    "feel": "Work in the chest, shoulders, arms and trunk.",
+    "stopIf": "Shoulder, wrist or back pain.",
+    "regressions": [
+      "wall-push-up"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "sit-to-stand",
+    "name": "Sit to stand",
+    "aliases": [
+      "Chair stand"
+    ],
+    "bodyAreas": [
+      "QUAD",
+      "GLUTE",
+      "KNEE"
+    ],
+    "kind": "STRENGTH",
+    "position": "SEATED",
+    "equipment": [
+      "CHAIR"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 10,
+      "restSec": 60
+    },
+    "why": "Standing up from a chair without using your hands builds the leg strength that keeps knees comfortable and balance steady. One of the most useful exercises there is.",
+    "setup": [
+      "Sit near the front of a sturdy chair, feet flat and hip-width apart."
+    ],
+    "cues": [
+      "Lean forward, nose over toes",
+      "Stand up without using your hands",
+      "Sit down slowly"
+    ],
+    "mistakes": [
+      "Flopping down",
+      "Knees falling inwards",
+      "Pushing off with the hands (use them only if you need to)"
+    ],
+    "feel": "Work in the thighs and buttocks.",
+    "stopIf": "Knee pain above about 5 out of 10, or dizziness.",
+    "progressions": [
+      "box-squat-slow"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "tandem-stance",
+    "name": "Heel-to-toe stance",
+    "aliases": [
+      "Tandem stance"
+    ],
+    "bodyAreas": [
+      "ANKLE",
+      "HIP"
+    ],
+    "kind": "BALANCE",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "equipment": [
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 3,
+      "holdSec": 30,
+      "restSec": 10
+    },
+    "why": "Standing with one foot directly in front of the other challenges balance safely: a staple of falls-prevention programmes.",
+    "setup": [
+      "Stand next to a counter or wall.",
+      "Put one foot directly in front of the other, heel touching toes."
+    ],
+    "cues": [
+      "Heel touching toes",
+      "Stand tall, look ahead",
+      "Touch the counter only if needed"
+    ],
+    "mistakes": [
+      "Looking down",
+      "Locking the knees",
+      "Standing far from support"
+    ],
+    "feel": "Your balance being gently tested.",
+    "stopIf": "Dizziness: hold on and stop.",
+    "progressions": [
+      "single-leg-balance"
+    ],
+    "reviewed": false
+  }
+]

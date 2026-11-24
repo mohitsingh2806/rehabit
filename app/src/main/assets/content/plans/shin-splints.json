@@ -1,0 +1,197 @@
+{
+  "id": "shin-splints",
+  "name": "Shin splints (medial tibial stress syndrome)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Ease shin pain by adjusting your running load and building the calf and foot strength that absorbs each landing, then return to running gradually.",
+  "whoFor": "Runners and walkers with an ache along the inside edge of the shin bone, spread over several centimetres, that comes on with running.",
+  "notFor": [
+    "Pain in one small spot on the bone (possible stress fracture): see a doctor"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Shin pain during or after running or walking (0-10)",
+  "painRules": "Cut running back to a level that keeps shin pain at 2-3 out of 10 or less and settled by the next day. Strength work should not increase shin pain.",
+  "redFlags": [
+    "Pain in one small spot on the shin bone that hurts to press, hop or at rest (possible stress fracture)",
+    "Pain at night or at rest",
+    "Tightness, burning, numbness or weakness in the lower leg that builds during exercise and eases with rest",
+    "Swelling, redness or warmth of the shin"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Calm and build the calf",
+      "durationHint": "2-3 weeks",
+      "entryCriteria": "Shin pain with running.",
+      "exitCriteria": "Daily walking is pain-free and heel raises are comfortable.",
+      "items": [
+        {
+          "exerciseId": "heel-raise-double",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "bent-knee-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "tibialis-raise",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "short-foot",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Strength for running",
+      "durationHint": "3-6 weeks",
+      "entryCriteria": "Walking is pain-free.",
+      "exitCriteria": "25 single-leg heel raises each side with no shin pain.",
+      "items": [
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "bent-knee-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "tibialis-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Return to running",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Strong calves, no shin pain day to day.",
+      "exitCriteria": "Your usual running without shin pain. Increase weekly distance gradually.",
+      "items": [
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "note": "Small, quiet hops; build up only if the shin is fine the next day."
+        },
+        {
+          "exerciseId": "single-leg-hop",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Winters M, et al. 2013. Treatment of medial tibial stress syndrome: a systematic review. Sports Med 43:1315-33."
+  ],
+  "reviewed": false
+}

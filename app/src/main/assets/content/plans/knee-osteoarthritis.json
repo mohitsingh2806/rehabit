@@ -1,0 +1,207 @@
+{
+  "id": "knee-osteoarthritis",
+  "name": "Knee osteoarthritis",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Less pain and easier walking, stairs and getting up from chairs, through regular strength and movement. Exercise is the first-line treatment for knee arthritis at any age.",
+  "whoFor": "People with knee osteoarthritis (wear-and-tear arthritis): aching, stiffness after rest, and pain with stairs or walking.",
+  "notFor": [
+    "A hot, red, very swollen knee: see a doctor first"
+  ],
+  "estMinutes": 20,
+  "trackedMetric": "Knee pain when walking or on stairs (0-10)",
+  "painRules": "Pain up to 5 out of 10 during exercise is acceptable if it settles within 24 hours. If it doesn't, do a bit less next time rather than stopping.",
+  "redFlags": [
+    "The knee locks, gives way, or won't fully straighten",
+    "Fast, large swelling after an injury",
+    "A hot, red, swollen knee, or fever",
+    "Calf pain with swelling and warmth (possible blood clot)",
+    "Pain after a fall or twist that hasn't been checked",
+    "Severe pain at night that's unrelated to activity"
+  ],
+  "phases": [
+    {
+      "id": "start",
+      "name": "Get started",
+      "durationHint": "2-4 weeks",
+      "entryCriteria": "Knee pain limits walking, stairs or chairs.",
+      "exitCriteria": "Exercises feel routine and pain settles within a day.",
+      "items": [
+        {
+          "exerciseId": "quad-set",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "straight-leg-raise",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "sit-to-stand",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "glute-bridge",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 900
+          },
+          "schedule": {
+            "slots": [
+              "ANYTIME"
+            ]
+          },
+          "note": "Split into shorter walks if needed."
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "name": "Build strength",
+      "durationHint": "8+ weeks, then keep going",
+      "entryCriteria": "Exercises are comfortable.",
+      "exitCriteria": "Ongoing: strength 2-3 times a week and daily walking keep the benefits.",
+      "items": [
+        {
+          "exerciseId": "sit-to-stand",
+          "dose": {
+            "sets": 3,
+            "reps": 12,
+            "restSec": 60
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "step-up",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "box-squat-slow",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 1800
+          },
+          "schedule": {
+            "slots": [
+              "ANYTIME"
+            ]
+          },
+          "note": "Or cycling or swimming."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Bannuru RR, et al. 2019. OARSI guidelines for the non-surgical management of knee, hip, and polyarticular osteoarthritis. Osteoarthritis Cartilage 27:1578-89.",
+    "Skou ST, Roos EM. 2017. Good Life with osteoArthritis in Denmark (GLA:D): evidence-based education and supervised neuromuscular exercise delivered by certified physiotherapists nationwide. BMC Musculoskelet Disord 18:72."
+  ],
+  "reviewed": false
+}

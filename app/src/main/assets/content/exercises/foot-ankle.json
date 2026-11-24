@@ -2,89 +2,163 @@
   {
     "id": "calf-stretch-wall-gastroc",
     "name": "Calf stretch, straight knee",
-    "aliases": ["Gastrocnemius stretch"],
-    "bodyAreas": ["CALF", "ANKLE"],
+    "aliases": [
+      "Gastrocnemius stretch"
+    ],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
     "deskFriendly": true,
     "trailFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Stretches the big upper calf muscle (gastrocnemius). A tight calf adds strain to the Achilles, the arch of the foot and the inside of the ankle.",
     "setup": [
       "Stand facing a wall with your hands on it.",
       "Step one foot back, heel down and toes pointing straight forward."
     ],
-    "cues": ["Back knee straight, heel down", "Toes point forward", "Lean in until the calf stretches"],
-    "mistakes": ["Letting the back heel lift", "Turning the back foot out", "Bouncing"],
+    "cues": [
+      "Back knee straight, heel down",
+      "Toes point forward",
+      "Lean in until the calf stretches"
+    ],
+    "mistakes": [
+      "Letting the back heel lift",
+      "Turning the back foot out",
+      "Bouncing"
+    ],
     "feel": "A stretch in the upper part of the back calf.",
     "stopIf": "Sharp pain in the heel, Achilles or ankle.",
-    "substitutes": ["calf-stretch-wall-soleus"],
     "reviewed": false
   },
   {
     "id": "calf-stretch-wall-soleus",
     "name": "Calf stretch, bent knee",
-    "aliases": ["Soleus stretch"],
-    "bodyAreas": ["CALF", "ANKLE"],
+    "aliases": [
+      "Soleus stretch"
+    ],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
     "deskFriendly": true,
     "trailFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Bending the knee shifts the stretch to the deeper, lower calf muscle (soleus), which works hard in running and walking downhill.",
     "setup": [
       "Stand facing a wall with your hands on it, one foot a short step behind the other.",
       "Keep both heels down."
     ],
-    "cues": ["Bend the back knee", "Keep that heel down", "Sink until the low calf stretches"],
-    "mistakes": ["Letting the back heel lift", "Stepping too far back", "Rolling the foot in"],
+    "cues": [
+      "Bend the back knee",
+      "Keep that heel down",
+      "Sink until the low calf stretches"
+    ],
+    "mistakes": [
+      "Letting the back heel lift",
+      "Stepping too far back",
+      "Rolling the foot in"
+    ],
     "feel": "A stretch low in the calf, just above the heel.",
     "stopIf": "Sharp pain in the heel, Achilles or ankle.",
-    "substitutes": ["calf-stretch-wall-gastroc"],
     "reviewed": false
   },
   {
     "id": "plantar-fascia-stretch",
     "name": "Plantar fascia stretch",
-    "aliases": ["Toe pull stretch"],
-    "bodyAreas": ["FOOT"],
+    "aliases": [
+      "Toe pull stretch"
+    ],
+    "bodyAreas": [
+      "FOOT"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "SEATED",
     "deskFriendly": true,
     "laterality": "EACH_SIDE",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 10, "sides": "AFFECTED" },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 10,
+      "sides": "AFFECTED"
+    },
     "why": "Stretches the thick band under your foot (plantar fascia). Doing it before your first steps in the morning reduces that sharp first-step heel pain.",
-    "setup": ["Sit and cross the sore foot over your other knee."],
-    "cues": ["Pull your toes back towards your shin", "Feel the band under the arch tighten", "Hold, then relax"],
-    "mistakes": ["Pulling the ankle instead of the toes", "Rushing the holds", "Skipping it before getting up"],
+    "setup": [
+      "Sit and cross the sore foot over your other knee."
+    ],
+    "cues": [
+      "Pull your toes back towards your shin",
+      "Feel the band under the arch tighten",
+      "Hold, then relax"
+    ],
+    "mistakes": [
+      "Pulling the ankle instead of the toes",
+      "Rushing the holds",
+      "Skipping it before getting up"
+    ],
     "feel": "A stretch along the arch and into the heel.",
     "stopIf": "Sharp heel pain.",
-    "references": ["DiGiovanni BF, et al. 2003. Tissue-specific plantar fascia-stretching exercise enhances outcomes in patients with chronic heel pain. J Bone Joint Surg Am 85:1270-7."],
+    "references": [
+      "DiGiovanni BF, et al. 2003. Tissue-specific plantar fascia-stretching exercise enhances outcomes in patients with chronic heel pain. J Bone Joint Surg Am 85:1270-7."
+    ],
     "reviewed": false
   },
   {
     "id": "short-foot",
     "name": "Short foot (arch lift)",
-    "aliases": ["Foot doming"],
-    "bodyAreas": ["FOOT", "ANKLE"],
+    "aliases": [
+      "Foot doming"
+    ],
+    "bodyAreas": [
+      "FOOT",
+      "ANKLE"
+    ],
     "kind": "ACTIVATION",
     "position": "SEATED",
     "deskFriendly": true,
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5
+    },
     "why": "Trains the small muscles that lift your arch, supporting the foot when the arch tends to flatten. Progress to doing it standing, then on one leg.",
-    "setup": ["Sit with your feet flat on the floor."],
-    "cues": ["Slide the ball of the foot towards the heel", "Keep your toes long and relaxed", "Feel your arch lift"],
-    "mistakes": ["Curling the toes", "Lifting the heel", "Rolling onto the outside of the foot"],
+    "setup": [
+      "Sit with your feet flat on the floor."
+    ],
+    "cues": [
+      "Slide the ball of the foot towards the heel",
+      "Keep your toes long and relaxed",
+      "Feel your arch lift"
+    ],
+    "mistakes": [
+      "Curling the toes",
+      "Lifting the heel",
+      "Rolling onto the outside of the foot"
+    ],
     "feel": "Effort in the arch of the foot.",
     "stopIf": "Cramping that doesn't ease, or arch pain.",
     "reviewed": false
@@ -92,150 +166,311 @@
   {
     "id": "ankle-inversion-isometric",
     "name": "Ankle inversion hold (isometric)",
-    "bodyAreas": ["ANKLE", "FOOT"],
+    "bodyAreas": [
+      "ANKLE",
+      "FOOT"
+    ],
     "kind": "ISOMETRIC",
     "position": "SEATED",
     "deskFriendly": true,
-    "trailFriendly": true,
-    "equipment": ["CHAIR"],
+    "trailFriendly": false,
+    "equipment": [
+      "CHAIR"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 5, "holdSec": 30, "restSec": 30, "effort": "Firm push, discomfort up to 3/10" },
+    "defaultDose": {
+      "sets": 5,
+      "holdSec": 30,
+      "restSec": 30,
+      "effort": "Firm push, discomfort up to 3/10"
+    },
     "why": "Pressing the inside of the foot against something solid works the tibialis posterior, the tendon on the inside of the ankle that holds up your arch, without moving the ankle. A gentle starting point when that tendon is painful.",
     "setup": [
       "Sit with both feet flat on the floor.",
       "Place the inside edge of the working foot against the inside of your other foot, or a table leg."
     ],
-    "cues": ["Push the inner foot inwards", "Don't let the foot move", "Keep breathing"],
-    "mistakes": ["Pushing so hard it hurts", "Lifting the heel", "Holding your breath"],
+    "cues": [
+      "Push the inner foot inwards",
+      "Don't let the foot move",
+      "Keep breathing"
+    ],
+    "mistakes": [
+      "Pushing so hard it hurts",
+      "Lifting the heel",
+      "Holding your breath"
+    ],
     "feel": "Effort along the inside of the ankle and lower shin.",
     "stopIf": "Sharp pain on the inside of the ankle.",
-    "progressions": ["ankle-inversion-band"],
+    "progressions": [
+      "ankle-inversion-band"
+    ],
     "reviewed": false
   },
   {
     "id": "ankle-inversion-band",
     "name": "Resisted ankle inversion (band)",
-    "bodyAreas": ["ANKLE", "FOOT"],
+    "bodyAreas": [
+      "ANKLE",
+      "FOOT"
+    ],
     "kind": "STRENGTH",
     "position": "SEATED",
-    "equipment": ["BAND"],
+    "equipment": [
+      "BAND"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-1-3" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60,
+      "tempo": "2-1-3"
+    },
     "why": "Strengthens the tibialis posterior through its full movement, with a slow lowering phase that tendons respond well to. Resisted exercise like this is part of non-surgical treatment for posterior tibial tendon problems.",
     "setup": [
       "Sit with the working leg crossed over the other knee, or with the foot flat on the floor.",
-      "Loop a band around the forefoot and hold or anchor it to the outside, so it pulls the foot outwards."
+      "Loop a band around the forefoot and hold or anchor it to the outside, so it pulls the foot outwards.",
+      "Keep your toes pointed slightly down: this targets the tendon on the inside of the ankle best."
     ],
-    "cues": ["Turn the sole of your foot inwards", "Move from the ankle, not the knee", "Lower slowly"],
-    "mistakes": ["Rotating the whole leg instead of the foot", "Letting the band snap back", "Using a band that's too heavy"],
+    "cues": [
+      "Turn the sole of your foot inwards",
+      "Move from the ankle, not the knee",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Rotating the whole leg instead of the foot",
+      "Letting the band snap back",
+      "Using a band that's too heavy"
+    ],
     "feel": "Work along the inside of the ankle and lower shin.",
     "stopIf": "Sharp pain on the inside of the ankle, or it's more painful the next morning.",
-    "regressions": ["ankle-inversion-isometric"],
-    "progressions": ["heel-raise-ball-squeeze"],
-    "substitutes": ["ankle-inversion-isometric"],
-    "references": ["Kulig K, et al. 2009. Nonsurgical management of posterior tibial tendon dysfunction with orthoses and resistive exercise: a randomized controlled trial. Phys Ther 89:26-37."],
+    "regressions": [
+      "ankle-inversion-isometric"
+    ],
+    "progressions": [
+      "heel-raise-ball-squeeze"
+    ],
+    "substitutes": [
+      "ankle-inversion-isometric"
+    ],
+    "references": [
+      "Kulig K, et al. 2009. Nonsurgical management of posterior tibial tendon dysfunction with orthoses and resistive exercise: a randomized controlled trial. Phys Ther 89:26-37."
+    ],
     "reviewed": false
   },
   {
     "id": "heel-raise-double",
     "name": "Heel raise (both legs)",
-    "aliases": ["Calf raise"],
-    "bodyAreas": ["CALF", "ANKLE"],
+    "aliases": [
+      "Calf raise"
+    ],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
     "deskFriendly": true,
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 15, "restSec": 45, "tempo": "2-1-2" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 45,
+      "tempo": "2-1-2"
+    },
     "why": "Builds calf and Achilles strength for walking, running and hiking. The first step before single-leg raises.",
-    "setup": ["Stand with your fingertips on a wall, feet hip-width apart."],
-    "cues": ["Rise up onto the balls of your feet", "Pause at the top", "Lower slowly"],
-    "mistakes": ["Rolling out onto the little toes", "Bouncing", "Only going halfway up"],
+    "setup": [
+      "Stand with your fingertips on a wall, feet hip-width apart."
+    ],
+    "cues": [
+      "Rise up onto the balls of your feet",
+      "Pause at the top",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Rolling out onto the little toes",
+      "Bouncing",
+      "Only going halfway up"
+    ],
     "feel": "Work in the calves.",
     "stopIf": "Sharp pain in the heel, Achilles or ankle.",
-    "progressions": ["heel-raise-ball-squeeze", "single-leg-heel-raise"],
+    "progressions": [
+      "heel-raise-ball-squeeze",
+      "single-leg-heel-raise"
+    ],
     "reviewed": false
   },
   {
     "id": "heel-raise-ball-squeeze",
     "name": "Heel raise with ball squeeze",
-    "bodyAreas": ["ANKLE", "CALF", "FOOT"],
+    "bodyAreas": [
+      "ANKLE",
+      "CALF",
+      "FOOT"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["TOWEL", "WALL"],
+    "equipment": [
+      "TOWEL",
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-1-3" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60,
+      "tempo": "2-1-3"
+    },
     "why": "Rising onto your toes while squeezing something between your heels makes the tibialis posterior, the tendon that holds up your arch, work harder. Building its strength is the core of rehab for posterior tibial tendon problems.",
     "setup": [
       "Stand facing a wall or counter with your fingertips on it for balance.",
       "Place a small soft ball or rolled-up towel between your ankles, just above the heels."
     ],
-    "cues": ["Squeeze the ball", "Rise up through the big toe", "Lower slowly"],
-    "mistakes": ["Rolling out onto the little toes", "Dropping down fast", "Letting the ball fall"],
+    "cues": [
+      "Squeeze the ball",
+      "Rise up through the big toe",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Rolling out onto the little toes",
+      "Dropping down fast",
+      "Letting the ball fall"
+    ],
     "feel": "Work in the calves and along the inside of the ankles and arches.",
     "stopIf": "Sharp pain on the inside of the ankle, or the ankle feels unstable.",
-    "regressions": ["ankle-inversion-band"],
-    "progressions": ["single-leg-heel-raise"],
+    "regressions": [
+      "ankle-inversion-band"
+    ],
+    "progressions": [
+      "single-leg-heel-raise"
+    ],
     "reviewed": false
   },
   {
     "id": "single-leg-heel-raise",
     "name": "Single-leg heel raise",
-    "bodyAreas": ["CALF", "ANKLE", "FOOT"],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE",
+      "FOOT"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 12, "restSec": 60, "tempo": "2-1-3", "load": "Add a backpack when 3 x 15 is easy" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60,
+      "tempo": "2-1-3",
+      "load": "Add a backpack when 3 x 15 is easy"
+    },
     "why": "The benchmark for calf, Achilles and posterior tibial tendon strength. Being able to do 20 or more on each leg is a good sign you're ready to run.",
-    "setup": ["Stand on one foot with fingertips on a wall for balance only."],
-    "cues": ["Rise as high as you can", "Keep your weight over the big toe", "Lower slowly"],
-    "mistakes": ["Rolling onto the outside of the foot", "Pushing with your hands", "Bouncing at the bottom"],
+    "setup": [
+      "Stand on one foot with fingertips on a wall for balance only."
+    ],
+    "cues": [
+      "Rise as high as you can",
+      "Keep your weight over the big toe",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Rolling onto the outside of the foot",
+      "Pushing with your hands",
+      "Bouncing at the bottom"
+    ],
     "feel": "Hard work in the calf of the standing leg.",
     "stopIf": "Sharp pain in the heel, Achilles or inside of the ankle.",
-    "regressions": ["heel-raise-double"],
+    "regressions": [
+      "heel-raise-double"
+    ],
     "reviewed": false
   },
   {
     "id": "single-leg-balance",
     "name": "Single-leg balance",
-    "bodyAreas": ["ANKLE", "FOOT", "HIP"],
+    "bodyAreas": [
+      "ANKLE",
+      "FOOT",
+      "HIP"
+    ],
     "kind": "BALANCE",
     "position": "STANDING",
     "deskFriendly": true,
     "trailFriendly": true,
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 3, "holdSec": 30, "restSec": 10 },
+    "defaultDose": {
+      "sets": 3,
+      "holdSec": 30,
+      "restSec": 10
+    },
     "why": "Trains the ankle, foot and hip muscles to react and keep your arch and knee steady. Important after ankle problems and for uneven trails. Harder: close your eyes or stand on a cushion.",
-    "setup": ["Stand on one leg near a wall or counter, knee slightly soft."],
-    "cues": ["Stand tall on one leg", "Keep your arch lifted", "Touch the wall only if you need to"],
-    "mistakes": ["Locking the knee", "Letting the arch collapse", "Hip dropping on the lifted side"],
+    "setup": [
+      "Stand on one leg near a wall or counter, knee slightly soft."
+    ],
+    "cues": [
+      "Stand tall on one leg",
+      "Keep your arch lifted",
+      "Touch the wall only if you need to"
+    ],
+    "mistakes": [
+      "Locking the knee",
+      "Letting the arch collapse",
+      "Hip dropping on the lifted side"
+    ],
     "feel": "Small muscles in the foot, ankle and hip working.",
     "stopIf": "Ankle pain.",
-    "cautions": ["Stay near support if your balance is poor."],
+    "cautions": [
+      "Stay near support if your balance is poor."
+    ],
     "reviewed": false
   },
   {
     "id": "tibialis-raise",
     "name": "Toe raise against a wall",
-    "aliases": ["Tibialis raise"],
-    "bodyAreas": ["SHIN", "ANKLE"],
+    "aliases": [
+      "Tibialis raise"
+    ],
+    "bodyAreas": [
+      "SHIN",
+      "ANKLE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 15, "restSec": 30 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 30
+    },
     "why": "Strengthens the muscle at the front of the shin, which helps control landing and can protect against shin pain in runners and hikers.",
-    "setup": ["Stand with your back and bottom against a wall, heels about 30 cm out from it."],
-    "cues": ["Lift your toes towards your shins", "Keep your knees straight", "Lower slowly"],
-    "mistakes": ["Bending the knees", "Rocking the hips", "Dropping the toes fast"],
+    "setup": [
+      "Stand with your back and bottom against a wall, heels about 30 cm out from it."
+    ],
+    "cues": [
+      "Lift your toes towards your shins",
+      "Keep your knees straight",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Bending the knees",
+      "Rocking the hips",
+      "Dropping the toes fast"
+    ],
     "feel": "Work at the front of the shins.",
     "stopIf": "Sharp shin pain.",
     "reviewed": false
@@ -243,21 +478,42 @@
   {
     "id": "ankle-pogo-hops",
     "name": "Pogo hops",
-    "bodyAreas": ["CALF", "ANKLE"],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
     "kind": "PLYOMETRIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 2, "reps": 20, "restSec": 60 },
+    "defaultDose": {
+      "sets": 2,
+      "reps": 20,
+      "restSec": 60
+    },
     "why": "Small, springy hops train the calf and Achilles to store and release energy like springs, preparing them for running.",
-    "setup": ["Stand tall, feet hip-width apart."],
-    "cues": ["Small quick hops on the balls of your feet", "Stiff ankles, soft knees", "Land quietly"],
-    "mistakes": ["Big high jumps", "Landing on the heels", "Knees caving in"],
+    "setup": [
+      "Stand tall, feet hip-width apart."
+    ],
+    "cues": [
+      "Small quick hops on the balls of your feet",
+      "Stiff ankles, soft knees",
+      "Land quietly"
+    ],
+    "mistakes": [
+      "Big high jumps",
+      "Landing on the heels",
+      "Knees caving in"
+    ],
     "feel": "Springy work in the calves.",
     "stopIf": "Pain in the Achilles, shin, heel or inside of the ankle.",
-    "cautions": ["Only once you can do 3 x 15 single-leg heel raises without pain."],
-    "regressions": ["single-leg-heel-raise"],
+    "cautions": [
+      "Only once you can do 3 x 15 single-leg heel raises without pain."
+    ],
+    "regressions": [
+      "single-leg-heel-raise"
+    ],
     "reviewed": false
   },
   {
@@ -311,6 +567,415 @@
     ],
     "references": [
       "Rathleff MS, et al. 2015. High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12 months follow-up. Scand J Med Sci Sports 25:e292-300."
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "eccentric-heel-drop-straight",
+    "name": "Heel drop off a step, straight knee",
+    "aliases": [
+      "Alfredson heel drop"
+    ],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
+    "kind": "STRENGTH",
+    "position": "STANDING",
+    "equipment": [
+      "STEP",
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 60,
+      "tempo": "1-3",
+      "sides": "AFFECTED",
+      "load": "Add a backpack when it's easy"
+    },
+    "why": "Slowly lowering your body weight on one leg loads the Achilles tendon in the way it adapts to best. A classic, well-tested treatment for pain in the middle of the tendon.",
+    "setup": [
+      "Stand on the edge of a step on the balls of both feet, holding a rail or wall.",
+      "Rise up on both feet, then shift your weight onto the sore leg."
+    ],
+    "cues": [
+      "Rise up on both feet",
+      "Shift onto the sore leg",
+      "Lower the heel slowly below the step"
+    ],
+    "mistakes": [
+      "Rising up on the sore leg (rise on both)",
+      "Dropping fast",
+      "Bending the knee in this version"
+    ],
+    "feel": "Hard work and a stretch in the calf and Achilles. Some tendon discomfort is OK.",
+    "stopIf": "Pain above about 5 out of 10, or it's worse the next morning.",
+    "cautions": [
+      "For pain where the tendon joins the heel bone, don't drop below the step: use heel raises on flat ground instead."
+    ],
+    "regressions": [
+      "calf-isometric-hold"
+    ],
+    "references": [
+      "Alfredson H, et al. 1998. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 26:360-6."
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "eccentric-heel-drop-bent",
+    "name": "Heel drop off a step, bent knee",
+    "aliases": [
+      "Alfredson heel drop, bent knee"
+    ],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
+    "kind": "STRENGTH",
+    "position": "STANDING",
+    "equipment": [
+      "STEP",
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 60,
+      "tempo": "1-3",
+      "sides": "AFFECTED",
+      "load": "Add a backpack when it's easy"
+    },
+    "why": "The bent-knee version of the heel drop works the deeper calf muscle (soleus) and the Achilles.",
+    "setup": [
+      "Stand on the edge of a step on the balls of both feet, holding a rail or wall.",
+      "Bend your knees a little and keep them bent throughout."
+    ],
+    "cues": [
+      "Rise up on both feet",
+      "Shift onto the sore leg, knee bent",
+      "Lower the heel slowly"
+    ],
+    "mistakes": [
+      "Straightening the knee",
+      "Dropping fast",
+      "Bouncing at the bottom"
+    ],
+    "feel": "Work low in the calf and in the Achilles. Some tendon discomfort is OK.",
+    "stopIf": "Pain above about 5 out of 10, or it's worse the next morning.",
+    "cautions": [
+      "For pain where the tendon joins the heel bone, don't drop below the step."
+    ],
+    "regressions": [
+      "calf-isometric-hold"
+    ],
+    "references": [
+      "Alfredson H, et al. 1998. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 26:360-6."
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "calf-isometric-hold",
+    "name": "Calf raise hold (isometric)",
+    "aliases": [],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
+    "kind": "ISOMETRIC",
+    "position": "STANDING",
+    "equipment": [
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 5,
+      "holdSec": 30,
+      "restSec": 60,
+      "sides": "AFFECTED"
+    },
+    "why": "Holding a half-height heel raise loads the calf and Achilles without moving: a gentle way to keep the tendon working when it's painful.",
+    "setup": [
+      "Stand on the sore leg on flat ground, fingertips on a wall."
+    ],
+    "cues": [
+      "Rise to half height",
+      "Hold still",
+      "Keep breathing"
+    ],
+    "mistakes": [
+      "Rising all the way up",
+      "Leaning on the wall",
+      "Holding your breath"
+    ],
+    "feel": "Steady work in the calf.",
+    "stopIf": "Pain above about 3-4 out of 10.",
+    "progressions": [
+      "single-leg-heel-raise"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "bent-knee-heel-raise",
+    "name": "Single-leg heel raise, bent knee",
+    "aliases": [
+      "Soleus raise"
+    ],
+    "bodyAreas": [
+      "CALF",
+      "ANKLE"
+    ],
+    "kind": "STRENGTH",
+    "position": "STANDING",
+    "equipment": [
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60,
+      "tempo": "2-1-2"
+    },
+    "why": "Strengthens the soleus, the deep calf muscle that takes huge loads in running. Weak soleus muscles are common with shin and Achilles pain.",
+    "setup": [
+      "Stand on one leg with the knee slightly bent, fingertips on a wall."
+    ],
+    "cues": [
+      "Keep the knee bent",
+      "Rise as high as you can",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Straightening the knee as you rise",
+      "Rolling to the outside of the foot",
+      "Bouncing"
+    ],
+    "feel": "Work low in the calf.",
+    "stopIf": "Sharp pain in the shin, Achilles or heel.",
+    "regressions": [
+      "heel-raise-double"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "ankle-alphabet",
+    "name": "Ankle alphabet",
+    "aliases": [
+      "Ankle circles"
+    ],
+    "bodyAreas": [
+      "ANKLE"
+    ],
+    "kind": "MOBILITY",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "TIME",
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 60,
+      "sides": "AFFECTED"
+    },
+    "why": "Moving the ankle gently in every direction soon after a sprain helps swelling go down and stops it stiffening.",
+    "setup": [
+      "Sit with your leg supported and the foot free to move."
+    ],
+    "cues": [
+      "Draw the alphabet with your big toe",
+      "Big, slow letters",
+      "Stay in a comfortable range"
+    ],
+    "mistakes": [
+      "Moving into sharp pain",
+      "Moving the whole leg",
+      "Rushing"
+    ],
+    "feel": "Easy movement in the ankle.",
+    "stopIf": "Sharp pain.",
+    "reviewed": false
+  },
+  {
+    "id": "ankle-eversion-isometric",
+    "name": "Ankle outward push (isometric)",
+    "aliases": [
+      "Eversion hold"
+    ],
+    "bodyAreas": [
+      "ANKLE"
+    ],
+    "kind": "ISOMETRIC",
+    "position": "SEATED",
+    "deskFriendly": true,
+    "equipment": [
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 5,
+      "holdSec": 20,
+      "restSec": 20,
+      "sides": "AFFECTED"
+    },
+    "why": "Works the muscles on the outside of the ankle (peroneals) that protect against rolling it again, without moving the sore joint.",
+    "setup": [
+      "Sit with the outside of the foot against a wall or table leg."
+    ],
+    "cues": [
+      "Push the outside of your foot out",
+      "Don't let the foot move",
+      "Firm push, no pain"
+    ],
+    "mistakes": [
+      "Pushing through pain",
+      "Turning the knee instead of the foot",
+      "Holding your breath"
+    ],
+    "feel": "Effort along the outside of the ankle and lower leg.",
+    "stopIf": "Sharp pain.",
+    "progressions": [
+      "ankle-eversion-band"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "ankle-eversion-band",
+    "name": "Resisted ankle eversion (band)",
+    "aliases": [],
+    "bodyAreas": [
+      "ANKLE"
+    ],
+    "kind": "STRENGTH",
+    "position": "SEATED",
+    "equipment": [
+      "BAND"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 60,
+      "tempo": "2-1-2"
+    },
+    "why": "Strengthens the outside-ankle muscles through their full movement, one of the keys to avoiding repeat sprains.",
+    "setup": [
+      "Sit with legs straight. Loop a band round the working forefoot and anchor it to the inside (round the other foot)."
+    ],
+    "cues": [
+      "Turn the sole of your foot outwards",
+      "Move from the ankle only",
+      "Return slowly"
+    ],
+    "mistakes": [
+      "Rotating the whole leg",
+      "Letting the band snap back",
+      "Too strong a band"
+    ],
+    "feel": "Work along the outside of the ankle and shin.",
+    "stopIf": "Sharp ankle pain.",
+    "regressions": [
+      "ankle-eversion-isometric"
+    ],
+    "substitutes": [
+      "ankle-eversion-isometric"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "single-leg-balance-cushion",
+    "name": "Single-leg balance on a cushion",
+    "aliases": [
+      "Unstable balance"
+    ],
+    "bodyAreas": [
+      "ANKLE",
+      "FOOT",
+      "HIP"
+    ],
+    "kind": "BALANCE",
+    "position": "STANDING",
+    "equipment": [
+      "TOWEL",
+      "WALL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 3,
+      "holdSec": 30,
+      "restSec": 10
+    },
+    "why": "Balancing on a soft surface trains the fast reactions that stop an ankle rolling. Balance training clearly reduces repeat ankle sprains.",
+    "setup": [
+      "Stand on one leg on a folded towel, pillow or cushion, near a wall or counter."
+    ],
+    "cues": [
+      "Stand tall on one leg",
+      "Let the ankle make small corrections",
+      "Eyes closed for a harder version"
+    ],
+    "mistakes": [
+      "Locking the knee",
+      "Grabbing the wall all the time",
+      "Letting the arch collapse"
+    ],
+    "feel": "Small muscles round the ankle and hip working hard.",
+    "stopIf": "Ankle pain or giving way.",
+    "cautions": [
+      "Stay next to support."
+    ],
+    "regressions": [
+      "single-leg-balance"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "single-leg-hop",
+    "name": "Single-leg hops",
+    "aliases": [
+      "Hop in place"
+    ],
+    "bodyAreas": [
+      "ANKLE",
+      "CALF",
+      "KNEE"
+    ],
+    "kind": "PLYOMETRIC",
+    "position": "STANDING",
+    "trailFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 2,
+      "reps": 10,
+      "restSec": 60
+    },
+    "why": "Small hops on one leg prepare the ankle, calf and knee for running and sport. A good test that you're ready to return.",
+    "setup": [
+      "Stand on one leg with space around you."
+    ],
+    "cues": [
+      "Small, quick hops",
+      "Land softly, knee over toes",
+      "Stay tall"
+    ],
+    "mistakes": [
+      "Big hops too soon",
+      "Knee caving in",
+      "Landing on the heel"
+    ],
+    "feel": "Springy work in the calf and ankle.",
+    "stopIf": "Pain, or the ankle or knee feels unstable.",
+    "regressions": [
+      "ankle-pogo-hops"
     ],
     "reviewed": false
   }

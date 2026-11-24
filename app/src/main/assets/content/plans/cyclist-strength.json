@@ -1,0 +1,107 @@
+{
+  "id": "cyclist-strength",
+  "name": "Cyclist strength and posture",
+  "kind": "FOCUSED",
+  "category": "SPORT",
+  "goal": "Twice-weekly strength for cyclists: hips and glutes for power, trunk and upper back for comfort on the bike, plus single-leg work cycling doesn't give you.",
+  "whoFor": "Road, mountain and commuter cyclists.",
+  "estMinutes": 20,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Strength",
+      "durationHint": "ongoing, 2 sessions a week",
+      "items": [
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "split-squat",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "bird-dog",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "prone-y-t-raise",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "chin-tuck",
+          "schedule": {
+            "slots": [
+              "DESK"
+            ]
+          },
+          "core": false,
+          "note": "Long rides push the head forward."
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

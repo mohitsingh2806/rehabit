@@ -1,0 +1,219 @@
+{
+  "id": "ankle-sprain",
+  "name": "Ankle sprain recovery",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Get a sprained ankle moving early, rebuild strength and balance, and cut the risk of spraining it again (balance training makes a big difference).",
+  "whoFor": "People with a sprained ankle (rolled ankle) who can put weight on it.",
+  "notFor": [
+    "You couldn't take 4 steps straight after the injury, or still can't: get an X-ray check first"
+  ],
+  "estMinutes": 12,
+  "trackedMetric": "Ankle pain when walking (0-10)",
+  "painRules": "Mild discomfort is OK; sharp pain or a feeling of the ankle giving way is not. Walk normally as soon as you comfortably can.",
+  "redFlags": [
+    "You can't take 4 steps, now or straight after the injury",
+    "Pain when pressing the back or tip of either ankle bone, or the bone on the outside of the midfoot",
+    "Numbness, or a cold, pale foot",
+    "The ankle looks deformed",
+    "Swelling and pain getting worse after the first 2-3 days"
+  ],
+  "phases": [
+    {
+      "id": "move",
+      "name": "Move and protect",
+      "durationHint": "first 1-2 weeks",
+      "entryCriteria": "Recent sprain, sore and swollen.",
+      "exitCriteria": "Walking is close to normal.",
+      "items": [
+        {
+          "exerciseId": "ankle-alphabet",
+          "schedule": {
+            "slots": [
+              "MORNING",
+              "NIGHT"
+            ],
+            "timesPerDay": 2
+          }
+        },
+        {
+          "exerciseId": "ankle-eversion-isometric",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-gastroc",
+          "dose": {
+            "sets": 2,
+            "holdSec": 20
+          },
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "dose": {
+            "sets": 3,
+            "holdSec": 20,
+            "restSec": 10
+          },
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "core": false,
+          "note": "Next to a counter, once standing on it is comfortable."
+        }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Strength and balance",
+      "durationHint": "2-6 weeks",
+      "entryCriteria": "Walking is close to normal.",
+      "exitCriteria": "Single-leg balance on a cushion for 30 seconds and 15 single-leg heel raises.",
+      "items": [
+        {
+          "exerciseId": "ankle-eversion-band",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "heel-raise-double",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance-cushion",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Back to sport, and keep it that way",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Strong and steady on one leg.",
+      "exitCriteria": "Hopping and cutting feel normal. Keep balance work 3 times a week for a few months.",
+      "items": [
+        {
+          "exerciseId": "single-leg-balance-cushion",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-hop",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "lateral-hop",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Vuurberg G, et al. 2018. Diagnosis, treatment and prevention of ankle sprains: update of an evidence-based clinical guideline. Br J Sports Med 52:956.",
+    "Doherty C, et al. 2017. Treatment and prevention of acute and recurrent ankle sprain: an overview of systematic reviews with meta-analysis. Br J Sports Med 51:113-25."
+  ],
+  "reviewed": false
+}

@@ -1,0 +1,102 @@
+{
+  "id": "mid-back-stiffness",
+  "name": "Mid-back stiffness and posture",
+  "kind": "FOCUSED",
+  "category": "MOBILITY",
+  "goal": "Loosen a stiff upper and mid back and build the muscles that hold you upright, for desk workers and anyone who feels hunched.",
+  "whoFor": "People with a stiff, achy mid or upper back from sitting, driving or screens.",
+  "notFor": [
+    "Mid-back pain with chest pain, breathlessness or fever: see a doctor"
+  ],
+  "estMinutes": 12,
+  "trackedMetric": "Mid-back stiffness at its worst today (0-10)",
+  "phases": [
+    {
+      "id": "main",
+      "name": "Mobility and strength",
+      "durationHint": "ongoing",
+      "items": [
+        {
+          "exerciseId": "cat-cow",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "open-book",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "thread-the-needle",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "thoracic-extension-chair",
+          "schedule": {
+            "slots": [
+              "DESK"
+            ]
+          }
+        },
+        {
+          "exerciseId": "thoracic-extension-foam-roller",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "wall-angel",
+          "schedule": {
+            "slots": [
+              "DESK"
+            ]
+          }
+        },
+        {
+          "exerciseId": "band-pull-apart",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "prone-y-t-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "doorway-pec-stretch",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

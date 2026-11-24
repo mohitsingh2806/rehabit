@@ -1,0 +1,66 @@
+{
+  "id": "cyclist-post-ride-stretch",
+  "name": "Cyclist's post-ride stretch",
+  "kind": "ON_DEMAND",
+  "category": "SPORT",
+  "goal": "Ten minutes after a ride to open up what the bike position closes: hip flexors, quads, chest and neck, plus hamstrings and calves.",
+  "whoFor": "Cyclists, after a ride. All standing.",
+  "estMinutes": 10,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Post-ride stretch",
+      "items": [
+        {
+          "exerciseId": "hip-flexor-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "quad-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "hamstring-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "figure-4-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-gastroc",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "standing-chest-opener",
+          "dose": {
+            "sets": 1,
+            "holdSec": 20
+          }
+        },
+        {
+          "exerciseId": "standing-trunk-rotation"
+        },
+        {
+          "exerciseId": "chin-tuck"
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

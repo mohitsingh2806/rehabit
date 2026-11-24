@@ -2,18 +2,35 @@
   {
     "id": "hamstring-stretch-standing",
     "name": "Hamstring stretch on a step",
-    "bodyAreas": ["HAMSTRING"],
+    "bodyAreas": [
+      "HAMSTRING"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
     "trailFriendly": true,
-    "equipment": ["STEP"],
+    "equipment": [
+      "STEP"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Stretches the back of the thigh, which tightens with running and sitting.",
-    "setup": ["Stand facing a low step, bench or rock and rest one heel on it, leg straight, toes pointing up."],
-    "cues": ["Hinge forward from the hips", "Keep your back long", "Stop at a gentle stretch"],
-    "mistakes": ["Rounding the back to reach further", "Locking the knee hard", "Bouncing"],
+    "setup": [
+      "Stand facing a low step, bench or rock and rest one heel on it, leg straight, toes pointing up."
+    ],
+    "cues": [
+      "Hinge forward from the hips",
+      "Keep your back long",
+      "Stop at a gentle stretch"
+    ],
+    "mistakes": [
+      "Rounding the back to reach further",
+      "Locking the knee hard",
+      "Bouncing"
+    ],
     "feel": "A stretch in the back of the thigh.",
     "stopIf": "Tingling or pain down the leg: that's a nerve, not a muscle, so ease off.",
     "reviewed": false
@@ -21,17 +38,33 @@
   {
     "id": "quad-stretch-standing",
     "name": "Standing quad stretch",
-    "bodyAreas": ["QUAD", "HIP"],
+    "bodyAreas": [
+      "QUAD",
+      "HIP"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Stretches the front of the thigh after running, cycling or hiking downhill.",
-    "setup": ["Stand tall holding a wall or tree for balance."],
-    "cues": ["Bring your heel towards your bottom", "Knees side by side", "Tuck your tailbone under"],
-    "mistakes": ["Arching the lower back", "Letting the knee drift forward or out", "Pulling hard on the ankle"],
+    "setup": [
+      "Stand tall holding a wall or tree for balance."
+    ],
+    "cues": [
+      "Bring your heel towards your bottom",
+      "Knees side by side",
+      "Tuck your tailbone under"
+    ],
+    "mistakes": [
+      "Arching the lower back",
+      "Letting the knee drift forward or out",
+      "Pulling hard on the ankle"
+    ],
     "feel": "A stretch along the front of the thigh.",
     "stopIf": "Knee pain.",
     "reviewed": false
@@ -76,6 +109,94 @@
     "stopIf": "Sharp pain in the back of the thigh.",
     "cautions": [
       "Start with 1-2 sets of 3-5: soreness for 2-3 days is normal at first."
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "hamstring-heel-dig",
+    "name": "Heel dig hold (isometric)",
+    "aliases": [],
+    "bodyAreas": [
+      "HAMSTRING"
+    ],
+    "kind": "ISOMETRIC",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 5,
+      "holdSec": 10,
+      "restSec": 20,
+      "sides": "AFFECTED"
+    },
+    "why": "A gentle first strengthening exercise after a hamstring strain: the muscle works without being stretched.",
+    "setup": [
+      "Lie on your back with knees bent and heels on the floor."
+    ],
+    "cues": [
+      "Dig your heel into the floor",
+      "Pull it towards your bottom without moving",
+      "Ease up if it pulls sharply"
+    ],
+    "mistakes": [
+      "Pushing into sharp pain",
+      "Lifting the hips",
+      "Holding your breath"
+    ],
+    "feel": "Effort in the back of the thigh.",
+    "stopIf": "Sharp pain in the back of the thigh.",
+    "progressions": [
+      "hamstring-bridge-isometric"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "hamstring-bridge-isometric",
+    "name": "Bridge hold with heels on a chair",
+    "aliases": [
+      "Long-lever bridge hold"
+    ],
+    "bodyAreas": [
+      "HAMSTRING",
+      "GLUTE"
+    ],
+    "kind": "ISOMETRIC",
+    "position": "FLOOR_SUPINE",
+    "equipment": [
+      "CHAIR",
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 4,
+      "holdSec": 20,
+      "restSec": 40
+    },
+    "why": "Holding a bridge with your heels raised loads the hamstrings strongly without movement: a key step in hamstring rehab and a good strength builder.",
+    "setup": [
+      "Lie on your back with your heels on a chair seat, knees slightly bent."
+    ],
+    "cues": [
+      "Press your heels down",
+      "Lift your hips",
+      "Hold still and breathe"
+    ],
+    "mistakes": [
+      "Arching the lower back",
+      "Knees locked straight",
+      "Cramping: bend the knees more"
+    ],
+    "feel": "Work in the backs of the thighs and buttocks.",
+    "stopIf": "Sharp pain in the back of the thigh.",
+    "regressions": [
+      "hamstring-heel-dig"
+    ],
+    "progressions": [
+      "single-leg-bridge"
     ],
     "reviewed": false
   }

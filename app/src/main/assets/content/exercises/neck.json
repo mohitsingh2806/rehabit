@@ -2,21 +2,33 @@
   {
     "id": "chin-tuck",
     "name": "Chin tuck",
-    "aliases": ["Neck retraction"],
-    "bodyAreas": ["NECK"],
+    "aliases": [
+      "Neck retraction"
+    ],
+    "bodyAreas": [
+      "NECK"
+    ],
     "kind": "ACTIVATION",
     "position": "SEATED",
     "deskFriendly": true,
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 3 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 3
+    },
     "why": "Wakes up the deep muscles at the front of your neck that hold your head balanced over your shoulders. After long hours at a screen the head drifts forward and these muscles switch off, which loads the back of the neck.",
     "setup": [
       "Sit or stand tall with your shoulders relaxed.",
       "Look straight ahead with your chin level."
     ],
-    "cues": ["Slide your head straight back", "Make a gentle double chin", "Keep your eyes level"],
+    "cues": [
+      "Slide your head straight back",
+      "Make a gentle double chin",
+      "Keep your eyes level"
+    ],
     "mistakes": [
       "Tipping the chin down to the chest instead of sliding the head back",
       "Pushing so hard that the neck strains",
@@ -24,26 +36,43 @@
     ],
     "feel": "A gentle stretch at the base of your skull and light effort at the front of your neck.",
     "stopIf": "Pain spreads into your arm, or you feel dizzy, tingly or numb.",
-    "progressions": ["deep-neck-flexor-nod"],
+    "progressions": [
+      "deep-neck-flexor-nod"
+    ],
     "reviewed": false
   },
   {
     "id": "deep-neck-flexor-nod",
     "name": "Deep neck flexor nod",
-    "aliases": ["Cranio-cervical flexion", "Lying chin nod"],
-    "bodyAreas": ["NECK"],
+    "aliases": [
+      "Cranio-cervical flexion",
+      "Lying chin nod"
+    ],
+    "bodyAreas": [
+      "NECK"
+    ],
     "kind": "STRENGTH",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5
+    },
     "why": "Trains the deep neck flexors with a tiny nodding movement. Building their endurance like this reduces neck pain and neck-related headaches. Work up to 10-second holds.",
     "setup": [
       "Lie on your back with knees bent. Use a thin folded towel under your head if your chin pokes up.",
       "Relax your jaw and rest your tongue on the roof of your mouth."
     ],
-    "cues": ["Nod as if saying a small yes", "Keep the back of the neck long", "Front of the neck stays soft"],
+    "cues": [
+      "Nod as if saying a small yes",
+      "Keep the back of the neck long",
+      "Front of the neck stays soft"
+    ],
     "mistakes": [
       "Lifting the head off the floor",
       "Jamming the chin into the chest",
@@ -51,26 +80,47 @@
     ],
     "feel": "A light effort deep at the front of the neck, under the chin.",
     "stopIf": "Neck pain increases, or you feel dizzy.",
-    "regressions": ["chin-tuck"],
-    "references": ["Jull G, et al. 2002. A randomized controlled trial of exercise and manipulative therapy for cervicogenic headache. Spine 27:1835-43."],
+    "regressions": [
+      "chin-tuck"
+    ],
+    "references": [
+      "Jull G, et al. 2002. A randomized controlled trial of exercise and manipulative therapy for cervicogenic headache. Spine 27:1835-43."
+    ],
     "reviewed": false
   },
   {
     "id": "neck-rotation",
     "name": "Neck rotation",
-    "aliases": ["Head turns"],
-    "bodyAreas": ["NECK"],
+    "aliases": [
+      "Head turns"
+    ],
+    "bodyAreas": [
+      "NECK"
+    ],
     "kind": "MOBILITY",
     "position": "SEATED",
     "deskFriendly": true,
     "trailFriendly": true,
     "laterality": "ALTERNATING",
     "measure": "REPS",
-    "defaultDose": { "sets": 1, "reps": 5 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 5
+    },
     "why": "Gentle, regular movement keeps a stiff neck moving and is often the quickest way to ease morning stiffness.",
-    "setup": ["Sit tall with your shoulders relaxed."],
-    "cues": ["Turn your head slowly to one side", "Only as far as is comfortable", "Back to the middle, then the other way"],
-    "mistakes": ["Moving fast or jerkily", "Lifting the shoulders as you turn", "Forcing the end of the range"],
+    "setup": [
+      "Sit tall with your shoulders relaxed."
+    ],
+    "cues": [
+      "Turn your head slowly to one side",
+      "Only as far as is comfortable",
+      "Back to the middle, then the other way"
+    ],
+    "mistakes": [
+      "Moving fast or jerkily",
+      "Lifting the shoulders as you turn",
+      "Forcing the end of the range"
+    ],
     "feel": "Gentle movement and a light stretch in the neck.",
     "stopIf": "Dizziness, blurred vision, or pain spreading into the arm.",
     "reviewed": false
@@ -78,23 +128,37 @@
   {
     "id": "upper-trap-stretch",
     "name": "Upper trapezius stretch",
-    "aliases": ["Side neck stretch"],
-    "bodyAreas": ["NECK", "SHOULDER"],
+    "aliases": [
+      "Side neck stretch"
+    ],
+    "bodyAreas": [
+      "NECK",
+      "SHOULDER"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "SEATED",
     "deskFriendly": true,
-    "trailFriendly": true,
-    "equipment": ["CHAIR"],
+    "trailFriendly": false,
+    "equipment": [
+      "CHAIR"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Eases tightness along the side of the neck and top of the shoulder, where tension builds up with stress, desk work and carrying bags.",
     "setup": [
       "Sit tall and hold the side of the chair seat with your right hand to keep that shoulder down.",
       "Slowly tilt your left ear towards your left shoulder.",
       "Optional: rest your left hand on your head for a little extra weight. Don't pull."
     ],
-    "cues": ["Ear towards shoulder", "Keep the other shoulder down", "Breathe slowly"],
+    "cues": [
+      "Ear towards shoulder",
+      "Keep the other shoulder down",
+      "Breathe slowly"
+    ],
     "mistakes": [
       "Pulling hard on your head",
       "Letting the stretched-side shoulder creep up",
@@ -102,53 +166,97 @@
     ],
     "feel": "A stretch along the side of the neck into the top of the shoulder, on the side away from the tilt.",
     "stopIf": "Pain or tingling travels down your arm, or you feel dizzy.",
-    "substitutes": ["levator-scapulae-stretch"],
+    "substitutes": [
+      "levator-scapulae-stretch"
+    ],
     "reviewed": false
   },
   {
     "id": "levator-scapulae-stretch",
     "name": "Levator scapulae stretch",
-    "aliases": ["Look-to-armpit stretch"],
-    "bodyAreas": ["NECK", "SHOULDER"],
+    "aliases": [
+      "Look-to-armpit stretch"
+    ],
+    "bodyAreas": [
+      "NECK",
+      "SHOULDER"
+    ],
     "kind": "STRETCH_STATIC",
     "position": "SEATED",
     "deskFriendly": true,
-    "trailFriendly": true,
-    "equipment": ["CHAIR"],
+    "trailFriendly": false,
+    "equipment": [
+      "CHAIR"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "HOLD",
-    "defaultDose": { "sets": 2, "holdSec": 30 },
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
     "why": "Stretches the muscle that runs from the side of the neck to the top of the shoulder blade, a common source of the 'knot' at the base of the neck.",
     "setup": [
       "Sit tall and hold the chair seat with your right hand.",
       "Turn your nose towards your left armpit, then let your head drop gently forward."
     ],
-    "cues": ["Nose towards your armpit", "Keep the other shoulder down", "Gentle, no pulling"],
-    "mistakes": ["Pulling the head down hard", "Rounding the whole back", "Shrugging"],
+    "cues": [
+      "Nose towards your armpit",
+      "Keep the other shoulder down",
+      "Gentle, no pulling"
+    ],
+    "mistakes": [
+      "Pulling the head down hard",
+      "Rounding the whole back",
+      "Shrugging"
+    ],
     "feel": "A stretch from the back of the neck down towards the top of the shoulder blade, on the side away from your nose.",
     "stopIf": "Pain or tingling into the arm, or dizziness.",
-    "substitutes": ["upper-trap-stretch"],
+    "substitutes": [
+      "upper-trap-stretch"
+    ],
     "reviewed": false
   },
   {
     "id": "scapular-retraction",
     "name": "Shoulder blade squeeze",
-    "aliases": ["Scapular retraction"],
-    "bodyAreas": ["THORACIC", "SHOULDER", "NECK"],
+    "aliases": [
+      "Scapular retraction"
+    ],
+    "bodyAreas": [
+      "THORACIC",
+      "SHOULDER",
+      "NECK"
+    ],
     "kind": "ACTIVATION",
     "position": "SEATED",
     "deskFriendly": true,
     "trailFriendly": true,
     "laterality": "BILATERAL",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5
+    },
     "why": "Wakes up the muscles between your shoulder blades that get lazy when you sit rounded at a desk, taking strain off the neck and shoulders.",
-    "setup": ["Sit or stand tall with your arms relaxed by your sides."],
-    "cues": ["Squeeze shoulder blades back and down", "Don't shrug", "Keep your chin level"],
-    "mistakes": ["Shrugging the shoulders up", "Arching the lower back", "Poking the chin forward"],
+    "setup": [
+      "Sit or stand tall with your arms relaxed by your sides."
+    ],
+    "cues": [
+      "Squeeze shoulder blades back and down",
+      "Don't shrug",
+      "Keep your chin level"
+    ],
+    "mistakes": [
+      "Shrugging the shoulders up",
+      "Arching the lower back",
+      "Poking the chin forward"
+    ],
     "feel": "Effort between and below your shoulder blades.",
     "stopIf": "Pain spreads into your arm.",
-    "progressions": ["band-row"],
+    "progressions": [
+      "band-row"
+    ],
     "reviewed": false
   }
 ]

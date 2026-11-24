@@ -1,0 +1,169 @@
+{
+  "id": "tennis-elbow",
+  "name": "Tennis elbow (lateral elbow pain)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Settle pain at the outside of the elbow and strengthen the forearm tendon gradually, while easing off the gripping that aggravates it. Recovery usually takes weeks to a few months.",
+  "whoFor": "People with tennis elbow (lateral elbow tendinopathy): pain at the outside of the elbow when gripping, lifting or typing, without having to play tennis.",
+  "notFor": [
+    "Pain after a fall onto the arm that hasn't been checked"
+  ],
+  "estMinutes": 10,
+  "trackedMetric": "Elbow pain when gripping or lifting (0-10)",
+  "painRules": "Up to about 3 out of 10 during exercise is OK if it settles within an hour and isn't worse the next day. Meanwhile, lift with palms up and avoid long, hard gripping.",
+  "redFlags": [
+    "Numbness, tingling or weakness in the hand or fingers",
+    "Pain after a fall or injury, or you can't straighten the elbow",
+    "A hot, red, swollen elbow, or fever",
+    "Neck pain with pain spreading down the arm"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Settle with holds",
+      "durationHint": "1-2 weeks",
+      "entryCriteria": "Painful to grip or lift.",
+      "exitCriteria": "Holds are comfortable and gripping hurts less.",
+      "items": [
+        {
+          "exerciseId": "wrist-extension-isometric",
+          "schedule": {
+            "slots": [
+              "MORNING",
+              "EVENING"
+            ],
+            "timesPerDay": 2
+          }
+        },
+        {
+          "exerciseId": "wrist-extensor-stretch",
+          "schedule": {
+            "slots": [
+              "DESK"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "grip-squeeze-towel",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "load",
+      "name": "Slow strength",
+      "durationHint": "6-12 weeks",
+      "entryCriteria": "Holds are comfortable.",
+      "exitCriteria": "Slow lifts with your target weight at 3 out of 10 or less.",
+      "items": [
+        {
+          "exerciseId": "wrist-extension-slow",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "forearm-rotation",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "grip-squeeze-towel",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "wrist-extension-isometric",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "band-row",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false,
+          "note": "Shoulder strength helps take load off the elbow."
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Back to full use",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Strength work is comfortable.",
+      "exitCriteria": "Gripping, lifting and your sport feel normal. Keep strength work twice a week.",
+      "items": [
+        {
+          "exerciseId": "wrist-extension-slow",
+          "dose": {
+            "sets": 3,
+            "reps": 12,
+            "restSec": 60,
+            "tempo": "3-3",
+            "sides": "AFFECTED",
+            "load": "Heavier than before"
+          },
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "forearm-rotation",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "push-up",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Coombes BK, Bisset L, Vicenzino B. 2015. Management of lateral elbow tendinopathy: one size does not fit all. J Orthop Sports Phys Ther 45:938-49."
+  ],
+  "reviewed": false
+}

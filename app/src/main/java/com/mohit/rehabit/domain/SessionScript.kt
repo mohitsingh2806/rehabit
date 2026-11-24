@@ -172,10 +172,10 @@ object SessionScript {
                             t += s * 1000L
                             cue
                         }
-                    }.filter { it.atMs > 0 } + listOf(Cue(breath[0] * 1000L, CueAction.Speak("and out.")))
+                    }.filter { it.atMs > 0 } + firstBreathWords(breath)
                     step(
                         "${sideLabel}Breathe", ms,
-                        "${sideSpeech}${breaths} slow breaths. Breathe in.",
+                        "${sideSpeech}$breaths slow breath${if (breaths == 1) "" else "s"}. Breathe in.",
                         cues, RepCounter(breaths, cycle, 0, unit = "Breath"), withCountdown = false,
                     )
                 }
@@ -228,6 +228,24 @@ object SessionScript {
                     cues, RepCounter(reps, cycle, offset),
                 )
             }
+        }
+    }
+
+    /**
+     * Words for the first breath only, so the pattern is clear and then quiet:
+     * 2 phases = in, out; 3 = in, hold, out; 4 = in, hold, out, hold (box breathing).
+     */
+    private fun firstBreathWords(phases: List<Int>): List<Cue> {
+        val words = when (phases.size) {
+            2 -> listOf("in", "out")
+            3 -> listOf("in", "hold", "out")
+            else -> listOf("in", "hold", "out", "hold")
+        }
+        var t = 0L
+        return phases.mapIndexedNotNull { i, sec ->
+            val cue = if (i == 0) null else Cue(t, CueAction.Speak(words[i] + "."))
+            t += sec * 1000L
+            cue
         }
     }
 

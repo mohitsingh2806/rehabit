@@ -2,209 +2,442 @@
   {
     "id": "quad-set",
     "name": "Thigh squeeze (quad set)",
-    "aliases": ["Quad set", "Static quads"],
-    "bodyAreas": ["QUAD", "KNEE"],
+    "aliases": [
+      "Quad set",
+      "Static quads"
+    ],
+    "bodyAreas": [
+      "QUAD",
+      "KNEE"
+    ],
     "kind": "ACTIVATION",
     "position": "SEATED",
     "deskFriendly": true,
-    "equipment": ["TOWEL"],
+    "equipment": [
+      "TOWEL"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS_WITH_HOLD",
-    "defaultDose": { "sets": 1, "reps": 10, "holdSec": 5 },
+    "defaultDose": {
+      "sets": 1,
+      "reps": 10,
+      "holdSec": 5
+    },
     "why": "Switches on the thigh muscle that pain and swelling turn off, without bending the knee. A first step after a knee flare-up.",
-    "setup": ["Sit with your leg straight out in front, a small rolled towel under the knee."],
-    "cues": ["Push the back of your knee into the towel", "Tighten the front of your thigh", "Hold, then relax"],
-    "mistakes": ["Holding your breath", "Lifting the heel instead of squeezing", "Squeezing the buttock instead"],
+    "setup": [
+      "Sit with your leg straight out in front, a small rolled towel under the knee."
+    ],
+    "cues": [
+      "Push the back of your knee into the towel",
+      "Tighten the front of your thigh",
+      "Hold, then relax"
+    ],
+    "mistakes": [
+      "Holding your breath",
+      "Lifting the heel instead of squeezing",
+      "Squeezing the buttock instead"
+    ],
     "feel": "Tightening in the front of the thigh, with the kneecap drawing up.",
     "stopIf": "Knee pain increases.",
-    "progressions": ["straight-leg-raise"],
+    "progressions": [
+      "straight-leg-raise"
+    ],
     "reviewed": false
   },
   {
     "id": "straight-leg-raise",
     "name": "Straight leg raise",
-    "bodyAreas": ["QUAD", "HIP"],
+    "bodyAreas": [
+      "QUAD",
+      "HIP"
+    ],
     "kind": "STRENGTH",
     "position": "FLOOR_SUPINE",
-    "equipment": ["MAT"],
+    "equipment": [
+      "MAT"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 10, "restSec": 30 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 10,
+      "restSec": 30
+    },
     "why": "Strengthens the thigh while keeping the knee straight, so there's very little load through a sore knee.",
-    "setup": ["Lie on your back with one knee bent and foot flat, the other leg straight."],
-    "cues": ["Tighten your thigh first", "Lift the straight leg to the other knee's height", "Lower slowly"],
-    "mistakes": ["Letting the knee bend as you lift", "Arching the lower back", "Dropping the leg"],
+    "setup": [
+      "Lie on your back with one knee bent and foot flat, the other leg straight."
+    ],
+    "cues": [
+      "Tighten your thigh first",
+      "Lift the straight leg to the other knee's height",
+      "Lower slowly"
+    ],
+    "mistakes": [
+      "Letting the knee bend as you lift",
+      "Arching the lower back",
+      "Dropping the leg"
+    ],
     "feel": "Work in the front of the thigh.",
     "stopIf": "Back or knee pain.",
-    "regressions": ["quad-set"],
+    "regressions": [
+      "quad-set"
+    ],
     "reviewed": false
   },
   {
     "id": "terminal-knee-extension-band",
     "name": "Band knee straightening",
-    "aliases": ["Terminal knee extension", "TKE"],
-    "bodyAreas": ["QUAD", "KNEE"],
+    "aliases": [
+      "Terminal knee extension",
+      "TKE"
+    ],
+    "bodyAreas": [
+      "QUAD",
+      "KNEE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["BAND"],
+    "equipment": [
+      "BAND"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 15, "restSec": 30 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 15,
+      "restSec": 30
+    },
     "why": "Trains the last bit of knee straightening, where the inner thigh muscle (VMO) works hardest, in a knee-friendly standing position.",
     "setup": [
       "Loop a band around a sturdy post at knee height and behind one knee, facing the post.",
       "Step back until the band pulls that knee slightly bent."
     ],
-    "cues": ["Straighten the knee against the band", "Squeeze your thigh", "Let it bend back slowly"],
-    "mistakes": ["Locking the knee hard backwards", "Leaning the trunk", "Letting the band snap the knee forward"],
+    "cues": [
+      "Straighten the knee against the band",
+      "Squeeze your thigh",
+      "Let it bend back slowly"
+    ],
+    "mistakes": [
+      "Locking the knee hard backwards",
+      "Leaning the trunk",
+      "Letting the band snap the knee forward"
+    ],
     "feel": "Work in the front of the thigh just above the kneecap.",
     "stopIf": "Pain at the front of the knee above about 3 out of 10.",
-    "substitutes": ["quad-set"],
+    "substitutes": [
+      "quad-set"
+    ],
     "reviewed": false
   },
   {
     "id": "wall-sit-isometric",
     "name": "Wall sit (isometric hold)",
-    "bodyAreas": ["KNEE", "QUAD"],
+    "bodyAreas": [
+      "KNEE",
+      "QUAD"
+    ],
     "kind": "ISOMETRIC",
     "position": "STANDING",
-    "equipment": ["WALL"],
+    "equipment": [
+      "WALL"
+    ],
     "laterality": "BILATERAL",
     "measure": "HOLD",
-    "defaultDose": { "sets": 4, "holdSec": 30, "restSec": 60, "effort": "Knee discomfort up to 3/10 is OK" },
+    "defaultDose": {
+      "sets": 4,
+      "holdSec": 30,
+      "restSec": 60,
+      "effort": "Knee discomfort up to 3/10 is OK"
+    },
     "why": "Holding a squat without moving loads the knee tendon and thigh muscles steadily. For patellar tendon pain, holds like this let you keep the tendon working when moving exercises hurt, and many people find the pain eases for a while afterwards.",
     "setup": [
       "Stand with your back against a wall, feet about 30 cm in front of you and hip-width apart.",
       "Slide down until your knees are bent to a depth that feels hard but not painful. Go no lower than thighs level with the floor."
     ],
-    "cues": ["Back flat on the wall", "Knees in line with your toes", "Keep breathing"],
-    "mistakes": ["Going so deep that the knee hurts", "Letting the knees fall inwards", "Holding your breath"],
+    "cues": [
+      "Back flat on the wall",
+      "Knees in line with your toes",
+      "Keep breathing"
+    ],
+    "mistakes": [
+      "Going so deep that the knee hurts",
+      "Letting the knees fall inwards",
+      "Holding your breath"
+    ],
     "feel": "Hard work in the front of the thighs. Mild knee discomfort that settles after the set is OK.",
     "stopIf": "Knee pain goes above about 3-4 out of 10, or is worse the next morning.",
-    "cautions": ["Skip it if the knee is hot or swollen."],
-    "substitutes": ["spanish-squat-isometric"],
-    "references": ["Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"],
+    "cautions": [
+      "Skip it if the knee is hot or swollen."
+    ],
+    "substitutes": [
+      "spanish-squat-isometric"
+    ],
+    "references": [
+      "Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"
+    ],
     "reviewed": false
   },
   {
     "id": "spanish-squat-isometric",
     "name": "Spanish squat (isometric hold)",
-    "bodyAreas": ["KNEE", "QUAD"],
+    "bodyAreas": [
+      "KNEE",
+      "QUAD"
+    ],
     "kind": "ISOMETRIC",
     "position": "STANDING",
-    "equipment": ["BAND"],
+    "equipment": [
+      "BAND"
+    ],
     "laterality": "BILATERAL",
     "measure": "HOLD",
-    "defaultDose": { "sets": 4, "holdSec": 30, "restSec": 60, "effort": "Knee discomfort up to 3/10 is OK" },
+    "defaultDose": {
+      "sets": 4,
+      "holdSec": 30,
+      "restSec": 60,
+      "effort": "Knee discomfort up to 3/10 is OK"
+    },
     "why": "The band holds your shins upright, so the thigh muscles and knee tendon do the work with less squeeze on the front of the knee. A favourite hold for patellar tendon pain.",
     "setup": [
       "Loop a long resistance band (or strap) around a sturdy post and behind both knees.",
       "Step back until the band is tight, feet hip-width apart.",
       "Sit back as if into a chair, keeping your shins upright."
     ],
-    "cues": ["Sit back into the band", "Shins stay upright", "Chest up, keep breathing"],
-    "mistakes": ["Letting the knees drift forward past the toes", "Squatting too deep too soon", "Anchoring to something that can move"],
+    "cues": [
+      "Sit back into the band",
+      "Shins stay upright",
+      "Chest up, keep breathing"
+    ],
+    "mistakes": [
+      "Letting the knees drift forward past the toes",
+      "Squatting too deep too soon",
+      "Anchoring to something that can move"
+    ],
     "feel": "Hard work in the front of the thighs. Mild knee discomfort that settles after the set is OK.",
     "stopIf": "Knee pain goes above about 3-4 out of 10, or is worse the next morning.",
-    "cautions": ["Check the anchor is solid before leaning back."],
-    "substitutes": ["wall-sit-isometric"],
-    "references": ["Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"],
+    "cautions": [
+      "Check the anchor is solid before leaning back."
+    ],
+    "substitutes": [
+      "wall-sit-isometric"
+    ],
+    "references": [
+      "Rio E, et al. 2015. Isometric exercise induces analgesia and reduces inhibition in patellar tendinopathy. Br J Sports Med 49:1277-83. (Leg-extension isometrics; same principle.)"
+    ],
     "reviewed": false
   },
   {
     "id": "box-squat-slow",
     "name": "Slow squat to a chair",
-    "aliases": ["Box squat"],
-    "bodyAreas": ["KNEE", "QUAD", "GLUTE"],
+    "aliases": [
+      "Box squat"
+    ],
+    "bodyAreas": [
+      "KNEE",
+      "QUAD",
+      "GLUTE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["CHAIR"],
+    "equipment": [
+      "CHAIR"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 10, "restSec": 90, "tempo": "3-1-3" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 10,
+      "restSec": 90,
+      "tempo": "3-1-3"
+    },
     "why": "A slow, controlled squat to a chair builds thigh and tendon strength. Slow lifting with steadily heavier loads is a core treatment for knee tendon pain.",
-    "setup": ["Stand in front of a chair, feet shoulder-width apart, arms out in front for balance."],
-    "cues": ["Sit back slowly to touch the chair", "Knees follow your toes", "Stand up slowly"],
-    "mistakes": ["Dropping onto the chair", "Knees caving in", "Heels lifting"],
+    "setup": [
+      "Stand in front of a chair, feet shoulder-width apart, arms out in front for balance."
+    ],
+    "cues": [
+      "Sit back slowly to touch the chair",
+      "Knees follow your toes",
+      "Stand up slowly"
+    ],
+    "mistakes": [
+      "Dropping onto the chair",
+      "Knees caving in",
+      "Heels lifting"
+    ],
     "feel": "Work in the thighs and buttocks. Mild knee-tendon discomfort up to 3/10 is OK.",
     "stopIf": "Knee pain above about 3-4 out of 10, or worse the next morning.",
-    "progressions": ["goblet-squat-slow"],
-    "references": ["Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802."],
+    "progressions": [
+      "goblet-squat-slow"
+    ],
+    "references": [
+      "Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802."
+    ],
     "reviewed": false
   },
   {
     "id": "goblet-squat-slow",
     "name": "Slow goblet squat",
-    "bodyAreas": ["KNEE", "QUAD", "GLUTE"],
+    "bodyAreas": [
+      "KNEE",
+      "QUAD",
+      "GLUTE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["DUMBBELL"],
+    "equipment": [
+      "DUMBBELL"
+    ],
     "laterality": "BILATERAL",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 8, "restSec": 120, "tempo": "3-1-3", "load": "Heavy enough that the last reps are hard" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 8,
+      "restSec": 120,
+      "tempo": "3-1-3",
+      "load": "Heavy enough that the last reps are hard"
+    },
     "why": "Heavy, slow squats are one of the best-tested treatments for patellar tendon pain: tendons get stronger with load, not rest. Add weight gradually over the weeks.",
-    "setup": ["Hold a dumbbell or kettlebell at your chest, feet shoulder-width apart."],
-    "cues": ["Squat down slowly", "Chest up, knees over toes", "Drive up slowly"],
-    "mistakes": ["Rushing the lowering", "Knees caving in", "Adding weight too fast"],
+    "setup": [
+      "Hold a dumbbell or kettlebell at your chest, feet shoulder-width apart."
+    ],
+    "cues": [
+      "Squat down slowly",
+      "Chest up, knees over toes",
+      "Drive up slowly"
+    ],
+    "mistakes": [
+      "Rushing the lowering",
+      "Knees caving in",
+      "Adding weight too fast"
+    ],
     "feel": "Hard work in the thighs and buttocks. Mild knee-tendon discomfort up to 3/10 is OK.",
     "stopIf": "Knee pain above about 3-4 out of 10, or worse the next morning.",
-    "regressions": ["box-squat-slow"],
-    "substitutes": ["box-squat-slow"],
-    "references": ["Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802."],
+    "regressions": [
+      "box-squat-slow"
+    ],
+    "substitutes": [
+      "box-squat-slow"
+    ],
+    "references": [
+      "Kongsgaard M, et al. 2009. Corticosteroid injections, eccentric decline squat training and heavy slow resistance training in patellar tendinopathy. Scand J Med Sci Sports 19:790-802."
+    ],
     "reviewed": false
   },
   {
     "id": "split-squat",
     "name": "Split squat",
-    "bodyAreas": ["QUAD", "GLUTE", "KNEE"],
+    "bodyAreas": [
+      "QUAD",
+      "GLUTE",
+      "KNEE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 8, "restSec": 60 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 8,
+      "restSec": 60
+    },
     "why": "Builds single-leg strength in the thigh and glute, with balance help from the back foot.",
-    "setup": ["Stand in a long stride, back heel lifted, holding a wall if needed."],
-    "cues": ["Drop the back knee straight down", "Front knee over the foot", "Push up through the front heel"],
-    "mistakes": ["Stride too short", "Front knee caving in", "Leaning forward a lot"],
+    "setup": [
+      "Stand in a long stride, back heel lifted, holding a wall if needed."
+    ],
+    "cues": [
+      "Drop the back knee straight down",
+      "Front knee over the foot",
+      "Push up through the front heel"
+    ],
+    "mistakes": [
+      "Stride too short",
+      "Front knee caving in",
+      "Leaning forward a lot"
+    ],
     "feel": "Work in the front-leg thigh and buttock.",
     "stopIf": "Knee pain above about 3 out of 10.",
-    "progressions": ["reverse-lunge"],
+    "progressions": [
+      "reverse-lunge"
+    ],
     "reviewed": false
   },
   {
     "id": "reverse-lunge",
     "name": "Reverse lunge",
-    "bodyAreas": ["QUAD", "GLUTE", "KNEE"],
+    "bodyAreas": [
+      "QUAD",
+      "GLUTE",
+      "KNEE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
     "trailFriendly": true,
     "laterality": "ALTERNATING",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 8, "restSec": 60 },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 8,
+      "restSec": 60
+    },
     "why": "A lunge that's kinder to the knee than stepping forward, building strength for stairs, hills and running.",
-    "setup": ["Stand tall, feet hip-width apart."],
-    "cues": ["Step one foot back", "Lower the back knee towards the floor", "Push through the front heel to return"],
-    "mistakes": ["Front knee caving in", "Leaning forward", "Stepping too short"],
+    "setup": [
+      "Stand tall, feet hip-width apart."
+    ],
+    "cues": [
+      "Step one foot back",
+      "Lower the back knee towards the floor",
+      "Push through the front heel to return"
+    ],
+    "mistakes": [
+      "Front knee caving in",
+      "Leaning forward",
+      "Stepping too short"
+    ],
     "feel": "Work in the front thigh and buttock.",
     "stopIf": "Knee pain above about 3 out of 10.",
-    "regressions": ["split-squat"],
+    "regressions": [
+      "split-squat"
+    ],
     "reviewed": false
   },
   {
     "id": "step-down-eccentric",
     "name": "Slow step-down",
-    "aliases": ["Eccentric step-down"],
-    "bodyAreas": ["KNEE", "QUAD", "GLUTE"],
+    "aliases": [
+      "Eccentric step-down"
+    ],
+    "bodyAreas": [
+      "KNEE",
+      "QUAD",
+      "GLUTE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
-    "equipment": ["STEP"],
+    "equipment": [
+      "STEP"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 10, "restSec": 60, "tempo": "3-0-1" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 10,
+      "restSec": 60,
+      "tempo": "3-1"
+    },
     "why": "Lowering yourself slowly off a step trains control of the knee, hip and foot arch: the same job your legs do going downstairs and downhill.",
-    "setup": ["Stand on a low step on one leg, the other foot hanging off the front, holding a rail if needed."],
-    "cues": ["Lower the free heel slowly to the floor", "Knee stays over your second toe", "Push back up"],
-    "mistakes": ["Knee caving in", "Hip dropping on the free side", "Going too fast"],
+    "setup": [
+      "Stand on a low step on one leg, the other foot hanging off the front, holding a rail if needed."
+    ],
+    "cues": [
+      "Lower the free heel slowly to the floor",
+      "Knee stays over your second toe",
+      "Push back up"
+    ],
+    "mistakes": [
+      "Knee caving in",
+      "Hip dropping on the free side",
+      "Going too fast"
+    ],
     "feel": "Work in the thigh and buttock of the standing leg.",
     "stopIf": "Knee pain above about 3 out of 10.",
     "reviewed": false
@@ -212,18 +445,39 @@
   {
     "id": "step-up",
     "name": "Step-up",
-    "bodyAreas": ["QUAD", "GLUTE", "KNEE"],
+    "bodyAreas": [
+      "QUAD",
+      "GLUTE",
+      "KNEE"
+    ],
     "kind": "STRENGTH",
     "position": "STANDING",
     "trailFriendly": true,
-    "equipment": ["STEP"],
+    "equipment": [
+      "STEP"
+    ],
     "laterality": "EACH_SIDE",
     "measure": "REPS",
-    "defaultDose": { "sets": 3, "reps": 10, "restSec": 60, "load": "Add a loaded backpack to progress" },
+    "defaultDose": {
+      "sets": 3,
+      "reps": 10,
+      "restSec": 60,
+      "load": "Add a loaded backpack to progress"
+    },
     "why": "Trains exactly what climbing stairs and hills needs. Great preparation for hiking.",
-    "setup": ["Stand facing a sturdy step, box or stair."],
-    "cues": ["Step up through the whole foot", "Stand tall at the top", "Step down slowly"],
-    "mistakes": ["Pushing off the back foot", "Knee caving in", "Dropping down fast"],
+    "setup": [
+      "Stand facing a sturdy step, box or stair."
+    ],
+    "cues": [
+      "Step up through the whole foot",
+      "Stand tall at the top",
+      "Step down slowly"
+    ],
+    "mistakes": [
+      "Pushing off the back foot",
+      "Knee caving in",
+      "Dropping down fast"
+    ],
     "feel": "Work in the thigh and buttock of the stepping leg.",
     "stopIf": "Knee pain above about 3 out of 10.",
     "reviewed": false

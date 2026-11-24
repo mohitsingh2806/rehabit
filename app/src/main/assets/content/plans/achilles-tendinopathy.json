@@ -1,0 +1,209 @@
+{
+  "id": "achilles-tendinopathy",
+  "name": "Achilles tendon pain (tendinopathy)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Load the Achilles tendon in steady steps so it gets stronger and less painful, while you keep as active as the pain allows. Expect around 12 weeks.",
+  "whoFor": "People with Achilles tendinopathy: pain and stiffness in the Achilles, worst in the morning or at the start of activity.",
+  "notFor": [
+    "A sudden pop or kick-like feeling at the back of the ankle (possible rupture): get checked the same day"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Achilles pain on your first steps in the morning (0-10)",
+  "painRules": "Pain-monitoring model: up to about 5 out of 10 during exercise is OK, as long as it settles by the next morning and isn't creeping up week to week. Running can usually continue at a level that follows the same rule.",
+  "redFlags": [
+    "A sudden pop, or a feeling of being kicked at the back of the ankle",
+    "You can't rise up on your toes on that side",
+    "Calf swelling with warmth or redness (possible blood clot)",
+    "Tendon pain that started soon after a course of 'quinolone' antibiotics (e.g. ciprofloxacin): tell your doctor",
+    "Hot, red, swollen tendon, or fever"
+  ],
+  "chooser": [
+    {
+      "id": "where",
+      "text": "Where is the pain?",
+      "options": [
+        {
+          "id": "mid",
+          "label": "In the tendon itself, a few centimetres above the heel",
+          "hint": "Mid-portion: the most common type."
+        },
+        {
+          "id": "insertion",
+          "label": "Where the tendon joins the heel bone",
+          "hint": "Insertional: avoid dropping the heel below a step or deep calf stretches."
+        }
+      ]
+    }
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Settle and load gently",
+      "durationHint": "1-2 weeks",
+      "entryCriteria": "Painful tendon, especially in the morning.",
+      "exitCriteria": "Morning pain is easing and heel raises on both legs are comfortable.",
+      "items": [
+        {
+          "exerciseId": "calf-isometric-hold",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "note": "Good for pain relief: also before a run."
+        },
+        {
+          "exerciseId": "heel-raise-double",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "dose": {
+            "sets": 2,
+            "holdSec": 30
+          },
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false,
+          "showIf": "where:mid"
+        }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Heavy, slow strength",
+      "durationHint": "6-12 weeks",
+      "entryCriteria": "Heel raises on both legs are comfortable.",
+      "exitCriteria": "20+ single-leg heel raises with little pain, and mornings are better.",
+      "items": [
+        {
+          "exerciseId": "eccentric-heel-drop-straight",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "note": "Pain up to 5/10 is OK. Add a backpack when easy.",
+          "showIf": "where:mid"
+        },
+        {
+          "exerciseId": "eccentric-heel-drop-bent",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "showIf": "where:mid"
+        },
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "note": "On flat ground, heels not below the toes.",
+          "showIf": "where:insertion"
+        },
+        {
+          "exerciseId": "bent-knee-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "showIf": "where:insertion"
+        },
+        {
+          "exerciseId": "calf-isometric-hold",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "spring",
+      "name": "Spring and return to sport",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Strong, mostly pain-free calf.",
+      "exitCriteria": "Running and jumping without the tendon flaring. Keep heel raises twice a week.",
+      "items": [
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "dose": {
+            "sets": 3,
+            "reps": 15,
+            "restSec": 60,
+            "tempo": "2-1-3",
+            "load": "Backpack"
+          },
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "bent-knee-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-hop",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Alfredson H, et al. 1998. Heavy-load eccentric calf muscle training for the treatment of chronic Achilles tendinosis. Am J Sports Med 26:360-6.",
+    "Silbernagel KG, et al. 2007. Continued sports activity, using a pain-monitoring model, during rehabilitation in patients with Achilles tendinopathy: a randomized controlled study. Am J Sports Med 35:897-906."
+  ],
+  "reviewed": false
+}

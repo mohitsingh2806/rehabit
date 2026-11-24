@@ -1,0 +1,138 @@
+{
+  "id": "bodyweight-strength",
+  "name": "Bodyweight strength at home",
+  "kind": "FOCUSED",
+  "category": "STRENGTH",
+  "goal": "A simple full-body strength routine three times a week with no gym: legs, push, pull and trunk.",
+  "whoFor": "Anyone who wants to get stronger at home. Pick the easier versions to start.",
+  "estMinutes": 25,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Full body",
+      "durationHint": "ongoing",
+      "items": [
+        {
+          "exerciseId": "box-squat-slow",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "push-up",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "reverse-lunge",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "band-row",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "note": "No band? Do the Y and T raise."
+        },
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "plank-pose",
+          "dose": {
+            "sets": 3,
+            "holdSec": 30,
+            "restSec": 30
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "dead-bug",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

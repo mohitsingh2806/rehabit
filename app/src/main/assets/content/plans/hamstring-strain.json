@@ -1,0 +1,197 @@
+{
+  "id": "hamstring-strain",
+  "name": "Hamstring strain recovery",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Recover from a pulled hamstring: gentle loading early, then strength in the lengthened position (where re-injuries happen), then a gradual return to running and sprinting.",
+  "whoFor": "People with a mild to moderate hamstring strain (a sudden pull or twinge in the back of the thigh while running or stretching).",
+  "notFor": [
+    "A large bruise high near the buttock with a pop and difficulty walking (possible tendon tear): see a doctor quickly"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Pain in the back of the thigh when walking fast or bending (0-10)",
+  "painRules": "Exercises should feel like work, not pain: stay at 2-3 out of 10 or less. Stretch only gently, and only once it doesn't hurt.",
+  "redFlags": [
+    "A pop with a large bruise high in the back of the thigh, a gap you can feel, or difficulty walking",
+    "Numbness or tingling down the leg",
+    "Calf swelling with warmth (possible blood clot)",
+    "Pain that keeps getting worse after the first few days"
+  ],
+  "phases": [
+    {
+      "id": "early",
+      "name": "Early loading",
+      "durationHint": "first 1-2 weeks",
+      "entryCriteria": "Recent strain, sore to walk fast or bend.",
+      "exitCriteria": "Brisk walking and the bridge hold are pain-free.",
+      "items": [
+        {
+          "exerciseId": "hamstring-heel-dig",
+          "schedule": {
+            "slots": [
+              "MORNING",
+              "NIGHT"
+            ],
+            "timesPerDay": 2
+          }
+        },
+        {
+          "exerciseId": "glute-bridge",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "hamstring-bridge-isometric",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 900
+          },
+          "schedule": {
+            "slots": [
+              "ANYTIME"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "lengthen",
+      "name": "Strength in length",
+      "durationHint": "2-4 weeks",
+      "entryCriteria": "Walking and bridges are pain-free.",
+      "exitCriteria": "Single-leg deadlifts and bridges without pain, and a full pain-free stretch.",
+      "items": [
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "hamstring-bridge-isometric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "hamstring-stretch-standing",
+          "dose": {
+            "sets": 2,
+            "holdSec": 20
+          },
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false,
+          "note": "Only once it doesn't hurt."
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Return to running and sprinting",
+      "durationHint": "2-4+ weeks",
+      "entryCriteria": "Pain-free strength and stretch.",
+      "exitCriteria": "Full-speed running feels normal. Keep Nordics once or twice a week to prevent re-injury.",
+      "items": [
+        {
+          "exerciseId": "nordic-hamstring-curl",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "THU"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "THU"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "a-skip",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "SAT"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "strides",
+          "dose": {
+            "sets": 4,
+            "distanceM": 60,
+            "restSec": 90
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "SAT"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false,
+          "note": "Build from 60% to near full speed over the weeks."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Askling CM, et al. 2013. Acute hamstring injuries in Swedish elite football: a prospective randomised controlled clinical trial comparing two rehabilitation protocols. Br J Sports Med 47:953-9.",
+    "Petersen J, et al. 2011. Preventive effect of eccentric training on acute hamstring injuries in men's soccer: a cluster-randomized controlled trial. Am J Sports Med 39:2296-303."
+  ],
+  "reviewed": false
+}
