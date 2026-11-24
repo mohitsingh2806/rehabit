@@ -35,5 +35,48 @@
     "feel": "A stretch along the front of the thigh.",
     "stopIf": "Knee pain.",
     "reviewed": false
+  },
+  {
+    "id": "nordic-hamstring-curl",
+    "name": "Nordic hamstring curl",
+    "aliases": [
+      "Nordics"
+    ],
+    "bodyAreas": [
+      "HAMSTRING"
+    ],
+    "kind": "STRENGTH",
+    "position": "KNEELING",
+    "equipment": [
+      "MAT"
+    ],
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 2,
+      "reps": 5,
+      "restSec": 90
+    },
+    "why": "Lowering yourself slowly from kneeling builds hamstring strength in the lengthened position, which strongly reduces hamstring strains and is part of sport injury-prevention programmes.",
+    "setup": [
+      "Kneel on a mat with your heels anchored under a sofa or held by a partner.",
+      "Body straight from knees to head, arms ready to catch you."
+    ],
+    "cues": [
+      "Lower forward as slowly as you can",
+      "Keep hips straight, don't bend",
+      "Catch yourself, push back up"
+    ],
+    "mistakes": [
+      "Bending at the hips",
+      "Dropping fast",
+      "Too many reps too soon (very sore legs)"
+    ],
+    "feel": "Very hard work in the back of the thighs.",
+    "stopIf": "Sharp pain in the back of the thigh.",
+    "cautions": [
+      "Start with 1-2 sets of 3-5: soreness for 2-3 days is normal at first."
+    ],
+    "reviewed": false
   }
 ]

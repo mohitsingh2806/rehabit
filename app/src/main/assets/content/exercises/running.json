@@ -165,5 +165,88 @@
     "stopIf": "Any tug or sharp pain in the calf or hamstring.",
     "cautions": ["Skip these if a tendon problem flares with speed."],
     "reviewed": false
+  },
+  {
+    "id": "jump-landing",
+    "name": "Squat jump with soft landing",
+    "aliases": [
+      "Landing drill"
+    ],
+    "bodyAreas": [
+      "KNEE",
+      "HIP",
+      "CALF"
+    ],
+    "kind": "PLYOMETRIC",
+    "position": "STANDING",
+    "laterality": "BILATERAL",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 2,
+      "reps": 8,
+      "restSec": 60
+    },
+    "why": "Practising soft, controlled landings with the knees over the toes is one of the main ways sport programmes reduce ACL injuries.",
+    "setup": [
+      "Stand with feet hip-width apart in an open space."
+    ],
+    "cues": [
+      "Jump straight up",
+      "Land softly on the balls of the feet",
+      "Knees stay over your toes"
+    ],
+    "mistakes": [
+      "Knees caving inwards on landing",
+      "Landing stiff-legged",
+      "Landing on the heels"
+    ],
+    "feel": "Springy effort in the legs.",
+    "stopIf": "Knee pain or the knee feels unstable.",
+    "regressions": [
+      "box-squat-slow"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "lateral-hop",
+    "name": "Side-to-side hop and stick",
+    "aliases": [
+      "Lateral bound"
+    ],
+    "bodyAreas": [
+      "KNEE",
+      "ANKLE",
+      "HIP"
+    ],
+    "kind": "PLYOMETRIC",
+    "position": "STANDING",
+    "trailFriendly": true,
+    "laterality": "ALTERNATING",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 2,
+      "reps": 6,
+      "restSec": 60
+    },
+    "why": "Hopping sideways and holding the landing on one leg trains the knee and ankle control needed for cutting and changing direction.",
+    "setup": [
+      "Stand on one leg with space to hop sideways about a metre."
+    ],
+    "cues": [
+      "Hop sideways onto the other leg",
+      "Stick the landing for 2 seconds",
+      "Knee over the middle of your foot"
+    ],
+    "mistakes": [
+      "Knee caving in",
+      "Wobbling without holding",
+      "Hopping too far at first"
+    ],
+    "feel": "Work in the hips, knees and ankles; balance being tested.",
+    "stopIf": "Knee or ankle pain, or the joint gives way.",
+    "regressions": [
+      "single-leg-balance"
+    ],
+    "reviewed": false
   }
 ]

@@ -259,5 +259,59 @@
     "cautions": ["Only once you can do 3 x 15 single-leg heel raises without pain."],
     "regressions": ["single-leg-heel-raise"],
     "reviewed": false
+  },
+  {
+    "id": "heel-raise-towel-toes",
+    "name": "High-load heel raise (towel under toes)",
+    "aliases": [
+      "Rathleff heel raise"
+    ],
+    "bodyAreas": [
+      "FOOT",
+      "CALF"
+    ],
+    "kind": "STRENGTH",
+    "position": "STANDING",
+    "equipment": [
+      "STEP",
+      "TOWEL"
+    ],
+    "laterality": "EACH_SIDE",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 3,
+      "reps": 12,
+      "restSec": 120,
+      "tempo": "3-2-3",
+      "sides": "AFFECTED",
+      "load": "Add a backpack with books as it gets easier"
+    },
+    "why": "Rising slowly on one leg with the toes bent up over a rolled towel loads the plantar fascia and calf heavily. Done every other day and progressed over weeks, this kind of strength training helps plantar heel pain.",
+    "setup": [
+      "Stand on a step on the sore foot, a rolled towel under your toes so they're bent up.",
+      "Let the heel hang off the edge; hold a rail or wall for balance only."
+    ],
+    "cues": [
+      "Up for 3 seconds",
+      "Hold 2 seconds at the top",
+      "Down for 3 seconds"
+    ],
+    "mistakes": [
+      "Rushing the reps",
+      "Pushing with your hands",
+      "Using both feet when it's meant to be one"
+    ],
+    "feel": "Hard work in the calf and a strong stretch-load under the foot.",
+    "stopIf": "Sharp heel pain that stays, or the heel is clearly worse the next morning.",
+    "cautions": [
+      "Every other day, not daily: the tissue needs recovery time."
+    ],
+    "regressions": [
+      "heel-raise-double"
+    ],
+    "references": [
+      "Rathleff MS, et al. 2015. High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12 months follow-up. Scand J Med Sci Sports 25:e292-300."
+    ],
+    "reviewed": false
   }
 ]

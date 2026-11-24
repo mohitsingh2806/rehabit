@@ -1,0 +1,70 @@
+{
+  "id": "hiker-trail-stretch",
+  "name": "Hiker's trail stretch",
+  "kind": "ON_DEMAND",
+  "category": "HIKING",
+  "goal": "A standing-only stretch for breaks and the end of a hiking day: no mat, no ground, about 10 minutes. Use a rock, tree or trekking poles for balance.",
+  "whoFor": "Hikers and trekkers, at rest stops or camp.",
+  "estMinutes": 10,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Hiker's trail stretch",
+      "items": [
+        {
+          "exerciseId": "calf-stretch-wall-gastroc",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "hamstring-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "quad-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "hip-flexor-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "figure-4-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        },
+        {
+          "exerciseId": "standing-chest-opener",
+          "dose": {
+            "sets": 1,
+            "holdSec": 20
+          }
+        },
+        {
+          "exerciseId": "standing-trunk-rotation"
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

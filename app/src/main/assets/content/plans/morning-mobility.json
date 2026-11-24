@@ -1,0 +1,52 @@
+{
+  "id": "morning-mobility",
+  "name": "Morning mobility (5 minutes)",
+  "kind": "ON_DEMAND",
+  "category": "MOBILITY",
+  "goal": "A gentle 5-minute wake-up for the spine and hips. Moving, not stretching hard.",
+  "whoFor": "Anyone who wakes up stiff.",
+  "estMinutes": 6,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Morning mobility (5 minutes)",
+      "items": [
+        {
+          "exerciseId": "cat-cow"
+        },
+        {
+          "exerciseId": "thread-the-needle",
+          "dose": {
+            "sets": 1,
+            "reps": 5
+          }
+        },
+        {
+          "exerciseId": "hip-90-90-switch",
+          "dose": {
+            "sets": 1,
+            "reps": 6
+          }
+        },
+        {
+          "exerciseId": "standing-trunk-rotation"
+        },
+        {
+          "exerciseId": "leg-swing-front-back",
+          "dose": {
+            "sets": 1,
+            "reps": 8
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "dose": {
+            "sets": 1,
+            "holdSec": 20
+          }
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

@@ -147,5 +147,84 @@
     "stopIf": "Shoulder or neck pain increases.",
     "substitutes": ["prone-y-t-raise"],
     "reviewed": false
+  },
+  {
+    "id": "standing-chest-opener",
+    "name": "Standing chest opener",
+    "aliases": [
+      "Hands-behind chest stretch"
+    ],
+    "bodyAreas": [
+      "SHOULDER",
+      "THORACIC"
+    ],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "BILATERAL",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 20
+    },
+    "why": "Opens the chest and fronts of the shoulders after hours with a backpack or at a desk, no wall needed.",
+    "setup": [
+      "Stand tall and clasp your hands behind your back (or hold a strap or the backpack straps)."
+    ],
+    "cues": [
+      "Draw your shoulders back and down",
+      "Lift your chest",
+      "Keep your chin level"
+    ],
+    "mistakes": [
+      "Arching the lower back",
+      "Poking the chin forward",
+      "Shrugging"
+    ],
+    "feel": "A stretch across the chest and front of the shoulders.",
+    "stopIf": "Pinching at the front of the shoulder, or tingling in the arms.",
+    "substitutes": [
+      "doorway-pec-stretch"
+    ],
+    "reviewed": false
+  },
+  {
+    "id": "standing-trunk-rotation",
+    "name": "Standing trunk rotation",
+    "aliases": [
+      "Torso twists"
+    ],
+    "bodyAreas": [
+      "THORACIC",
+      "LUMBAR"
+    ],
+    "kind": "MOBILITY",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "ALTERNATING",
+    "measure": "REPS",
+    "defaultDose": {
+      "sets": 1,
+      "reps": 8
+    },
+    "why": "Easy, gentle rotation through the mid back to loosen up after sitting, driving or carrying a pack.",
+    "setup": [
+      "Stand with feet hip-width apart, knees soft, arms crossed on your chest."
+    ],
+    "cues": [
+      "Turn your chest to one side",
+      "Let your hips stay facing forward",
+      "Smooth and easy, then the other way"
+    ],
+    "mistakes": [
+      "Twisting fast",
+      "Turning from the knees",
+      "Holding your breath"
+    ],
+    "feel": "Gentle movement through the mid back.",
+    "stopIf": "Sharp back pain.",
+    "reviewed": false
   }
 ]

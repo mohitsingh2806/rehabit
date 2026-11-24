@@ -1,0 +1,206 @@
+{
+  "id": "plantar-heel-pain",
+  "name": "Plantar heel pain (plantar fasciitis)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Ease that sharp first-step heel pain, then make the foot and calf strong enough that it stays away. Expect weeks to a few months; steady loading works better than rest.",
+  "whoFor": "People with plantar heel pain (plantar fasciitis): pain under the heel, worst on the first steps in the morning or after sitting, easing as you warm up.",
+  "notFor": [
+    "Heel pain after a fall or jump that hasn't been checked (possible fracture)",
+    "Burning, tingling or numbness in the foot (more likely a nerve)"
+  ],
+  "estMinutes": 12,
+  "trackedMetric": "Pain on your first steps in the morning (0-10)",
+  "painRules": "Up to about 3-4 out of 10 during the heel raises is OK if the first-step pain the next morning isn't worse. If it is, drop the load or reps for a few days. Supportive shoes, and avoiding barefoot walking on hard floors, help early on.",
+  "redFlags": [
+    "Heel pain after a fall or jump, or you can't put weight on it",
+    "Burning, tingling or numbness in the foot",
+    "A hot, red, swollen heel, or fever",
+    "Pain in both heels together with morning stiffness or swelling in other joints",
+    "Severe pain at night or at rest"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Calm the morning pain",
+      "durationHint": "1-2 weeks",
+      "entryCriteria": "Sharp first-step pain in the morning or after sitting.",
+      "exitCriteria": "First-step pain is easing and double-leg heel raises are comfortable.",
+      "items": [
+        {
+          "exerciseId": "plantar-fascia-stretch",
+          "schedule": {
+            "slots": [
+              "WAKE"
+            ]
+          },
+          "note": "Before your first steps out of bed."
+        },
+        {
+          "exerciseId": "calf-stretch-wall-gastroc",
+          "schedule": {
+            "slots": [
+              "MORNING",
+              "NIGHT"
+            ],
+            "timesPerDay": 2
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "schedule": {
+            "slots": [
+              "MORNING",
+              "NIGHT"
+            ],
+            "timesPerDay": 2
+          }
+        },
+        {
+          "exerciseId": "short-foot",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "heel-raise-double",
+          "dose": {
+            "sets": 3,
+            "reps": 12,
+            "restSec": 45,
+            "tempo": "2-1-2"
+          },
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "load",
+      "name": "High-load strength",
+      "durationHint": "6-12 weeks",
+      "entryCriteria": "Double-leg heel raises are comfortable.",
+      "exitCriteria": "First-step pain is 2 out of 10 or less for 2 weeks.",
+      "items": [
+        {
+          "exerciseId": "plantar-fascia-stretch",
+          "schedule": {
+            "slots": [
+              "WAKE"
+            ]
+          },
+          "core": false,
+          "note": "Keep it while the mornings are sore."
+        },
+        {
+          "exerciseId": "heel-raise-towel-toes",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "note": "Start at 3 x 12; after 2 weeks 4 x 10; after 4 weeks 5 x 8 with a backpack."
+        },
+        {
+          "exerciseId": "calf-stretch-wall-gastroc",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "short-foot",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Back to full activity",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Mornings are mostly pain-free.",
+      "exitCriteria": "Walking, running or hiking without heel pain. Keep heel raises twice a week.",
+      "items": [
+        {
+          "exerciseId": "heel-raise-towel-toes",
+          "dose": {
+            "sets": 4,
+            "reps": 8,
+            "restSec": 120,
+            "tempo": "3-2-3",
+            "sides": "AFFECTED",
+            "load": "Backpack"
+          },
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false,
+          "note": "Only if the heel is calm: a step towards running."
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Rathleff MS, et al. 2015. High-load strength training improves outcome in patients with plantar fasciitis: a randomized controlled trial with 12 months follow-up. Scand J Med Sci Sports 25:e292-300.",
+    "DiGiovanni BF, et al. 2003. Tissue-specific plantar fascia-stretching exercise enhances outcomes in patients with chronic heel pain. J Bone Joint Surg Am 85:1270-7."
+  ],
+  "reviewed": false
+}

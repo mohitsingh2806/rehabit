@@ -58,7 +58,9 @@ import com.mohit.rehabit.content.PlanCategory
 import com.mohit.rehabit.content.Sides
 import com.mohit.rehabit.data.ReminderMode
 import com.mohit.rehabit.data.SideChoice
+import com.mohit.rehabit.domain.combinationWarnings
 import com.mohit.rehabit.ui.common.NoInsets
+import com.mohit.rehabit.ui.library.CombinationCard
 import com.mohit.rehabit.ui.common.TimeRow
 import kotlinx.coroutines.launch
 import java.time.LocalDate
@@ -174,6 +176,11 @@ private fun FollowForm(plan: Plan, bundle: ContentBundle, onFollowed: () -> Unit
                 }
             }
         }
+
+        val enrollmentsFlow = remember { c.agenda.currentEnrollments() }
+        val enrollments by enrollmentsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+        val warnings = remember(enrollments) { combinationWarnings(plan, c.agenda.followed(enrollments, bundle), bundle.exercisesById) }
+        if (warnings.isNotEmpty()) CombinationCard(warnings)
 
         // Chooser questions
         plan.chooser.forEach { q ->

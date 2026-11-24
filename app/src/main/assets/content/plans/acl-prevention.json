@@ -1,0 +1,130 @@
+{
+  "id": "acl-prevention",
+  "name": "ACL injury prevention (sport)",
+  "kind": "FOCUSED",
+  "category": "SPORT",
+  "goal": "Strength, balance and landing control that lower the risk of ACL and other knee injuries in sports with jumping, cutting and pivoting (football, basketball, badminton, skiing...). Based on programmes like FIFA 11+.",
+  "whoFor": "Healthy players of jumping and cutting sports. Not a rehab plan: after an ACL injury or surgery, follow your surgeon's and physio's protocol.",
+  "notFor": [
+    "After an ACL injury or surgery: follow your own clinician's protocol"
+  ],
+  "estMinutes": 15,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Prevention",
+      "durationHint": "ongoing, 2-3 times a week",
+      "items": [
+        {
+          "exerciseId": "nordic-hamstring-curl",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "THU"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "jump-landing",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "lateral-hop",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "WED",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "WED"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "reverse-lunge",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "WED"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "MON",
+              "THU"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "banded-lateral-walk",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Soligard T, et al. 2008. Comprehensive warm-up programme to prevent injuries in young female footballers: cluster randomised controlled trial. BMJ 337:a2469."
+  ],
+  "reviewed": false
+}

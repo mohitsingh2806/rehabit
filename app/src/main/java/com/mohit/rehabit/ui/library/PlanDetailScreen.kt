@@ -48,6 +48,7 @@ import com.mohit.rehabit.content.Plan
 import com.mohit.rehabit.content.PlanItem
 import com.mohit.rehabit.content.PlanKind
 import com.mohit.rehabit.domain.SessionItem
+import com.mohit.rehabit.domain.combinationWarnings
 import com.mohit.rehabit.domain.SessionScript
 import com.mohit.rehabit.domain.doseText
 import com.mohit.rehabit.domain.scheduleText
@@ -166,6 +167,9 @@ private fun PlanDetail(
         }
 
         if (enrollment != null) FollowingCard(plan, enrollment, bundle)
+
+        val warnings = remember(enrollments, bundle) { combinationWarnings(plan, agenda.followed(enrollments, bundle), bundle.exercisesById) }
+        if (warnings.isNotEmpty()) CombinationCard(warnings)
 
         Section("Who it's for") {
             Body(plan.whoFor)
@@ -482,4 +486,21 @@ private fun reminderText(mode: ReminderMode, minute: Int): String = when (mode) 
     ReminderMode.SLOTS -> "at each time of day"
     ReminderMode.DAILY -> "once a day at ${minuteText(minute)}"
     ReminderMode.OFF -> "off"
+}
+
+@Composable
+fun CombinationCard(warnings: List<String>) {
+    Card(
+        Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.tertiaryContainer),
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Row(verticalAlignment = Alignment.CenterVertically) {
+                Icon(Icons.Filled.Warning, contentDescription = null)
+                Spacer(Modifier.width(8.dp))
+                Text("Heads-up with your other plans", style = MaterialTheme.typography.titleSmall, fontWeight = FontWeight.Bold)
+            }
+            warnings.forEach { Text("• $it", style = MaterialTheme.typography.bodyMedium) }
+        }
+    }
 }

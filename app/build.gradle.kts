@@ -14,8 +14,8 @@ android {
         applicationId = "com.mohit.rehabit"
         minSdk = 26
         targetSdk = 35
-        versionCode = 4
-        versionName = "0.4"
+        versionCode = 5
+        versionName = "0.5"
     }
 
     // Permanent signing key so every build can be installed over the previous one (keeping data).

@@ -1,0 +1,112 @@
+{
+  "id": "runner-strength",
+  "name": "Runner strength",
+  "kind": "FOCUSED",
+  "category": "RUNNING",
+  "goal": "Two short strength sessions a week that make running easier on your calves, knees, hips and back. Strength work is one of the best-supported ways to cut running injuries.",
+  "whoFor": "Runners of any level without a current injury (if something hurts, start with that rehab plan).",
+  "estMinutes": 20,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Strength",
+      "durationHint": "ongoing, 2 sessions a week",
+      "items": [
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "split-squat",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "tibialis-raise",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "TUE",
+              "FRI"
+            ],
+            "slots": [
+              "EVENING"
+            ]
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

@@ -1,0 +1,103 @@
+{
+  "id": "long-hold-flexibility",
+  "name": "Long-hold flexibility (inspired by David Goggins)",
+  "kind": "ON_DEMAND",
+  "category": "MOBILITY",
+  "goal": "A long, slow full-body stretching session with 60-90 second holds, inspired by the daily stretching David Goggins describes (not affiliated with or endorsed by him). Best in the evening, never right before running. Breathe slowly and ease deeper as the muscle lets go: never force.",
+  "whoFor": "People without a current flare-up who want to build flexibility over weeks. Hips, hamstrings, calves and back get most of the time.",
+  "estMinutes": 35,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Long-hold flexibility (inspired by David Goggins)",
+      "items": [
+        {
+          "exerciseId": "cat-cow"
+        },
+        {
+          "exerciseId": "hip-90-90-switch"
+        },
+        {
+          "exerciseId": "hip-flexor-stretch-kneeling",
+          "dose": {
+            "sets": 1,
+            "holdSec": 90
+          }
+        },
+        {
+          "exerciseId": "couch-stretch",
+          "dose": {
+            "sets": 1,
+            "holdSec": 90
+          },
+          "core": false,
+          "note": "Skip if knee-tendon pain is flaring."
+        },
+        {
+          "exerciseId": "pigeon-stretch",
+          "dose": {
+            "sets": 1,
+            "holdSec": 90
+          }
+        },
+        {
+          "exerciseId": "figure-4-stretch-supine",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "hamstring-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 90
+          }
+        },
+        {
+          "exerciseId": "side-lunge-adductor-stretch",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-gastroc",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "calf-stretch-wall-soleus",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        },
+        {
+          "exerciseId": "child-pose",
+          "dose": {
+            "sets": 1,
+            "holdSec": 90
+          }
+        },
+        {
+          "exerciseId": "thread-the-needle"
+        },
+        {
+          "exerciseId": "doorway-pec-stretch",
+          "dose": {
+            "sets": 1,
+            "holdSec": 60
+          }
+        }
+      ]
+    }
+  ],
+  "notFor": [
+    "During the painful stage of frozen shoulder or a tendon flare-up: use that plan instead",
+    "Right before running or sport (long static holds can briefly reduce power)"
+  ],
+  "reviewed": false
+}

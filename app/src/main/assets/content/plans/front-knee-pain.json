@@ -1,0 +1,225 @@
+{
+  "id": "front-knee-pain",
+  "name": "Front-of-knee pain (patellofemoral)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Ease pain around the kneecap and build hip and thigh strength so stairs, squats and running feel good again. Load is managed, not avoided.",
+  "whoFor": "People with patellofemoral pain: an ache around or behind the kneecap, worse on stairs, squatting, kneeling, long sitting or running.",
+  "notFor": [
+    "Pain just below the kneecap that's sharpest with jumping (see the patellar tendinopathy plan)",
+    "Knee pain after a twist or fall that hasn't been checked"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Pain around the kneecap on stairs or squats (0-10)",
+  "painRules": "Up to about 3 out of 10 during exercise is OK if it settles within an hour and isn't worse the next day. Choose squat depths and step heights that stay in that range and progress gradually.",
+  "redFlags": [
+    "The knee locks, gives way, or won't fully straighten",
+    "Fast, large swelling after an injury",
+    "A hot, red, swollen knee, or fever",
+    "Calf pain with swelling and warmth (possible blood clot)",
+    "Pain after a fall or twist that hasn't been checked"
+  ],
+  "avoid": [
+    "couch-stretch"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Settle and switch on",
+      "durationHint": "1-2 weeks",
+      "entryCriteria": "Kneecap pain limits stairs or squats.",
+      "exitCriteria": "Shallow squats and stairs at 3 out of 10 or less.",
+      "items": [
+        {
+          "exerciseId": "quad-set",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "straight-leg-raise",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "clamshell",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "wall-sit-isometric",
+          "dose": {
+            "sets": 4,
+            "holdSec": 30,
+            "restSec": 60,
+            "effort": "Shallow: only as deep as is comfortable"
+          },
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Build strength",
+      "durationHint": "6-8 weeks",
+      "entryCriteria": "Shallow squats and stairs are manageable.",
+      "exitCriteria": "Slow squats, step-ups and step-downs with little or no pain.",
+      "items": [
+        {
+          "exerciseId": "box-squat-slow",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "step-up",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "banded-lateral-walk",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "terminal-knee-extension-band",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Back to sport",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Strength work is comfortable.",
+      "exitCriteria": "Running, stairs and squatting without pain. Keep strength work twice a week.",
+      "items": [
+        {
+          "exerciseId": "split-squat",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "reverse-lunge",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Crossley KM, et al. 2016. 2016 Patellofemoral pain consensus statement from the 4th International Patellofemoral Pain Research Retreat, Manchester. Part 2: recommended physical interventions. Br J Sports Med 50:844-52."
+  ],
+  "reviewed": false
+}

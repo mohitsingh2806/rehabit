@@ -170,6 +170,18 @@ class AgendaTest {
         assertEquals("Desk break 2", key.label())
     }
 
+    @Test
+    fun combiningWarnsAboutAvoidedExercisesBothWays() {
+        val knee = followed(1, PlanItem("calf", schedule = night())).let { it.copy(plan = it.plan.copy(name = "Knee", avoid = listOf("raise"))) }
+        val routine = followed(2, PlanItem("raise")).plan.copy(id = "routine", kind = PlanKind.ON_DEMAND)
+        val warnings = combinationWarnings(routine, listOf(knee), exercises)
+        assertEquals(listOf("Knee advises avoiding raise: skip it here."), warnings)
+
+        val strict = routine.copy(avoid = listOf("calf"))
+        assertTrue(combinationWarnings(strict, listOf(knee), exercises).any { it.contains("which is in Knee") })
+        assertTrue(combinationWarnings(knee.plan, listOf(knee), exercises).isEmpty())
+    }
+
     private fun night() = Schedule(slots = listOf(SlotId.NIGHT))
 
     private fun build(

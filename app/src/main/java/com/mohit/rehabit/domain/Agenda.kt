@@ -233,3 +233,17 @@ object Reminders {
         return (slotEvents + dailyEvents).sortedBy { it.atMillis }
     }
 }
+
+/**
+ * Heads-up when combining: [plan] contains something a followed plan advises avoiding, or a
+ * followed plan contains something [plan] advises avoiding.
+ */
+fun combinationWarnings(plan: Plan, followed: List<FollowedPlan>, exercises: Map<String, Exercise>): List<String> {
+    val name = { id: String -> exercises[id]?.name ?: id }
+    val mine = plan.phases.flatMap { it.items }.map { it.exerciseId }.toSet()
+    return followed.filter { it.plan.id != plan.id }.flatMap { other ->
+        val theirs = other.items.map { it.exerciseId }.toSet()
+        mine.filter { it in other.plan.avoid }.map { "${other.plan.name} advises avoiding ${name(it)}: skip it here." } +
+            theirs.filter { it in plan.avoid }.map { "This plan advises avoiding ${name(it)}, which is in ${other.plan.name}." }
+    }.distinct()
+}

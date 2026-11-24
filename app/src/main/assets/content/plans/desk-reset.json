@@ -1,0 +1,44 @@
+{
+  "id": "desk-reset",
+  "name": "Desk reset",
+  "kind": "ON_DEMAND",
+  "category": "DESK",
+  "goal": "Three to four minutes at your desk to undo sitting: neck, upper back, chest and hips. No floor, no equipment.",
+  "whoFor": "Anyone who sits for long periods. Great between meetings.",
+  "estMinutes": 4,
+  "phases": [
+    {
+      "id": "main",
+      "name": "Desk reset",
+      "items": [
+        {
+          "exerciseId": "chin-tuck"
+        },
+        {
+          "exerciseId": "scapular-retraction"
+        },
+        {
+          "exerciseId": "thoracic-extension-chair"
+        },
+        {
+          "exerciseId": "neck-rotation"
+        },
+        {
+          "exerciseId": "standing-chest-opener",
+          "dose": {
+            "sets": 1,
+            "holdSec": 20
+          }
+        },
+        {
+          "exerciseId": "hip-flexor-stretch-standing",
+          "dose": {
+            "sets": 1,
+            "holdSec": 30
+          }
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

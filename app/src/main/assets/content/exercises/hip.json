@@ -244,5 +244,46 @@
     "feel": "A stretch and work in the back of the thigh and the buttock.",
     "stopIf": "Back pain, or sharp hamstring pain.",
     "reviewed": false
+  },
+  {
+    "id": "hip-flexor-stretch-standing",
+    "name": "Standing hip flexor stretch",
+    "aliases": [
+      "Split-stance hip flexor stretch"
+    ],
+    "bodyAreas": [
+      "HIP",
+      "QUAD"
+    ],
+    "kind": "STRETCH_STATIC",
+    "position": "STANDING",
+    "deskFriendly": true,
+    "trailFriendly": true,
+    "laterality": "EACH_SIDE",
+    "measure": "HOLD",
+    "defaultDose": {
+      "sets": 2,
+      "holdSec": 30
+    },
+    "why": "The front-of-hip stretch without kneeling: handy at a desk or on the trail, where long sitting or a heavy pack tightens the hips.",
+    "setup": [
+      "Stand in a long stride, back heel lifted, hands on your hips or a support."
+    ],
+    "cues": [
+      "Tuck your tailbone under",
+      "Shift gently forward",
+      "Squeeze the back buttock"
+    ],
+    "mistakes": [
+      "Arching the lower back",
+      "Leaning forward",
+      "Stride too short"
+    ],
+    "feel": "A stretch at the front of the back leg's hip.",
+    "stopIf": "Back pain or a pinch at the front of the hip.",
+    "substitutes": [
+      "hip-flexor-stretch-kneeling"
+    ],
+    "reviewed": false
   }
 ]

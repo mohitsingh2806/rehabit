@@ -1,0 +1,292 @@
+{
+  "id": "hiking-prep",
+  "name": "Hiking and trekking prep",
+  "kind": "FOCUSED",
+  "category": "HIKING",
+  "goal": "Get your legs, knees, ankles and lungs ready for long days on the trail with a pack: strength for climbing, control for descending, and stamina built step by step. Start 6-8 weeks before a trek.",
+  "whoFor": "Anyone preparing for day hikes or multi-day treks, especially with a heavy pack or lots of downhill.",
+  "notFor": [
+    "Chest pain, breathlessness or dizziness with exertion: see a doctor before training"
+  ],
+  "estMinutes": 25,
+  "phases": [
+    {
+      "id": "base",
+      "name": "Build the base",
+      "durationHint": "weeks 1-3",
+      "entryCriteria": "6-8 weeks before your trek.",
+      "exitCriteria": "20 minutes of stairs or hills feels steady, strength sessions feel solid.",
+      "items": [
+        {
+          "exerciseId": "step-up",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "reverse-lunge",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "heel-raise-double",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-plank-knees",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "stair-climb",
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "WED",
+              "SAT"
+            ],
+            "slots": [
+              "ANYTIME"
+            ]
+          }
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 2700
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "SUN"
+            ],
+            "slots": [
+              "ANYTIME"
+            ]
+          },
+          "core": false,
+          "note": "A long walk, ideally on uneven ground."
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "name": "Load up",
+      "durationHint": "weeks 4-6",
+      "entryCriteria": "Base phase feels comfortable.",
+      "exitCriteria": "You can climb for 45-60 minutes with most of your trek pack weight.",
+      "items": [
+        {
+          "exerciseId": "step-up",
+          "dose": {
+            "sets": 3,
+            "reps": 12,
+            "restSec": 60,
+            "load": "Backpack, building towards trek weight"
+          },
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "split-squat",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-heel-raise",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "banded-lateral-walk",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "stair-climb",
+          "dose": {
+            "sets": 1,
+            "durationSec": 2700,
+            "load": "Pack at 70-100% of trek weight"
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "WED",
+              "SAT"
+            ],
+            "slots": [
+              "ANYTIME"
+            ]
+          }
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 5400
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "SUN"
+            ],
+            "slots": [
+              "ANYTIME"
+            ]
+          },
+          "core": false,
+          "note": "A long hike in your trek boots if you can."
+        }
+      ]
+    },
+    {
+      "id": "taper",
+      "name": "Taper",
+      "durationHint": "the last week",
+      "entryCriteria": "About a week before you leave.",
+      "exitCriteria": "Trek day: fresh legs.",
+      "items": [
+        {
+          "exerciseId": "step-up",
+          "dose": {
+            "sets": 2,
+            "reps": 10,
+            "restSec": 60
+          },
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "single-leg-balance",
+          "schedule": {
+            "slots": [
+              "MORNING"
+            ]
+          }
+        },
+        {
+          "exerciseId": "brisk-walk",
+          "dose": {
+            "sets": 1,
+            "durationSec": 1800
+          },
+          "schedule": {
+            "days": "WEEKDAYS",
+            "weekdays": [
+              "WED",
+              "SAT"
+            ],
+            "slots": [
+              "ANYTIME"
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "reviewed": false
+}

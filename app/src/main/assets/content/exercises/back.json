@@ -263,5 +263,48 @@
     "stopIf": "Lower-back pain increases during the exercise.",
     "progressions": ["single-leg-bridge"],
     "reviewed": false
+  },
+  {
+    "id": "stair-climb",
+    "name": "Stair or hill climb",
+    "aliases": [
+      "Loaded stairs"
+    ],
+    "bodyAreas": [
+      "QUAD",
+      "GLUTE",
+      "FULL_BODY"
+    ],
+    "kind": "CARDIO",
+    "position": "STANDING",
+    "trailFriendly": true,
+    "laterality": "BILATERAL",
+    "measure": "TIME",
+    "defaultDose": {
+      "sets": 1,
+      "durationSec": 1200,
+      "load": "Start without a pack; add weight gradually up to your trek load"
+    },
+    "why": "Climbing stairs or hills with a pack is the most specific way to prepare your legs, heart and lungs for trekking. Build the time and pack weight week by week.",
+    "setup": [
+      "Find a long staircase, stair machine or hill.",
+      "Wear the boots and pack you'll hike with as you progress."
+    ],
+    "cues": [
+      "Steady pace you can keep",
+      "Whole foot on each step",
+      "Walk down slowly to train the knees"
+    ],
+    "mistakes": [
+      "Starting with a full pack",
+      "Going too fast early",
+      "Skipping the downhill"
+    ],
+    "feel": "Breathing harder, legs working; you can still talk in short sentences.",
+    "stopIf": "Chest pain, dizziness, or joint pain that changes how you walk.",
+    "cautions": [
+      "Build up slowly if you have knee pain: downhill is the hardest part."
+    ],
+    "reviewed": false
   }
 ]

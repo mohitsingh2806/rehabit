@@ -1,0 +1,218 @@
+{
+  "id": "it-band-syndrome",
+  "name": "IT band syndrome (outer knee pain in runners)",
+  "kind": "FOCUSED",
+  "category": "REHAB",
+  "goal": "Settle outer-knee pain and fix what usually drives it: weak side-hip muscles and too much running load too soon. (Stretching the IT band itself does little: it barely stretches.)",
+  "whoFor": "Runners and hikers diagnosed with IT band syndrome: sharp pain on the outside of the knee that comes on at a predictable point in a run, often worse downhill.",
+  "notFor": [
+    "Knee pain after a twist or fall that hasn't been checked",
+    "Pain inside the knee joint with swelling or locking"
+  ],
+  "estMinutes": 15,
+  "trackedMetric": "Pain on the outside of the knee during or after running (0-10)",
+  "painRules": "Strength work can cause mild muscle burn; the outer knee should stay at 3 out of 10 or less. While it's sore, run only as far as you can without pain, on flat ground, and shorten your stride a little (cadence up 5-10%).",
+  "redFlags": [
+    "The knee locks, gives way, or won't fully straighten",
+    "Fast, large swelling after an injury",
+    "A hot, red, swollen knee, or fever",
+    "Calf pain with swelling and warmth (possible blood clot)",
+    "Pain after a fall or twist that hasn't been checked"
+  ],
+  "phases": [
+    {
+      "id": "calm",
+      "name": "Calm and activate",
+      "durationHint": "1-2 weeks",
+      "entryCriteria": "Outer-knee pain that stops runs or comes on early.",
+      "exitCriteria": "Everyday walking and stairs are pain-free.",
+      "items": [
+        {
+          "exerciseId": "clamshell",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "glute-bridge",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          }
+        },
+        {
+          "exerciseId": "figure-4-stretch-supine",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "hip-flexor-stretch-kneeling",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "strengthen",
+      "name": "Strengthen the hips",
+      "durationHint": "3-6 weeks",
+      "entryCriteria": "Walking and stairs are pain-free.",
+      "exitCriteria": "Single-leg step-downs with a level pelvis and no knee pain.",
+      "items": [
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "banded-lateral-walk",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-bridge",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 2,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "side-lying-hip-abduction",
+          "schedule": {
+            "slots": [
+              "NIGHT"
+            ]
+          },
+          "core": false
+        }
+      ]
+    },
+    {
+      "id": "return",
+      "name": "Return to running",
+      "durationHint": "4+ weeks",
+      "entryCriteria": "Strong, pain-free single-leg control.",
+      "exitCriteria": "Your usual runs, including hills, without outer-knee pain. Keep hip work twice a week.",
+      "items": [
+        {
+          "exerciseId": "side-plank",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "single-leg-rdl",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "step-down-eccentric",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          }
+        },
+        {
+          "exerciseId": "ankle-pogo-hops",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        },
+        {
+          "exerciseId": "banded-lateral-walk",
+          "schedule": {
+            "days": "EVERY_N_DAYS",
+            "everyNDays": 3,
+            "slots": [
+              "NIGHT"
+            ],
+            "notOnRunDay": true
+          },
+          "core": false
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Fredericson M, et al. 2000. Hip abductor weakness in distance runners with iliotibial band syndrome. Clin J Sport Med 10:169-75."
+  ],
+  "reviewed": false
+}
