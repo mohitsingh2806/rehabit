@@ -66,7 +66,7 @@ fun PlayerScreen(request: PlayerRequest, onClose: () -> Unit) {
     val context = LocalContext.current
     val vm: PlayerViewModel = viewModel(key = request.toString()) {
         val c = context.container
-        PlayerViewModel(context.applicationContext, c.content, c.db, c.appScope, request)
+        PlayerViewModel(context.applicationContext, c.content, c.db, c.agenda, c.appScope, request)
     }
     val s by vm.state.collectAsStateWithLifecycle()
     var confirmExit by remember { mutableStateOf(false) }

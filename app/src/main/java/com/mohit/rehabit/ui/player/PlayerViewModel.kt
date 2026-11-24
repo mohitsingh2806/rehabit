@@ -9,7 +9,9 @@ import com.mohit.rehabit.content.ContentRepository
 import com.mohit.rehabit.content.ContentState
 import com.mohit.rehabit.content.Exercise
 import com.mohit.rehabit.content.PlanCategory
+import com.mohit.rehabit.data.AgendaRepository
 import com.mohit.rehabit.data.Feedback
+import com.mohit.rehabit.data.TaskStatus
 import com.mohit.rehabit.data.RehabitDatabase
 import com.mohit.rehabit.data.SessionEntity
 import com.mohit.rehabit.data.SessionExerciseEntity
@@ -17,6 +19,9 @@ import com.mohit.rehabit.domain.Cue
 import com.mohit.rehabit.domain.CueAction
 import com.mohit.rehabit.domain.SessionItem
 import com.mohit.rehabit.domain.SessionScript
+import com.mohit.rehabit.domain.SlotKey
+import com.mohit.rehabit.domain.Task
+import com.mohit.rehabit.domain.label
 import com.mohit.rehabit.domain.Step
 import com.mohit.rehabit.domain.StepKind
 import com.mohit.rehabit.player.SessionAudio
@@ -29,10 +34,14 @@ import kotlinx.coroutines.flow.filterIsInstance
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.isActive
 import kotlinx.coroutines.launch
+import java.time.LocalDate
 
 sealed interface PlayerRequest {
     data class PlanPhase(val planId: String, val phaseId: String) : PlayerRequest
     data class SingleExercise(val exerciseId: String) : PlayerRequest
+
+    /** The pending items of one time slot on the daily checklist. */
+    data class Slot(val day: Long, val slotId: String) : PlayerRequest
 }
 
 data class PlayerState(
@@ -53,6 +62,10 @@ data class PlayerState(
     val voiceOn: Boolean = true,
     val startedAt: Long = 0,
     val endedAt: Long = 0,
+    val category: PlanCategory? = null,
+    /** For slot sessions: the checklist task behind each item. */
+    val slotTasks: List<Task> = emptyList(),
+    val slotDay: Long? = null,
 ) {
     val step: Step? get() = steps.getOrNull(index)
 
@@ -74,6 +87,7 @@ class PlayerViewModel(
     context: Context,
     content: ContentRepository,
     private val db: RehabitDatabase,
+    private val agenda: AgendaRepository,
     /** Outlives this screen, so saving isn't cancelled when the player closes. */
     private val appScope: CoroutineScope,
     request: PlayerRequest,
@@ -95,8 +109,8 @@ class PlayerViewModel(
         }
     }
 
-    private fun load(bundle: ContentBundle, request: PlayerRequest): PlayerState {
-        val base = PlayerState(loading = false)
+    private suspend fun load(bundle: ContentBundle, request: PlayerRequest): PlayerState {
+        var base = PlayerState(loading = false)
         val (title, items, rehab) = when (request) {
             is PlayerRequest.PlanPhase -> {
                 val plan = bundle.plansById[request.planId]
@@ -106,7 +120,15 @@ class PlayerViewModel(
                     bundle.exercisesById[item.exerciseId]?.let { SessionItem(it, item.dose ?: it.defaultDose) }
                 }
                 val title = if (plan.phases.size > 1) "${plan.name} · ${phase.name}" else plan.name
+                base = base.copy(category = plan.category)
                 Triple(title, items, plan.category == PlanCategory.REHAB)
+            }
+            is PlayerRequest.Slot -> {
+                val key = SlotKey.parse(request.slotId) ?: return base.copy(error = "This session isn't available.")
+                val tasks = agenda.agendaFor(request.day).groups.firstOrNull { it.key == key }?.pending.orEmpty()
+                if (tasks.isEmpty()) return base.copy(error = "Nothing left to do in this slot. Nice work!")
+                base = base.copy(slotTasks = tasks, slotDay = request.day)
+                Triple("${key.label()} session", tasks.map { it.item }, tasks.any { it.rehab })
             }
             is PlayerRequest.SingleExercise -> {
                 val e = bundle.exercisesById[request.exerciseId]
@@ -241,7 +263,34 @@ class PlayerViewModel(
                 feedback = feedback[i],
             )
         }
-        appScope.launch { db.sessionDao().save(session, exercises) }
+        appScope.launch {
+            db.sessionDao().save(session, exercises)
+            creditChecklist(s)
+        }
+    }
+
+    /** Ticks today's checklist with what was done, and marks a run day after a running routine. */
+    private suspend fun creditChecklist(s: PlayerState) {
+        fun statusOf(i: Int): TaskStatus? {
+            val done = s.workDone(i)
+            return when {
+                done == 0 -> null
+                done >= s.workPlanned(i) -> TaskStatus.DONE
+                else -> TaskStatus.PARTIAL
+            }
+        }
+        val day = s.slotDay
+        if (day != null && s.slotTasks.size == s.items.size) {
+            s.slotTasks.forEachIndexed { i, task ->
+                statusOf(i)?.let { agenda.setStatus(day, listOf(task), it) }
+            }
+        } else {
+            val results = s.items.indices.mapNotNull { i -> statusOf(i)?.let { s.items[i].exercise.id to it } }.toMap()
+            agenda.creditExercises(LocalDate.now().toEpochDay(), results)
+        }
+        if (s.category == PlanCategory.RUNNING && s.exercisesDone > 0) {
+            agenda.setRunDay(LocalDate.now().toEpochDay(), true)
+        }
     }
 
     override fun onCleared() {

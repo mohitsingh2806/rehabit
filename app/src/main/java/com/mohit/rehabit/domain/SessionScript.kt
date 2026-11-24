@@ -6,8 +6,8 @@ import com.mohit.rehabit.content.Laterality
 import com.mohit.rehabit.content.Measure
 import com.mohit.rehabit.content.Sides
 
-/** One exercise in a session, with the dose to do. */
-data class SessionItem(val exercise: Exercise, val dose: Dose)
+/** One exercise in a session, with the dose to do. [affected] names the "sore side" if known. */
+data class SessionItem(val exercise: Exercise, val dose: Dose, val affected: Side? = null)
 
 enum class StepKind { PREPARE, WORK, SWITCH_SIDE, REST }
 
@@ -82,7 +82,7 @@ object SessionScript {
             val sets = d.sets.coerceAtLeast(1)
             val sides: List<Side?> = when {
                 e.laterality != Laterality.EACH_SIDE -> listOf(null)
-                d.sides == Sides.AFFECTED -> listOf(Side.AFFECTED)
+                d.sides == Sides.AFFECTED -> listOf(item.affected ?: Side.AFFECTED)
                 else -> listOf(Side.LEFT, Side.RIGHT)
             }
 

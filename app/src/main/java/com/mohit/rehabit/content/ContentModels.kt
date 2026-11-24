@@ -148,6 +148,13 @@ data class Schedule(
     val notOnRunDay: Boolean = false,
 )
 
+/** A "Which sounds like you?" question asked when following a plan; answers pick plan items. */
+@Serializable
+data class ChooserQuestion(val id: String, val text: String, val options: List<ChooserOption>)
+
+@Serializable
+data class ChooserOption(val id: String, val label: String, val hint: String? = null)
+
 @Serializable
 data class PlanItem(
     val exerciseId: String,
@@ -158,6 +165,8 @@ data class PlanItem(
     /** Optional items never count against adherence and are dropped by "Core only". */
     val core: Boolean = true,
     val note: String? = null,
+    /** "questionId:optionId": the item is only included for that chooser answer. */
+    val showIf: String? = null,
 )
 
 @Serializable
@@ -189,6 +198,8 @@ data class Plan(
     val painRules: String? = null,
     /** Exercise ids to avoid while following this plan (warned about when combining). */
     val avoid: List<String> = emptyList(),
+    /** Asked when following the plan; answers include items via [PlanItem.showIf]. */
+    val chooser: List<ChooserQuestion> = emptyList(),
     val references: List<String> = emptyList(),
     val reviewed: Boolean = false,
 )

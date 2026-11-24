@@ -14,7 +14,10 @@ conventions and content-authoring rules.
 ## Status
 Milestone 1: Library (plans, routines, 84 exercises; search and filters), plan detail with phases
 and red flags, and a hands-free guided player (timers, left/right sides, voice cues, beeps and
-metronome, vibration) with a session log. Daily plans with reminders come next (see PLAN.md §13).
+metronome, vibration) with a session log.
+Milestone 2: follow plans daily: set up your day, a Today checklist spread over time slots (merged
+across plans, Core only, "I ran today"), and gentle reminders (once per slot or once a day, never
+repeated) with Start / Done / Snooze. Progress tracking and check-ins come next (see PLAN.md §13).
 
 ## Install
 Every push to `main` builds a signed APK and publishes it as a GitHub Release:
@@ -45,8 +48,10 @@ The schema is `app/src/main/java/com/mohit/rehabit/content/ContentModels.kt`; th
 app/src/main/java/com/mohit/rehabit/
   RehabitApp.kt      Application + AppContainer (manual DI)
   content/           schema, loader, validator (pure Kotlin) + ContentRepository (assets)
-  data/              Room database (session log)
-  domain/            pure logic, unit-tested: SessionScript (doses → player steps), dose/schedule text
+  data/              Room database (sessions, followed plans, ticks, run days), settings, AgendaRepository
+  domain/            pure logic, unit-tested: Agenda (what's due today, merging, reminders),
+                     SessionScript (doses → player steps), dose/schedule text
   player/            SessionAudio: offline voice, beeps, vibration
+  reminders/         ReminderScheduler (AlarmManager), AlarmReceiver, BootReceiver, Notifier
   ui/                Compose screens: today, library (lists, plan + exercise detail), player, progress, settings
 ```

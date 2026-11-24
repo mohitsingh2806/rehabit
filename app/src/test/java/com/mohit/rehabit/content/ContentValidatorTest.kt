@@ -162,6 +162,36 @@ class ContentValidatorTest {
         assertTrue(problems.any { "one slot per time a day" in it })
     }
 
+    @Test
+    fun showIfMustMatchAChooserAnswer() {
+        val e = exercise()
+        val plan = Plan(
+            id = "p",
+            name = "P",
+            kind = PlanKind.FOCUSED,
+            category = PlanCategory.MOBILITY,
+            goal = "g",
+            whoFor = "w",
+            estMinutes = 5,
+            chooser = listOf(
+                ChooserQuestion("eases", "Which?", listOf(ChooserOption("a", "A"), ChooserOption("b", "B"))),
+            ),
+            phases = listOf(
+                Phase(
+                    id = "x",
+                    name = "X",
+                    items = listOf(
+                        PlanItem(exerciseId = e.id, schedule = Schedule(slots = listOf(SlotId.NIGHT)), showIf = "eases:a"),
+                        PlanItem(exerciseId = e.id, schedule = Schedule(slots = listOf(SlotId.NIGHT)), showIf = "eases:zzz"),
+                    ),
+                ),
+            ),
+        )
+        val problems = ContentValidator.validate(ContentBundle(1, listOf(e), listOf(plan)))
+        assertEquals(1, problems.size)
+        assertTrue(problems.single().contains("eases:zzz"))
+    }
+
     private fun problemsFor(e: Exercise) = ContentValidator.validate(bundle(e))
 
     private fun bundle(vararg e: Exercise) = ContentBundle(1, e.toList(), emptyList())

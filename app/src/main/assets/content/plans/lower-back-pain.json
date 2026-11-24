@@ -21,6 +21,17 @@
     "A history of cancer, or unexplained weight loss",
     "Severe pain that no position eases, or pain after a significant fall"
   ],
+  "chooser": [
+    {
+      "id": "eases",
+      "text": "Which position usually eases your back pain?",
+      "options": [
+        { "id": "bending", "label": "Bending forward or sitting eases it", "hint": "Standing for long, walking or leaning back makes it worse." },
+        { "id": "straightening", "label": "Standing up straight or walking eases it", "hint": "Sitting and bending forward make it worse." },
+        { "id": "neither", "label": "Neither, or I'm not sure", "hint": "You'll get the gentle movements that suit most backs." }
+      ]
+    }
+  ],
   "phases": [
     {
       "id": "calm",
@@ -34,14 +45,14 @@
         { "exerciseId": "pelvic-tilt", "schedule": { "slots": ["MORNING"] }, "core": false },
         { "exerciseId": "lower-trunk-rotation", "schedule": { "slots": ["NIGHT"] } },
         { "exerciseId": "glute-bridge", "schedule": { "slots": ["NIGHT"] } },
-        { "exerciseId": "knee-to-chest", "schedule": { "slots": ["NIGHT"] }, "core": false, "note": "Use if bending forward eases your pain." },
+        { "exerciseId": "knee-to-chest", "schedule": { "slots": ["NIGHT"] }, "showIf": "eases:bending" },
+        { "exerciseId": "child-pose", "schedule": { "slots": ["NIGHT"] }, "core": false, "showIf": "eases:bending" },
         {
           "exerciseId": "prone-press-up",
-          "schedule": { "slots": ["NIGHT"] },
-          "core": false,
-          "note": "Use if standing up straight or leaning back eases your pain. Skip it if leg pain spreads."
-        },
-        { "exerciseId": "child-pose", "schedule": { "slots": ["NIGHT"] }, "core": false }
+          "schedule": { "timesPerDay": 2, "slots": ["MORNING", "NIGHT"] },
+          "showIf": "eases:straightening",
+          "note": "Skip it if leg pain spreads further down the leg."
+        }
       ]
     },
     {

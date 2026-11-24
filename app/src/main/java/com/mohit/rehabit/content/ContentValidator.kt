@@ -100,6 +100,12 @@ object ContentValidator {
             if (id !in known) p.add("$at: avoid list refers to unknown exercise '$id'")
         }
         duplicates(plan.phases.map { it.id }).forEach { p.add("$at: duplicate phase id '$it'") }
+        duplicates(plan.chooser.map { it.id }).forEach { p.add("$at: duplicate chooser question '$it'") }
+        for (q in plan.chooser) {
+            if (q.options.size < 2) p.add("$at: chooser question '${q.id}' needs at least 2 options")
+            duplicates(q.options.map { it.id }).forEach { p.add("$at: question '${q.id}' has duplicate option '$it'") }
+        }
+        val answers = plan.chooser.flatMap { q -> q.options.map { "${q.id}:${it.id}" } }.toSet()
 
         for (phase in plan.phases) {
             val ph = "$at phase '${phase.id}'"
@@ -111,6 +117,8 @@ object ContentValidator {
                     p.add("$where: unknown exercise '${item.exerciseId}'")
                 } else {
                     if (item.exerciseId in plan.avoid) p.add("$where: '${item.exerciseId}' is also on the avoid list")
+                    val showIf = item.showIf
+                    if (showIf != null && showIf !in answers) p.add("$where: showIf '$showIf' matches no chooser answer")
                     val dose = item.dose
                     if (dose != null) p.addAll(checkDose(dose, exercise, "$where dose"))
                     val schedule = item.schedule

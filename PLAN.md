@@ -1,6 +1,6 @@
 # Rehabit — Exercise & Rehab Routine App (Android) — Plan
 
-> **Status (2026-11-24): M1 built** (Library with plans/routines/exercises + search & filters, plan detail, guided Player with timers/sides/voice/beeps/metronome/vibration, session log; content drop C1 = 84 exercises, 2 routines, 5 rehab plans). Next: M2 (daily plans, Today checklist, reminders). This doc holds all context so any future session
+> **Status (2026-11-24): M2 built** (follow plans daily: setup of your day, "Is this plan for you?" + chooser + side + phase, Today checklist with dedupe / Core only / I ran today, gentle reminders with Start/Done/Snooze, desk breaks). Next: M3 (progress, check-ins, pain rules). This doc holds all context so any future session
 > can pick up from here. **Flaws & fixes (§3) are LOCKED** with the user's refinements (§16).
 > **All open questions (§15) answered 2026-11-24**; decisions in §16, which wins over any older text.
 > **Generic app (2026-11-24):** content and defaults are written for anyone, never tailored to the
@@ -600,4 +600,11 @@ Nothing open. (No per-user condition intake: the app is generic, see §16 "gener
 | 2026-11-24 | M1 | User: exercise base too small → expanded to **84 exercises** across neck, shoulder, mid/low back, hip, thigh, knee, foot/ankle and running drills (19 not yet used by a plan, ready for C2 plans). Equipment enum gained STICK (everyday). |
 | 2026-11-24 | M1 | Lower back plan ships without the Q8 chooser for now: flexion- vs extension-biased items are optional with notes ("use if bending forward eases your pain"). The chooser comes with M2. |
 | 2026-11-24 | M1 | Session log stored in Room (`sessions`, `session_exercises`: what was actually done + per-exercise feedback + pain during). Progress tab lists recent sessions until M3. |
+| 2026-11-24 | M2 | First-run setup ("Your day") is shown when following the **first plan**, not at app launch, so browsing and routines need no setup. Editable in Settings. |
+| 2026-11-24 | M2 | Desk breaks: on/off, **2 a day** at two editable times (workdays only). Work hours dropped (the two desk times are enough); 60/90-minute breaks not built. |
+| 2026-11-24 | M2 | Changing phase (or taking an updated phase) **ends the current follow and starts a fresh one today** with the same settings, so past ticks keep pointing at the items they were for. |
+| 2026-11-24 | M2 | Reminder engine: one exact alarm at a time (next reminder, or a 03:00 refresh so the wake slot follows alarm-clock changes); each reminder fires once; reminders already older than 15 min are dropped (phone off). Snooze only when the user taps it. Notifications for finished slots are removed automatically. |
+| 2026-11-24 | M2 | Run day = "I ran today" chip, or any completed session of a RUNNING routine. Items marked not-on-run-day move to the next day (1-day shift), unless already ticked before the run. |
+| 2026-11-24 | M2 | Finished sessions tick the checklist: slot sessions tick their tasks (Done / Partly done); other sessions tick the earliest pending task of each exercise done. |
+| 2026-11-24 | Q8 | Chooser implemented as plan `chooser` questions + item `showIf`; first used by the lower back plan ("which position eases your pain?"). |
 | 2026-11-24 | Q6b | **AI-prompt import dropped**: user not convinced it's useful. Personal additions via manual Builder (M4). |

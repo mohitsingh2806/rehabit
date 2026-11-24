@@ -53,6 +53,23 @@ import com.mohit.rehabit.domain.doseText
 import com.mohit.rehabit.domain.scheduleText
 import com.mohit.rehabit.ui.common.NoInsets
 import com.mohit.rehabit.ui.common.NotReviewedBadge
+import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.RadioButton
+import androidx.compose.material3.TextButton
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.semantics.Role
+import com.mohit.rehabit.data.EnrollmentEntity
+import com.mohit.rehabit.data.FollowStatus
+import com.mohit.rehabit.data.ReminderMode
+import com.mohit.rehabit.ui.common.TimeRow
+import com.mohit.rehabit.ui.common.minuteText
+import kotlinx.coroutines.launch
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
 import kotlin.math.roundToInt
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -62,6 +79,7 @@ fun PlanDetailScreen(
     onBack: () -> Unit,
     onOpenExercise: (String) -> Unit,
     onStart: (planId: String, phaseId: String) -> Unit,
+    onFollow: (planId: String) -> Unit,
 ) {
     val context = LocalContext.current
     val state by context.container.content.state.collectAsStateWithLifecycle()
@@ -86,7 +104,7 @@ fun PlanDetailScreen(
                     "This plan isn't in the library any more.",
                     modifier = Modifier.align(Alignment.Center).padding(32.dp),
                 )
-                else -> PlanDetail(plan, ready.bundle, onOpenExercise, onStart)
+                else -> PlanDetail(plan, ready.bundle, onOpenExercise, onStart, onFollow)
             }
         }
     }
@@ -98,8 +116,14 @@ private fun PlanDetail(
     bundle: ContentBundle,
     onOpenExercise: (String) -> Unit,
     onStart: (String, String) -> Unit,
+    onFollow: (String) -> Unit,
 ) {
     val isPlan = plan.kind == PlanKind.FOCUSED
+    val context = LocalContext.current
+    val agenda = context.container.agenda
+    val enrollmentsFlow = remember(agenda) { agenda.currentEnrollments() }
+    val enrollments by enrollmentsFlow.collectAsStateWithLifecycle(initialValue = emptyList())
+    val enrollment = enrollments.firstOrNull { it.planId == plan.id }
     Column(
         Modifier.fillMaxSize().verticalScroll(rememberScrollState()).padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp),
@@ -121,6 +145,12 @@ private fun PlanDetail(
                 }
                 Spacer(Modifier.height(4.dp))
                 Text(plan.goal, style = MaterialTheme.typography.bodyLarge)
+                if (isPlan && enrollment == null) {
+                    Spacer(Modifier.height(16.dp))
+                    Button(onClick = { onFollow(plan.id) }, modifier = Modifier.fillMaxWidth().height(64.dp)) {
+                        Text("Follow this plan daily", style = MaterialTheme.typography.titleMedium)
+                    }
+                }
                 if (!isPlan) {
                     Spacer(Modifier.height(16.dp))
                     Button(
@@ -134,6 +164,8 @@ private fun PlanDetail(
                 }
             }
         }
+
+        if (enrollment != null) FollowingCard(plan, enrollment, bundle)
 
         Section("Who it's for") {
             Body(plan.whoFor)
@@ -177,17 +209,11 @@ private fun PlanDetail(
 
         plan.trackedMetric?.let { Section("What to track") { Body(it) } }
 
-        if (isPlan) {
-            Text(
-                "Do any phase now as a guided session. Following a plan daily (checklist and reminders) " +
-                    "arrives in the next update.",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurfaceVariant,
-            )
-        }
-
         plan.phases.forEachIndexed { i, phase ->
-            PhaseCard(plan, phase, i, bundle, showHeader = isPlan || plan.phases.size > 1, onOpenExercise, onStart)
+            PhaseCard(
+                plan, phase, i, bundle, showHeader = isPlan || plan.phases.size > 1, onOpenExercise, onStart,
+                current = enrollment?.phaseId == phase.id,
+            )
         }
 
         if (plan.references.isNotEmpty()) {
@@ -210,13 +236,14 @@ private fun PhaseCard(
     showHeader: Boolean,
     onOpenExercise: (String) -> Unit,
     onStart: (String, String) -> Unit,
+    current: Boolean = false,
 ) {
     val minutes = phaseMinutes(phase, bundle)
     Card(Modifier.fillMaxWidth()) {
         Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(8.dp)) {
             if (showHeader) {
                 Text(
-                    "PHASE ${index + 1}" + (phase.durationHint?.let { " · $it" } ?: ""),
+                    (if (current) "YOUR PHASE · " else "") + "PHASE ${index + 1}" + (phase.durationHint?.let { " · $it" } ?: ""),
                     style = MaterialTheme.typography.labelMedium,
                     color = MaterialTheme.colorScheme.primary,
                     fontWeight = FontWeight.Bold,
@@ -231,7 +258,7 @@ private fun PhaseCard(
                 color = MaterialTheme.colorScheme.onSurfaceVariant,
             )
             HorizontalDivider()
-            phase.items.forEach { item -> ItemRow(item, bundle, onOpenExercise) }
+            phase.items.forEach { item -> ItemRow(item, bundle, onOpenExercise, chooserLabel(plan, item.showIf)) }
             if (plan.kind == PlanKind.FOCUSED) {
                 OutlinedButton(onClick = { onStart(plan.id, phase.id) }, modifier = Modifier.fillMaxWidth().height(52.dp)) {
                     Icon(Icons.Filled.PlayArrow, contentDescription = null)
@@ -251,7 +278,7 @@ private fun phaseMinutes(phase: Phase, bundle: ContentBundle): Int {
 }
 
 @Composable
-private fun ItemRow(item: PlanItem, bundle: ContentBundle, onOpenExercise: (String) -> Unit) {
+private fun ItemRow(item: PlanItem, bundle: ContentBundle, onOpenExercise: (String) -> Unit, onlyIf: String?) {
     val e = bundle.exercisesById[item.exerciseId] ?: return
     val dose = item.dose ?: e.defaultDose
     Surface(
@@ -281,6 +308,9 @@ private fun ItemRow(item: PlanItem, bundle: ContentBundle, onOpenExercise: (Stri
                 item.schedule?.let {
                     Text(scheduleText(it), style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.primary)
                 }
+                onlyIf?.let {
+                    Text("Only if: $it", style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.secondary)
+                }
                 item.note?.let {
                     Text(it, style = MaterialTheme.typography.bodySmall, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 }
@@ -309,4 +339,151 @@ private fun Labelled(label: String, text: String) {
         Text(label, style = MaterialTheme.typography.labelLarge, fontWeight = FontWeight.Bold)
         Text(text, style = MaterialTheme.typography.bodyMedium)
     }
+}
+
+/** "eases:bending" → the option's label, e.g. "Bending forward or sitting eases it". */
+private fun chooserLabel(plan: Plan, showIf: String?): String? {
+    val (q, o) = showIf?.split(':', limit = 2)?.takeIf { it.size == 2 }?.let { it[0] to it[1] } ?: return null
+    return plan.chooser.firstOrNull { it.id == q }?.options?.firstOrNull { it.id == o }?.label
+}
+
+@Composable
+private fun FollowingCard(plan: Plan, e: EnrollmentEntity, bundle: ContentBundle) {
+    val context = LocalContext.current
+    val agenda = context.container.agenda
+    val scope = rememberCoroutineScope()
+    var dialog by remember { mutableStateOf<String?>(null) }
+    val phaseIndex = plan.phases.indexOfFirst { it.id == e.phaseId }
+    val phase = plan.phases.getOrNull(phaseIndex)
+    val since = LocalDate.ofEpochDay(e.startEpochDay).format(DateTimeFormatter.ofPattern("d MMM"))
+    val outdated = remember(e, bundle) { agenda.isOutdated(e, bundle) }
+
+    Card(
+        Modifier.fillMaxWidth(),
+        colors = CardDefaults.cardColors(containerColor = MaterialTheme.colorScheme.secondaryContainer),
+    ) {
+        Column(Modifier.padding(16.dp), verticalArrangement = Arrangement.spacedBy(4.dp)) {
+            Text(
+                (if (e.status == FollowStatus.PAUSED) "PAUSED" else "FOLLOWING") + " · since $since",
+                style = MaterialTheme.typography.labelLarge,
+                fontWeight = FontWeight.Bold,
+            )
+            phase?.let { Text("Phase ${phaseIndex + 1}: ${it.name}", style = MaterialTheme.typography.titleMedium) }
+            Text("Reminders: " + reminderText(e.reminderMode, e.dailyReminderMin), style = MaterialTheme.typography.bodyMedium)
+            e.side?.let { Text("Sore side: " + it.name.lowercase().replaceFirstChar { c -> c.uppercase() }, style = MaterialTheme.typography.bodyMedium) }
+            if (outdated) {
+                Spacer(Modifier.height(4.dp))
+                Text("This phase has been updated in the app.", style = MaterialTheme.typography.bodyMedium, fontWeight = FontWeight.SemiBold)
+                TextButton(onClick = { scope.launch { agenda.setPhase(e.id, e.phaseId) } }) { Text("Use the new version") }
+            }
+            Spacer(Modifier.height(4.dp))
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                if (plan.phases.size > 1) OutlinedButton(onClick = { dialog = "phase" }) { Text("Change phase") }
+                OutlinedButton(onClick = { dialog = "reminders" }) { Text("Reminders") }
+            }
+            Row(horizontalArrangement = Arrangement.spacedBy(8.dp)) {
+                TextButton(onClick = {
+                    scope.launch {
+                        agenda.updateEnrollment(e.id) {
+                            it.copy(status = if (it.status == FollowStatus.PAUSED) FollowStatus.ACTIVE else FollowStatus.PAUSED)
+                        }
+                    }
+                }) { Text(if (e.status == FollowStatus.PAUSED) "Resume" else "Pause") }
+                TextButton(onClick = { dialog = "stop" }) { Text("Stop following") }
+            }
+        }
+    }
+
+    when (dialog) {
+        "phase" -> {
+            var selected by remember { mutableStateOf(e.phaseId) }
+            AlertDialog(
+                onDismissRequest = { dialog = null },
+                title = { Text("Change phase") },
+                text = {
+                    Column {
+                        plan.phases.forEachIndexed { i, ph ->
+                            Row(
+                                Modifier.fillMaxWidth().selectable(selected = selected == ph.id, role = Role.RadioButton) { selected = ph.id }
+                                    .padding(vertical = 4.dp),
+                                verticalAlignment = Alignment.Top,
+                            ) {
+                                RadioButton(selected = selected == ph.id, onClick = null)
+                                Spacer(Modifier.width(8.dp))
+                                Column {
+                                    Text("Phase ${i + 1}: ${ph.name}")
+                                    ph.entryCriteria?.let { Text(it, style = MaterialTheme.typography.bodySmall) }
+                                }
+                            }
+                        }
+                        Text(
+                            "Today's checklist starts fresh with the new phase.",
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        )
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        dialog = null
+                        if (selected != e.phaseId) scope.launch { agenda.setPhase(e.id, selected) }
+                    }) { Text("Change") }
+                },
+                dismissButton = { TextButton(onClick = { dialog = null }) { Text("Cancel") } },
+            )
+        }
+        "reminders" -> {
+            var mode by remember { mutableStateOf(e.reminderMode) }
+            var minute by remember { mutableStateOf(e.dailyReminderMin) }
+            AlertDialog(
+                onDismissRequest = { dialog = null },
+                title = { Text("Reminders") },
+                text = {
+                    Column {
+                        listOf(
+                            ReminderMode.SLOTS to "At each time of day",
+                            ReminderMode.DAILY to "Once a day",
+                            ReminderMode.OFF to "No reminders",
+                        ).forEach { (m, label) ->
+                            Row(
+                                Modifier.fillMaxWidth().selectable(selected = mode == m, role = Role.RadioButton) { mode = m }
+                                    .padding(vertical = 4.dp),
+                                verticalAlignment = Alignment.CenterVertically,
+                            ) {
+                                RadioButton(selected = mode == m, onClick = null)
+                                Spacer(Modifier.width(8.dp))
+                                Text(label)
+                            }
+                        }
+                        if (mode == ReminderMode.DAILY) TimeRow("Time", minute) { minute = it }
+                    }
+                },
+                confirmButton = {
+                    TextButton(onClick = {
+                        dialog = null
+                        scope.launch { agenda.updateEnrollment(e.id) { it.copy(reminderMode = mode, dailyReminderMin = minute) } }
+                    }) { Text("Save") }
+                },
+                dismissButton = { TextButton(onClick = { dialog = null }) { Text("Cancel") } },
+            )
+        }
+        "stop" -> AlertDialog(
+            onDismissRequest = { dialog = null },
+            title = { Text("Stop following ${plan.name}?") },
+            text = { Text("It leaves your daily checklist and reminders. Your history is kept.") },
+            confirmButton = {
+                TextButton(onClick = {
+                    dialog = null
+                    scope.launch { agenda.stop(e.id) }
+                }) { Text("Stop following") }
+            },
+            dismissButton = { TextButton(onClick = { dialog = null }) { Text("Cancel") } },
+        )
+    }
+}
+
+private fun reminderText(mode: ReminderMode, minute: Int): String = when (mode) {
+    ReminderMode.SLOTS -> "at each time of day"
+    ReminderMode.DAILY -> "once a day at ${minuteText(minute)}"
+    ReminderMode.OFF -> "off"
 }
